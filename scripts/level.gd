@@ -13,7 +13,10 @@ var _gems_got := {"red": 0, "blue": 0}
 var _deaths := 0
 var _elapsed := 0.0
 var _completed := false
-var _exits := {"fire": false, "water": false}
+## 各元素出口门的占用状态。键是元素名（fire/water/...），值是否有人站入。
+## 由 _ready 按本关实际出口动态初始化，不写死 fire/water，
+## 这样加第三个角色/元素时只要关卡数据里有对应出口门即可，无需改代码。
+var _exits: Dictionary[StringName, bool] = {}
 var _hud: CanvasLayer
 var _level_name := ""
 var _subtitle := ""
@@ -31,6 +34,14 @@ func _ready() -> void:
 	_subtitle = String(info.get("subtitle", ""))
 	_players = info.get("players", [])
 	_gems_total = info.get("gems_total", {"red": 0, "blue": 0})
+
+	# 按本关出口门动态建立占用表；没有任何出口数据时退回火/水双门，避免死锁。
+	var exit_elements: Array = info.get("exit_elements", [])
+	if exit_elements.is_empty():
+		exit_elements = ["fire", "water"]
+	_exits = {}
+	for el in exit_elements:
+		_exits[StringName(el)] = false
 
 	var cam: CameraRig = $CameraRig
 	cam.setup(_players, info.get("bounds", Rect2(0, 0, 1280, 720)))
@@ -78,8 +89,14 @@ func _on_player_died(_id: StringName, _cause: StringName) -> void:
 
 
 func _on_exit_occupied(player_id: StringName, occupied: bool) -> void:
-	_exits[String(player_id)] = occupied
-	if _exits.get("fire", false) and _exits.get("water", false):
+	_exits[player_id] = occupied
+	# 所有出口门都被占住才算过关（动态适配双人或更多角色）
+	var all := true
+	for v in _exits.values():
+		if not v:
+			all = false
+			break
+	if all and not _exits.is_empty():
 		_complete()
 
 

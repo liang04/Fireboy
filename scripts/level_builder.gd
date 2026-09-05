@@ -160,6 +160,7 @@ static func build(parent: Node2D, data: Dictionary) -> Dictionary:
 	return {
 		"players": made_players,
 		"gems_total": gems_total,
+		"exit_elements": exit_cells.keys(),
 		"bounds": Rect2(0, 0, w * CELL, h * CELL),
 		"level_name": data.get("name", "未命名"),
 		"subtitle": data.get("subtitle", ""),
@@ -231,7 +232,11 @@ static func _make_tileset(cell: int) -> TileSet:
 		ts.add_source(atlas, i)
 		var td := atlas.get_tile_data(Vector2i(0, 0), 0)
 		td.add_collision_polygon(0)
+		# 注意：Godot 4 的 atlas tile 碰撞原点在格子「中心」而非左上角，
+		# 所以多边形必须按中心基准写，否则整张地图的碰撞面会下移半格（16px），
+		# 表现就是角色半截身子陷进地板里。
+		var h := cell * 0.5
 		td.set_collision_polygon_points(0, 0, PackedVector2Array([
-			Vector2(0, 0), Vector2(cell, 0), Vector2(cell, cell), Vector2(0, cell),
+			Vector2(-h, -h), Vector2(h, -h), Vector2(h, h), Vector2(-h, h),
 		]))
 	return ts

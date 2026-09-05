@@ -49,3 +49,9 @@ textures/canvas_textures/default_texture_filter=0
 2d_physics/layer_3="Props"
 2d_physics/layer_4="Hazards"
 2d_physics/layer_5="Triggers"
+
+[debug/gdscript]
+
+## 开启全部 GDScript 告警，让未类型化变量、未使用变量、不安全转型等问题
+## 在解析/运行时显性暴露，便于持续清理（不会让构建失败，仅打印告警）。
+enable_all_warnings=true

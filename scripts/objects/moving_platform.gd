@@ -1,4 +1,4 @@
-extends AnimatableBody2D
+extends StaticBody2D
 class_name MovingPlatform
 ## 横向 / 纵向往返移动平台。
 ##
@@ -6,6 +6,11 @@ class_name MovingPlatform
 ## 每帧把平台自身的位移直接加到乘客的 global_position 上。
 ## 这比依赖引擎的 platform velocity 更可预测，横向和纵向都能用，
 ## 而且不会和角色自己的 move_and_slide 打架。
+##
+## 注意：这里用 StaticBody2D 而非 AnimatableBody2D。
+## 因为 AnimatableBody2D 的 sync_to_physics（默认开）会让引擎自动把站在
+## 上面的角色带着走，再叠加下面的手动 _carry() 就变成 2 倍位移。
+## 用 StaticBody2D 关掉引擎自动载人，乘客位移完全由 _carry() 决定。
 
 var width_cells := 3
 var speed := 90.0

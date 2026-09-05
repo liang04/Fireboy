@@ -259,6 +259,10 @@ func _process(delta: float) -> void:
 	if _visual == null:
 		return
 	_time += delta
+	# 死亡缩放补间 / 过关冻结都由其它逻辑接管视觉，这里只在存活且未冻结时
+	# 更新朝向与走动晃动，否则会每帧把 scale.x 拉回 ±1，覆盖 die() 的死亡补间。
+	if not alive or frozen:
+		return
 	# 朝向
 	_visual.scale.x = move_toward(_visual.scale.x, float(_facing), 12.0 * delta)
 	# 走动时上下轻晃，落地时压扁一点，纯粹为了「活」一点

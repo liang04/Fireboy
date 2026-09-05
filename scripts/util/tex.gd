@@ -6,6 +6,14 @@ extends RefCounted
 
 class_name Tex
 
+# ---------------------------------------------------------------- 纹理缓存
+## 同一 (颜色, 尺寸) 的纯色贴图只生成一次，后续全部命中复用。
+## 收益：① 门装饰线、宝石/池子等大量重复贴图不再重复 new ImageTexture + 逐像素填充；
+##       ② 重玩本关 / 切关时不再泄漏式地生成新纹理（旧纹理随节点释放，
+##          但缓存命中后引用计数归零才会真正释放，整体内存更稳定）。
+static var _cache: Dictionary = {}
+
+
 # ---------------------------------------------------------------- 调色板
 const C_STONE := Color("#4a5568")        # 石头地形
 const C_WOOD := Color("#8a5a34")         # 木质平台
@@ -27,8 +35,12 @@ const C_PORTAL := Color("#b46cff")
 const C_EXIT := Color("#2b3440")
 
 
-## 生成一张带高光/阴影边的纯色方块贴图
+## 生成一张带高光/阴影边的纯色方块贴图（按 颜色+尺寸 缓存复用）
 static func solid(color: Color, size: Vector2i) -> ImageTexture:
+	var key := "%s|%d|%d" % [color.to_html(false), maxi(size.x, 1), maxi(size.y, 1)]
+	if _cache.has(key):
+		return _cache[key] as ImageTexture
+
 	var img := Image.create(maxi(size.x, 1), maxi(size.y, 1), false, Image.FORMAT_RGBA8)
 	var w: int = img.get_width()
 	var h: int = img.get_height()
@@ -41,7 +53,9 @@ static func solid(color: Color, size: Vector2i) -> ImageTexture:
 		img.set_pixel(0, y, color.lightened(0.12))
 		if w > 1:
 			img.set_pixel(w - 1, y, color.darkened(0.22))
-	return ImageTexture.create_from_image(img)
+	var tex := ImageTexture.create_from_image(img)
+	_cache[key] = tex
+	return tex
 
 
 ## 生成一个圆形（近似）多边形，用于水滴 / 宝石等装饰
