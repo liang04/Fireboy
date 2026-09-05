@@ -9,10 +9,12 @@ var cell_size := 32
 var _on := false
 var _handle: Sprite2D
 var _bodies: Dictionary = {}
+var _hint: Label
 
 
 func setup(cell: Vector2i, ch: StringName, cell_px: int) -> void:
 	channel = ch
+	_hint = Tex.channel_label(self, channel, Vector2(-12, -24))
 	cell_size = cell_px
 	position = Vector2(cell) * float(cell_px)
 
@@ -42,11 +44,19 @@ func setup(cell: Vector2i, ch: StringName, cell_px: int) -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	var keys := PackedStringArray()
+	for body in _bodies.keys():
+		if not is_instance_valid(body) or (body is Player and not body.alive):
+			_bodies.erase(body)
+			continue
+		if is_instance_valid(body) and body is Player and body.alive:
+			keys.append(InputSetup.key_text(body.action_key))
+	_hint.text = String(channel) + (" · " + "/".join(keys) + " 交互" if not keys.is_empty() else "")
 	if _bodies.is_empty():
 		return
 	for key in _bodies:
 		var p := key as Player
-		if p == null or not p.alive:
+		if not is_instance_valid(p) or not p.alive or p.frozen:
 			continue
 		if Input.is_action_just_pressed(p.action_key):
 			_toggle()

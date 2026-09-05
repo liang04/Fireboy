@@ -3,7 +3,7 @@ class_name MovingPlatform
 ## 横向 / 纵向往返移动平台。
 ##
 ## 携带乘客的做法：平台上方放一个薄的「乘客检测区」，
-## 每帧把平台自身的位移直接加到乘客的 global_position 上。
+## 每帧通过 move_and_collide 将平台位移传给乘客，检查墙壁和天花板。
 ## 这比依赖引擎的 platform velocity 更可预测，横向和纵向都能用，
 ## 而且不会和角色自己的 move_and_slide 打架。
 ##
@@ -25,6 +25,7 @@ var _dir := 1.0
 var _active := true
 var _length := 1.0
 var _riders: Area2D
+var _status: Label
 
 
 func setup(from_cell: Vector2i, to_cell: Vector2i, width: int, spd: float,
@@ -33,6 +34,9 @@ func setup(from_cell: Vector2i, to_cell: Vector2i, width: int, spd: float,
 	speed = spd
 	cell_size = cell_px
 	channel = ch
+	if channel != &"":
+		_status = Tex.channel_label(self, channel, Vector2(4, 18))
+		_status.text = String(channel) + " · 等待供电"
 
 	var w := float(width_cells * cell_px)
 	_a = Vector2(from_cell) * float(cell_px)
@@ -76,6 +80,8 @@ func setup(from_cell: Vector2i, to_cell: Vector2i, width: int, spd: float,
 func _on_channel_state_changed(ch: StringName, active: bool) -> void:
 	if ch == channel:
 		_active = active
+		if _status != null:
+			_status.text = String(channel) + (" · 运行" if active else " · 等待供电")
 
 
 func _physics_process(delta: float) -> void:
@@ -98,4 +104,7 @@ func _carry(delta_pos: Vector2) -> void:
 		return
 	for body in _riders.get_overlapping_bodies():
 		if body is CharacterBody2D:
-			body.global_position += delta_pos
+			if body is Player and (not body.alive or body.frozen or body.velocity.y < 0.0):
+				continue
+			# Respect walls and ceilings during the carried displacement too.
+			body.move_and_collide(delta_pos)

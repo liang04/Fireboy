@@ -56,8 +56,16 @@ func _set_occupied(v: bool) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is Player and body.element == element_required:
+	if body is Player and body.alive and body.element == element_required:
 		_set_occupied(true)
+
+
+func _physics_process(_delta: float) -> void:
+	var occupied := false
+	for body in get_overlapping_bodies():
+		if body is Player and body.alive and body.element == element_required:
+			occupied = true
+	_set_occupied(occupied)
 
 
 func _on_body_exited(body: Node2D) -> void:

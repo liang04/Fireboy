@@ -61,15 +61,17 @@ func _process(delta: float) -> void:
 	if _completed:
 		return
 	_elapsed += delta
-	_refresh_hud()
+	_hud.update_time(_elapsed)
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_echo():
+		return
 	if event.is_action_pressed(&"restart"):
 		get_tree().reload_current_scene()
 		return
 	if event.is_action_pressed(&"pause"):
-		get_tree().change_scene_to_file(MENU_SCENE)
+		_hud.set_paused(true)
 		return
 	if _completed and (event.is_action_pressed(&"fire_jump")
 			or event.is_action_pressed(&"water_jump")):

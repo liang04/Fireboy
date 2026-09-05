@@ -9,7 +9,8 @@ var pair_id: StringName = &""
 var cell_size := 32
 
 var target: Portal = null
-var _cooldown := 0.0
+var _cooldowns: Dictionary = {}
+var _arrivals: Dictionary = {}
 var _ring: Polygon2D
 var _t := 0.0
 
@@ -42,22 +43,34 @@ func setup(cell: Vector2i, pair: StringName, cell_px: int) -> void:
 	add_child(core)
 
 	body_entered.connect(_on_body_entered)
+	body_exited.connect(func(body: Node2D): _arrivals.erase(body.get_instance_id()))
 
 
 func _process(delta: float) -> void:
-	if _cooldown > 0.0:
-		_cooldown -= delta
+	for id in _cooldowns.keys():
+		_cooldowns[id] -= delta
+		if _cooldowns[id] <= 0.0:
+			_cooldowns.erase(id)
 	if _ring != null:
 		_t += delta
 		_ring.scale = Vector2.ONE * (1.0 + sin(_t * 3.0) * 0.08)
 
 
+func _physics_process(_delta: float) -> void:
+	for body in get_overlapping_bodies():
+		_on_body_entered(body)
+
+
 func _on_body_entered(body: Node2D) -> void:
-	if target == null or _cooldown > 0.0 or target._cooldown > 0.0:
+	if not is_instance_valid(target):
 		return
-	if not (body is Player) or not body.alive:
+	if not (body is Player) or not body.alive or body.frozen:
 		return
+	var id := body.get_instance_id()
+	if _arrivals.has(id) or _cooldowns.has(id) or target._cooldowns.has(id):
+		return
+	_cooldowns[id] = COOLDOWN
+	target._cooldowns[id] = COOLDOWN
+	target._arrivals[id] = true
 	body.global_position = target.global_position
 	body.velocity = Vector2.ZERO
-	_cooldown = COOLDOWN
-	target._cooldown = COOLDOWN

@@ -8,6 +8,7 @@ class_name LevelBuilder
 ## 这样地形性能好，机关又保留完整的面向对象表达力。
 
 const CELL := 32
+static var _tilesets: Dictionary = {}
 const PLAYER_SCENE := preload("res://scenes/player.tscn")
 
 const TERRAIN_STONE := 0
@@ -215,6 +216,8 @@ static func _collect_hazard_rects(grid: Array, w: int, h: int) -> Array:
 
 ## 程序化生成 TileSet：每种材质一个图集源，自带一格大小的碰撞多边形
 static func _make_tileset(cell: int) -> TileSet:
+	if _tilesets.has(cell):
+		return _tilesets[cell]
 	var ts := TileSet.new()
 	ts.tile_size = Vector2i(cell, cell)
 	ts.add_physics_layer()
@@ -239,4 +242,5 @@ static func _make_tileset(cell: int) -> TileSet:
 		td.set_collision_polygon_points(0, 0, PackedVector2Array([
 			Vector2(-h, -h), Vector2(h, -h), Vector2(h, h), Vector2(-h, h),
 		]))
+	_tilesets[cell] = ts
 	return ts

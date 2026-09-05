@@ -13,6 +13,7 @@ var _base_y := 0.0
 
 func setup(cell: Vector2i, ch: StringName, cell_px: int) -> void:
 	channel = ch
+	Tex.channel_label(self, channel, Vector2(8, -8))
 	cell_size = cell_px
 	position = Vector2(cell) * float(cell_px)
 
@@ -39,7 +40,17 @@ func setup(cell: Vector2i, ch: StringName, cell_px: int) -> void:
 
 
 func _pressable(body: Node2D) -> bool:
-	return body is Player or body is PushBox
+	return (body is Player and body.alive) or body is PushBox
+
+
+func _physics_process(_delta: float) -> void:
+	var changed := false
+	for body in _bodies.keys():
+		if not is_instance_valid(body) or (body is Player and not body.alive):
+			_bodies.erase(body)
+			changed = true
+	if changed:
+		_refresh()
 
 
 func _on_body_entered(body: Node2D) -> void:

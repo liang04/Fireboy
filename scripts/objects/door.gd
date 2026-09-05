@@ -10,10 +10,12 @@ var cell_size := 32
 var _closed_y := 0.0
 var _open_y := 0.0
 var _is_open := false
+var _motion: Tween
 
 
 func setup(cell: Vector2i, ch: StringName, height: int, cell_px: int) -> void:
 	channel = ch
+	Tex.channel_label(self, channel, Vector2(8, -22))
 	height_cells = maxi(height, 1)
 	cell_size = cell_px
 
@@ -51,5 +53,7 @@ func _on_channel_state_changed(ch: StringName, active: bool) -> void:
 	if ch != channel or active == _is_open:
 		return
 	_is_open = active
-	var tw := create_tween()
-	tw.tween_property(self, "position:y", _open_y if active else _closed_y, 0.35)
+	if _motion != null and _motion.is_valid():
+		_motion.kill()
+	_motion = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+	_motion.tween_property(self, "position:y", _open_y if active else _closed_y, 0.35)

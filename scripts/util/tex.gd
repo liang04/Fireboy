@@ -14,6 +14,20 @@ class_name Tex
 static var _cache: Dictionary = {}
 
 
+static func channel_label(parent: Node, channel: StringName, at: Vector2) -> Label:
+	var label := Label.new()
+	label.text = String(channel)
+	label.position = at
+	label.z_index = 10
+	label.add_theme_font_size_override("font_size", 14)
+	label.add_theme_color_override("font_color", Color("#ffd166"))
+	label.add_theme_color_override("font_shadow_color", Color.BLACK)
+	label.add_theme_constant_override("shadow_offset_x", 1)
+	label.add_theme_constant_override("shadow_offset_y", 1)
+	parent.add_child(label)
+	return label
+
+
 # ---------------------------------------------------------------- 调色板
 const C_STONE := Color("#4a5568")        # 石头地形
 const C_WOOD := Color("#8a5a34")         # 木质平台

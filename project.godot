@@ -15,6 +15,7 @@ config/quit_on_go_back=false
 
 InputSetup="*res://scripts/autoload/input_setup.gd"
 EventBus="*res://scripts/autoload/event_bus.gd"
+Sound="*res://scripts/autoload/sound.gd"
 GameState="*res://scripts/autoload/game_state.gd"
 SmokeRunner="*res://scripts/autoload/smoke.gd"
 

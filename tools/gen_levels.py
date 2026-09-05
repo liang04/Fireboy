@@ -1154,6 +1154,7 @@ class_name Levels
 ## 之后可直接手工编辑 —— 改完重跑生成器会覆盖，请注意。
 
 const CELL := 32
+static var _cache: Array = []
 
 
 static func count() -> int:
@@ -1166,7 +1167,9 @@ static func get_level(index: int) -> Dictionary:
 
 
 static func _all() -> Array:
-	return [%s]
+	if _cache.is_empty():
+		_cache = [%s]
+	return _cache
 
 '''
 

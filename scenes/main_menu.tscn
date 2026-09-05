@@ -39,7 +39,7 @@ theme_override_constants/separation = 8
 [node name="Help" type="Label" parent="VBox"]
 theme_override_font_sizes/font_size = 14
 horizontal_alignment = 1
-text = "火娃：A / D 移动，W 跳，S 交互　　水娃：← / → 移动，↑ 跳，↓ 交互　　R 重开本关　　Esc 返回菜单"
+text = "火娃：WASD　水娃：方向键　R 重玩　Esc 暂停 / 改键 / 音效\n支持双手柄：方向键或左摇杆移动，A 跳跃，X 交互"
 
 [node name="QuitButton" type="Button" parent="VBox"]
 theme_override_font_sizes/font_size = 16

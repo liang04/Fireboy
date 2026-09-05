@@ -7,6 +7,7 @@ var color: StringName = &"red"
 var cell_size := 32
 
 var _t := 0.0
+var _collected := false
 var _spin: Polygon2D
 
 
@@ -50,8 +51,9 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if not (body is Player) or not body.alive:
+	if _collected or not (body is Player) or not body.alive:
 		return
+	_collected = true
 	EventBus.gem_collected.emit(color)
 	# 收起动画：先放大再消失
 	var tw := create_tween()
