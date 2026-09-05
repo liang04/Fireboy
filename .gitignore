@@ -1,0 +1,16 @@
+# Godot 4 引擎导入缓存（自动生成，重新打开工程会重建）
+.godot/
+
+# WorkBuddy 工具项目数据（记忆/缓存，非游戏源码）
+.workbuddy/
+
+# 操作系统 / 编辑器临时文件
+*.tmp
+*.log
+*.bak
+.DS_Store
+Thumbs.db
+*~
+
+# 文本编辑器 swap
+*.swp

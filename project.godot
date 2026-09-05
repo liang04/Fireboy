@@ -1,0 +1,51 @@
+; Engine configuration file.
+; 森林冰火人 (Fireboy & Watergirl) —— Godot 4.7.2 双人同屏合作解谜平台跳跃原型
+
+config_version=5
+
+[application]
+
+config/name="森林冰火人 Fireboy & Watergirl"
+config/description="Godot 4.7 双人同屏合作解谜平台跳跃游戏原型"
+run/main_scene="res://scenes/main_menu.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/quit_on_go_back=false
+
+[autoload]
+
+InputSetup="*res://scripts/autoload/input_setup.gd"
+EventBus="*res://scripts/autoload/event_bus.gd"
+GameState="*res://scripts/autoload/game_state.gd"
+SmokeRunner="*res://scripts/autoload/smoke.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+
+[gui]
+
+theme/custom_font="res://assets/fonts/NotoSansSC-Regular.otf"
+
+[physics]
+
+common/physics_ticks_per_second=60
+2d/default_gravity=1400.0
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/canvas_textures/default_texture_filter=0
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Players"
+2d_physics/layer_3="Props"
+2d_physics/layer_4="Hazards"
+2d_physics/layer_5="Triggers"
