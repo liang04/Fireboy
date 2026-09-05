@@ -1,0 +1,14 @@
+# 统一换行符为 LF，避免 Windows/Mac 协作时 Godot 文件 diff 混乱
+* text=auto eol=lf
+
+# 二进制资源不转换换行
+*.otf binary
+*.ttf binary
+*.png binary
+*.webp binary
+*.ogg binary
+*.wav binary
+*.mp3 binary
+
+# Godot 的 .import 是文本元数据
+*.import text
