@@ -51,10 +51,17 @@ var _jump_held := false
 var _fluids: Dictionary = {}
 var _facing := 1
 var _time := 0.0
+var _walk_phase := 0.0
 var _layer := 0
 var _mask := 0
 var _visual: Node2D
-var _body_poly: Polygon2D
+var _sprite: AnimatedSprite2D
+var _was_on_floor := false
+var _land_squash := 0.0
+var _jump_stretch := 0.0
+var _land_anim_time := 0.0
+const FIREBOY_SHEET := preload("res://assets/characters/fireboy-spritesheet-v2.png")
+const WATERGIRL_SHEET := preload("res://assets/characters/watergirl-spritesheet-v2.png")
 ## 死亡动画的补间句柄。
 ## 必须有：如果外部（比如重生、切关、测试探针）提前调用了 respawn()，
 ## 这个补间仍会在 0.26 秒后触发一次 respawn()，把角色强行拽回出生点并清空输入缓冲，
@@ -73,55 +80,68 @@ func _ready() -> void:
 	floor_snap_length = 4.0
 
 
-# ---------------------------------------------------------------- 视觉（全程序生成）
+# ---------------------------------------------------------------- 视觉（AI 角色立绘 + 程序动态）
 func _build_visual() -> void:
 	_visual = Node2D.new()
 	_visual.name = "Visual"
 	add_child(_visual)
 
-	var main_color := Tex.C_FIRE if element == &"fire" else Tex.C_WATER
-	var dark_color := Tex.C_FIRE_DARK if element == &"fire" else Tex.C_WATER_DARK
+	_sprite = AnimatedSprite2D.new()
+	_sprite.name = "CharacterArt"
+	var sheet: Texture2D = FIREBOY_SHEET if element == &"fire" else WATERGIRL_SHEET
+	_sprite.sprite_frames = _make_sprite_frames(sheet)
+	# 每个单元格约 350px 高，缩到 48px；脚底与 28px 高碰撞体对齐。
+	_sprite.scale = Vector2.ONE * (48.0 / (float(sheet.get_height()) / 3.0))
+	_sprite.position.y = -10.0
+	_sprite.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+	_visual.add_child(_sprite)
+	_sprite.play(&"idle")
 
-	# 身体：上窄下宽的拟人轮廓
-	_body_poly = Polygon2D.new()
-	_body_poly.polygon = PackedVector2Array([
-		Vector2(-9, 14), Vector2(-9, -4), Vector2(-6, -13),
-		Vector2(6, -13), Vector2(9, -4), Vector2(9, 14),
-	])
-	_body_poly.color = main_color
-	_visual.add_child(_body_poly)
 
-	# 底部阴影，增加立体感
-	var shade := Polygon2D.new()
-	shade.polygon = PackedVector2Array([
-		Vector2(-9, 14), Vector2(9, 14), Vector2(9, 8), Vector2(-9, 8),
-	])
-	shade.color = dark_color
-	_visual.add_child(shade)
-
-	# 眼睛
-	for sx in [-4.0, 4.0]:
-		var eye := Polygon2D.new()
-		eye.polygon = PackedVector2Array([
-			Vector2(sx - 2, -9), Vector2(sx + 2, -9),
-			Vector2(sx + 2, -4), Vector2(sx - 2, -4),
-		])
-		eye.color = Color.WHITE
-		_visual.add_child(eye)
-
-	# 头顶标志：火娃是火苗，水娃是水滴
-	var crest := Polygon2D.new()
-	if element == &"fire":
-		crest.polygon = PackedVector2Array([
-			Vector2(-5, -13), Vector2(0, -26), Vector2(5, -13),
-		])
-		crest.color = Tex.C_LAVA
-	else:
-		crest.polygon = PackedVector2Array([
-			Vector2(0, -26), Vector2(4, -16), Vector2(-4, -16),
-		])
-		crest.color = Color("#9fe8ff")
-	_visual.add_child(crest)
+## 按实际图片尺寸等分 4×3 网格。使用 AtlasTexture 而不是 hframes/vframes，
+## 因此即使图片高度不能被 3 整除，最后一排也不会错一像素。
+func _make_sprite_frames(sheet: Texture2D) -> SpriteFrames:
+	var frames := SpriteFrames.new()
+	frames.remove_animation(&"default")
+	# 水娃生成图并不是严格等分网格：第一排高度超过 1/3 画布，直接等分会
+	# 截掉下半身。这里按图中每个人物的实际范围使用允许重叠的裁切区域。
+	var water_regions: Array[Rect2] = [
+		Rect2(180, 0, 320, 384), Rect2(500, 0, 320, 384),
+		Rect2(790, 0, 320, 384), Rect2(1085, 0, 320, 384),
+		Rect2(180, 360, 300, 340), Rect2(490, 360, 300, 340),
+		Rect2(800, 360, 300, 340), Rect2(1100, 360, 300, 340),
+		Rect2(180, 680, 300, 344), Rect2(490, 680, 300, 344),
+		Rect2(800, 680, 300, 344), Rect2(1100, 680, 300, 344),
+	]
+	var animation_rows := {
+		# 生成图的四个待机姿势没有使用同一个锚点；静止时固定使用第一帧，
+		# 呼吸感继续由下方的程序缩放提供，避免角色左右漂移。
+		&"idle": [0],
+		&"walk": [4, 5, 6, 7],
+		&"takeoff": [8],
+		&"rise": [9],
+		&"fall": [10],
+		&"land": [11],
+	}
+	for animation: StringName in animation_rows:
+		frames.add_animation(animation)
+		frames.set_animation_loop(animation, animation == &"idle" or animation == &"walk")
+		frames.set_animation_speed(animation, 3.0 if animation == &"idle" else 10.0)
+		for frame_index: int in animation_rows[animation]:
+			var atlas := AtlasTexture.new()
+			atlas.atlas = sheet
+			if sheet == WATERGIRL_SHEET:
+				atlas.region = water_regions[frame_index]
+			else:
+				var column := frame_index % 4
+				var row := frame_index / 4
+				var x0 := roundi(float(sheet.get_width()) * float(column) / 4.0)
+				var x1 := roundi(float(sheet.get_width()) * float(column + 1) / 4.0)
+				var y0 := roundi(float(sheet.get_height()) * float(row) / 3.0)
+				var y1 := roundi(float(sheet.get_height()) * float(row + 1) / 3.0)
+				atlas.region = Rect2(x0, y0, x1 - x0, y1 - y0)
+			frames.add_frame(animation, atlas)
+	return frames
 
 
 # ---------------------------------------------------------------- 液体
@@ -234,6 +254,8 @@ func _physics_process(delta: float) -> void:
 		_buffer = 0.0
 		_coyote = 0.0
 		_jump_held = true
+		_jump_stretch = 1.0
+		Sound.play(&"jump")
 
 	# --- 可变跳跃高度：提前松手就砍掉上升速度
 	if _jump_held and not Input.is_action_pressed(jump_action) and velocity.y < 0.0:
@@ -253,6 +275,11 @@ func _physics_process(delta: float) -> void:
 		velocity.y = MAX_FALL
 
 	move_and_slide()
+	var landed := is_on_floor() and not _was_on_floor and velocity.y >= 0.0
+	if landed:
+		_land_squash = 1.0
+		_land_anim_time = 0.13
+	_was_on_floor = is_on_floor()
 
 
 func _process(delta: float) -> void:
@@ -263,9 +290,88 @@ func _process(delta: float) -> void:
 	# 更新朝向与走动晃动，否则会每帧把 scale.x 拉回 ±1，覆盖 die() 的死亡补间。
 	if not alive or frozen:
 		return
-	# 朝向
-	_visual.scale.x = move_toward(_visual.scale.x, float(_facing), 12.0 * delta)
-	# 走动时上下轻晃，落地时压扁一点，纯粹为了「活」一点
-	var speed_ratio := absf(velocity.x) / SPEED
-	var bob := sin(_time * 14.0) * 1.6 * speed_ratio if is_on_floor() else 0.0
-	_visual.position.y = bob
+	_update_character_animation(delta)
+	# 单张立绘的程序动画：待机呼吸、走路步频、起跳拉伸、下落收拢、落地回弹。
+	# 步频跟随实际速度，减速时动作会自然停下来，避免原地“踏步”。
+	var speed_ratio := clampf(absf(velocity.x) / SPEED, 0.0, 1.0)
+	_walk_phase += delta * lerpf(5.0, 17.0, speed_ratio)
+	var stride := sin(_walk_phase)
+	var step := absf(stride)
+	var breathe := sin(_time * 2.6)
+	var target_scale := Vector2.ONE
+	var target_rotation := 0.0
+	var bob := 0.0
+	if is_on_floor():
+		# 静止时有很轻的呼吸；移动时每一步抬起并左右摆动。
+		bob = breathe * -0.35 * (1.0 - speed_ratio) - step * 2.2 * speed_ratio
+		target_scale.x = 1.0 + breathe * 0.008 * (1.0 - speed_ratio) + step * 0.045 * speed_ratio
+		target_scale.y = 1.0 - breathe * 0.012 * (1.0 - speed_ratio) - step * 0.035 * speed_ratio
+		target_rotation = deg_to_rad(2.2) * stride * speed_ratio + deg_to_rad(3.0) * speed_ratio * float(_facing)
+	else:
+		var rising := clampf(-velocity.y / absf(JUMP_VELOCITY), 0.0, 1.0)
+		var falling := clampf(velocity.y / MAX_FALL, 0.0, 1.0)
+		target_scale = Vector2(1.0 - 0.10 * rising + 0.07 * falling, 1.0 + 0.14 * rising - 0.06 * falling)
+		target_rotation = deg_to_rad(6.0) * clampf(velocity.x / SPEED, -1.0, 1.0)
+		bob = -1.0 * rising + 0.6 * falling
+	_jump_stretch = move_toward(_jump_stretch, 0.0, delta * 6.5)
+	target_scale.x -= _jump_stretch * 0.07
+	target_scale.y += _jump_stretch * 0.11
+	_land_squash = move_toward(_land_squash, 0.0, delta * 7.5)
+	# 一次略微过冲的落地压缩，让跳跃结束更有重量感。
+	var land_bounce := sin(_land_squash * PI * 2.5) * _land_squash
+	target_scale.x += _land_squash * 0.14 + land_bounce * 0.055
+	target_scale.y -= _land_squash * 0.13 + land_bounce * 0.04
+	_visual.scale.x = move_toward(_visual.scale.x, target_scale.x * float(_facing), 13.0 * delta)
+	_visual.scale.y = move_toward(_visual.scale.y, target_scale.y, 13.0 * delta)
+	_visual.rotation = lerp_angle(_visual.rotation, target_rotation, 12.0 * delta)
+	_visual.position.y = move_toward(_visual.position.y, bob, 90.0 * delta)
+
+
+func _update_character_animation(delta: float) -> void:
+	_land_anim_time = maxf(_land_anim_time - delta, 0.0)
+	var wanted: StringName
+	if _land_anim_time > 0.0:
+		wanted = &"land"
+	elif not is_on_floor():
+		if _jump_stretch > 0.72:
+			wanted = &"takeoff"
+		elif velocity.y < 0.0:
+			wanted = &"rise"
+		else:
+			wanted = &"fall"
+	elif absf(velocity.x) > 12.0:
+		wanted = &"walk"
+	else:
+		wanted = &"idle"
+	if _sprite.animation != wanted:
+		_sprite.play(wanted)
+	_apply_frame_anchor(wanted, _sprite.frame)
+	# 走得慢时同步降低动画速度，避免脚步打滑。
+	_sprite.speed_scale = clampf(absf(velocity.x) / SPEED, 0.45, 1.0) if wanted == &"walk" else 1.0
+
+
+## AI 生成的各帧在单元格内位置不完全一致。这里把每帧的可见中心固定到
+## 角色原点，并把脚底固定到同一基线；offset 使用的是缩放前的贴图像素。
+func _apply_frame_anchor(animation: StringName, frame: int) -> void:
+	var offsets: Dictionary
+	if element == &"fire":
+		offsets = {
+			&"idle": [Vector2(-89, 0)],
+			&"walk": [Vector2(-89, 46), Vector2(-30, 0), Vector2(-28, 0), Vector2(106, 44)],
+			&"takeoff": [Vector2(-94, 78)],
+			&"rise": [Vector2(0, 114)],
+			&"fall": [Vector2(-27, 114)],
+			&"land": [Vector2(108, 78)],
+		}
+	else:
+		offsets = {
+			# 水娃已经用逐帧实际区域居中，不再施加等分网格的补偿值。
+			&"idle": [Vector2.ZERO],
+			&"walk": [Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO],
+			&"takeoff": [Vector2.ZERO],
+			&"rise": [Vector2.ZERO],
+			&"fall": [Vector2.ZERO],
+			&"land": [Vector2.ZERO],
+		}
+	var animation_offsets: Array = offsets.get(animation, [Vector2.ZERO])
+	_sprite.offset = animation_offsets[mini(frame, animation_offsets.size() - 1)]
