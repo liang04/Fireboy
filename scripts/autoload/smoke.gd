@@ -303,14 +303,76 @@ func _probe_mechanisms(lvl: Node) -> int:
 			portals.append(c)
 
 	# --- 移动平台：跑 60 帧，看它动了没
+	#     带 channel 的平台平时就是不动的（要等别人供电），所以测之前
+	#     先把它的 channel 点亮，测完再灭掉 —— 否则「受控平台」会被
+	#     误判成「坏掉的平台」，而「受控」恰恰是第 5 关的核心机制。
 	for mp in platforms:
-		var p0 := (mp as MovingPlatform).global_position
+		var plat := mp as MovingPlatform
+		var gated := plat.channel != &""
+		if gated:
+			EventBus.channel_state_changed.emit(plat.channel, true)
+			await get_tree().physics_frame
+		var p0 := plat.global_position
 		for i in 60:
 			await get_tree().physics_frame
-		var p1 := (mp as MovingPlatform).global_position
+		var p1 := plat.global_position
 		if p0.distance_to(p1) < 8.0:
-			printerr("[smoke] 移动平台没有动：%s" % (mp as Node).get_path())
+			printerr("[smoke] 移动平台没有动：%s" % (plat as Node).get_path())
 			errs += 1
+		if gated:
+			EventBus.channel_state_changed.emit(plat.channel, false)
+			await get_tree().physics_frame
+
+	# --- 平台载客：站上去之后，人必须跟着平台走
+	#     横向渡河靠它，纵向电梯更是全靠它 —— 第 5 关的两台电梯如果
+	#     只是「平台在动而人没跟上」，关卡就变成不可通关，而静态校验器
+	#     看不出来（它假设平台两端天然连通）。所以这条必须实测位移。
+	for mp in platforms:
+		var plat := mp as MovingPlatform
+		var riders: Array = lvl.get("_players")
+		if riders.is_empty():
+			continue
+		var rider: Player = null
+		for r in riders:
+			var rp := r as Player
+			if rp != null and rp.alive:
+				rider = rp
+				break
+		if rider == null:
+			continue
+		var gated := plat.channel != &""
+		if gated:
+			EventBus.channel_state_changed.emit(plat.channel, true)
+		var saved_pos := rider.global_position
+		# 放到平台站立面正上方（角色高 28px，原点在中心，抬 18px 再落下去）
+		rider.global_position = plat.global_position + Vector2(16.0, -18.0)
+		rider.velocity = Vector2.ZERO
+		for i in 12:
+			await get_tree().physics_frame
+		var q0 := rider.global_position
+		var s0 := plat.global_position
+		for i in 40:
+			await get_tree().physics_frame
+		var q1 := rider.global_position
+		var s1 := plat.global_position
+		var drift := (q1 - q0).distance_to(s1 - s0)
+		# 自己也得动起来才算有效测试：否则「平台没动 + 人没动」会
+		# 因为两者位移都接近 0 而被判成「完美同步」，整条检查形同虚设
+		if (s1 - s0).length() < 8.0:
+			printerr("[smoke] 平台 %s 在载客测试窗口内没有位移，无法判定是否载客"
+					% (plat as Node).get_path())
+			errs += 1
+		elif drift > 24.0:
+			printerr("[smoke] 平台 %s 没有把乘客带走：平台位移 %s，乘客位移 %s"
+					% [(plat as Node).get_path(), s1 - s0, q1 - q0])
+			errs += 1
+		rider.global_position = saved_pos
+		rider.velocity = Vector2.ZERO
+		for i in 20:
+			await get_tree().physics_frame
+		if gated:
+			EventBus.channel_state_changed.emit(plat.channel, false)
+			await get_tree().physics_frame
 
 	# --- 升降门：广播 channel，看门有没有升降
 	for d in doors:
@@ -335,18 +397,35 @@ func _probe_mechanisms(lvl: Node) -> int:
 	for pl in plates:
 		var plate := pl as PressurePlate
 		var linked: Array = doors.filter(func(d): return (d as GateDoor).channel == plate.channel)
-		if linked.is_empty():
+		var linked_plats: Array = platforms.filter(
+				func(m): return (m as MovingPlatform).channel == plate.channel)
+		if linked.is_empty() and linked_plats.is_empty():
 			printerr("[smoke] 压力板 %s 的 channel '%s' 没有任何门在听"
 					% [plate.get_path(), String(plate.channel)])
 			errs += 1
 			continue
-		var gate := linked[0] as GateDoor
-		var gy0 := gate.position.y
 		var players: Array = lvl.get("_players")
 		if players.is_empty():
 			continue
 		var probe_player := players[0] as Player
 		var saved := probe_player.global_position
+		# 板子也可能是在给平台供电（第 5 关就是），那时改用平台位移来验收
+		if linked.is_empty():
+			var plat := linked_plats[0] as MovingPlatform
+			var q0 := plat.global_position
+			probe_player.global_position = plate.position + Vector2(16, 16)
+			for i in 60:
+				await get_tree().physics_frame
+			if plat.global_position.distance_to(q0) < 8.0:
+				printerr("[smoke] 角色站上压力板 %s，但平台 %s 没有通电动起来"
+						% [plate.get_path(), plat.get_path()])
+				errs += 1
+			probe_player.global_position = saved
+			for i in 25:
+				await get_tree().physics_frame
+			continue
+		var gate := linked[0] as GateDoor
+		var gy0 := gate.position.y
 		# 站到压力板格子中心
 		probe_player.global_position = plate.position + Vector2(16, 16)
 		for i in 20:
@@ -364,17 +443,45 @@ func _probe_mechanisms(lvl: Node) -> int:
 	for lv in levers:
 		var lever := lv as Lever
 		var linked: Array = doors.filter(func(d): return (d as GateDoor).channel == lever.channel)
-		if linked.is_empty():
+		var linked_plats: Array = platforms.filter(
+				func(m): return (m as MovingPlatform).channel == lever.channel)
+		if linked.is_empty() and linked_plats.is_empty():
 			printerr("[smoke] 杠杆 %s 的 channel '%s' 没有任何门在听"
 					% [lever.get_path(), String(lever.channel)])
 			errs += 1
 			continue
-		var gate := linked[0] as GateDoor
 		var players: Array = lvl.get("_players")
 		if players.is_empty():
 			continue
 		var pb := players[0] as Player
 		var saved := pb.global_position
+		# 杠杆也可能是在给平台供电（第 5 关就是），那时改用平台位移验收，
+		# 并且要额外验证「人走开之后平台照样在跑」—— 那才是自锁
+		if linked.is_empty():
+			var plat := linked_plats[0] as MovingPlatform
+			pb.global_position = lever.position + Vector2(16, 16)
+			for i in 4:
+				await get_tree().physics_frame
+			Input.action_press(pb.action_key)
+			await get_tree().physics_frame
+			Input.action_release(pb.action_key)
+			var q1 := plat.global_position
+			for i in 60:
+				await get_tree().physics_frame
+			if plat.global_position.distance_to(q1) < 8.0:
+				printerr("[smoke] 角色拉下杠杆 %s，但平台 %s 没有通电动起来"
+						% [lever.get_path(), plat.get_path()])
+				errs += 1
+			pb.global_position = saved
+			var q2 := plat.global_position
+			for i in 30:
+				await get_tree().physics_frame
+			if plat.global_position.distance_to(q2) < 4.0:
+				printerr("[smoke] 杠杆 %s 没有自锁：人一走开，平台 %s 就断电了"
+						% [lever.get_path(), plat.get_path()])
+				errs += 1
+			continue
+		var gate := linked[0] as GateDoor
 		var gy0 := gate.position.y
 
 		pb.global_position = lever.position + Vector2(16, 16)
