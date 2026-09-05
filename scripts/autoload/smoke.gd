@@ -6,7 +6,11 @@ extends Node
 
 const LEVEL_SCENE := preload("res://scenes/level.tscn")
 const SIM_FRAMES := 240
-const WATCHDOG_SECONDS := 90.0
+# 8 关逐关载入 + 动作探针 + 机关联调（每关十几个 await physics_frame 的联调窗口）
+# 在 headless 下物理帧按 60fps 节流，全量跑完需要 ~100-130s（真实时间）。
+# 之前只有 6 关时 90s 够用；加关后看门狗会把「还没跑完」误判成「死循环」。
+# 留足余量设 240s——真死循环照样会被抓住，只是别再误伤正常的长测试。
+const WATCHDOG_SECONDS := 240.0
 
 var _watchdog := 0.0
 var _finished := false
