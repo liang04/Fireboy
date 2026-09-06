@@ -13,7 +13,6 @@ var _base_y := 0.0
 
 func setup(cell: Vector2i, ch: StringName, cell_px: int) -> void:
 	channel = ch
-	Tex.channel_label(self, channel, Vector2(8, -8))
 	cell_size = cell_px
 	position = Vector2(cell) * float(cell_px)
 

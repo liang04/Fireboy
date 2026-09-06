@@ -51,7 +51,7 @@ func _physics_process(_delta: float) -> void:
 			continue
 		if is_instance_valid(body) and body is Player and body.alive:
 			keys.append(InputSetup.key_text(body.action_key))
-	_hint.text = String(channel) + (" · " + "/".join(keys) + " 交互" if not keys.is_empty() else "")
+	_hint.text = ("/".join(keys) + " 交互") if not keys.is_empty() else ""
 	if _bodies.is_empty():
 		return
 	for key in _bodies:

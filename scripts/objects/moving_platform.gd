@@ -25,7 +25,6 @@ var _dir := 1.0
 var _active := true
 var _length := 1.0
 var _riders: Area2D
-var _status: Label
 
 
 func setup(from_cell: Vector2i, to_cell: Vector2i, width: int, spd: float,
@@ -34,9 +33,6 @@ func setup(from_cell: Vector2i, to_cell: Vector2i, width: int, spd: float,
 	speed = spd
 	cell_size = cell_px
 	channel = ch
-	if channel != &"":
-		_status = Tex.channel_label(self, channel, Vector2(4, 18))
-		_status.text = String(channel) + " · 等待供电"
 
 	var w := float(width_cells * cell_px)
 	_a = Vector2(from_cell) * float(cell_px)
@@ -80,8 +76,6 @@ func setup(from_cell: Vector2i, to_cell: Vector2i, width: int, spd: float,
 func _on_channel_state_changed(ch: StringName, active: bool) -> void:
 	if ch == channel:
 		_active = active
-		if _status != null:
-			_status.text = String(channel) + (" · 运行" if active else " · 等待供电")
 
 
 func _physics_process(delta: float) -> void:

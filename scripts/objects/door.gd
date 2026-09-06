@@ -15,7 +15,6 @@ var _motion: Tween
 
 func setup(cell: Vector2i, ch: StringName, height: int, cell_px: int) -> void:
 	channel = ch
-	Tex.channel_label(self, channel, Vector2(8, -22))
 	height_cells = maxi(height, 1)
 	cell_size = cell_px
 
