@@ -33,12 +33,12 @@ text = "00:00.00"
 [node name="Red" type="Label" parent="Bar/Row"]
 modulate = Color(1, 0.38, 0.47, 1)
 theme_override_font_sizes/font_size = 20
-text = "火 0/0"
+text = "火娃宝石 0/0"
 
 [node name="Blue" type="Label" parent="Bar/Row"]
 modulate = Color(0.36, 0.85, 1, 1)
 theme_override_font_sizes/font_size = 20
-text = "水 0/0"
+text = "水娃宝石 0/0"
 
 [node name="Deaths" type="Label" parent="Bar/Row"]
 theme_override_font_sizes/font_size = 20

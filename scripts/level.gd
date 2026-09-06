@@ -51,6 +51,7 @@ func _ready() -> void:
 	_hud.setup(_level_name, _subtitle)
 
 	EventBus.gem_collected.connect(_on_gem_collected)
+	EventBus.gem_rejected.connect(_on_gem_rejected)
 	EventBus.player_died.connect(_on_player_died)
 	EventBus.exit_occupied.connect(_on_exit_occupied)
 
@@ -83,6 +84,13 @@ func _on_gem_collected(color: StringName) -> void:
 	var key := String(color)
 	_gems_got[key] = int(_gems_got.get(key, 0)) + 1
 	_refresh_hud()
+
+
+## 异色角色碰到了宝石：不影响计数，只提示一句归属。
+func _on_gem_rejected(color: StringName, element: StringName) -> void:
+	if _hud == null or _completed:
+		return
+	_hud.flash_gem_owner_hint(color, element)
 
 
 func _on_player_died(_id: StringName, _cause: StringName) -> void:

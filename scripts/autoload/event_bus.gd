@@ -13,6 +13,10 @@ signal channel_state_changed(channel: StringName, active: bool)
 ## 宝石被拾取：color = "red" / "blue"
 signal gem_collected(color: StringName)
 
+## 宝石被【非归属元素】碰到：不拾取、不致死，仅用于弹一次提示。
+## element 是这颗宝石的归属元素（red→fire / blue→water）。
+signal gem_rejected(color: StringName, element: StringName)
+
 ## 玩家死亡 / 重生
 signal player_died(player_id: StringName, cause: StringName)
 signal player_respawned(player_id: StringName)

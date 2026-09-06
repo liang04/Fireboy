@@ -6,7 +6,7 @@ var _voices: Array[AudioStreamPlayer] = []
 var _next := 0
 const CUES := {"jump": [420.0, 680.0, 0.10], "gem": [880.0, 1320.0, 0.16],
 	"mechanism": [180.0, 260.0, 0.12], "death": [300.0, 80.0, 0.25],
-	"complete": [520.0, 1040.0, 0.45]}
+	"reject": [300.0, 190.0, 0.13], "complete": [520.0, 1040.0, 0.45]}
 
 
 func _ready() -> void:
@@ -22,6 +22,7 @@ func _ready() -> void:
 		add_child(voice)
 		_voices.append(voice)
 	EventBus.gem_collected.connect(func(_color): play(&"gem"))
+	EventBus.gem_rejected.connect(func(_color, _element): play(&"reject"))
 	EventBus.player_died.connect(func(_id, _cause): play(&"death"))
 	EventBus.level_completed.connect(func(_stats): play(&"complete"))
 	EventBus.channel_state_changed.connect(func(_channel, _active): play(&"mechanism"))

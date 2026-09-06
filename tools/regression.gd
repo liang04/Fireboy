@@ -125,13 +125,32 @@ func _run() -> void:
 	Input.parse_input_event(joy.duplicate())
 	await get_tree().process_frame
 	var fire := level._players[0] as Player
+	var water: Player = null
+	for p in level._players:
+		if (p as Player).element == &"water":
+			water = p as Player
+	check(water != null and fire.element == &"fire", "level exposes one fire and one water player")
 	var gem := Gem.new()
 	gem.setup(Vector2i(0, -30), &"red", 32)
 	add_child(gem)
 	var red_before: int = level._gems_got["red"]
+	gem._on_body_entered(water)
+	await frames(2)
+	check(level._gems_got["red"] == red_before, "water cannot collect a red gem")
 	gem._on_body_entered(fire)
 	gem._on_body_entered(fire)
 	check(level._gems_got["red"] == red_before + 1, "gem counts only once")
+	var blue_gem := Gem.new()
+	blue_gem.setup(Vector2i(2, -30), &"blue", 32)
+	add_child(blue_gem)
+	var blue_before: int = level._gems_got["blue"]
+	blue_gem._on_body_entered(fire)
+	await frames(2)
+	check(level._gems_got["blue"] == blue_before, "fire cannot collect a blue gem")
+	check(blue_gem.owner_element == &"water", "blue gem is owned by water")
+	blue_gem._on_body_entered(water)
+	check(level._gems_got["blue"] == blue_before + 1, "water collects a blue gem")
+	blue_gem.queue_free()
 	var plate := PressurePlate.new()
 	plate.setup(Vector2i(0, -30), &"test_plate", 32)
 	add_child(plate)
