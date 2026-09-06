@@ -4,6 +4,10 @@
 # WorkBuddy 工具项目数据（记忆/缓存，非游戏源码）
 .workbuddy/
 
+# Godot 运行时目录：引擎日志、user:// 数据、以及 tools/analyze_spritesheets.py
+# 生成的诊断图（diag_*.png）都落在这里，全部不入库。
+Godot/
+
 # 操作系统 / 编辑器临时文件
 *.tmp
 *.log

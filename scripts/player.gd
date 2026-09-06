@@ -60,8 +60,27 @@ var _was_on_floor := false
 var _land_squash := 0.0
 var _jump_stretch := 0.0
 var _land_anim_time := 0.0
+## walk 动画的帧数，用于把身体起伏的相位锁到精灵帧上
+var _walk_frame_count := 4
 const FIREBOY_SHEET := preload("res://assets/characters/fireboy-spritesheet-v2.png")
 const WATERGIRL_SHEET := preload("res://assets/characters/watergirl-spritesheet-v2.png")
+const _ZERO_OFFSETS: Array = [Vector2.ZERO]
+static var _fire_anchors: Dictionary = {
+	&"idle": [Vector2(-88, 0)],
+	&"walk": [Vector2(-88, 45), Vector2(-29, 0), Vector2(40, 0), Vector2(105, 44)],
+	&"takeoff": [Vector2(-94, 77)],
+	&"rise": [Vector2(0, 114)],
+	&"fall": [Vector2(56, 114)],
+	&"land": [Vector2(108, 77)],
+}
+static var _water_anchors: Dictionary = {
+	&"idle": [Vector2(12, 0)],
+	&"walk": [Vector2(11, 34), Vector2(34, 9), Vector2(33, 9), Vector2(44, 34)],
+	&"takeoff": [Vector2(20, 41)],
+	&"rise": [Vector2(50, 86)],
+	&"fall": [Vector2(33, 78)],
+	&"land": [Vector2(38, 43)],
+}
 ## 死亡动画的补间句柄。
 ## 必须有：如果外部（比如重生、切关、测试探针）提前调用了 respawn()，
 ## 这个补间仍会在 0.26 秒后触发一次 respawn()，把角色强行拽回出生点并清空输入缓冲，
@@ -92,10 +111,16 @@ func _build_visual() -> void:
 	_sprite.sprite_frames = _make_sprite_frames(sheet)
 	# 每个单元格约 350px 高，缩到 48px；脚底与 28px 高碰撞体对齐。
 	_sprite.scale = Vector2.ONE * (48.0 / (float(sheet.get_height()) / 3.0))
-	_sprite.position.y = -10.0
+	# 校准后两张表的脚底都落在「sprite 原点下方 178~180 贴图像素」，
+	# 换算过来火娃落到 +13.9px、水娃落到 +15.0px；水娃这里多让 1px 才压在 +14。
+	_sprite.position.y = -10.0 if element == &"fire" else -11.0
 	_sprite.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 	_visual.add_child(_sprite)
+	_walk_frame_count = _sprite.sprite_frames.get_frame_count(&"walk")
+	# 锚点修正必须跟着帧推进走，不能只在父节点的 _process 里做（见 _on_frame_changed）
+	_sprite.frame_changed.connect(_on_frame_changed)
 	_sprite.play(&"idle")
+	_apply_frame_anchor(&"idle", 0)
 
 
 ## 按实际图片尺寸等分 4×3 网格。使用 AtlasTexture 而不是 hframes/vframes，
@@ -126,7 +151,9 @@ func _make_sprite_frames(sheet: Texture2D) -> SpriteFrames:
 	for animation: StringName in animation_rows:
 		frames.add_animation(animation)
 		frames.set_animation_loop(animation, animation == &"idle" or animation == &"walk")
-		frames.set_animation_speed(animation, 3.0 if animation == &"idle" else 10.0)
+		# walk 只有 4 帧，10fps 意味着每 100ms 硬切一次，观感偏卡；
+		# 提到 12fps 后换帧间隔 83ms。再往上会让步频高过角色速度，反而像滑步。
+		frames.set_animation_speed(animation, 3.0 if animation == &"idle" else 12.0)
 		for frame_index: int in animation_rows[animation]:
 			var atlas := AtlasTexture.new()
 			atlas.atlas = sheet
@@ -294,7 +321,13 @@ func _process(delta: float) -> void:
 	# 单张立绘的程序动画：待机呼吸、走路步频、起跳拉伸、下落收拢、落地回弹。
 	# 步频跟随实际速度，减速时动作会自然停下来，避免原地“踏步”。
 	var speed_ratio := clampf(absf(velocity.x) / SPEED, 0.0, 1.0)
-	_walk_phase += delta * lerpf(5.0, 17.0, speed_ratio)
+	# 步频与精灵帧严格锁相：相位直接由「当前帧 + 帧内进度」换算成角度，
+	# 而不是另起一个独立的时间累加。一个 4 帧循环 = 迈一步 = sin 的一个周期。
+	# 锁相之前两套节奏各跑各的（程序 2.7Hz vs 帧循环 2.5Hz，约 5 秒一个拍频），
+	# 会出现「腿在换帧、身体起伏却慢半拍」的踩空感。
+	# land 期间保持上一帧的相位，避免落地瞬间身体乱晃。
+	if _sprite.animation == &"walk":
+		_walk_phase = (float(_sprite.frame) + _sprite.frame_progress) / float(_walk_frame_count) * TAU
 	var stride := sin(_walk_phase)
 	var step := absf(stride)
 	var breathe := sin(_time * 2.6)
@@ -321,10 +354,14 @@ func _process(delta: float) -> void:
 	var land_bounce := sin(_land_squash * PI * 2.5) * _land_squash
 	target_scale.x += _land_squash * 0.14 + land_bounce * 0.055
 	target_scale.y -= _land_squash * 0.13 + land_bounce * 0.04
-	_visual.scale.x = move_toward(_visual.scale.x, target_scale.x * float(_facing), 13.0 * delta)
-	_visual.scale.y = move_toward(_visual.scale.y, target_scale.y, 13.0 * delta)
-	_visual.rotation = lerp_angle(_visual.rotation, target_rotation, 12.0 * delta)
-	_visual.position.y = move_toward(_visual.position.y, bob, 90.0 * delta)
+	# 这几个平滑是「一阶低通」，对周期信号会同时造成幅度衰减与相位滞后：
+	# 滞后量 ≈ atan(ω/k)，ω 是步态角频率（12fps 锁相后约 22 rad/s）。
+	# 原来的 13 / 12 / 90 对走路摆动来说太肉（rotation 滞后接近 80°、幅度只剩 58%），
+	# 身体明显比脚步慢半拍。这里统一提速，转身翻面也跟着更利落（0.1s 完成）。
+	_visual.scale.x = move_toward(_visual.scale.x, target_scale.x * float(_facing), 20.0 * delta)
+	_visual.scale.y = move_toward(_visual.scale.y, target_scale.y, 20.0 * delta)
+	_visual.rotation = lerp_angle(_visual.rotation, target_rotation, 30.0 * delta)
+	_visual.position.y = move_toward(_visual.position.y, bob, 160.0 * delta)
 
 
 func _update_character_animation(delta: float) -> void:
@@ -345,33 +382,40 @@ func _update_character_animation(delta: float) -> void:
 		wanted = &"idle"
 	if _sprite.animation != wanted:
 		_sprite.play(wanted)
-	_apply_frame_anchor(wanted, _sprite.frame)
+		# play() 会把帧重置到 0。如果切换前恰好停在第 0 帧，frame_changed 不会触发，
+		# 所以这里必须手动补一次锚点修正。
+		_apply_frame_anchor(wanted, _sprite.frame)
 	# 走得慢时同步降低动画速度，避免脚步打滑。
 	_sprite.speed_scale = clampf(absf(velocity.x) / SPEED, 0.45, 1.0) if wanted == &"walk" else 1.0
 
 
-## AI 生成的各帧在单元格内位置不完全一致。这里把每帧的可见中心固定到
-## 角色原点，并把脚底固定到同一基线；offset 使用的是缩放前的贴图像素。
+## AI 生成的各帧在单元格内位置、大小都不一致，直接播放会「每帧乱跳」。
+## 这里把每帧的主体水平中心固定到角色原点、把脚底固定到同一基线；
+## offset 使用的是缩放前的贴图像素。
+##
+## 这两张表【不要手改】，改素材后重跑：
+##     python tools/analyze_spritesheets.py
+## 把输出的「可粘贴回 player.gd」整段替换过来即可。
+##
+## 手算这张表有两个必踩的坑（火娃 walk2 / fall 就是这么错的）：
+##   1. 邻格溢出：人物的火焰/肢体常跨越等分格边界，把相邻格的一小条内容也框进
+##      bbox，中心会偏几十贴图像素（walk2 真实需要 +39.5，手算成了 -28，
+##      角色每个步态循环左窜 9 个屏幕像素）。工具用列投影连通段过滤先剥掉溢出。
+##   2. region 高度不一致：Godot 以 region 中心为绘制原点，比较时必须扣掉半高。
+##      水娃的 region 是 320x384 / 300x340 / 300x344 混用，漏掉这一项整套 y
+##      偏移会错半格。
 func _apply_frame_anchor(animation: StringName, frame: int) -> void:
-	var offsets: Dictionary
-	if element == &"fire":
-		offsets = {
-			&"idle": [Vector2(-89, 0)],
-			&"walk": [Vector2(-89, 46), Vector2(-30, 0), Vector2(-28, 0), Vector2(106, 44)],
-			&"takeoff": [Vector2(-94, 78)],
-			&"rise": [Vector2(0, 114)],
-			&"fall": [Vector2(-27, 114)],
-			&"land": [Vector2(108, 78)],
-		}
-	else:
-		offsets = {
-			# 水娃已经用逐帧实际区域居中，不再施加等分网格的补偿值。
-			&"idle": [Vector2.ZERO],
-			&"walk": [Vector2.ZERO, Vector2.ZERO, Vector2.ZERO, Vector2.ZERO],
-			&"takeoff": [Vector2.ZERO],
-			&"rise": [Vector2.ZERO],
-			&"fall": [Vector2.ZERO],
-			&"land": [Vector2.ZERO],
-		}
-	var animation_offsets: Array = offsets.get(animation, [Vector2.ZERO])
+	# 表是常量，但写成 static var 而不是在调用处 new：GDScript 的 const 字典
+	# 每次求值都会重建一份，而这里每渲染帧要跑两次（两个角色）。
+	var offsets: Dictionary = _fire_anchors if element == &"fire" else _water_anchors
+	var animation_offsets: Array = offsets.get(animation, _ZERO_OFFSETS)
 	_sprite.offset = animation_offsets[mini(frame, animation_offsets.size() - 1)]
+
+
+## 帧推进后立刻修正锚点。
+## 必须挂在信号上：AnimatedSprite2D 的帧推进发生在它自己的 NOTIFICATION_PROCESS，
+## 而 Godot 按树序先父后子，父节点的 _process 读到的 frame 是「上一帧推进的结果」。
+## 只靠 _process 里每帧应用一次，换帧的那一个渲染帧会显示「新帧 + 旧 offset」，
+## 10fps 下每 100ms 抽一下。
+func _on_frame_changed() -> void:
+	_apply_frame_anchor(_sprite.animation, _sprite.frame)
