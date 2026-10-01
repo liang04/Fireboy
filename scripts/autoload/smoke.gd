@@ -18,6 +18,9 @@ var _finished := false
 
 func _ready() -> void:
 	if _smoke_requested():
+		# 冒烟机器人会真的把关卡往前推，万一走到出口就会触发 _complete()，
+		# 以 4 秒的成绩写进玩家的存档 —— 必须从源头掐掉这个写路径。
+		GameState.suppress_recording = true
 		set_process(true)
 		_run.call_deferred()
 
@@ -96,10 +99,19 @@ func _run() -> void:
 			printerr("[smoke] level %d: 出口门数量不是 2（火门 + 水门）" % i)
 			errors += 1
 
+		# 三星门槛是关卡数据的一部分。缺了不会崩，但星级会静默退化成
+		# 「全宝石即三星」，所以当成硬错误报出来 —— 见 docs/DESIGN.md 星级一节。
+		if float(Levels.get_level(i).get("par_time", 0.0)) <= 0.0:
+			printerr("[smoke] level %d: 缺少 par_time，三星会退化成「全宝石即三星」" % i)
+			errors += 1
+
 		print("[smoke] level %d -> %s" % [i, lvl.debug_snapshot()])
 
 		if i == 0:
 			await _probe_movement(lvl)
+			await _probe_box_drop()
+			await _probe_box_stand(lvl)
+			await _probe_shaft_climb(lvl)
 		errors += await _probe_mechanisms(lvl)
 
 	print("[smoke] finished, errors=%d" % errors)
@@ -275,7 +287,455 @@ func _measure(probe: Node2D, pl: Player) -> void:
 	pl.global_position = old_pos
 
 
-# ---------------------------------------------------------------- 机关联调
+# ---------------------------------------------------------------- 踩箱子探针
+## 「玩家踩在木箱顶上」这个状态到底成不成立 —— 这是把木箱当【垫脚台】用的
+## 全部前提，而且**没法推理**：两个 CharacterBody2D 互相挤压时的行为
+## 取决于 move_and_slide 的解算顺序，只能实测。
+##
+## 为什么必须测：几何校验器里完全没有「踩箱子」这个概念，如果我们要给它加
+## 这个模型（让依赖垫脚的关卡能通过可达性检查），那**前提得先为真**。
+## 否则就是给一个不存在的玩法写规则 —— 比不写更糟，因为它会让坏关卡通过。
+##
+## 测三件事：
+##   1. 箱子承重  —— 玩家站上去后箱子下沉多少（沉下去 = 垫脚高度不稳定）
+##   2. 站立稳定  —— is_on_floor() 是否持续为真（决定能不能起跳）
+##   3. 垫脚增益  —— 从箱顶起跳比从地面起跳高出多少格（决定「1 格箱子 = 1 格垫脚」是否成立）
+##
+## 探针跑道自建，不依赖任何关卡地形。箱子用真实 PushBox，
+## 但附近不能有玩家 —— 否则 _detect_push() 会把它推走，测的就不是纯承重了。
+## 做法：先把玩家挪到远处，等箱子落稳，再把玩家放到箱子正上方。
+func _probe_box_stand(lvl: Node) -> void:
+	print("[smoke] ---- 踩箱子探针 ----")
+
+	var players: Array = lvl.get("_players")
+	if players.is_empty():
+		return
+	var pl := players[0] as Player
+	if pl == null:
+		return
+
+	var probe := Node2D.new()
+	get_tree().root.add_child(probe)
+
+	# 地板顶面 y=384；箱子摆在 x=0 那一列的正上方
+	_slab(probe, -320.0, 320.0, PROBE_TOP)
+
+	var box := PushBox.new()
+	box.setup(Vector2i(0, int(PROBE_TOP / 32.0) - 1), 32)
+	probe.add_child(box)
+	# 箱子中心落在它自己那一格的中央；脚底贴地板顶面
+	box.global_position = Vector2(16.0, PROBE_TOP - 16.0)
+
+	# 把玩家挪进来测（和 _measure 一样的搬移手法）
+	var old_parent := pl.get_parent()
+	var old_pos := pl.global_position
+	old_parent.remove_child(pl)
+	probe.add_child(pl)
+	pl.respawn()
+	pl.frozen = false
+	pl.set_physics_process(true)
+
+	# 先让箱子自己落稳 —— 此时玩家必须站远，否则会被判成「有人推」
+	_teleport(pl, Vector2(-256.0, PROBE_TOP - 14.0))
+	var box_y0 := 0.0
+	for i in 30:
+		await get_tree().physics_frame
+	box_y0 = box.global_position.y
+
+	# ---- 1 + 2：把玩家放到箱子正上方，看箱子沉不沉、人站不站得住
+	var box_top := box.global_position.y - 16.0     # 箱子碰撞体顶面（半高 14，留 2px 冗余）
+	_teleport(pl, Vector2(box.global_position.x, box_top - 14.0))
+	var on_floor_frames := 0
+	var max_box_sink := 0.0
+	for i in 60:
+		await get_tree().physics_frame
+		if pl.is_on_floor():
+			on_floor_frames += 1
+		max_box_sink = maxf(max_box_sink, box.global_position.y - box_y0)
+	var settled_box_y := box.global_position.y
+	var sink := settled_box_y - box_y0
+	print("[smoke] 踩箱子·承重: 箱子下沉 %.0fpx(%.2f格) | 玩家 on_floor %d/60 帧 | 玩家 y=%.0f 箱顶 y=%.0f"
+		% [sink, sink / 32.0, on_floor_frames, pl.global_position.y, settled_box_y - 16.0])
+
+	# ---- 3：从箱顶起跳的高度
+	var stand_on_box_y := pl.global_position.y
+	var y_start := pl.global_position.y
+	var y_peak := y_start
+	Input.action_press(pl.jump_action)
+	for i in 90:
+		await get_tree().physics_frame
+		y_peak = minf(y_peak, pl.global_position.y)
+		if i > 5 and pl.is_on_floor():
+			break
+	Input.action_release(pl.jump_action)
+	await get_tree().physics_frame
+	var rise_from_box := stand_on_box_y - y_peak
+
+	# 对照：从地面起跳
+	_teleport(pl, Vector2(-256.0, PROBE_TOP - 14.0))
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	var g_start := pl.global_position.y
+	var g_peak := g_start
+	Input.action_press(pl.jump_action)
+	for i in 90:
+		await get_tree().physics_frame
+		g_peak = minf(g_peak, pl.global_position.y)
+		if i > 5 and pl.is_on_floor():
+			break
+	Input.action_release(pl.jump_action)
+	await get_tree().physics_frame
+	var rise_from_ground := g_start - g_peak
+
+	print("[smoke] 踩箱子·垫脚: 箱顶起跳 %.0fpx(%.2f格) | 地面起跳 %.0fpx(%.2f格) | 净增益 %.0fpx(%.2f格)"
+		% [rise_from_box, rise_from_box / 32.0,
+		   rise_from_ground, rise_from_ground / 32.0,
+		   rise_from_box - rise_from_ground, (rise_from_box - rise_from_ground) / 32.0])
+
+	# ---- 4：玩家在箱顶上【走动】时，箱子会不会被拖着跑
+	#      这一条比承重更要命：如果玩家一走箱子就跟着滑，
+	#      那「垫脚台」就是个会自己跑掉的东西，关卡没法设计 ——
+	#      玩家想站上去够门，箱子却先滑到别处去了。
+	#      注意 _detect_push() 要求玩家按键方向【朝向箱子】才会推；
+	#      玩家站在【顶上】时高度差 0，方向判据用的是 d.x 符号。
+	#      所以人站在箱子正上方、按方向键，理论上 d.x≈0 → 不推。
+	#      实测就是验证这个「理论上」。
+	_teleport(pl, Vector2(box.global_position.x, box.global_position.y - 16.0 - 14.0))
+	for i in 20:
+		await get_tree().physics_frame
+	var box_x_before := box.global_position.x
+	Input.action_press(pl.move_right)
+	var drift_frames := 0
+	for i in 60:
+		await get_tree().physics_frame
+		if absf(box.global_position.x - box_x_before) > 2.0:
+			drift_frames += 1
+	Input.action_release(pl.move_right)
+	# 再试往左走（玩家会先走下箱子，落差里箱子可能被推）
+	await get_tree().physics_frame
+	var box_drift := absf(box.global_position.x - box_x_before)
+	print("[smoke] 踩箱子·走动: 人在箱顶按方向键 60 帧，箱子横移 %.0fpx(%.2f格)，%s"
+		% [box_drift, box_drift / 32.0,
+		   "✅ 不跟着跑" if box_drift < 4.0 else "❌ 被拖着走"])
+
+	# 结论行：给人类看的一句话，免得每次都回去算
+	if sink < 6.0 and on_floor_frames >= 50:
+		print("[smoke] 踩箱子 => ✅ 成立（箱子不下沉、站立稳定），可作垫脚台")
+	else:
+		printerr("[smoke] 踩箱子 => ❌ 不成立（下沉 %.1fpx / on_floor %d 帧），垫脚玩法不可用"
+			% [sink, on_floor_frames])
+
+	# 归位
+	probe.remove_child(pl)
+	old_parent.add_child(pl)
+	pl.global_position = old_pos
+	pl.velocity = Vector2.ZERO
+	probe.queue_free()
+	await get_tree().physics_frame
+
+
+# ---------------------------------------------------------------- 竖井攀爬探针
+## 「人掉进一个窄竖井，能不能自己爬出来」—— 这个数字决定第 10 关能不能立住。
+##
+## 为什么必须实测：校验器的扩散模型（reachable()）只比较【相邻格】的高度差
+## （阈值 MAX_STEP_UP_CELLS=2 / MAX_JUMP_UP_CELLS=3），它**不模拟跳跃弧线**。
+## 在一格宽的竖直通道里，每一对相邻格都是垂直相邻、差 1 格 ⇒ 模型认为
+## 「一步一步往上走」合法 ⇒ 它判定人能从任意深度的竖井里爬出来。
+## 但真人在没有落脚平台的竖直通道里起跳，是【原地跳】—— 上去再落回原处，
+## 净上升 0。这两者只要不一致，校验器就会给出一整类**假阳性**：
+## 它认为「井困住人」的关卡其实困不住，于是「必须用箱子出井」这个设计的前提
+## 从一开始就不存在。
+##
+## 测法：造一个三面封死的竖井（宽 w 格、深 d 格），把人放到井底，
+## 连续按住跳跃 + 左右方向键（模拟玩家真的在挣扎），量最终净爬升。
+##   净爬升 ≈ 0        ⇒ 井困得住人 ✓（箱子可以做必需品）
+##   净爬升 ≈ 井深     ⇒ 井困不住人 ✗（这个深度/宽度组合不可用）
+func _probe_shaft_climb(lvl: Node) -> void:
+	print("[smoke] ---- 竖井攀爬探针 ----")
+	var players: Array = lvl.get("_players")
+	if players.is_empty():
+		return
+	var pl := players[0] as Player
+	if pl == null:
+		return
+
+	# 组合扫描：宽度 1~3 格 × 深度 2~5 格。
+	# 上界 3 宽的理由：更宽的井人显然能靠「之」字跳借力，不需要测。
+	# 下界 1 宽：这是物理上最"应该"困住人的极限形态。
+	for w in range(1, 4):
+		for d in range(2, 6):
+			await _shaft_trial(pl, w, d)
+
+	await get_tree().physics_frame
+
+
+## 单次竖井试验：造井 → 放人 → 挣扎 → 量净爬升。
+func _shaft_trial(pl: Player, w: int, d: int) -> void:
+	var probe := Node2D.new()
+	get_tree().root.add_child(probe)
+
+	var CELLS := 32.0
+	var TOP := 0.0                       # 井口那一行的顶面 y
+	# 井身：x 从 0 到 (w-1) 格。左壁与右壁各一段实心。
+	# 用「左壁 / 右壁 / 井底」三块板围出来，比整块挖孔更可控。
+	var shaft_left := 0.0
+	var shaft_right := float(w) * CELLS
+
+	# 左右壁：从井口往下一直延伸（比井深多留 2 格，保证兜得住）
+	var wall_top := TOP
+	var wall_bottom := TOP + float(d + 2) * CELLS
+	var wall_h := wall_bottom - wall_top
+	# 左壁：中心在井口左侧半格处
+	_slab_vert(probe, shaft_left - CELLS * 0.5, wall_top, wall_h)
+	_slab_vert(probe, shaft_right + CELLS * 0.5, wall_top, wall_h)
+	# 井底：一块横板，顶面在 TOP + d*CELLS
+	_slab(probe, shaft_left - CELLS, shaft_right + CELLS, TOP + float(d) * CELLS)
+
+	# 把玩家搬进探针
+	var old_parent := pl.get_parent()
+	var old_pos := pl.global_position
+	old_parent.remove_child(pl)
+	probe.add_child(pl)
+	pl.respawn()
+	pl.frozen = false
+	pl.set_physics_process(true)
+	await get_tree().physics_frame
+
+	# 放到井底（身体中心 = 井底顶面 - 半高 14）
+	var bottom_stand_y := TOP + float(d) * CELLS - 14.0
+	_teleport(pl, Vector2(float(w) * CELLS * 0.5, bottom_stand_y))
+	await get_tree().physics_frame
+	_teleport(pl, Vector2(float(w) * CELLS * 0.5, bottom_stand_y))
+	await get_tree().physics_frame
+	var y_start := pl.global_position.y
+
+	# 挣扎 180 帧：每 30 帧一次跳，中间左右来回按（模拟玩家真的在找出路）
+	Input.action_release(pl.move_left)
+	Input.action_release(pl.move_right)
+	var y_best := y_start
+	for i in 180:
+		if i % 30 == 0:
+			Input.action_press(pl.jump_action)
+		elif i % 30 == 8:
+			Input.action_release(pl.jump_action)
+		# 方向键按周期切换，给「蹭壁」留机会
+		if (i / 15) % 2 == 0:
+			Input.action_press(pl.move_right)
+			Input.action_release(pl.move_left)
+		else:
+			Input.action_press(pl.move_left)
+			Input.action_release(pl.move_right)
+		await get_tree().physics_frame
+		y_best = minf(y_best, pl.global_position.y)
+	Input.action_release(pl.jump_action)
+	Input.action_release(pl.move_left)
+	Input.action_release(pl.move_right)
+	await get_tree().physics_frame
+
+	var net := (y_start - y_best) / CELLS      # 净爬升格数（正 = 往上）
+	var escaped := net >= float(d) - 0.5       # 爬到井口附近就算逃出
+	print("[smoke] 竖井 宽%d 深%d: 净爬升 %.2f 格 / 需 %.0f 格 ⇒ %s"
+		% [w, d, net, float(d), "❌ 逃得出" if escaped else "✅ 困得住"])
+
+	# 归位
+	probe.remove_child(pl)
+	old_parent.add_child(pl)
+	pl.global_position = old_pos
+	pl.velocity = Vector2.ZERO
+	probe.queue_free()
+	await get_tree().physics_frame
+
+
+## 一段竖直实心板（中心 x = cx，顶面 y = top_y，高 h）
+func _slab_vert(parent: Node2D, cx: float, top_y: float, h: float) -> void:
+	var body := StaticBody2D.new()
+	body.position = Vector2(cx, top_y + h * 0.5)
+	var cs := CollisionShape2D.new()
+	var sh := RectangleShape2D.new()
+	sh.size = Vector2(32.0, h)
+	cs.shape = sh
+	body.add_child(cs)
+	parent.add_child(body)
+
+
+# ---------------------------------------------------------------- 木箱落体探针
+## 木箱被推出悬崖边缘后到底怎么飞 —— 这个数字是「重力投递」机制的唯一设计输入，
+## 算不出来（move_and_slide 的滑动解算不是纯运动学），只能实测。
+##
+## 测三件事，对应机关规格里的三个失败态：
+##   1. 横向飘移  —— 箱子出边缘后到落地之间飘出去多远（决定落点能否精确设计）
+##   2. 边缘卡滞  —— 箱子停在边缘上不落的次数（F5：机制不成立）
+##   3. 落差安全  —— 落差多大时箱子还在相机窗口内（F2）
+##
+## 注意箱子必须在【自己的独立场景】里测：它靠 _detect_push() 找同层的玩家，
+## 而探针跑道是临时造的，关卡里的玩家不在附近 —— 箱子不会被人推，只测重力与惯性。
+## 我们要的正是「出边缘之后的自由飞行」，所以这是对的。
+## 推出边缘的那一瞬间由代码直接注入 velocity.x（等价于「人一直贴着按键推」）。
+func _probe_box_drop() -> void:
+	print("[smoke] ---- 木箱落体探针 ----")
+
+	# 落差从 1 层到 7 层。上界 7 的来历：相机纵向分离上限 22.8 格，
+	# 现有 9 关已用掉 15 格 → 余量 7.8 格，取整 7。
+	for drop in range(1, 8):
+		var probe := Node2D.new()
+		get_tree().root.add_child(probe)
+
+		# 高台右边缘固定在 x = 640：顶面 y=384
+		_slab(probe, -320.0, 640.0, PROBE_TOP)
+		# 低层地板：顶面比高台低 drop 格
+		var floor_y := PROBE_TOP + float(drop) * 32.0
+		_slab(probe, 640.0, 1400.0, floor_y)
+
+		# 箱子【已经越过边缘】—— 只测「出边缘之后的自由飞行」这一段。
+		# 把箱子摆在边缘外 1 格处、带 PUSH_SPEED 的初速度，等价于
+		# 「玩家一直贴着按键把它推出去了」那一瞬间之后的运动。
+		# 这样测的才是设计真正需要的那个量：从离开边缘到落地飘多远。
+		#
+		# 注意必须离边缘 ≥1 整格：箱子碰撞体 28px 半宽 14px，
+		# 贴在 x=641 时它的左边缘会压住高台板的右边缘(640)而被托住，
+		# 于是永远「已经在落地状态」，测出来全是 0。
+		var box := PushBox.new()
+		box.setup(Vector2i(21, int(PROBE_TOP / 32.0) - 1), 32)
+		probe.add_child(box)
+		box.global_position = Vector2(672.0, PROBE_TOP - 16.0)
+		await get_tree().physics_frame
+		await get_tree().physics_frame
+
+		# 注入「被推」的初速度：PUSH_SPEED=95，向右。
+		# 之后不再干预 —— 箱子自己飞、自己落。
+		var x_edge := box.global_position.x
+		var y_start := box.global_position.y
+		box.velocity.x = 95.0
+		box.velocity.y = 0.0
+
+		var landed := false
+		var land_frames := 0
+		for i in 180:
+			await get_tree().physics_frame
+			land_frames = i
+			if i > 2 and box.is_on_floor():
+				landed = true
+				break
+
+		if landed:
+			var dx := box.global_position.x - x_edge
+			var dy := box.global_position.y - y_start
+			print("[smoke] 木箱落差 %d 格: 横飘=%.0fpx(%.2f格) 实际坠落=%.0fpx(%.2f格) 耗时=%d帧"
+				% [drop, dx, dx / 32.0, dy, dy / 32.0, land_frames])
+		else:
+			# 180 帧还没落地 —— 要么卡在边缘，要么掉出了世界。
+			printerr("[smoke] 木箱落差 %d 格: 180 帧内未落地 "
+				% drop + "（卡在边缘 / 掉出边界，位置 x=%.0f y=%.0f）"
+				% [box.global_position.x, box.global_position.y])
+
+		probe.queue_free()
+		await get_tree().physics_frame
+
+	# ---- 对照实验：箱子在「还在被推」的那段时间里跑了多远
+	#      上一组测的是「无人推」—— _detect_push() 返回 0，箱子在空中被
+	#      FRICTION=1600 立刻刹停，横飘只有 2px。
+	#      但真实场景的开头一小段不是这样的：箱子刚越过边缘时，
+	#      推箱的人还站在边缘上、还按着方向键，只要【高度差还 ≤0.9 格】，
+	#      _detect_push() 就继续返回非零，箱子保持 PUSH_SPEED 不被减速。
+	#      0.9 格 = 28.8px，下落这么高要 sqrt(2*28.8/1400) ≈ 0.203s，
+	#      这段时间里箱子会横移 95*0.203 ≈ 19px ≈ 0.6 格。
+	#      这一段才是「箱子会飞出去多远」的真答案；之后摩擦接管，几乎垂直。
+	#      两组数合起来才能回答：落点能不能逐格精确设计。
+	print("[smoke] ---- 木箱落体探针（对照：推手持续推的前 0.9 格）----")
+	for drop in range(1, 8):
+		var probe2 := Node2D.new()
+		get_tree().root.add_child(probe2)
+
+		_slab(probe2, -320.0, 640.0, PROBE_TOP)
+		var floor_y2 := PROBE_TOP + float(drop) * 32.0
+		_slab(probe2, 640.0, 1400.0, floor_y2)
+
+		var box2 := PushBox.new()
+		box2.setup(Vector2i(20, int(PROBE_TOP / 32.0) - 1), 32)
+		probe2.add_child(box2)
+		box2.global_position = Vector2(672.0, PROBE_TOP - 16.0)
+		await get_tree().physics_frame
+
+		# 直接复刻「_detect_push 返回 +1」的物理后果：每帧强制把水平速度
+		# 设为 PUSH_SPEED，直到高度差超过 0.9 格 —— 之后交给引擎自己摩擦。
+		# 这样不需要真的摆一个玩家，也精确等价于「人一直贴着推到够不着为止」。
+		var y_edge := box2.global_position.y
+		var x_edge2 := box2.global_position.x
+		var still_pushed := true
+		var pushed_frames := 0
+		var x_when_released := x_edge2
+		var landed2 := false
+		var frames2 := 0
+		for i in 240:
+			# 高度差超过 0.9 格（28.8px）→ 推的人够不着了，停止供速
+			if still_pushed and (box2.global_position.y - y_edge) > 28.8:
+				still_pushed = false
+				pushed_frames = i
+				x_when_released = box2.global_position.x
+			if still_pushed:
+				box2.velocity.x = 95.0
+			await get_tree().physics_frame
+			frames2 = i
+			if i > 2 and box2.is_on_floor():
+				landed2 = true
+				break
+
+		if landed2:
+			var dx2 := box2.global_position.x - x_edge2
+			var dy2 := box2.global_position.y - y_edge
+			var dx_push := x_when_released - x_edge2
+			print("[smoke] 对照·落差 %d 格: 总横飘=%.0fpx(%.2f格) "
+				% [drop, dx2, dx2 / 32.0]
+				+ "其中被推段=%.0fpx(%.2f格,%d帧) 坠落=%.0fpx(%.2f格) 耗时=%d帧"
+				% [dx_push, dx_push / 32.0, pushed_frames, dy2, dy2 / 32.0, frames2])
+		else:
+			printerr("[smoke] 对照·落差 %d 格: 240 帧未落地（x=%.0f y=%.0f）"
+				% [drop, box2.global_position.x, box2.global_position.y])
+
+		probe2.queue_free()
+		await get_tree().physics_frame
+
+	# ---- 第三组：箱子掉进液体池会怎样
+	#      「重力投递」若用在有液体的关卡，箱子可能被推错方向掉进池子。
+	#      求解器的 landing_row() 假设「液体不是箱子的落点」（箱子会沉底），
+	#      但这个假设**从没被验证过** —— PushBox 里完全没有液体逻辑。
+	#      如果箱子会永久卡在池底，那「推错方向」就是不可逆软锁，
+	#      地形必须设计成不可能发生。这条必须先测清楚。
+	print("[smoke] ---- 木箱落体探针（第三组：掉进液体池）----")
+	for kind in [&"lava", &"water"]:
+		var probe3 := Node2D.new()
+		get_tree().root.add_child(probe3)
+
+		# 平台在左，右边是一个 3 格深的池子
+		_slab(probe3, -320.0, 640.0, PROBE_TOP)
+		# 池底：比 PROBE_TOP 低 3 格
+		var pool_floor := PROBE_TOP + 3.0 * 32.0
+		_slab(probe3, 640.0, 1400.0, pool_floor)
+		# 池壁：把池子围起来（左右两岸高出池底 3 格）
+		_slab(probe3, 620.0, 640.0, PROBE_TOP)      # 左岸（也是推出点）
+		# 充满池水：从 PROBE_TOP 到 pool_floor
+		var pool := HazardPool.new()
+		pool.setup(kind, Rect2i(int(640.0 / 32.0) + 1, int(PROBE_TOP / 32.0),
+			int((1400.0 - 640.0) / 32.0) - 2, 3), 32)
+		probe3.add_child(pool)
+
+		var box3 := PushBox.new()
+		box3.setup(Vector2i(21, int(PROBE_TOP / 32.0) - 1), 32)
+		probe3.add_child(box3)
+		box3.global_position = Vector2(672.0, PROBE_TOP - 16.0)
+		await get_tree().physics_frame
+
+		var y3 := box3.global_position.y
+		for i in 120:
+			box3.velocity.x = 0.0
+			await get_tree().physics_frame
+		var settled_y := box3.global_position.y
+		var sank := settled_y - y3
+		print("[smoke] 木箱掉进%s池: 下落 %.0fpx(%.2f格) 最终 y=%.0f（池底 y=%.0f）"
+			% [String(kind), sank, sank / 32.0, settled_y, pool_floor])
+
+		probe3.queue_free()
+		await get_tree().physics_frame
 ## 关卡里的机关光「生成出来没报错」是不够的 —— 冒烟 AI 通常被第一道门挡住，
 ## 后面的平台、压力板、传送门一辈子都碰不到。这里绕过玩法，直接对每个机关做联调：
 ##   移动平台：自己动起来了没有

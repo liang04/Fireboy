@@ -7,11 +7,25 @@ class_name Level
 const HUD_SCENE := preload("res://scenes/hud.tscn")
 const MENU_SCENE := "res://scenes/main_menu.tscn"
 
+# ---------------------------------------------------------------- 星级门槛
+## 三星 = 「全宝石」**且**「≤ par_time」。par_time 跟着关卡数据走
+## （定义在 tools/gen_levels.py 的每关字典里，标定依据见那里的注释）。
+##
+## 刻意不设全局常量：8 关的实测长度差 2 倍以上，一个全局秒数对短关形同白送、
+## 对长关又不讲道理 —— 上一版的 180s 就是这样被 13~30s 的实测数据打穿的。
+##
+## 为什么不再单列「失误」判据：死亡要等 1 秒重生，**已经通过计时被计入成本**了。
+## 把它立成第三条判据只会得到两个高度相关的轴（少死的人自然更快），
+## 矩阵里那格「死很多次但极快」在真实对局里几乎不存在 —— 白占一个维度。
+
 var _players: Array = []
 var _gems_total := {"red": 0, "blue": 0}
 var _gems_got := {"red": 0, "blue": 0}
 var _deaths := 0
 var _elapsed := 0.0
+## 本关的三星时间门槛（秒），来自关卡数据。<= 0 表示数据没给，
+## 此时速度判据不生效 —— 三星拿不到，而不是静默地白送。
+var _par_time := 0.0
 var _completed := false
 ## 各元素出口门的占用状态。键是元素名（fire/water/...），值是否有人站入。
 ## 由 _ready 按本关实际出口动态初始化，不写死 fire/water，
@@ -20,6 +34,10 @@ var _exits: Dictionary[StringName, bool] = {}
 var _hud: CanvasLayer
 var _level_name := ""
 var _subtitle := ""
+## channel → 受控物数量。用来识别「一杆控多物」的总闸时刻（第 8 关）。
+var _channel_fanout: Dictionary = {}
+## 闪屏冷却的到期时刻（毫秒）。防止玩家在板上反复起跳时把强调反馈刷成噪音。
+var _power_flash_until := 0
 
 
 func _ready() -> void:
@@ -34,6 +52,9 @@ func _ready() -> void:
 	_subtitle = String(info.get("subtitle", ""))
 	_players = info.get("players", [])
 	_gems_total = info.get("gems_total", {"red": 0, "blue": 0})
+	_par_time = float(data.get("par_time", 0.0))
+	if _par_time <= 0.0:
+		push_warning("Level %d 缺少 par_time：三星会退化为「全宝石即三星」" % index)
 
 	# 按本关出口门动态建立占用表；没有任何出口数据时退回火/水双门，避免死锁。
 	var exit_elements: Array = info.get("exit_elements", [])
@@ -54,7 +75,9 @@ func _ready() -> void:
 	EventBus.gem_rejected.connect(_on_gem_rejected)
 	EventBus.player_died.connect(_on_player_died)
 	EventBus.exit_occupied.connect(_on_exit_occupied)
+	EventBus.channel_state_changed.connect(_on_channel_state_changed)
 
+	_count_channel_fanout()
 	_refresh_hud()
 
 
@@ -62,7 +85,7 @@ func _process(delta: float) -> void:
 	if _completed:
 		return
 	_elapsed += delta
-	_hud.update_time(_elapsed)
+	_hud.update_time(_elapsed, _par_time)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -93,9 +116,13 @@ func _on_gem_rejected(color: StringName, element: StringName) -> void:
 	_hud.flash_gem_owner_hint(color, element)
 
 
-func _on_player_died(_id: StringName, _cause: StringName) -> void:
+func _on_player_died(id: StringName, cause: StringName) -> void:
 	_deaths += 1
 	_refresh_hud()
+	# 死因必须回传给玩家：得让他知道是哪种液体杀了他，
+	# 否则「谁怕什么」的元素相克教学就无从建立。
+	if _hud != null and not _completed:
+		_hud.flash_death_cause(cause, id)
 
 
 func _on_exit_occupied(player_id: StringName, occupied: bool) -> void:
@@ -108,6 +135,37 @@ func _on_exit_occupied(player_id: StringName, occupied: bool) -> void:
 			break
 	if all and not _exits.is_empty():
 		_complete()
+
+
+## 统计每个 channel 背后挂了几个受控物（门 / 平台）。
+## 直接数节点树而不是读关卡数据，所以加关卡永远不用维护这张表。
+func _count_channel_fanout() -> void:
+	_channel_fanout.clear()
+	var objects := get_node_or_null("Objects")
+	if objects == null:
+		return
+	for c in objects.get_children():
+		var ch: StringName = &""
+		if c is GateDoor:
+			ch = (c as GateDoor).channel
+		elif c is MovingPlatform:
+			ch = (c as MovingPlatform).channel
+		if ch != &"":
+			_channel_fanout[ch] = int(_channel_fanout.get(ch, 0)) + 1
+
+
+## 一个触发器同时驱动 ≥2 个受控物时，给一次强调反馈（音效 + 闪屏）。
+## 这是第 8 关「总闸」的情绪高点：拉一下，整张地图下半场同时活过来。
+func _on_channel_state_changed(ch: StringName, active: bool) -> void:
+	if not active or int(_channel_fanout.get(ch, 0)) < 2:
+		return
+	var now := Time.get_ticks_msec()
+	if now < _power_flash_until:
+		return
+	_power_flash_until = now + 1200
+	Sound.play(&"power")
+	if _hud != null and _hud.has_method("pulse_power"):
+		_hud.pulse_power()
 
 
 # ---------------------------------------------------------------- 过关
@@ -129,14 +187,36 @@ func _complete() -> void:
 
 
 func _build_stats() -> Dictionary:
+	var red := int(_gems_got.get("red", 0))
+	var red_total := int(_gems_total.get("red", 0))
+	var blue := int(_gems_got.get("blue", 0))
+	var blue_total := int(_gems_total.get("blue", 0))
+	var all_gems := red >= red_total and blue >= blue_total
+	var in_time := _par_time > 0.0 and _elapsed <= _par_time
 	return {
 		"time": _elapsed,
-		"red": int(_gems_got.get("red", 0)),
-		"red_total": int(_gems_total.get("red", 0)),
-		"blue": int(_gems_got.get("blue", 0)),
-		"blue_total": int(_gems_total.get("blue", 0)),
+		"red": red, "red_total": red_total,
+		"blue": blue, "blue_total": blue_total,
 		"deaths": _deaths,
+		"par_time": _par_time,
+		"all_gems": all_gems,
+		"in_time": in_time,
+		"stars": _rate_stars(all_gems, in_time),
 	}
+
+
+## 评星：两个条件**都达成**才三星。
+## 关键在「全宝石」是三星的**前置条件**而不是并列项 —— 否则「不捡宝石 + 跑得快」
+## 也能三星，宝石系统对整个评价体系就失效了（这正是上一版 8 关全三星的成因）。
+##   ★    过关（保底，永不落空 —— 这是「失误要便宜」的兑现）
+##   ★★   全宝石 或 达标时间（探索 / 效率，任选一条先追）
+##   ★★★  全宝石 **且** 达标时间（同时满足探索与速度，这才是一道路线优化题）
+func _rate_stars(all_gems: bool, in_time: bool) -> int:
+	if all_gems and in_time:
+		return 3
+	if all_gems or in_time:
+		return 2
+	return 1
 
 
 func _go_next() -> void:
@@ -156,7 +236,7 @@ func _refresh_hud() -> void:
 		_elapsed,
 		int(_gems_got.get("red", 0)), int(_gems_total.get("red", 0)),
 		int(_gems_got.get("blue", 0)), int(_gems_total.get("blue", 0)),
-		_deaths)
+		_deaths, _par_time)
 
 
 # ---------------------------------------------------------------- 冒烟测试用
@@ -171,9 +251,9 @@ func debug_snapshot() -> String:
 			int(pl.global_position.x), int(pl.global_position.y),
 			"" if pl.alive else "(dead)",
 		])
-	return "players=[%s] gems=%d/%d red, %d/%d blue, deaths=%d, t=%.1fs, completed=%s" % [
+	return "players=[%s] gems=%d/%d red, %d/%d blue, deaths=%d, t=%.1fs, par=%.0fs, completed=%s" % [
 		", ".join(parts),
 		int(_gems_got.get("red", 0)), int(_gems_total.get("red", 0)),
 		int(_gems_got.get("blue", 0)), int(_gems_total.get("blue", 0)),
-		_deaths, _elapsed, str(_completed),
+		_deaths, _elapsed, _par_time, str(_completed),
 	]

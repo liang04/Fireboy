@@ -42,11 +42,18 @@ const C_GEM_RED := Color("#ff4d6d")
 const C_GEM_BLUE := Color("#4dd2ff")
 const C_PLATE_OFF := Color("#9aa5b1")
 const C_PLATE_ON := Color("#ffd166")
+## 机关「通电」指示。刻意复用压力板激活的暖黄，让「板亮了 = 有电了」
+## 成为玩家能一眼读出的统一语言；断电用比石头更暗的冷灰，形成强对比。
+const C_POWER_ON := Color("#ffd166")
+const C_POWER_OFF := Color("#3d4756")
 const C_DOOR := Color("#b08d57")
 const C_PLATFORM := Color("#6c7a89")
 const C_BOX := Color("#a0783c")
 const C_PORTAL := Color("#b46cff")
 const C_EXIT := Color("#2b3440")
+## 计时超出三星门槛时的告警色。用带粉的暖红，和岩浆橙（C_LAVA）区分开，
+## 免得玩家误以为"变红了"是踩到岩浆。
+const C_TIME_OVER := Color("#ff6b8a")
 
 
 ## 生成一张带高光/阴影边的纯色方块贴图（按 颜色+尺寸 缓存复用）

@@ -25,6 +25,13 @@ var _dir := 1.0
 var _active := true
 var _length := 1.0
 var _riders: Area2D
+var _body_sprite: Sprite2D
+## 受控平台的「通电」指示灯。空 channel 的常驻平台永远通电，不做指示。
+## 没有它，第 5 / 7 关的电梯断电停在半空时，玩家分不清是「到站」还是「断电」。
+var _power_light: Sprite2D
+var _width_px := 0
+var _pulse := 0.0
+var _powered := false
 
 
 func setup(from_cell: Vector2i, to_cell: Vector2i, width: int, spd: float,
@@ -51,9 +58,9 @@ func setup(from_cell: Vector2i, to_cell: Vector2i, width: int, spd: float,
 	collision_layer = 1          # World
 	collision_mask = 0
 
-	var sprite := Tex.sprite(Tex.C_PLATFORM, Vector2i(int(w), int(cell_px * 0.5)), false)
-	sprite.z_index = 3
-	add_child(sprite)
+	_body_sprite = Tex.sprite(Tex.C_PLATFORM, Vector2i(int(w), int(cell_px * 0.5)), false)
+	_body_sprite.z_index = 3
+	add_child(_body_sprite)
 
 	# 乘客检测区：贴在站立面正上方
 	_riders = Area2D.new()
@@ -70,15 +77,40 @@ func setup(from_cell: Vector2i, to_cell: Vector2i, width: int, spd: float,
 
 	_active = channel == &""
 	if channel != &"":
+		_width_px = int(w)
+		# 嵌在平台下沿的一条能量带：通电亮黄并呼吸，断电转暗、平台本体也压暗。
+		# 位置贴着平台底面而不是顶面，避免盖住站在上面的角色脚部。
+		_power_light = Tex.sprite(Tex.C_POWER_OFF, Vector2i(_width_px - 2, 4), false)
+		_power_light.position = Vector2(1, int(cell_px * 0.5) - 6)
+		_power_light.z_index = 4
+		add_child(_power_light)
+		_set_powered(false)
 		EventBus.channel_state_changed.connect(_on_channel_state_changed)
 
 
 func _on_channel_state_changed(ch: StringName, active: bool) -> void:
 	if ch == channel:
 		_active = active
+		_set_powered(active)
+
+
+## 更新通电表现。断电时把平台本体一起压暗，让「没电」这件事一眼可见，
+## 而不是仅仅「平台不动」——静止停在半空和到站停靠在外观上必须能区分。
+func _set_powered(value: bool) -> void:
+	_powered = value
+	_pulse = 0.0
+	if _body_sprite != null:
+		_body_sprite.modulate = Color(1, 1, 1) if value else Color(0.55, 0.6, 0.72)
+	if _power_light != null:
+		_power_light.texture = Tex.solid(
+			Tex.C_POWER_ON if value else Tex.C_POWER_OFF, Vector2i(_width_px - 2, 4))
+		_power_light.modulate.a = 1.0
 
 
 func _physics_process(delta: float) -> void:
+	if _powered and _power_light != null:
+		_pulse += delta
+		_power_light.modulate.a = 0.55 + sin(_pulse * 6.0) * 0.45
 	if not _active or _length <= 0.001:
 		return
 	var prev := global_position

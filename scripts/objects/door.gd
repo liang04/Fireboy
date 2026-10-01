@@ -11,6 +11,8 @@ var _closed_y := 0.0
 var _open_y := 0.0
 var _is_open := false
 var _motion: Tween
+## 门顶的通电指示灯。
+var _power_light: Sprite2D
 
 
 func setup(cell: Vector2i, ch: StringName, height: int, cell_px: int) -> void:
@@ -45,6 +47,14 @@ func setup(cell: Vector2i, ch: StringName, height: int, cell_px: int) -> void:
 		line.z_index = 7
 		add_child(line)
 
+	# 门顶的通电指示灯：收到信号时亮起、与门一起下沉。
+	# 「门开了」本身看得见，但「门是因为收到信号才开的」这条因果，
+	# 在门位于屏幕外或玩家正忙于别处时是不可见的，靠这盏灯补上。
+	_power_light = Tex.sprite(Tex.C_POWER_OFF, Vector2i(cell_px - 12, 4), false)
+	_power_light.position = Vector2(6, -8)
+	_power_light.z_index = 8
+	add_child(_power_light)
+
 	EventBus.channel_state_changed.connect(_on_channel_state_changed)
 
 
@@ -54,5 +64,8 @@ func _on_channel_state_changed(ch: StringName, active: bool) -> void:
 	_is_open = active
 	if _motion != null and _motion.is_valid():
 		_motion.kill()
+	if _power_light != null:
+		_power_light.texture = Tex.solid(
+			Tex.C_POWER_ON if active else Tex.C_POWER_OFF, Vector2i(cell_size - 12, 4))
 	_motion = create_tween().set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	_motion.tween_property(self, "position:y", _open_y if active else _closed_y, 0.35)

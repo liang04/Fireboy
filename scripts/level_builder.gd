@@ -95,6 +95,13 @@ static func build(parent: Node2D, data: Dictionary) -> Dictionary:
 				var p := PressurePlate.new()
 				p.setup(_vec(o.get("cell", [0, 0])), StringName(o.get("channel", "A")), CELL)
 				objects.add_child(p)
+			"double_plate":
+				# 双钥匙板：一个对象管多块板，靠 "cells" 数组而不是多次声明。
+				# 做成单节点是有意的 —— 跨节点同步「队友踩了没有」需要新信号，
+				# 而一组板本来就是一个整体，没必要拆开。
+				var dp := DoublePlate.new()
+				dp.setup(o.get("cells", []), StringName(o.get("channel", "K")), CELL)
+				objects.add_child(dp)
 			"door":
 				var d := GateDoor.new()
 				d.setup(_vec(o.get("cell", [0, 0])), StringName(o.get("channel", "A")),
