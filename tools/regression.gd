@@ -1,11 +1,11 @@
 extends Node
-## Run with an isolated APPDATA directory; exercises real physics overlaps and UI input.
+## Run through tools/run_checks.py; exercises real physics overlaps and UI input.
 var errors := 0
 
 
 func _ready() -> void:
-	if not OS.get_environment("APPDATA").replace("\\", "/").ends_with("/Fireboy-optimization-tests"):
-		printerr("[regression] Set APPDATA to a temporary Fireboy-optimization-tests directory first; tests write progress.")
+	if not OS.get_user_data_dir().replace("\\", "/").contains("/Fireboy-optimization-tests/"):
+		printerr("[regression] Use tools/run_checks.py (isolated user-data directory required; tests write progress).")
 		get_tree().quit(2)
 		return
 	_run.call_deferred()

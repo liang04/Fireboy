@@ -22,3 +22,7 @@ Thumbs.db
 # 一次性脚本输出残留（历史诊断命令产生，非项目文件）
 _cls.txt
 _cls2.txt
+
+# Python validation caches
+__pycache__/
+*.pyc

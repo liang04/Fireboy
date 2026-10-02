@@ -62,12 +62,18 @@ func _detect_push() -> float:
 		if p == null or not p.alive or p.frozen:
 			continue
 		var d := p.global_position - global_position
-		if absf(d.y) > size * 0.9:          # 高度差太大，说明不在同一层
+		# 顶上的乘客不能隔空侧推：两身体须有真实的垂直重叠。
+		# 留 1px 容差排除接触边缘/物理安全间隙造成的落地抖动。
+		var side_overlap := (size - 4.0 + Player.BODY_H) * 0.5 - absf(d.y)
+		if side_overlap <= 1.0:
 			continue
 		if absf(d.x) > size * 1.05:         # 必须紧贴箱子
 			continue
-		if d.x > 0.0 and Input.is_action_pressed(p.move_left):
+		# 与 Player 的水平输入一致：同时按左右会抵消，不能让静止玩家推箱。
+		var direction := float(Input.is_action_pressed(p.move_right)) \
+			- float(Input.is_action_pressed(p.move_left))
+		if d.x > 0.0 and direction < 0.0:
 			return -1.0
-		if d.x < 0.0 and Input.is_action_pressed(p.move_right):
+		if d.x < 0.0 and direction > 0.0:
 			return 1.0
 	return 0.0

@@ -10,37 +10,62 @@ script = ExtResource("1_menu")
 [node name="Background" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 color = Color(0.086, 0.105, 0.145, 1)
 
-[node name="VBox" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -230.0
-offset_right = 300.0
-offset_bottom = 230.0
-theme_override_constants/separation = 16
+[node name="Margin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 28
 
-[node name="Title" type="Label" parent="VBox"]
-theme_override_font_sizes/font_size = 46
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
 horizontal_alignment = 1
 text = "森林冰火人"
 
-[node name="Subtitle" type="Label" parent="VBox"]
+[node name="Subtitle" type="Label" parent="Margin/VBox"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 15
 horizontal_alignment = 1
-text = "Godot 4.7 · 本地双人同屏合作解谜原型"
+text = "两种元素，一起过关 · 本地双人合作解谜"
 
-[node name="LevelList" type="VBoxContainer" parent="VBox"]
-theme_override_constants/separation = 8
+[node name="Progress" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(1, 0.82, 0.4, 1)
+horizontal_alignment = 1
 
-[node name="Help" type="Label" parent="VBox"]
+[node name="LevelScroll" type="ScrollContainer" parent="Margin/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+follow_focus = true
+
+[node name="LevelList" type="GridContainer" parent="Margin/VBox/LevelScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Help" type="Label" parent="Margin/VBox"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 14
 horizontal_alignment = 1
-text = "火娃：WASD　水娃：方向键　R 重玩　Esc 暂停 / 改键 / 音效\n支持双手柄：方向键或左摇杆移动，A 跳跃，X 交互"
+autowrap_mode = 2
+text = ""
 
-[node name="QuitButton" type="Button" parent="VBox"]
+[node name="QuitButton" type="Button" parent="Margin/VBox"]
+custom_minimum_size = Vector2(200, 36)
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 16
 text = "退出游戏"

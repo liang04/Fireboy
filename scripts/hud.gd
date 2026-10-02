@@ -214,6 +214,11 @@ func _add_button(parent: Node, text: String, callback: Callable) -> void:
 
 
 func set_paused(value: bool) -> void:
+	if not value and _binding != &"":
+		if is_instance_valid(_binding_button):
+			_binding_button.text = InputSetup.action_label(_binding)
+		_binding = &""
+		_binding_button = null
 	get_tree().paused = value
 	_pause_panel.visible = value
 	_shade.visible = value
@@ -297,7 +302,7 @@ func show_result(stats: Dictionary, has_next: bool) -> void:
 	# 标题跟星级走，而不是跟「有没有拿满宝石」走 —— 后者在三星规则下已经不够用了：
 	# 全宝石但超时只是 2 星，标题却喊「完美通关」，玩家会觉得被耍。
 	_title.text = ["过关！", "通关！", "完美通关！"][stars - 1]
-	_stats.text = "用时 %s　　宝石 火 %d/%d · 水 %d/%d　　失误 %d 次" % [
+	_stats.text = "用时 %s　　宝石 火 %d/%d · 水 %d/%d\n失误 %d 次" % [
 		fmt_time(elapsed),
 		red, red_total, blue, blue_total, int(stats.get("deaths", 0)),
 	]
