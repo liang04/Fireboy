@@ -57,6 +57,7 @@ func _physics_process(delta: float) -> void:
 ## 返回 -1 / 0 / +1：玩家想把箱子往哪个方向推
 func _detect_push() -> float:
 	var size := float(cell_size)
+	var push := 0.0
 	for node in get_tree().get_nodes_in_group("players"):
 		var p := node as Player
 		if p == null or not p.alive or p.frozen:
@@ -73,7 +74,8 @@ func _detect_push() -> float:
 		var direction := float(Input.is_action_pressed(p.move_right)) \
 			- float(Input.is_action_pressed(p.move_left))
 		if d.x > 0.0 and direction < 0.0:
-			return -1.0
+			push -= 1.0
 		if d.x < 0.0 and direction > 0.0:
-			return 1.0
-	return 0.0
+			push += 1.0
+	# 合力与玩家/节点顺序无关：对推抵消，同向合作不会加倍速度。
+	return clampf(push, -1.0, 1.0)

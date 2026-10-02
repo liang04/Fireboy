@@ -67,6 +67,10 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.enter_fluid(kind)
+	elif body is PushBox:
+		var recovery := body.get_node_or_null("Recovery") as BoxRecovery
+		if recovery != null:
+			recovery.request_recovery()
 
 
 func _on_body_exited(body: Node2D) -> void:

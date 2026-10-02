@@ -26,6 +26,9 @@ var _warn_tween: Tween = null
 ## 提示冷却的到期时刻（毫秒）。用时间戳而不是计时器，省掉一个 _process 轮询。
 var _warn_until_msec := 0
 const WARN_COOLDOWN_MSEC := 1600
+const DEATH_HOLD_MSEC := 2400
+enum HintPriority { NORMAL, RECOVERY, DEATH }
+var _warn_priority := HintPriority.NORMAL
 
 var _pause_panel: PanelContainer
 var _shade: ColorRect
@@ -79,7 +82,7 @@ func _ready() -> void:
 	audio_toggle.toggled.connect(func(value: bool): Sound.set_enabled(value))
 	box.add_child(audio_toggle)
 	var help := Label.new()
-	help.text = "点击下方改键，Esc 取消；手柄 1 / 2 分别控制火娃 / 水娃\n手柄：方向键 / 左摇杆移动，A 跳跃，X 交互，Start 暂停\n红宝石只有火娃能拿，蓝宝石只有水娃能拿。\n死亡回到出生点；机关状态和已拾取宝石保留。"
+	help.text = "点击下方改键，Esc 取消；手柄 1 / 2 分别控制火娃 / 水娃\n手柄：方向键 / 左摇杆移动，A 跳跃，X 交互，Start 暂停\n红宝石只有火娃能拿，蓝宝石只有水娃能拿。\n死亡回到出生点；机关状态和已拾取宝石保留。\n木箱落水会回到原位，并加时 3 秒；原位被挡时请先让开。"
 	help.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	box.add_child(help)
 	var grid := GridContainer.new()
@@ -164,22 +167,31 @@ func pulse_power() -> void:
 	tw.tween_property(_pulse_rect, "color:a", 0.0, 0.32)
 
 
-## 弹一条即时提示。冷却期内重复调用直接忽略，避免玩家站在宝石上刷屏。
-func flash_hint(text: String, tint := Color(1, 1, 1)) -> void:
+## 普通提示限流；死亡提示立即抢占并保留完整阅读时间。
+## 连续死亡可以更新死因，但宝石提示既不能覆盖，也不能延长死亡提示的锁定。
+func flash_hint(text: String, tint := Color(1, 1, 1),
+		priority: HintPriority = HintPriority.NORMAL) -> void:
 	if _warn == null:
 		return
 	var now := Time.get_ticks_msec()
 	if now < _warn_until_msec:
-		return
-	_warn_until_msec = now + WARN_COOLDOWN_MSEC
+		if priority < _warn_priority or (priority == _warn_priority and priority != HintPriority.DEATH):
+			return
+	_warn_priority = priority
+	var is_death := priority == HintPriority.DEATH
+	_warn_until_msec = now + (DEATH_HOLD_MSEC if is_death else WARN_COOLDOWN_MSEC)
 
 	if _warn_tween != null and _warn_tween.is_valid():
 		_warn_tween.kill()
 	_warn.text = text
-	_warn.modulate = Color(tint.r, tint.g, tint.b, 0.0)
+	# 死亡直接可见，避免重复死亡反复重启淡入，让提示始终处于透明状态。
+	_warn.modulate = Color(tint.r, tint.g, tint.b, 1.0 if is_death else 0.0)
 	_warn_tween = create_tween()
-	_warn_tween.tween_property(_warn, "modulate:a", 1.0, 0.12)
-	_warn_tween.tween_interval(1.5)
+	if is_death:
+		_warn_tween.tween_interval(float(DEATH_HOLD_MSEC) / 1000.0)
+	else:
+		_warn_tween.tween_property(_warn, "modulate:a", 1.0, 0.12)
+		_warn_tween.tween_interval(1.5)
 	_warn_tween.tween_property(_warn, "modulate:a", 0.0, 0.5)
 
 
@@ -187,6 +199,10 @@ func flash_hint(text: String, tint := Color(1, 1, 1)) -> void:
 func flash_gem_owner_hint(color: StringName, element: StringName) -> void:
 	flash_hint("%s只有%s拿得到" % [Gem.color_label_of(color), Gem.owner_label_of(element)],
 			Gem.owner_color_of(element))
+
+
+func flash_box_recovery() -> void:
+	flash_hint("木箱落水，正在回到原位（+3秒）；请让开原位", Color("#ffd166"), HintPriority.RECOVERY)
 
 
 ## 死亡归因：告诉玩家「是什么杀了他」。
@@ -197,11 +213,11 @@ func flash_death_cause(cause: StringName, element: StringName) -> void:
 	var who := "火娃" if element == &"fire" else "水娃"
 	match cause:
 		&"lava":
-			flash_hint("%s碰岩浆会融化 —— 那是火娃的路" % who, Tex.C_LAVA)
+			flash_hint("%s碰岩浆会融化 —— 那是火娃的路" % who, Tex.C_LAVA, HintPriority.DEATH)
 		&"water":
-			flash_hint("%s碰水潭会被浇灭 —— 那是水娃的路" % who, Tex.C_POOL)
+			flash_hint("%s碰水潭会被浇灭 —— 那是水娃的路" % who, Tex.C_POOL, HintPriority.DEATH)
 		&"acid":
-			flash_hint("%s被毒液腐蚀 —— 毒液谁都不能碰" % who, Tex.C_ACID)
+			flash_hint("%s被毒液腐蚀 —— 毒液谁都不能碰" % who, Tex.C_ACID, HintPriority.DEATH)
 		_:
 			pass
 
@@ -306,6 +322,9 @@ func show_result(stats: Dictionary, has_next: bool) -> void:
 		fmt_time(elapsed),
 		red, red_total, blue, blue_total, int(stats.get("deaths", 0)),
 	]
+	var box_resets := int(stats.get("box_resets", 0))
+	if box_resets > 0:
+		_stats.text += "\n木箱复位 %d 次（已计入 +%.0f 秒）" % [box_resets, box_resets * BoxRecovery.TIME_PENALTY]
 	_criteria.text = _criteria_text(all_gems, in_time, elapsed, par)
 	_hint.text = "跳跃键 / 手柄 A：下一关　R：重玩　Esc：暂停 / 菜单" if has_next \
 		else "已是最后一关　R：重玩　Esc：暂停 / 菜单"

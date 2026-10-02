@@ -9,12 +9,15 @@ var cell_size := 32
 var _on := false
 var _handle: Sprite2D
 var _bodies: Dictionary = {}
+var _channel_label: Label
 var _hint: Label
 
 
 func setup(cell: Vector2i, ch: StringName, cell_px: int) -> void:
 	channel = ch
-	_hint = Tex.channel_label(self, channel, Vector2(-12, -24))
+	_channel_label = Tex.channel_label(self, channel, Vector2(-12, -24))
+	_hint = Tex.channel_label(self, &"", Vector2(-12, -44))
+	_hint.hide()
 	cell_size = cell_px
 	position = Vector2(cell) * float(cell_px)
 
@@ -34,10 +37,11 @@ func setup(cell: Vector2i, ch: StringName, cell_px: int) -> void:
 	base.z_index = 3
 	add_child(base)
 
-	_handle = Tex.sprite(Tex.C_PLATE_ON, Vector2i(6, cell_px - 16), false)
+	_handle = Tex.sprite(Tex.C_PLATE_OFF, Vector2i(6, cell_px - 16), false)
 	_handle.position = Vector2(cell_px * 0.5 - 3, 4)
 	_handle.z_index = 4
 	add_child(_handle)
+	_refresh_state()
 
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
@@ -49,9 +53,11 @@ func _physics_process(_delta: float) -> void:
 		if not is_instance_valid(body) or (body is Player and not body.alive):
 			_bodies.erase(body)
 			continue
-		if is_instance_valid(body) and body is Player and body.alive:
+		if body is Player and body.alive and not body.frozen:
 			keys.append(InputSetup.key_text(body.action_key))
 	_hint.text = ("/".join(keys) + " 交互") if not keys.is_empty() else ""
+	_hint.visible = not keys.is_empty()
+	_hint.position.y = _channel_label.position.y - _hint.get_minimum_size().y - 4.0
 	if _bodies.is_empty():
 		return
 	for key in _bodies:
@@ -66,6 +72,12 @@ func _physics_process(_delta: float) -> void:
 func _toggle() -> void:
 	_on = not _on
 	EventBus.channel_state_changed.emit(channel, _on)
+	_refresh_state()
+
+
+func _refresh_state() -> void:
+	if _channel_label != null:
+		_channel_label.text = "%s · %s" % [channel, "开" if _on else "关"]
 	if _handle != null:
 		_handle.scale.x = -1.0 if _on else 1.0
 		_handle.texture = Tex.solid(

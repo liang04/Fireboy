@@ -26,3 +26,6 @@ signal exit_occupied(player_id: StringName, occupied: bool)
 
 ## 关卡完成：stats 见 Level._build_stats()
 signal level_completed(stats: Dictionary)
+
+## 木箱丢失后恢复到本关原位；计时惩罚由 Level 统一处理。
+signal box_recovery_started()

@@ -9,12 +9,14 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
+SUPPORTED_GODOT = "4.6.3"
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--godot", default=os.environ.get("GODOT_BIN", "godot"))
     parser.add_argument("--skip-smoke", action="store_true", help="Skip the longer 10-level probe")
+    parser.add_argument("--skip-routes", action="store_true", help="Skip full-gem input replays")
     args = parser.parse_args()
     binary = shutil.which(args.godot)
     if not binary:
@@ -30,15 +32,29 @@ def main():
             folder.mkdir(parents=True, exist_ok=True)
             env[key] = str(folder)
         env["PYTHONUTF8"] = "1"
+        version = subprocess.run([binary, "--version"], env=env, capture_output=True,
+                                 text=True, encoding="utf-8", errors="replace", timeout=30)
+        actual = version.stdout.strip()
+        if version.returncode or not actual.startswith(SUPPORTED_GODOT + "."):
+            print(f"FAIL: supported Godot version is {SUPPORTED_GODOT}; got {actual!r}", file=sys.stderr)
+            return 1
+        print(f"Godot: {actual}", flush=True)
         checks = [
             ("Import", [binary, "--headless", "--path", str(ROOT), "--editor", "--import", "--quit"]),
             ("Level validator", [sys.executable, "tools/gen_levels.py"]),
             ("Existing regression", [binary, "--headless", "--path", str(ROOT), "res://tools/regression.tscn"]),
             ("Controls regression", [binary, "--headless", "--path", str(ROOT), "res://tools/control_regression.tscn"]),
+            ("Box co-op regression", [binary, "--headless", "--path", str(ROOT), "res://tools/box_regression.tscn"]),
+            ("Feedback regression", [binary, "--headless", "--path", str(ROOT), "res://tools/feedback_regression.tscn"]),
+            ("Box recovery regression", [binary, "--headless", "--path", str(ROOT), "res://tools/recovery_regression.tscn"]),
             ("UI regression", [binary, "--headless", "--path", str(ROOT), "res://tools/ui_regression.tscn"]),
         ]
         if not args.skip_smoke:
             checks.append(("10-level smoke", [binary, "--headless", "--path", str(ROOT), "--", "--smoke"]))
+        if not args.skip_routes:
+            checks.append(("10-level full-gem input replay", [sys.executable,
+                           "tools/run_full_gem_routes.py", "--godot", binary, "--replay",
+                           "--output", str(isolated / "full-gem-replay.json")]))
         for name, command in checks:
             print(f"\n=== {name} ===", flush=True)
             try:

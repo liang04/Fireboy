@@ -1,0 +1,2278 @@
+[
+  {
+    "level": 1,
+    "max_frames": 488,
+    "expected": {
+      "frames": 486,
+      "deaths": 0,
+      "box_resets": 0,
+      "red": 3,
+      "red_total": 3,
+      "blue": 3,
+      "blue_total": 3,
+      "stars": 3
+    },
+    "replay_tape": [
+      {
+        "frames": 33,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 39,
+        "mask": 98
+      },
+      {
+        "frames": 9,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 26,
+        "mask": 0
+      },
+      {
+        "frames": 18,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 34,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 80,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 15,
+        "mask": 38
+      },
+      {
+        "frames": 32,
+        "mask": 6
+      },
+      {
+        "frames": 2,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 18,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 34,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 102
+      },
+      {
+        "frames": 1,
+        "mask": 70
+      },
+      {
+        "frames": 20,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 8,
+        "mask": 38
+      },
+      {
+        "frames": 16,
+        "mask": 6
+      },
+      {
+        "frames": 21,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 33,
+        "mask": 6
+      },
+      {
+        "frames": 8,
+        "mask": 4
+      }
+    ]
+  },
+  {
+    "level": 2,
+    "max_frames": 933,
+    "expected": {
+      "frames": 931,
+      "deaths": 0,
+      "box_resets": 0,
+      "red": 3,
+      "red_total": 3,
+      "blue": 3,
+      "blue_total": 3,
+      "stars": 3
+    },
+    "replay_tape": [
+      {
+        "frames": 6,
+        "mask": 17
+      },
+      {
+        "frames": 1,
+        "mask": 16
+      },
+      {
+        "frames": 9,
+        "mask": 17
+      },
+      {
+        "frames": 1,
+        "mask": 16
+      },
+      {
+        "frames": 13,
+        "mask": 17
+      },
+      {
+        "frames": 1,
+        "mask": 1
+      },
+      {
+        "frames": 9,
+        "mask": 33
+      },
+      {
+        "frames": 1,
+        "mask": 1
+      },
+      {
+        "frames": 7,
+        "mask": 33
+      },
+      {
+        "frames": 16,
+        "mask": 32
+      },
+      {
+        "frames": 20,
+        "mask": 0
+      },
+      {
+        "frames": 140,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 26,
+        "mask": 6
+      },
+      {
+        "frames": 23,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 33,
+        "mask": 34
+      },
+      {
+        "frames": 7,
+        "mask": 32
+      },
+      {
+        "frames": 58,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 4
+      },
+      {
+        "frames": 8,
+        "mask": 68
+      },
+      {
+        "frames": 2,
+        "mask": 70
+      },
+      {
+        "frames": 17,
+        "mask": 102
+      },
+      {
+        "frames": 2,
+        "mask": 100
+      },
+      {
+        "frames": 2,
+        "mask": 69
+      },
+      {
+        "frames": 7,
+        "mask": 85
+      },
+      {
+        "frames": 2,
+        "mask": 80
+      },
+      {
+        "frames": 221,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 8,
+        "mask": 34
+      },
+      {
+        "frames": 2,
+        "mask": 32
+      },
+      {
+        "frames": 3,
+        "mask": 33
+      },
+      {
+        "frames": 3,
+        "mask": 1
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 16
+      },
+      {
+        "frames": 3,
+        "mask": 17
+      },
+      {
+        "frames": 3,
+        "mask": 16
+      },
+      {
+        "frames": 4,
+        "mask": 17
+      },
+      {
+        "frames": 4,
+        "mask": 16
+      },
+      {
+        "frames": 1,
+        "mask": 18
+      },
+      {
+        "frames": 3,
+        "mask": 2
+      },
+      {
+        "frames": 5,
+        "mask": 0
+      },
+      {
+        "frames": 3,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 3,
+        "mask": 2
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 3,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 3,
+        "mask": 2
+      },
+      {
+        "frames": 18,
+        "mask": 0
+      },
+      {
+        "frames": 10,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 28,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 11,
+        "mask": 38
+      },
+      {
+        "frames": 15,
+        "mask": 6
+      },
+      {
+        "frames": 17,
+        "mask": 102
+      },
+      {
+        "frames": 6,
+        "mask": 100
+      },
+      {
+        "frames": 1,
+        "mask": 96
+      },
+      {
+        "frames": 7,
+        "mask": 102
+      },
+      {
+        "frames": 1,
+        "mask": 38
+      },
+      {
+        "frames": 2,
+        "mask": 102
+      },
+      {
+        "frames": 15,
+        "mask": 70
+      },
+      {
+        "frames": 20,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 11,
+        "mask": 70
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 13,
+        "mask": 102
+      },
+      {
+        "frames": 20,
+        "mask": 100
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 8,
+        "mask": 66
+      },
+      {
+        "frames": 3,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 6,
+        "mask": 16
+      }
+    ]
+  },
+  {
+    "level": 3,
+    "max_frames": 680,
+    "expected": {
+      "frames": 678,
+      "deaths": 0,
+      "box_resets": 0,
+      "red": 3,
+      "red_total": 3,
+      "blue": 3,
+      "blue_total": 3,
+      "stars": 3
+    },
+    "replay_tape": [
+      {
+        "frames": 65,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 24,
+        "mask": 38
+      },
+      {
+        "frames": 16,
+        "mask": 36
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 6,
+        "mask": 38
+      },
+      {
+        "frames": 18,
+        "mask": 6
+      },
+      {
+        "frames": 2,
+        "mask": 4
+      },
+      {
+        "frames": 14,
+        "mask": 36
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 11,
+        "mask": 38
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 13,
+        "mask": 102
+      },
+      {
+        "frames": 15,
+        "mask": 100
+      },
+      {
+        "frames": 1,
+        "mask": 96
+      },
+      {
+        "frames": 2,
+        "mask": 102
+      },
+      {
+        "frames": 4,
+        "mask": 70
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 25,
+        "mask": 38
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 8,
+        "mask": 6
+      },
+      {
+        "frames": 41,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 80,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 23,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 6
+      },
+      {
+        "frames": 7,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 56,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 8,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 34
+      },
+      {
+        "frames": 104,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 28,
+        "mask": 32
+      }
+    ]
+  },
+  {
+    "level": 4,
+    "max_frames": 999,
+    "expected": {
+      "frames": 997,
+      "deaths": 0,
+      "box_resets": 0,
+      "red": 3,
+      "red_total": 3,
+      "blue": 3,
+      "blue_total": 3,
+      "stars": 3
+    },
+    "replay_tape": [
+      {
+        "frames": 87,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 25,
+        "mask": 98
+      },
+      {
+        "frames": 1,
+        "mask": 96
+      },
+      {
+        "frames": 10,
+        "mask": 102
+      },
+      {
+        "frames": 13,
+        "mask": 70
+      },
+      {
+        "frames": 3,
+        "mask": 6
+      },
+      {
+        "frames": 23,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 8,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 135,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 64
+      },
+      {
+        "frames": 8,
+        "mask": 68
+      },
+      {
+        "frames": 2,
+        "mask": 100
+      },
+      {
+        "frames": 17,
+        "mask": 102
+      },
+      {
+        "frames": 2,
+        "mask": 70
+      },
+      {
+        "frames": 5,
+        "mask": 84
+      },
+      {
+        "frames": 4,
+        "mask": 68
+      },
+      {
+        "frames": 2,
+        "mask": 6
+      },
+      {
+        "frames": 154,
+        "mask": 0
+      },
+      {
+        "frames": 3,
+        "mask": 32
+      },
+      {
+        "frames": 25,
+        "mask": 34
+      },
+      {
+        "frames": 6,
+        "mask": 2
+      },
+      {
+        "frames": 17,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 64,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 2
+      },
+      {
+        "frames": 20,
+        "mask": 0
+      },
+      {
+        "frames": 34,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 6,
+        "mask": 6
+      },
+      {
+        "frames": 43,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 10,
+        "mask": 17
+      },
+      {
+        "frames": 7,
+        "mask": 16
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 19,
+        "mask": 96
+      },
+      {
+        "frames": 21,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 96
+      },
+      {
+        "frames": 8,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 15,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 39,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 5,
+        "mask": 38
+      },
+      {
+        "frames": 26,
+        "mask": 6
+      },
+      {
+        "frames": 14,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 5,
+        "mask": 2
+      }
+    ]
+  },
+  {
+    "level": 5,
+    "max_frames": 1398,
+    "expected": {
+      "frames": 1396,
+      "deaths": 0,
+      "box_resets": 0,
+      "red": 3,
+      "red_total": 3,
+      "blue": 3,
+      "blue_total": 3,
+      "stars": 3
+    },
+    "replay_tape": [
+      {
+        "frames": 57,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 17,
+        "mask": 66
+      },
+      {
+        "frames": 16,
+        "mask": 98
+      },
+      {
+        "frames": 1,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 98
+      },
+      {
+        "frames": 28,
+        "mask": 2
+      },
+      {
+        "frames": 36,
+        "mask": 0
+      },
+      {
+        "frames": 26,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 35,
+        "mask": 5
+      },
+      {
+        "frames": 1,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 5
+      },
+      {
+        "frames": 47,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 73,
+        "mask": 1
+      },
+      {
+        "frames": 129,
+        "mask": 0
+      },
+      {
+        "frames": 12,
+        "mask": 4
+      },
+      {
+        "frames": 19,
+        "mask": 6
+      },
+      {
+        "frames": 3,
+        "mask": 4
+      },
+      {
+        "frames": 160,
+        "mask": 0
+      },
+      {
+        "frames": 36,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 12,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 52,
+        "mask": 96
+      },
+      {
+        "frames": 5,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 48,
+        "mask": 32
+      },
+      {
+        "frames": 28,
+        "mask": 0
+      },
+      {
+        "frames": 26,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 34,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 39,
+        "mask": 32
+      },
+      {
+        "frames": 105,
+        "mask": 0
+      },
+      {
+        "frames": 12,
+        "mask": 64
+      },
+      {
+        "frames": 18,
+        "mask": 96
+      },
+      {
+        "frames": 4,
+        "mask": 64
+      },
+      {
+        "frames": 160,
+        "mask": 0
+      },
+      {
+        "frames": 45,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 10,
+        "mask": 96
+      },
+      {
+        "frames": 39,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 16
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 22,
+        "mask": 1
+      }
+    ]
+  },
+  {
+    "level": 6,
+    "max_frames": 1141,
+    "expected": {
+      "frames": 1139,
+      "deaths": 0,
+      "box_resets": 0,
+      "red": 3,
+      "red_total": 3,
+      "blue": 3,
+      "blue_total": 3,
+      "stars": 3
+    },
+    "replay_tape": [
+      {
+        "frames": 100,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 44,
+        "mask": 98
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 4,
+        "mask": 70
+      },
+      {
+        "frames": 22,
+        "mask": 6
+      },
+      {
+        "frames": 23,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 14,
+        "mask": 38
+      },
+      {
+        "frames": 35,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 3,
+        "mask": 6
+      },
+      {
+        "frames": 2,
+        "mask": 38
+      },
+      {
+        "frames": 24,
+        "mask": 36
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 19,
+        "mask": 100
+      },
+      {
+        "frames": 15,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 24,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 9,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 100
+      },
+      {
+        "frames": 18,
+        "mask": 102
+      },
+      {
+        "frames": 1,
+        "mask": 70
+      },
+      {
+        "frames": 1,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 84
+      },
+      {
+        "frames": 8,
+        "mask": 85
+      },
+      {
+        "frames": 1,
+        "mask": 5
+      },
+      {
+        "frames": 190,
+        "mask": 0
+      },
+      {
+        "frames": 6,
+        "mask": 34
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 6,
+        "mask": 17
+      },
+      {
+        "frames": 1,
+        "mask": 1
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 16
+      },
+      {
+        "frames": 1,
+        "mask": 17
+      },
+      {
+        "frames": 2,
+        "mask": 1
+      },
+      {
+        "frames": 1,
+        "mask": 16
+      },
+      {
+        "frames": 5,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 3,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 3,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 34
+      },
+      {
+        "frames": 2,
+        "mask": 32
+      },
+      {
+        "frames": 18,
+        "mask": 0
+      },
+      {
+        "frames": 18,
+        "mask": 98
+      },
+      {
+        "frames": 31,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 4,
+        "mask": 96
+      },
+      {
+        "frames": 11,
+        "mask": 98
+      },
+      {
+        "frames": 15,
+        "mask": 66
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 18,
+        "mask": 70
+      },
+      {
+        "frames": 17,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 6,
+        "mask": 6
+      },
+      {
+        "frames": 43,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 10,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 36
+      },
+      {
+        "frames": 16,
+        "mask": 38
+      },
+      {
+        "frames": 7,
+        "mask": 36
+      },
+      {
+        "frames": 9,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 4
+      },
+      {
+        "frames": 16,
+        "mask": 6
+      },
+      {
+        "frames": 16,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 4
+      },
+      {
+        "frames": 9,
+        "mask": 6
+      },
+      {
+        "frames": 7,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 5,
+        "mask": 18
+      },
+      {
+        "frames": 1,
+        "mask": 16
+      },
+      {
+        "frames": 17,
+        "mask": 18
+      },
+      {
+        "frames": 2,
+        "mask": 16
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 64
+      },
+      {
+        "frames": 16,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 96
+      },
+      {
+        "frames": 47,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 5,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 38,
+        "mask": 32
+      }
+    ]
+  },
+  {
+    "level": 7,
+    "max_frames": 771,
+    "expected": {
+      "frames": 769,
+      "deaths": 0,
+      "box_resets": 0,
+      "red": 3,
+      "red_total": 3,
+      "blue": 3,
+      "blue_total": 3,
+      "stars": 3
+    },
+    "replay_tape": [
+      {
+        "frames": 17,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 7,
+        "mask": 34
+      },
+      {
+        "frames": 25,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 74,
+        "mask": 34
+      },
+      {
+        "frames": 26,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 26,
+        "mask": 6
+      },
+      {
+        "frames": 23,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 33,
+        "mask": 98
+      },
+      {
+        "frames": 7,
+        "mask": 66
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 8,
+        "mask": 70
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 23,
+        "mask": 38
+      },
+      {
+        "frames": 8,
+        "mask": 36
+      },
+      {
+        "frames": 26,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 19,
+        "mask": 96
+      },
+      {
+        "frames": 21,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 40,
+        "mask": 96
+      },
+      {
+        "frames": 9,
+        "mask": 64
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 34
+      },
+      {
+        "frames": 8,
+        "mask": 2
+      },
+      {
+        "frames": 10,
+        "mask": 66
+      },
+      {
+        "frames": 17,
+        "mask": 98
+      },
+      {
+        "frames": 6,
+        "mask": 66
+      },
+      {
+        "frames": 5,
+        "mask": 2
+      },
+      {
+        "frames": 39,
+        "mask": 0
+      },
+      {
+        "frames": 41,
+        "mask": 96
+      },
+      {
+        "frames": 6,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 32
+      },
+      {
+        "frames": 12,
+        "mask": 36
+      },
+      {
+        "frames": 18,
+        "mask": 38
+      },
+      {
+        "frames": 4,
+        "mask": 36
+      },
+      {
+        "frames": 49,
+        "mask": 32
+      },
+      {
+        "frames": 25,
+        "mask": 38
+      },
+      {
+        "frames": 18,
+        "mask": 36
+      },
+      {
+        "frames": 52,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 13,
+        "mask": 2
+      }
+    ]
+  },
+  {
+    "level": 8,
+    "max_frames": 746,
+    "expected": {
+      "frames": 744,
+      "deaths": 0,
+      "box_resets": 0,
+      "red": 4,
+      "red_total": 4,
+      "blue": 3,
+      "blue_total": 3,
+      "stars": 3
+    },
+    "replay_tape": [
+      {
+        "frames": 105,
+        "mask": 18
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 32,
+        "mask": 82
+      },
+      {
+        "frames": 1,
+        "mask": 66
+      },
+      {
+        "frames": 6,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 96,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 11,
+        "mask": 1
+      },
+      {
+        "frames": 119,
+        "mask": 0
+      },
+      {
+        "frames": 30,
+        "mask": 96
+      },
+      {
+        "frames": 17,
+        "mask": 64
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 81,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 22,
+        "mask": 6
+      },
+      {
+        "frames": 18,
+        "mask": 4
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 128
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 34,
+        "mask": 32
+      },
+      {
+        "frames": 96,
+        "mask": 0
+      },
+      {
+        "frames": 23,
+        "mask": 5
+      },
+      {
+        "frames": 24,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 14,
+        "mask": 1
+      }
+    ]
+  },
+  {
+    "level": 9,
+    "max_frames": 1435,
+    "expected": {
+      "frames": 1433,
+      "deaths": 0,
+      "box_resets": 0,
+      "red": 3,
+      "red_total": 3,
+      "blue": 3,
+      "blue_total": 3,
+      "stars": 3
+    },
+    "replay_tape": [
+      {
+        "frames": 41,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 17,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 49,
+        "mask": 98
+      },
+      {
+        "frames": 1,
+        "mask": 34
+      },
+      {
+        "frames": 2,
+        "mask": 98
+      },
+      {
+        "frames": 14,
+        "mask": 66
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 26,
+        "mask": 70
+      },
+      {
+        "frames": 6,
+        "mask": 68
+      },
+      {
+        "frames": 17,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 48,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 147,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 64
+      },
+      {
+        "frames": 8,
+        "mask": 68
+      },
+      {
+        "frames": 2,
+        "mask": 100
+      },
+      {
+        "frames": 17,
+        "mask": 102
+      },
+      {
+        "frames": 2,
+        "mask": 70
+      },
+      {
+        "frames": 2,
+        "mask": 84
+      },
+      {
+        "frames": 7,
+        "mask": 85
+      },
+      {
+        "frames": 2,
+        "mask": 5
+      },
+      {
+        "frames": 215,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 34
+      },
+      {
+        "frames": 10,
+        "mask": 32
+      },
+      {
+        "frames": 7,
+        "mask": 33
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 6,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 23,
+        "mask": 34
+      },
+      {
+        "frames": 20,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 56,
+        "mask": 34
+      },
+      {
+        "frames": 339,
+        "mask": 0
+      },
+      {
+        "frames": 12,
+        "mask": 68
+      },
+      {
+        "frames": 18,
+        "mask": 102
+      },
+      {
+        "frames": 5,
+        "mask": 68
+      },
+      {
+        "frames": 173,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 102
+      },
+      {
+        "frames": 12,
+        "mask": 100
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 17,
+        "mask": 98
+      },
+      {
+        "frames": 3,
+        "mask": 96
+      },
+      {
+        "frames": 29,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 13,
+        "mask": 32
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "max_frames": 662,
+    "expected": {
+      "frames": 660,
+      "deaths": 0,
+      "box_resets": 0,
+      "red": 2,
+      "red_total": 2,
+      "blue": 2,
+      "blue_total": 2,
+      "stars": 3
+    },
+    "replay_tape": [
+      {
+        "frames": 1,
+        "mask": 18
+      },
+      {
+        "frames": 24,
+        "mask": 86
+      },
+      {
+        "frames": 9,
+        "mask": 70
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 6,
+        "mask": 86
+      },
+      {
+        "frames": 1,
+        "mask": 80
+      },
+      {
+        "frames": 26,
+        "mask": 86
+      },
+      {
+        "frames": 4,
+        "mask": 70
+      },
+      {
+        "frames": 8,
+        "mask": 68
+      },
+      {
+        "frames": 2,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 68,
+        "mask": 2
+      },
+      {
+        "frames": 18,
+        "mask": 0
+      },
+      {
+        "frames": 45,
+        "mask": 32
+      },
+      {
+        "frames": 17,
+        "mask": 0
+      },
+      {
+        "frames": 101,
+        "mask": 16
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 79,
+        "mask": 16
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 14,
+        "mask": 32
+      },
+      {
+        "frames": 43,
+        "mask": 0
+      },
+      {
+        "frames": 60,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 12,
+        "mask": 33
+      },
+      {
+        "frames": 116,
+        "mask": 32
+      }
+    ]
+  }
+]

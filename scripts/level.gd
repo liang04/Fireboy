@@ -8,20 +8,16 @@ const HUD_SCENE := preload("res://scenes/hud.tscn")
 const MENU_SCENE := "res://scenes/main_menu.tscn"
 
 # ---------------------------------------------------------------- 星级门槛
-## 三星 = 「全宝石」**且**「≤ par_time」。par_time 跟着关卡数据走
-## （定义在 tools/gen_levels.py 的每关字典里，标定依据见那里的注释）。
-##
-## 刻意不设全局常量：8 关的实测长度差 2 倍以上，一个全局秒数对短关形同白送、
-## 对长关又不讲道理 —— 上一版的 180s 就是这样被 13~30s 的实测数据打穿的。
-##
-## 为什么不再单列「失误」判据：死亡要等 1 秒重生，**已经通过计时被计入成本**了。
-## 把它立成第三条判据只会得到两个高度相关的轴（少死的人自然更快），
-## 矩阵里那格「死很多次但极快」在真实对局里几乎不存在 —— 白占一个维度。
+## 三星 = 全宝石且用时 <= par_time。每关目标来自 tools/gen_levels.py。
+## 现有数值保留为暂定真人难度目标；十关已有真实输入全宝石达标回放，
+## 见 docs/full_gem_routes_round2.md，但它不等于真人合作难度已标定。
+## 死亡等待仍计时；木箱恢复继续计时并加时，不额外增加星级判据。
 
 var _players: Array = []
 var _gems_total := {"red": 0, "blue": 0}
 var _gems_got := {"red": 0, "blue": 0}
 var _deaths := 0
+var _box_resets := 0
 var _elapsed := 0.0
 ## 本关的三星时间门槛（秒），来自关卡数据。<= 0 表示数据没给，
 ## 此时速度判据不生效 —— 三星拿不到，而不是静默地白送。
@@ -54,7 +50,7 @@ func _ready() -> void:
 	_gems_total = info.get("gems_total", {"red": 0, "blue": 0})
 	_par_time = float(data.get("par_time", 0.0))
 	if _par_time <= 0.0:
-		push_warning("Level %d 缺少 par_time：三星会退化为「全宝石即三星」" % index)
+		push_warning("Level %d 缺少 par_time：三星不可获得" % index)
 
 	# 按本关出口门动态建立占用表；没有任何出口数据时退回火/水双门，避免死锁。
 	var exit_elements: Array = info.get("exit_elements", [])
@@ -74,6 +70,7 @@ func _ready() -> void:
 	EventBus.gem_collected.connect(_on_gem_collected)
 	EventBus.gem_rejected.connect(_on_gem_rejected)
 	EventBus.player_died.connect(_on_player_died)
+	EventBus.box_recovery_started.connect(_on_box_recovery_started)
 	EventBus.exit_occupied.connect(_on_exit_occupied)
 	EventBus.channel_state_changed.connect(_on_channel_state_changed)
 
@@ -123,6 +120,16 @@ func _on_player_died(id: StringName, cause: StringName) -> void:
 	# 否则「谁怕什么」的元素相克教学就无从建立。
 	if _hud != null and not _completed:
 		_hud.flash_death_cause(cause, id)
+
+
+func _on_box_recovery_started() -> void:
+	if _completed:
+		return
+	_box_resets += 1
+	_elapsed += BoxRecovery.TIME_PENALTY
+	_refresh_hud()
+	if _hud != null:
+		_hud.flash_box_recovery()
 
 
 func _on_exit_occupied(player_id: StringName, occupied: bool) -> void:
@@ -198,6 +205,7 @@ func _build_stats() -> Dictionary:
 		"red": red, "red_total": red_total,
 		"blue": blue, "blue_total": blue_total,
 		"deaths": _deaths,
+		"box_resets": _box_resets,
 		"par_time": _par_time,
 		"all_gems": all_gems,
 		"in_time": in_time,

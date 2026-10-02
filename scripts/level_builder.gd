@@ -95,6 +95,7 @@ static func build(parent: Node2D, data: Dictionary) -> Dictionary:
 				var p := PressurePlate.new()
 				p.setup(_vec(o.get("cell", [0, 0])), StringName(o.get("channel", "A")), CELL)
 				objects.add_child(p)
+				_channel_label(p, p.channel, Vector2(-8, -12))
 			"double_plate":
 				# 双钥匙板：一个对象管多块板，靠 "cells" 数组而不是多次声明。
 				# 做成单节点是有意的 —— 跨节点同步「队友踩了没有」需要新信号，
@@ -102,11 +103,14 @@ static func build(parent: Node2D, data: Dictionary) -> Dictionary:
 				var dp := DoublePlate.new()
 				dp.setup(o.get("cells", []), StringName(o.get("channel", "K")), CELL)
 				objects.add_child(dp)
+				for zone: Area2D in dp._zones:
+					_channel_label(zone, dp.channel, Vector2(-8, -12))
 			"door":
 				var d := GateDoor.new()
 				d.setup(_vec(o.get("cell", [0, 0])), StringName(o.get("channel", "A")),
 					int(o.get("height", 3)), CELL)
 				objects.add_child(d)
+				_channel_label(d, d.channel, Vector2(-8, 4))
 			"lever":
 				var lv := Lever.new()
 				lv.setup(_vec(o.get("cell", [0, 0])), StringName(o.get("channel", "A")), CELL)
@@ -117,10 +121,16 @@ static func build(parent: Node2D, data: Dictionary) -> Dictionary:
 					int(o.get("width", 3)), float(o.get("speed", 90.0)),
 					StringName(o.get("channel", "")), CELL)
 				objects.add_child(mp)
+				if mp.channel != &"":
+					_channel_label(mp, mp.channel, Vector2(0, 12))
 			"box":
 				var b := PushBox.new()
 				b.setup(_vec(o.get("cell", [0, 0])), CELL)
 				objects.add_child(b)
+				var recovery := BoxRecovery.new()
+				recovery.name = "Recovery"
+				recovery.setup(b, Rect2(0, 0, w * CELL, h * CELL))
+				b.add_child(recovery)
 			"portal":
 				var po := Portal.new()
 				po.setup(_vec(o.get("cell", [0, 0])), StringName(o.get("pair", "")), CELL)
@@ -173,6 +183,22 @@ static func build(parent: Node2D, data: Dictionary) -> Dictionary:
 		"level_name": data.get("name", "未命名"),
 		"subtitle": data.get("subtitle", ""),
 	}
+
+
+## 用同一线路编号连接触发器和目标；字母与杠杆的常驻标签一致。
+static func _channel_label(parent: Node2D, channel: StringName, offset: Vector2) -> void:
+	var label := Label.new()
+	label.name = "ChannelLabel"
+	label.text = String(channel)
+	label.position = offset
+	label.size = Vector2(48, 22)
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.add_theme_font_size_override("font_size", 14)
+	label.add_theme_color_override("font_color", Color("#ffdc8a"))
+	label.add_theme_color_override("font_outline_color", Color("#101827"))
+	label.add_theme_constant_override("outline_size", 4)
+	label.z_index = 10
+	parent.add_child(label)
 
 
 ## 出生点：让脚底正好落在标记格下方的方块顶面上
