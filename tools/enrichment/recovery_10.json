@@ -1,0 +1,203 @@
+[
+  {
+    "level": 10,
+    "name": "L10 misplaced cargo at right wall stays on wide receiver and both escape",
+    "max_frames": 2000,
+    "replay_tape": [
+      {
+        "frames": 1,
+        "mask": 18
+      },
+      {
+        "frames": 8,
+        "mask": 82
+      },
+      {
+        "frames": 8,
+        "mask": 80
+      },
+      {
+        "frames": 24,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 80
+      },
+      {
+        "frames": 23,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 80
+      },
+      {
+        "frames": 23,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 16
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 79,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 14,
+        "mask": 2
+      },
+      {
+        "frames": 123,
+        "mask": 0
+      },
+      {
+        "frames": 5,
+        "mask": 1
+      },
+      {
+        "frames": 122,
+        "mask": 0
+      },
+      {
+        "frames": 46,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 4,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 1
+      },
+      {
+        "frames": 82,
+        "mask": 0
+      },
+      {
+        "frames": 6,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 14,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 46,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 1
+      },
+      {
+        "frames": 22,
+        "mask": 0
+      },
+      {
+        "frames": 25,
+        "mask": 33
+      },
+      {
+        "frames": 17,
+        "mask": 1
+      },
+      {
+        "frames": 14,
+        "mask": 33
+      },
+      {
+        "frames": 9,
+        "mask": 32
+      },
+      {
+        "frames": 18,
+        "mask": 33
+      },
+      {
+        "frames": 1,
+        "mask": 1
+      },
+      {
+        "frames": 6,
+        "mask": 33
+      },
+      {
+        "frames": 8,
+        "mask": 32
+      },
+      {
+        "frames": 30,
+        "mask": 33
+      }
+    ],
+    "expected": {
+      "frames": 873,
+      "deaths": 0,
+      "box_resets": 0,
+      "red": 3,
+      "red_total": 3,
+      "blue": 3,
+      "blue_total": 3,
+      "stars": 3
+    }
+  }
+]

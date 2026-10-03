@@ -17,6 +17,7 @@ def main():
     parser.add_argument('--godot', default=os.environ.get('GODOT_BIN', 'godot'))
     parser.add_argument('--levels', default='', help='Comma-separated level numbers, e.g. 1,8,10')
     parser.add_argument('--routes', help='Alternate controller-route or replay-tape JSON')
+    parser.add_argument('--scenario', action='store_true', help='Run explicit adversarial scenarios, not completion proofs')
     parser.add_argument('--replay', action='store_true', help='Replay checked-in action tapes without waypoint logic')
     parser.add_argument('--skip-import', action='store_true', help='Skip the initial Godot import (for an already imported project)')
     parser.add_argument('--output', default=str(Path(tempfile.gettempdir()) / 'full-gem-routes-results.json'))
@@ -37,10 +38,13 @@ def main():
     selected = requested or available
     sources = [ROOT / 'project.godot', *sorted((ROOT / 'scripts').rglob('*.gd')),
                *sorted((ROOT / 'scenes').glob('*.tscn')), ROOT / 'tools/full_gem_routes.gd',
-               ROOT / 'tools/full_gem_routes.tscn', ROOT / 'tools/run_full_gem_routes.py', source]
+               ROOT / 'tools/full_gem_routes.tscn', ROOT / 'tools/run_full_gem_routes.py',
+               ROOT / 'tools/gen_levels.py', *sorted((ROOT / 'tools/enrichment').glob('*.py')), source]
     def source_hashes():
         return {str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path):
                 hashlib.sha256(path.read_bytes()).hexdigest() for path in sources}
+    if args.scenario:
+        sources += [ROOT / 'tools/coop_scenarios.gd', ROOT / 'tools/coop_scenarios.tscn']
     initial_hashes = source_hashes()
     # Temporary results ensure a stale report cannot disguise a failed invocation.
     with tempfile.TemporaryDirectory(prefix='fireboy-routes-') as temporary:
@@ -72,7 +76,7 @@ def main():
             print('Godot import passed.')
         report_path = Path(temporary) / 'results.json'
         command = [binary, '--headless', '--path', str(ROOT), '--fixed-fps', '60',
-                   'res://tools/full_gem_routes.tscn', '--', f'--routes={source}',
+                   ('res://tools/coop_scenarios.tscn' if args.scenario else 'res://tools/full_gem_routes.tscn'), '--', f'--routes={source}',
                    f'--output={report_path}']
         if args.levels:
             command.append(f'--levels={args.levels}')

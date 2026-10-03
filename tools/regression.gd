@@ -83,7 +83,7 @@ func _run() -> void:
 	stale_cfg.set_value("progress", "unlocked_levels", 3)
 	stale_cfg.set_value("progress", "rating_version", 1)   # 老规则
 	stale_cfg.set_value("results", "0", {"time": 12.0, "red": 3, "red_total": 3,
-		"blue": 3, "blue_total": 3, "deaths": 1, "stars": 3})
+		"blue": 3, "blue_total": 3, "deaths": 1, "stars": 3, "rev": GameState.level_revision(0)})
 	stale_cfg.save(GameState.SAVE_PATH)
 	GameState.load_progress()
 	var migrated: Dictionary = GameState.results.get(0, {})
@@ -98,9 +98,9 @@ func _run() -> void:
 	layout_cfg.set_value("progress", "rating_version", GameState.RATING_VERSION)
 	layout_cfg.set_value("progress", "layout_version", 1)   # 旧排布：8 关
 	layout_cfg.set_value("results", "6", {"time": 20.45, "red": 4, "red_total": 4,
-		"blue": 3, "blue_total": 3, "deaths": 0, "stars": 2})
+		"blue": 3, "blue_total": 3, "deaths": 0, "stars": 2, "rev": GameState.level_revision(7)})
 	layout_cfg.set_value("results", "7", {"time": 23.93, "red": 3, "red_total": 3,
-		"blue": 3, "blue_total": 3, "deaths": 1, "stars": 3})
+		"blue": 3, "blue_total": 3, "deaths": 1, "stars": 3, "rev": GameState.level_revision(8)})
 	layout_cfg.save(GameState.SAVE_PATH)
 	GameState.load_progress()
 	check(not GameState.results.has(6),
@@ -126,17 +126,19 @@ func _run() -> void:
 	rev_cfg.set_value("progress", "unlocked_levels", 9)
 	rev_cfg.set_value("progress", "rating_version", GameState.RATING_VERSION)
 	rev_cfg.set_value("progress", "layout_version", GameState.LEVEL_LAYOUT_VERSION)
-	# 索引 2 故意不带 rev 字段：模拟老存档，按 1 算，必须活下来
+	# Current-revision record remains; absent-revision records are tested separately.
 	rev_cfg.set_value("results", "2", {"time": 14.25, "red": 3, "red_total": 3,
-		"blue": 3, "blue_total": 3, "deaths": 0, "stars": 3})
+		"blue": 3, "blue_total": 3, "deaths": 0, "stars": 3, "rev": GameState.level_revision(2)})
 	# 索引 3 带着过期的 rev：关卡改过，整条该丢
 	rev_cfg.set_value("results", "3", {"time": 16.13, "red": 3, "red_total": 3,
 		"blue": 3, "blue_total": 3, "deaths": 0, "stars": 3, "rev": 1})
+	rev_cfg.set_value("results", "0", {"time": 10.0, "stars": 3})
 	rev_cfg.save(GameState.SAVE_PATH)
 	GameState.load_progress()
 	check(GameState.level_revision(3) > 1, "level 4 declares a bumped revision")
 	check(GameState.results.has(2),
-		"a legacy record without a rev field survives (defaults to 1)")
+		"a current-revision record survives content migration")
+	check(not GameState.results.has(0), "legacy missing-revision record expires after content changes")
 	check(not GameState.results.has(3),
 		"a changed level's stale record is dropped")
 	check(GameState.unlocked_levels == 9,

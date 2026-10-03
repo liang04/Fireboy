@@ -1,0 +1,185 @@
+[
+  {
+    "level": 10,
+    "replay_tape": [
+      {
+        "frames": 1,
+        "mask": 18
+      },
+      {
+        "frames": 8,
+        "mask": 82
+      },
+      {
+        "frames": 8,
+        "mask": 80
+      },
+      {
+        "frames": 24,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 80
+      },
+      {
+        "frames": 23,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 80
+      },
+      {
+        "frames": 23,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 16
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 79,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 14,
+        "mask": 1
+      },
+      {
+        "frames": 63,
+        "mask": 0
+      },
+      {
+        "frames": 25,
+        "mask": 33
+      },
+      {
+        "frames": 7,
+        "mask": 1
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 5
+      },
+      {
+        "frames": 7,
+        "mask": 37
+      },
+      {
+        "frames": 1,
+        "mask": 33
+      },
+      {
+        "frames": 2,
+        "mask": 37
+      },
+      {
+        "frames": 31,
+        "mask": 36
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 15,
+        "mask": 36
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 27,
+        "mask": 38
+      },
+      {
+        "frames": 4,
+        "mask": 36
+      },
+      {
+        "frames": 9,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 6
+      },
+      {
+        "frames": 13,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 59,
+        "mask": 1
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 25,
+        "mask": 1
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 29,
+        "mask": 1
+      }
+    ],
+    "expected": {
+      "frames": 644,
+      "deaths": 0,
+      "box_resets": 0,
+      "red": 3,
+      "red_total": 3,
+      "blue": 3,
+      "blue_total": 3,
+      "stars": 3
+    }
+  }
+]

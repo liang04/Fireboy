@@ -1,0 +1,124 @@
+[
+  {
+    "level": 10,
+    "phases": [
+      {
+        "label": "hold elevated delivery plate",
+        "water": [
+          {
+            "kind": "jump",
+            "x": 27,
+            "y": 9
+          },
+          {
+            "kind": "jump",
+            "x": 25,
+            "y": 7
+          },
+          {
+            "kind": "jump",
+            "x": 23,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 21,
+            "y": 5
+          }
+        ],
+        "fire": [
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "deliver box while partner holds H",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 16
+          },
+          {
+            "kind": "go",
+            "x": 14,
+            "y": 11
+          },
+          {
+            "kind": "wait",
+            "frames": 60
+          }
+        ]
+      },
+      {
+        "label": "upper red gem and release H",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 9,
+            "y": 9
+          },
+          {
+            "kind": "jump",
+            "x": 11,
+            "y": 7
+          },
+          {
+            "kind": "jump",
+            "x": 13,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 17,
+            "y": 5
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 24,
+            "y": 7
+          },
+          {
+            "kind": "go",
+            "x": 29,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "fire return route",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 7
+          },
+          {
+            "kind": "go",
+            "x": 7,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 3,
+            "y": 11
+          }
+        ]
+      }
+    ]
+  }
+]

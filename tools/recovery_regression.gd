@@ -103,7 +103,11 @@ func _fixture_checks() -> void:
 	await frames(3)
 
 func _level_checks() -> void:
-	for index in [1, 3, 5, 8]:
+	for index in GameState.level_count():
+		var has_box := false
+		for entry: Dictionary in Levels.get_level(index).objects:
+			if entry.type == "box": has_box = true
+		if not has_box: continue
 		GameState.current_level_index = index
 		var level := preload("res://scenes/level.tscn").instantiate() as Level
 		add_child(level)
@@ -127,12 +131,18 @@ func _level_checks() -> void:
 		for player: Player in level._players:
 			player.set_physics_process(false)
 			initial_positions.append(player.position)
-		var pool := level.get_node("Hazards").get_child(0) as HazardPool
-		box.global_position = pool.global_position + Vector2(16, 16)
+		var hazards := level.get_node("Hazards")
+		var recovery_source := "world bounds"
+		if hazards.get_child_count() > 0:
+			var pool := hazards.get_child(0) as HazardPool
+			box.global_position = pool.global_position + Vector2(16, 16)
+			recovery_source = "real liquid Area2D"
+		else:
+			box.global_position = Vector2(100000, 100000)
 		box.velocity = Vector2.ZERO
 		await frames(70)
 		check(not recovery.recovering and box.global_position.distance_to(recovery._origin) < 3,
-			"level %d real liquid Area2D returns the box" % (index + 1))
+			"level %d %s returns the box" % [index + 1, recovery_source])
 		check(level._box_resets == 1 and is_equal_approx(level._elapsed, initial_time + 3.0),
 			"level %d charges one visible 3-second penalty" % (index + 1))
 		var positions_unchanged := true

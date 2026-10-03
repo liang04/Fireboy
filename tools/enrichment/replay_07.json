@@ -1,0 +1,182 @@
+[
+  {
+    "level": 7,
+    "max_frames": 1218,
+    "expected": {
+      "frames": 1098,
+      "deaths": 0,
+      "box_resets": 0,
+      "red": 3,
+      "red_total": 3,
+      "blue": 3,
+      "blue_total": 3,
+      "stars": 3
+    },
+    "replay_tape": [
+      {
+        "frames": 17,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 7,
+        "mask": 34
+      },
+      {
+        "frames": 25,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 56,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 19,
+        "mask": 98
+      },
+      {
+        "frames": 21,
+        "mask": 66
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 40,
+        "mask": 98
+      },
+      {
+        "frames": 102,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 34
+      },
+      {
+        "frames": 24,
+        "mask": 2
+      },
+      {
+        "frames": 10,
+        "mask": 66
+      },
+      {
+        "frames": 24,
+        "mask": 98
+      },
+      {
+        "frames": 72,
+        "mask": 2
+      },
+      {
+        "frames": 34,
+        "mask": 98
+      },
+      {
+        "frames": 13,
+        "mask": 66
+      },
+      {
+        "frames": 318,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 12,
+        "mask": 102
+      },
+      {
+        "frames": 14,
+        "mask": 70
+      },
+      {
+        "frames": 23,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 40,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 6
+      },
+      {
+        "frames": 29,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 49,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 30,
+        "mask": 96
+      },
+      {
+        "frames": 19,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 40,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 13,
+        "mask": 2
+      }
+    ]
+  }
+]

@@ -1,0 +1,404 @@
+[
+  {
+    "level": 4,
+    "name": "L4 idle holder blocks courier",
+    "max_frames": 400,
+    "phases": [
+      {
+        "fire": [
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 20,
+            "timeout": 300
+          }
+        ]
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_x_max": 315,
+      "gates": {
+        "A": false,
+        "K": false
+      },
+      "frames": 300,
+      "reason_prefix": "task timeout: phase 0 fire task 0"
+    }
+  },
+  {
+    "level": 4,
+    "name": "L4 premature handoff release blocks box",
+    "max_frames": 900,
+    "phases": [
+      {
+        "label": "live hold A",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 6,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "courier beyond A",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 16,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "release before box arrives",
+        "water": [
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 20
+          }
+        ],
+        "fire": [
+          {
+            "kind": "wait",
+            "frames": 35
+          }
+        ]
+      },
+      {
+        "label": "returning box blocked",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 6,
+            "timeout": 240
+          }
+        ]
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_x_min": 373,
+      "gates": {
+        "A": false,
+        "K": false
+      },
+      "frames": 411,
+      "reason_prefix": "task timeout: phase 3 fire task 0"
+    }
+  },
+  {
+    "level": 4,
+    "name": "L4 single final key cannot replace teammate",
+    "max_frames": 2400,
+    "phases": [
+      {
+        "label": "live hold A",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 6,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "retrieve box beyond A",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 16,
+            "y": 20
+          },
+          {
+            "kind": "push",
+            "box_x": 6
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "box takes over A",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 16,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 8,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 16,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "cross acid",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 17,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 865,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 17,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 865,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 32,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "lower lever",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 38,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 47,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 48,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": [
+          {
+            "kind": "wait",
+            "frames": 1
+          }
+        ]
+      },
+      {
+        "label": "one final key is insufficient",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 47,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "cannot reach fire exit alone",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 57,
+            "y": 19,
+            "timeout": 300
+          }
+        ]
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_x_max": 1689,
+      "gates": {
+        "K": false
+      },
+      "frames": 1437,
+      "reason_prefix": "task timeout: phase 6 fire task 0"
+    }
+  },
+  {
+    "level": 4,
+    "name": "L4 box cannot be carried across acid to final keys",
+    "max_frames": 1700,
+    "phases": [
+      {
+        "label": "live hold A",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 6,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "retrieve box beyond A",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 16,
+            "y": 20
+          },
+          {
+            "kind": "push",
+            "box_x": 6
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "hold position while courier gets left of box",
+        "water": [
+          {
+            "kind": "jump",
+            "x": 6,
+            "y": 19
+          }
+        ],
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 4,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "box cannot cross acid to final keys",
+        "water": [
+          {
+            "kind": "go",
+            "x": 6,
+            "y": 20
+          }
+        ],
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 19.2,
+            "timeout": 450
+          }
+        ]
+      },
+      {
+        "label": "wait for safe box reset",
+        "fire": [
+          {
+            "kind": "wait",
+            "frames": 90
+          }
+        ],
+        "water": []
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 1,
+      "box_x_min": 450,
+      "box_x_max": 478,
+      "gates": {
+        "A": true,
+        "K": false
+      },
+      "frames": 845,
+      "reason_prefix": "steps exhausted before both exits"
+    }
+  }
+]

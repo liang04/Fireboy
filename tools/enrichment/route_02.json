@@ -1,0 +1,184 @@
+[
+  {
+    "level": 2,
+    "phases": [
+      {
+        "label": "water guard, fire stages courier",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 10,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 21
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 2,
+            "y_less": 550,
+            "timeout": 200
+          },
+          {
+            "kind": "go",
+            "x": 15,
+            "y": 16
+          }
+        ]
+      },
+      {
+        "label": "courier delivers behind A",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 22
+          },
+          {
+            "kind": "wait",
+            "frames": 30
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "guard released by B",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 23,
+            "y": 21
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "cross acid",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 21
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400,
+            "range": 75
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1060,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 34,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 21
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 21
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400,
+            "range": 75
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1060,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "water and exits",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 37.5,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 43,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 46,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 49,
+            "y": 19
+          },
+          {
+            "kind": "go",
+            "x": 50,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 39,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 43,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 47,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 20
+          }
+        ]
+      }
+    ]
+  }
+]

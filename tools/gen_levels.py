@@ -59,7 +59,10 @@ SOLID_CHARS = "#="
 FLUID_CHARS = {"^": "lava", "~": "water", "*": "acid"}
 
 
-# ---------------------------------------------------------------- 三星时间门槛
+# ---------------------------------------------------------------- 历史三星时间门槛
+# 以下 BASE_TIMES / par_for 只记录改造前设计来源。2026-10-03 改造后的
+# 最终目标由 tools/enrichment/level_*.py 指定，基于新按键回放增加真人沟通余量。
+# 见 docs/enrichment_2026-10-03.md；RATING_VERSION 已提升至 4。
 # 保留现有数值作为暂定的真人难度目标，不把历史「普通最快用时 × 1.20」
 # 冒充「全宝石最快」标定。下面的系数和 BASE_TIMES 只保留原目标的计算来源。
 # 历史来源：作者 2026-09-12 的 progress.cfg；第 4、10 关另含设计估值。
@@ -1011,6 +1014,20 @@ for _i, _lv in enumerate(LEVELS):
     _lv["revision"] = LEVEL_REVISION.get(_i + 1, 1)
 
 
+# Enrichment stages are separate, reviewable source modules. Every module is part
+# of the generator; levels.gd remains generated, never hand-edited.
+from pathlib import Path
+import importlib.util
+ENRICHED_LEVELS = set()
+for _source in sorted((Path(__file__).parent / "enrichment").glob("level_??.py")):
+    _number = int(_source.stem[-2:])
+    _spec = importlib.util.spec_from_file_location(_source.stem, _source)
+    _module = importlib.util.module_from_spec(_spec)
+    _spec.loader.exec_module(_module)
+    LEVELS[_number - 1] = _module.build(Grid, LEVELS[_number - 1])
+    ENRICHED_LEVELS.add(_number)
+
+
 # ============================================================ 可达性校验
 def immune_to(element, kind):
     if kind == "acid":
@@ -1217,6 +1234,31 @@ def box_reachable(grid, objects, box_cell, player_reach, active):
     这里直接**不加入** seen（由 validate() 再单独判致命/警告，见 box_drop_* 规则）。
     """
     W = len(grid[0])
+    # MovingPlatform carries PushBox through the same rider detector as players.
+    # Model endpoint decks and a swept-clear transport edge, never teleport boxes.
+    decks = set()
+    carries = {}
+    for platform in objects:
+        if platform.get("type") != "moving_platform" or not channel_active(platform, active):
+            continue
+        ax, ay = platform["from"]; bx, by = platform["to"]
+        width = int(platform.get("width", 3))
+        for offset in range(width):
+            aa, bb = (ax + offset, ay), (bx + offset, by)
+            decks.update((aa, bb))
+            steps = max(abs(bx - ax), abs(by - ay), 1)
+            clear = all(not _solid_at(grid, round(aa[0] + (bb[0] - aa[0]) * i / steps),
+                                      round(aa[1] + (bb[1] - aa[1]) * i / steps) - 1)
+                        and not _door_blocks(objects, round(aa[0] + (bb[0] - aa[0]) * i / steps),
+                                             round(aa[1] + (bb[1] - aa[1]) * i / steps) - 1, active)
+                        for i in range(steps + 1))
+            if clear:
+                carries.setdefault(aa, set()).add(bb)
+                carries.setdefault(bb, set()).add(aa)
+    def exposed(c, row):
+        return _exposed_surface(grid, objects, c, row, active) or (
+            (c, row) in decks and not _solid_at(grid, c, row - 1)
+            and not _door_blocks(objects, c, row - 1, active))
     c0 = box_cell[0]
     # 木箱受重力，落在它下方第一个实心格上
     s0 = None
@@ -1231,16 +1273,20 @@ def box_reachable(grid, objects, box_cell, player_reach, active):
     q = deque([(c0, s0)])
     while q:
         c, s = q.popleft()
+        for endpoint in carries.get((c, s), ()):
+            if endpoint not in seen:
+                seen.add(endpoint)
+                q.append(endpoint)
         for dc in (-1, 1):
             nc = c + dc
             if not (0 <= nc < W):
                 continue
             # 目标列必须在同一高度有落脚面，且头顶净空
-            if _exposed_surface(grid, objects, nc, s, active):
+            if exposed(nc, s):
                 behind = c - dc
                 if not (0 <= behind < W):
                     continue
-                if not _exposed_surface(grid, objects, behind, s, active):
+                if not exposed(behind, s):
                     continue
                 if (behind, s) not in player_reach:
                     continue
@@ -1252,7 +1298,7 @@ def box_reachable(grid, objects, box_cell, player_reach, active):
             behind = c - dc
             if not (0 <= behind < W):
                 continue
-            if not _exposed_surface(grid, objects, behind, s, active):
+            if not exposed(behind, s):
                 continue
             if (behind, s) not in player_reach:
                 continue
@@ -1353,6 +1399,12 @@ def double_plate_solvable(grid, objects, cells, fire, water, active):
     return False
 
 
+def plate_surfaces(plate):
+    """Supported floor cells covered by a one-cell or wide receiving plate."""
+    x, y = plate["cell"]
+    return {(x + dx, y + 1) for dx in range(max(int(plate.get("width", 1)), 1))}
+
+
 def solve_channels(grid, objects):
     """求「哪些 channel 最终能被激活」，返回 (active, 未解开的依赖列表)。
 
@@ -1396,12 +1448,12 @@ def solve_channels(grid, objects):
             if o.get("type") != "plate" or o.get("channel") in active:
                 continue
             px, py = o["cell"]
-            target = (px, py + 1)
+            targets = plate_surfaces(o)
             both = fire | water
             for b in objects:
                 if b.get("type") != "box":
                     continue
-                if target in box_reachable(grid, objects, b["cell"], both, active):
+                if targets & box_reachable(grid, objects, b["cell"], both, active):
                     active.add(o["channel"])
                     grew = True
                     break
@@ -1413,11 +1465,19 @@ def solve_channels(grid, objects):
             px, py = o["cell"]
             for pinner, explorer in (("fire", "water"), ("water", "fire")):
                 held = fire if pinner == "fire" else water
-                if (px, py + 1) not in held:
+                if not (plate_surfaces(o) & held):
                     continue
                 tmp = active | {o["channel"]}
                 after = compute_reach(grid, objects, explorer, tmp)
                 before = fire if explorer == "fire" else water
+                # A held gate can let the explorer deliver a box back onto a plate.
+                # The keeper's reachable set must not act as a second courier.
+                for box in (b for b in objects if b.get("type") == "box"):
+                    delivered = box_reachable(grid, objects, box["cell"], after, tmp)
+                    for plate in (p for p in objects if p.get("type") == "plate"):
+                        if plate_surfaces(plate) & delivered and plate["channel"] not in active:
+                            active.add(plate["channel"])
+                            grew = True
                 for l in objects:
                     if l.get("type") != "lever" or l.get("channel") in active:
                         continue
@@ -1562,6 +1622,13 @@ def _can_move(blocked, virtual, x, y, nx, ny, d):
     # 跨沟：上升不能超过跳跃高度（井里已按竖井上限卡过）
     if rise > MAX_JUMP_UP_CELLS:
         return False
+    # A descending jump cannot land under a solid shelf by falling through it.
+    # Check the destination-column descent as well as the launch arc below.
+    if rise < 0:
+        for row in range(y - 1, ny):
+            if 0 <= row < H and blocked[row][nx]:
+                return False
+
     # 跳跃弧线经过的头顶几格必须净空（注意不含起跳行本身 —— 那正是要跨过去的坑）
     lo, hi = (x, nx) if x < nx else (nx, x)
     for cx in range(lo + 1, hi):
@@ -1645,7 +1712,7 @@ def solve_endgame(grid, objects, base_active, exits):
                 continue
             px, py = p["cell"]
             r = reach_f if who == "fire" else reach_w
-            if (px, py + 1) not in r:
+            if not (plate_surfaces(p) & r):
                 ok = False
                 break
         if not ok:
@@ -1720,6 +1787,12 @@ def validate(lv, index):
         if n != 1:
             errs.append("%s: %s 出现 %d 次（应为 1 次）" % (tag, label, n))
 
+    for plate in (o for o in objects if o.get("type") == "plate"):
+        width = int(plate.get("width", 1))
+        x, y = plate["cell"]
+        if width < 1 or x < 0 or x + width > W or y < 0 or y >= H:
+            errs.append("%s: 【致命】压力板宽度或位置越界" % tag)
+
     def find(ch):
         for y, line in enumerate(grid):
             x = line.find(ch)
@@ -1751,6 +1824,16 @@ def validate(lv, index):
     # 注意：即使终局不成立也不能提前 return —— 后面的池深、宝石检查
     # 必须照样跑完。否则会出现「关卡因为别的原因挂了，池深超标反而被漏掉」。
     plan, note = solve_endgame(grid, objects, active, exits)
+    # Sequential keeper exchanges need actor positions retained across gate closes.
+    # This is a bounded checkpoint-state search, not an allowlist or error suppression.
+    if plan is None:
+        from enrichment.relay_validator import solve as solve_relay
+        relay = solve_relay(grid, objects, globals())
+        if relay is not None:
+            active, plan = relay["active"], relay["plan"]
+            note = None
+            print("      （连续接力状态搜索通过：%d 个状态）" % relay["states"])
+
     if note:
         errs.append("%s: 【致命】%s" % (tag, note))
         plan = None
@@ -2593,7 +2676,7 @@ class_name Levels
 ##        ^ 岩浆（火娃安全）  ~ 水潭（水娃安全）  * 毒液（都致命）
 ##
 ## 本文件由 tools/gen_levels.py 生成并校验，但生成结果就是普通 GDScript，
-## 之后可直接手工编辑 —— 改完重跑生成器会覆盖，请注意。
+## 修改源生成器及 tools/enrichment/level_*.py 后重新生成；不要手改此文件。
 
 const CELL := 32
 static var _cache: Array = []
@@ -2623,6 +2706,8 @@ def emit_level(fn_name, lv):
     out.append('\t\t"par_time": %s,\n' % lv.get("par_time", 0.0))
     # 内容修订号必须一起输出：游戏靠它判断存档里该关的旧成绩还成不成立。
     out.append('\t\t"revision": %d,\n' % int(lv.get("revision", 1)))
+    if "camera_margin" in lv:
+        out.append('\t\t"camera_margin": %s,\n' % lv["camera_margin"])
     out.append('\t\t"grid": [\n')
     for r in lv["grid"]:
         out.append('\t\t\t"%s",\n' % r)
@@ -2657,7 +2742,7 @@ def main():
         all_errs.extend(e)
         # 基准是外推值的关必须标出来，否则它会安静地混进「实测」里 ——
         # 这正是上一轮「作者更快了却没人回去重算」的成因。
-        est = "  ⚠ 基准为估值" if (i + 1) in BASE_TIMES_ESTIMATED else ""
+        est = "  新回放校准的暂定真人目标" if (i + 1) in ENRICHED_LEVELS else ("  ⚠ 基准为估值" if (i + 1) in BASE_TIMES_ESTIMATED else "")
         print("%-14s %dx%d  对象 %2d 个  三星≤%2.0fs  %s%s"
               % (lv["name"], len(lv["grid"][0]), len(lv["grid"]),
                  len(lv["objects"]), float(lv.get("par_time", 0.0)),

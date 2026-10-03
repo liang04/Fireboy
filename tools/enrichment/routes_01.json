@@ -1,0 +1,133 @@
+[
+  {
+    "level": 1,
+    "phases": [
+      {
+        "label": "first pool",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 14,
+            "y": 21
+          },
+          {
+            "kind": "swim",
+            "x": 16,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 16,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "second pool",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 26,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 31,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 32,
+            "y": 17
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 28,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 21
+          },
+          {
+            "kind": "swim",
+            "x": 31,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "fire keeps A on the lava bridge",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 35,
+            "y": 15
+          },
+          {
+            "kind": "go",
+            "x": 39,
+            "y": 16
+          },
+          {
+            "kind": "swim",
+            "x": 46,
+            "y": 15
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "water returns B",
+        "fire": [],
+        "water": [
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 19
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "kind": "go",
+            "x": 47,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "join exits",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 50,
+            "y": 15
+          }
+        ],
+        "water": []
+      }
+    ]
+  }
+]

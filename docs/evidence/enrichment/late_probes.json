@@ -1,0 +1,3357 @@
+{
+  "engine": "4.6.3-stable (official)",
+  "physics_hz": 60,
+  "runs": [
+    {
+      "assertions": [
+        {
+          "actual": 240,
+          "expected": 240,
+          "field": "input_tape_fully_consumed",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "completed",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "box_resets",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "channels.H",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "channels.A",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 465.997924804688,
+          "expected": 466.0,
+          "field": "boxes.0.x",
+          "op": "lte",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "deaths",
+          "op": "eq",
+          "passed": true
+        }
+      ],
+      "channel_events": [
+        {
+          "channels": {
+            "A": false,
+            "H": false
+          },
+          "frame": 0
+        }
+      ],
+      "frames": 240,
+      "input_tape": [
+        {
+          "frames": 240,
+          "mask": 2
+        }
+      ],
+      "level": 10.0,
+      "passed": true,
+      "probe": "L10_idle_holder_blocks_delivery",
+      "reason": "input tape exhausted before completion",
+      "snapshot": {
+        "blue": 1,
+        "box_resets": 0,
+        "boxes": [
+          {
+            "x": 465.997924804688,
+            "y": 369.998229980469
+          }
+        ],
+        "channels": {
+          "A": false,
+          "H": false
+        },
+        "completed": false,
+        "deaths": 0,
+        "ever_on": {
+          "A": false,
+          "H": false
+        },
+        "levers": {},
+        "max_y": {
+          "fire": 370.0,
+          "water": 370.0
+        },
+        "players": {
+          "fire": {
+            "alive": true,
+            "x": 442.99267578125,
+            "y": 369.998352050781
+          },
+          "water": {
+            "alive": true,
+            "x": 944.0,
+            "y": 370.0
+          }
+        },
+        "red": 1
+      },
+      "verification": "Fresh Level; inherited Input-only controller; read-only observations"
+    },
+    {
+      "assertions": [
+        {
+          "actual": 446,
+          "expected": 446,
+          "field": "input_tape_fully_consumed",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "completed",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "box_resets",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "field": "channels.H",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "channels.A",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 400.0,
+          "expected": 399.0,
+          "field": "boxes.0.x",
+          "op": "gte",
+          "passed": true
+        },
+        {
+          "actual": 400.0,
+          "expected": 401.0,
+          "field": "boxes.0.x",
+          "op": "lte",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "deaths",
+          "op": "eq",
+          "passed": true
+        }
+      ],
+      "channel_events": [
+        {
+          "channels": {
+            "A": false,
+            "H": false
+          },
+          "frame": 0
+        },
+        {
+          "channels": {
+            "A": false,
+            "H": true
+          },
+          "frame": 136
+        }
+      ],
+      "frames": 446,
+      "input_tape": [
+        {
+          "frames": 1,
+          "mask": 18
+        },
+        {
+          "frames": 8,
+          "mask": 82
+        },
+        {
+          "frames": 8,
+          "mask": 80
+        },
+        {
+          "frames": 24,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 17,
+          "mask": 80
+        },
+        {
+          "frames": 23,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 17,
+          "mask": 80
+        },
+        {
+          "frames": 23,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 16,
+          "mask": 16
+        },
+        {
+          "frames": 306,
+          "mask": 0
+        }
+      ],
+      "level": 10.0,
+      "passed": true,
+      "probe": "L10_idle_pusher_leaves_return_paths_closed",
+      "reason": "input tape exhausted before completion",
+      "snapshot": {
+        "blue": 2,
+        "box_resets": 0,
+        "boxes": [
+          {
+            "x": 400.0,
+            "y": 369.99609375
+          }
+        ],
+        "channels": {
+          "A": false,
+          "H": true
+        },
+        "completed": false,
+        "deaths": 0,
+        "ever_on": {
+          "A": false,
+          "H": true
+        },
+        "levers": {},
+        "max_y": {
+          "fire": 370.0,
+          "water": 370.0
+        },
+        "players": {
+          "fire": {
+            "alive": true,
+            "x": 369.222229003906,
+            "y": 369.925262451172
+          },
+          "water": {
+            "alive": true,
+            "x": 685.888000488281,
+            "y": 177.925247192383
+          }
+        },
+        "red": 1
+      },
+      "verification": "Fresh Level; inherited Input-only controller; read-only observations"
+    },
+    {
+      "assertions": [
+        {
+          "actual": 441,
+          "expected": 441,
+          "field": "input_tape_fully_consumed",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "completed",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "box_resets",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "field": "ever_on.H",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "channels.H",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "channels.A",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 465.999816894531,
+          "expected": 466.0,
+          "field": "boxes.0.x",
+          "op": "lte",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "deaths",
+          "op": "eq",
+          "passed": true
+        }
+      ],
+      "channel_events": [
+        {
+          "channels": {
+            "A": false,
+            "H": false
+          },
+          "frame": 0
+        },
+        {
+          "channels": {
+            "A": false,
+            "H": true
+          },
+          "frame": 136
+        },
+        {
+          "channels": {
+            "A": false,
+            "H": false
+          },
+          "frame": 191
+        }
+      ],
+      "frames": 441,
+      "input_tape": [
+        {
+          "frames": 1,
+          "mask": 18
+        },
+        {
+          "frames": 8,
+          "mask": 82
+        },
+        {
+          "frames": 8,
+          "mask": 80
+        },
+        {
+          "frames": 24,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 17,
+          "mask": 80
+        },
+        {
+          "frames": 23,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 17,
+          "mask": 80
+        },
+        {
+          "frames": 23,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 16,
+          "mask": 16
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 38,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 17,
+          "mask": 32
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 240,
+          "mask": 2
+        }
+      ],
+      "level": 10.0,
+      "passed": true,
+      "probe": "L10_early_departure_closes_delivery_gate",
+      "reason": "input tape exhausted before completion",
+      "snapshot": {
+        "blue": 2,
+        "box_resets": 0,
+        "boxes": [
+          {
+            "x": 465.999816894531,
+            "y": 369.998565673828
+          }
+        ],
+        "channels": {
+          "A": false,
+          "H": false
+        },
+        "completed": false,
+        "deaths": 0,
+        "ever_on": {
+          "A": false,
+          "H": true
+        },
+        "levers": {},
+        "max_y": {
+          "fire": 370.0,
+          "water": 370.0
+        },
+        "players": {
+          "fire": {
+            "alive": true,
+            "x": 442.992492675781,
+            "y": 369.980255126953
+          },
+          "water": {
+            "alive": true,
+            "x": 752.888061523438,
+            "y": 177.925247192383
+          }
+        },
+        "red": 1
+      },
+      "verification": "Fresh Level; inherited Input-only controller; read-only observations"
+    },
+    {
+      "assertions": [
+        {
+          "actual": 273,
+          "expected": 273,
+          "field": "input_tape_fully_consumed",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "completed",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "box_resets",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 593.97998046875,
+          "expected": 580.0,
+          "field": "max_y.water",
+          "op": "gte",
+          "passed": true
+        },
+        {
+          "actual": 177.974731445312,
+          "expected": 190.0,
+          "field": "players.water.y",
+          "op": "lte",
+          "passed": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "field": "players.water.alive",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "ever_on.H",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "channels.A",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "deaths",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 400.0,
+          "expected": 410.0,
+          "field": "boxes.0.x",
+          "op": "lte",
+          "passed": true
+        }
+      ],
+      "channel_events": [
+        {
+          "channels": {
+            "A": false,
+            "H": false
+          },
+          "frame": 0
+        },
+        {
+          "channels": {
+            "A": true,
+            "H": false
+          },
+          "frame": 106
+        },
+        {
+          "channels": {
+            "A": false,
+            "H": false
+          },
+          "frame": 113
+        }
+      ],
+      "frames": 273,
+      "input_tape": [
+        {
+          "frames": 73,
+          "mask": 16
+        },
+        {
+          "frames": 33,
+          "mask": 0
+        },
+        {
+          "frames": 5,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 33,
+          "mask": 32
+        },
+        {
+          "frames": 128,
+          "mask": 0
+        }
+      ],
+      "level": 10.0,
+      "passed": true,
+      "probe": "L10_fall_rescue_without_delivered_box_or_powered_return_gate",
+      "reason": "input tape exhausted before completion",
+      "snapshot": {
+        "blue": 1,
+        "box_resets": 0,
+        "boxes": [
+          {
+            "x": 400.0,
+            "y": 369.99609375
+          }
+        ],
+        "channels": {
+          "A": false,
+          "H": false
+        },
+        "completed": false,
+        "deaths": 0,
+        "ever_on": {
+          "A": true,
+          "H": false
+        },
+        "levers": {},
+        "max_y": {
+          "fire": 370.0,
+          "water": 593.97998046875
+        },
+        "players": {
+          "fire": {
+            "alive": true,
+            "x": 336.0,
+            "y": 370.0
+          },
+          "water": {
+            "alive": true,
+            "x": 755.0,
+            "y": 177.974731445312
+          }
+        },
+        "red": 0
+      },
+      "verification": "Fresh Level; inherited Input-only controller; read-only observations"
+    },
+    {
+      "assertions": [
+        {
+          "actual": 321,
+          "expected": 321,
+          "field": "input_tape_fully_consumed",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "completed",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "box_resets",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "field": "ever_on.A",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "channels.A",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 369.99609375,
+          "expected": 370.0,
+          "field": "boxes.0.y",
+          "op": "lte",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "deaths",
+          "op": "eq",
+          "passed": true
+        }
+      ],
+      "channel_events": [
+        {
+          "channels": {
+            "A": false,
+            "H": false
+          },
+          "frame": 0
+        },
+        {
+          "channels": {
+            "A": true,
+            "H": false
+          },
+          "frame": 106
+        },
+        {
+          "channels": {
+            "A": false,
+            "H": false
+          },
+          "frame": 161
+        }
+      ],
+      "frames": 321,
+      "input_tape": [
+        {
+          "frames": 105,
+          "mask": 16
+        },
+        {
+          "frames": 32,
+          "mask": 0
+        },
+        {
+          "frames": 22,
+          "mask": 32
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 33,
+          "mask": 32
+        },
+        {
+          "frames": 128,
+          "mask": 0
+        }
+      ],
+      "level": 10.0,
+      "passed": true,
+      "probe": "L10_person_on_delivery_plate_cannot_leave_it_latched",
+      "reason": "input tape exhausted before completion",
+      "snapshot": {
+        "blue": 1,
+        "box_resets": 0,
+        "boxes": [
+          {
+            "x": 400.0,
+            "y": 369.99609375
+          }
+        ],
+        "channels": {
+          "A": false,
+          "H": false
+        },
+        "completed": false,
+        "deaths": 0,
+        "ever_on": {
+          "A": true,
+          "H": false
+        },
+        "levers": {},
+        "max_y": {
+          "fire": 370.0,
+          "water": 593.925231933594
+        },
+        "players": {
+          "fire": {
+            "alive": true,
+            "x": 336.0,
+            "y": 370.0
+          },
+          "water": {
+            "alive": true,
+            "x": 755.0,
+            "y": 177.974731445312
+          }
+        },
+        "red": 0
+      },
+      "verification": "Fresh Level; inherited Input-only controller; read-only observations"
+    },
+    {
+      "assertions": [
+        {
+          "actual": 673,
+          "expected": 673,
+          "field": "input_tape_fully_consumed",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "completed",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "box_resets",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "channels.H",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "field": "channels.A",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 593.998229980469,
+          "expected": 590.0,
+          "field": "boxes.0.y",
+          "op": "gte",
+          "passed": true
+        },
+        {
+          "actual": 526.002014160156,
+          "expected": 526.0,
+          "field": "boxes.0.x",
+          "op": "gte",
+          "passed": true
+        },
+        {
+          "actual": 526.002014160156,
+          "expected": 532.0,
+          "field": "boxes.0.x",
+          "op": "lte",
+          "passed": true
+        },
+        {
+          "actual": 593.998229980469,
+          "expected": 580.0,
+          "field": "max_y.water",
+          "op": "gte",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "deaths",
+          "op": "eq",
+          "passed": true
+        }
+      ],
+      "channel_events": [
+        {
+          "channels": {
+            "A": false,
+            "H": false
+          },
+          "frame": 0
+        },
+        {
+          "channels": {
+            "A": false,
+            "H": true
+          },
+          "frame": 136
+        },
+        {
+          "channels": {
+            "A": true,
+            "H": true
+          },
+          "frame": 256
+        },
+        {
+          "channels": {
+            "A": true,
+            "H": false
+          },
+          "frame": 308
+        }
+      ],
+      "frames": 673,
+      "input_tape": [
+        {
+          "frames": 1,
+          "mask": 18
+        },
+        {
+          "frames": 8,
+          "mask": 82
+        },
+        {
+          "frames": 8,
+          "mask": 80
+        },
+        {
+          "frames": 24,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 17,
+          "mask": 80
+        },
+        {
+          "frames": 23,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 17,
+          "mask": 80
+        },
+        {
+          "frames": 23,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 16,
+          "mask": 16
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 79,
+          "mask": 2
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 14,
+          "mask": 1
+        },
+        {
+          "frames": 63,
+          "mask": 0
+        },
+        {
+          "frames": 25,
+          "mask": 32
+        },
+        {
+          "frames": 17,
+          "mask": 0
+        },
+        {
+          "frames": 41,
+          "mask": 32
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 92,
+          "mask": 16
+        },
+        {
+          "frames": 18,
+          "mask": 0
+        },
+        {
+          "frames": 180,
+          "mask": 16
+        }
+      ],
+      "level": 10.0,
+      "passed": true,
+      "probe": "L10_delivered_box_cannot_climb_well_wall",
+      "reason": "input tape exhausted before completion",
+      "snapshot": {
+        "blue": 2,
+        "box_resets": 0,
+        "boxes": [
+          {
+            "x": 526.002014160156,
+            "y": 593.998229980469
+          }
+        ],
+        "channels": {
+          "A": true,
+          "H": false
+        },
+        "completed": false,
+        "deaths": 0,
+        "ever_on": {
+          "A": true,
+          "H": true
+        },
+        "levers": {},
+        "max_y": {
+          "fire": 370.0,
+          "water": 593.998229980469
+        },
+        "players": {
+          "fire": {
+            "alive": true,
+            "x": 460.250366210938,
+            "y": 369.925262451172
+          },
+          "water": {
+            "alive": true,
+            "x": 549.016174316406,
+            "y": 593.998229980469
+          }
+        },
+        "red": 1
+      },
+      "verification": "Fresh Level; inherited Input-only controller; read-only observations"
+    },
+    {
+      "assertions": [
+        {
+          "actual": 240,
+          "expected": 240,
+          "field": "input_tape_fully_consumed",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "completed",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "box_resets",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "channels.A",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 1014.92529296875,
+          "expected": 1016.0,
+          "field": "players.water.x",
+          "op": "lte",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "deaths",
+          "op": "eq",
+          "passed": true
+        }
+      ],
+      "channel_events": [
+        {
+          "channels": {
+            "A": false,
+            "H": false
+          },
+          "frame": 0
+        }
+      ],
+      "frames": 240,
+      "input_tape": [
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 49,
+          "mask": 96
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 48,
+          "mask": 96
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 48,
+          "mask": 96
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 48,
+          "mask": 96
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 42,
+          "mask": 96
+        }
+      ],
+      "level": 10.0,
+      "passed": true,
+      "probe": "L10_return_gate_jump_shortcut_is_blocked",
+      "reason": "input tape exhausted before completion",
+      "snapshot": {
+        "blue": 1,
+        "box_resets": 0,
+        "boxes": [
+          {
+            "x": 400.0,
+            "y": 369.99609375
+          }
+        ],
+        "channels": {
+          "A": false,
+          "H": false
+        },
+        "completed": false,
+        "deaths": 0,
+        "ever_on": {
+          "A": false,
+          "H": false
+        },
+        "levers": {},
+        "max_y": {
+          "fire": 370.0,
+          "water": 370.0
+        },
+        "players": {
+          "fire": {
+            "alive": true,
+            "x": 336.0,
+            "y": 370.0
+          },
+          "water": {
+            "alive": true,
+            "x": 1014.92529296875,
+            "y": 322.164947509766
+          }
+        },
+        "red": 0
+      },
+      "verification": "Fresh Level; inherited Input-only controller; read-only observations"
+    },
+    {
+      "assertions": [
+        {
+          "actual": 1664,
+          "expected": 1664,
+          "field": "input_tape_fully_consumed",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "completed",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "box_resets",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "field": "levers.M",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "field": "levers.R",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "levers.B",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "channels.B",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 2345.001953125,
+          "expected": 2338.0,
+          "field": "players.fire.x",
+          "op": "gte",
+          "passed": true
+        },
+        {
+          "actual": 177.998336791992,
+          "expected": 190.0,
+          "field": "players.fire.y",
+          "op": "lte",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "deaths",
+          "op": "eq",
+          "passed": true
+        }
+      ],
+      "channel_events": [
+        {
+          "channels": {
+            "A": false,
+            "B": false,
+            "M": false,
+            "R": false
+          },
+          "frame": 0
+        },
+        {
+          "channels": {
+            "A": true,
+            "B": false,
+            "M": false,
+            "R": false
+          },
+          "frame": 111
+        },
+        {
+          "channels": {
+            "A": true,
+            "B": false,
+            "M": true,
+            "R": false
+          },
+          "frame": 719
+        },
+        {
+          "channels": {
+            "A": true,
+            "B": false,
+            "M": true,
+            "R": true
+          },
+          "frame": 822
+        }
+      ],
+      "frames": 1664,
+      "input_tape": [
+        {
+          "frames": 41,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 17,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 49,
+          "mask": 98
+        },
+        {
+          "frames": 1,
+          "mask": 34
+        },
+        {
+          "frames": 2,
+          "mask": 98
+        },
+        {
+          "frames": 14,
+          "mask": 66
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 26,
+          "mask": 70
+        },
+        {
+          "frames": 6,
+          "mask": 68
+        },
+        {
+          "frames": 17,
+          "mask": 4
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 48,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 147,
+          "mask": 0
+        },
+        {
+          "frames": 2,
+          "mask": 64
+        },
+        {
+          "frames": 8,
+          "mask": 68
+        },
+        {
+          "frames": 2,
+          "mask": 100
+        },
+        {
+          "frames": 17,
+          "mask": 102
+        },
+        {
+          "frames": 2,
+          "mask": 70
+        },
+        {
+          "frames": 2,
+          "mask": 84
+        },
+        {
+          "frames": 7,
+          "mask": 85
+        },
+        {
+          "frames": 2,
+          "mask": 5
+        },
+        {
+          "frames": 215,
+          "mask": 0
+        },
+        {
+          "frames": 16,
+          "mask": 34
+        },
+        {
+          "frames": 10,
+          "mask": 32
+        },
+        {
+          "frames": 7,
+          "mask": 33
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 6,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 23,
+          "mask": 34
+        },
+        {
+          "frames": 20,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 8
+        },
+        {
+          "frames": 4,
+          "mask": 0
+        },
+        {
+          "frames": 96,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 8
+        },
+        {
+          "frames": 3,
+          "mask": 0
+        },
+        {
+          "frames": 184,
+          "mask": 2
+        },
+        {
+          "frames": 181,
+          "mask": 0
+        },
+        {
+          "frames": 12,
+          "mask": 4
+        },
+        {
+          "frames": 18,
+          "mask": 6
+        },
+        {
+          "frames": 4,
+          "mask": 4
+        },
+        {
+          "frames": 156,
+          "mask": 0
+        },
+        {
+          "frames": 26,
+          "mask": 5
+        },
+        {
+          "frames": 18,
+          "mask": 4
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 240,
+          "mask": 1
+        }
+      ],
+      "level": 9.0,
+      "passed": true,
+      "probe": "L9_missing_water_repair_blocks_fire_roof_approach",
+      "reason": "input tape exhausted before completion",
+      "snapshot": {
+        "blue": 2,
+        "box_resets": 0,
+        "boxes": [
+          {
+            "x": 504.584320068359,
+            "y": 657.924011230469
+          }
+        ],
+        "channels": {
+          "A": true,
+          "B": false,
+          "M": true,
+          "R": true
+        },
+        "completed": false,
+        "deaths": 0,
+        "ever_on": {
+          "A": true,
+          "B": false,
+          "M": true,
+          "R": true
+        },
+        "levers": {
+          "B": false,
+          "M": true,
+          "R": true
+        },
+        "max_y": {
+          "fire": 658.0,
+          "water": 658.0
+        },
+        "players": {
+          "fire": {
+            "alive": true,
+            "x": 2345.001953125,
+            "y": 177.998336791992
+          },
+          "water": {
+            "alive": true,
+            "x": 1329.50402832031,
+            "y": 657.925231933594
+          }
+        },
+        "red": 4
+      },
+      "verification": "Fresh Level; inherited Input-only controller; read-only observations"
+    },
+    {
+      "assertions": [
+        {
+          "actual": 1660,
+          "expected": 1660,
+          "field": "input_tape_fully_consumed",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "completed",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "box_resets",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "field": "levers.M",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "levers.R",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "field": "levers.B",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "channels.R",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 2134.99829101562,
+          "expected": 2136.0,
+          "field": "players.water.x",
+          "op": "lte",
+          "passed": true
+        },
+        {
+          "actual": 177.98828125,
+          "expected": 190.0,
+          "field": "players.water.y",
+          "op": "lte",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "deaths",
+          "op": "eq",
+          "passed": true
+        }
+      ],
+      "channel_events": [
+        {
+          "channels": {
+            "A": false,
+            "B": false,
+            "M": false,
+            "R": false
+          },
+          "frame": 0
+        },
+        {
+          "channels": {
+            "A": true,
+            "B": false,
+            "M": false,
+            "R": false
+          },
+          "frame": 111
+        },
+        {
+          "channels": {
+            "A": true,
+            "B": false,
+            "M": true,
+            "R": false
+          },
+          "frame": 719
+        },
+        {
+          "channels": {
+            "A": true,
+            "B": true,
+            "M": true,
+            "R": false
+          },
+          "frame": 1134
+        }
+      ],
+      "frames": 1660,
+      "input_tape": [
+        {
+          "frames": 41,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 17,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 49,
+          "mask": 98
+        },
+        {
+          "frames": 1,
+          "mask": 34
+        },
+        {
+          "frames": 2,
+          "mask": 98
+        },
+        {
+          "frames": 14,
+          "mask": 66
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 26,
+          "mask": 70
+        },
+        {
+          "frames": 6,
+          "mask": 68
+        },
+        {
+          "frames": 17,
+          "mask": 4
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 48,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 147,
+          "mask": 0
+        },
+        {
+          "frames": 2,
+          "mask": 64
+        },
+        {
+          "frames": 8,
+          "mask": 68
+        },
+        {
+          "frames": 2,
+          "mask": 100
+        },
+        {
+          "frames": 17,
+          "mask": 102
+        },
+        {
+          "frames": 2,
+          "mask": 70
+        },
+        {
+          "frames": 2,
+          "mask": 84
+        },
+        {
+          "frames": 7,
+          "mask": 85
+        },
+        {
+          "frames": 2,
+          "mask": 5
+        },
+        {
+          "frames": 215,
+          "mask": 0
+        },
+        {
+          "frames": 16,
+          "mask": 34
+        },
+        {
+          "frames": 10,
+          "mask": 32
+        },
+        {
+          "frames": 7,
+          "mask": 33
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 6,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 23,
+          "mask": 34
+        },
+        {
+          "frames": 20,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 8
+        },
+        {
+          "frames": 4,
+          "mask": 0
+        },
+        {
+          "frames": 9,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 49,
+          "mask": 64
+        },
+        {
+          "frames": 128,
+          "mask": 0
+        },
+        {
+          "frames": 12,
+          "mask": 64
+        },
+        {
+          "frames": 19,
+          "mask": 96
+        },
+        {
+          "frames": 5,
+          "mask": 64
+        },
+        {
+          "frames": 80,
+          "mask": 0
+        },
+        {
+          "frames": 32,
+          "mask": 96
+        },
+        {
+          "frames": 15,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 57,
+          "mask": 32
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 128
+        },
+        {
+          "frames": 3,
+          "mask": 0
+        },
+        {
+          "frames": 48,
+          "mask": 32
+        },
+        {
+          "frames": 105,
+          "mask": 0
+        },
+        {
+          "frames": 13,
+          "mask": 64
+        },
+        {
+          "frames": 18,
+          "mask": 96
+        },
+        {
+          "frames": 5,
+          "mask": 64
+        },
+        {
+          "frames": 50,
+          "mask": 0
+        },
+        {
+          "frames": 24,
+          "mask": 96
+        },
+        {
+          "frames": 20,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 240,
+          "mask": 32
+        }
+      ],
+      "level": 9.0,
+      "passed": true,
+      "probe": "L9_missing_fire_repair_blocks_water_roof_approach",
+      "reason": "input tape exhausted before completion",
+      "snapshot": {
+        "blue": 4,
+        "box_resets": 0,
+        "boxes": [
+          {
+            "x": 504.584320068359,
+            "y": 657.924011230469
+          }
+        ],
+        "channels": {
+          "A": true,
+          "B": true,
+          "M": true,
+          "R": false
+        },
+        "completed": false,
+        "deaths": 0,
+        "ever_on": {
+          "A": true,
+          "B": true,
+          "M": true,
+          "R": false
+        },
+        "levers": {
+          "B": true,
+          "M": true,
+          "R": false
+        },
+        "max_y": {
+          "fire": 658.0,
+          "water": 658.0
+        },
+        "players": {
+          "fire": {
+            "alive": true,
+            "x": 1331.31884765625,
+            "y": 657.925231933594
+          },
+          "water": {
+            "alive": true,
+            "x": 2134.99829101562,
+            "y": 177.98828125
+          }
+        },
+        "red": 2
+      },
+      "verification": "Fresh Level; inherited Input-only controller; read-only observations"
+    },
+    {
+      "assertions": [
+        {
+          "actual": 1373,
+          "expected": 1373,
+          "field": "input_tape_fully_consumed",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "completed",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "box_resets",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "levers.R",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "levers.B",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 2,
+          "expected": 1.0,
+          "field": "deaths",
+          "op": "gte",
+          "passed": true
+        }
+      ],
+      "channel_events": [
+        {
+          "channels": {
+            "A": false,
+            "B": false,
+            "M": false,
+            "R": false
+          },
+          "frame": 0
+        },
+        {
+          "channels": {
+            "A": true,
+            "B": false,
+            "M": false,
+            "R": false
+          },
+          "frame": 111
+        },
+        {
+          "channels": {
+            "A": true,
+            "B": false,
+            "M": true,
+            "R": false
+          },
+          "frame": 719
+        },
+        {
+          "channels": {
+            "A": false,
+            "B": false,
+            "M": true,
+            "R": false
+          },
+          "frame": 1228
+        }
+      ],
+      "frames": 1373,
+      "input_tape": [
+        {
+          "frames": 41,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 17,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 49,
+          "mask": 98
+        },
+        {
+          "frames": 1,
+          "mask": 34
+        },
+        {
+          "frames": 2,
+          "mask": 98
+        },
+        {
+          "frames": 14,
+          "mask": 66
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 26,
+          "mask": 70
+        },
+        {
+          "frames": 6,
+          "mask": 68
+        },
+        {
+          "frames": 17,
+          "mask": 4
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 48,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 147,
+          "mask": 0
+        },
+        {
+          "frames": 2,
+          "mask": 64
+        },
+        {
+          "frames": 8,
+          "mask": 68
+        },
+        {
+          "frames": 2,
+          "mask": 100
+        },
+        {
+          "frames": 17,
+          "mask": 102
+        },
+        {
+          "frames": 2,
+          "mask": 70
+        },
+        {
+          "frames": 2,
+          "mask": 84
+        },
+        {
+          "frames": 7,
+          "mask": 85
+        },
+        {
+          "frames": 2,
+          "mask": 5
+        },
+        {
+          "frames": 215,
+          "mask": 0
+        },
+        {
+          "frames": 16,
+          "mask": 34
+        },
+        {
+          "frames": 10,
+          "mask": 32
+        },
+        {
+          "frames": 7,
+          "mask": 33
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 6,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 23,
+          "mask": 34
+        },
+        {
+          "frames": 20,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 8
+        },
+        {
+          "frames": 4,
+          "mask": 0
+        },
+        {
+          "frames": 10,
+          "mask": 1
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 49,
+          "mask": 4
+        },
+        {
+          "frames": 127,
+          "mask": 0
+        },
+        {
+          "frames": 12,
+          "mask": 4
+        },
+        {
+          "frames": 19,
+          "mask": 6
+        },
+        {
+          "frames": 5,
+          "mask": 4
+        },
+        {
+          "frames": 80,
+          "mask": 0
+        },
+        {
+          "frames": 33,
+          "mask": 6
+        },
+        {
+          "frames": 14,
+          "mask": 4
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 300,
+          "mask": 2
+        }
+      ],
+      "level": 9.0,
+      "passed": true,
+      "probe": "L9_fire_cannot_repair_water_tunnel",
+      "reason": "input tape exhausted before completion",
+      "snapshot": {
+        "blue": 2,
+        "box_resets": 0,
+        "boxes": [
+          {
+            "x": 593.997009277344,
+            "y": 657.998229980469
+          }
+        ],
+        "channels": {
+          "A": false,
+          "B": false,
+          "M": true,
+          "R": false
+        },
+        "completed": false,
+        "deaths": 2,
+        "ever_on": {
+          "A": true,
+          "B": false,
+          "M": true,
+          "R": false
+        },
+        "levers": {
+          "B": false,
+          "M": true,
+          "R": false
+        },
+        "max_y": {
+          "fire": 658.0,
+          "water": 658.0
+        },
+        "players": {
+          "fire": {
+            "alive": true,
+            "x": 570.990112304688,
+            "y": 657.996154785156
+          },
+          "water": {
+            "alive": true,
+            "x": 1329.50402832031,
+            "y": 657.925231933594
+          }
+        },
+        "red": 2
+      },
+      "verification": "Fresh Level; inherited Input-only controller; read-only observations"
+    },
+    {
+      "assertions": [
+        {
+          "actual": 1022,
+          "expected": 1022,
+          "field": "input_tape_fully_consumed",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "completed",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "box_resets",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "levers.R",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "levers.B",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 2,
+          "expected": 1.0,
+          "field": "deaths",
+          "op": "gte",
+          "passed": true
+        }
+      ],
+      "channel_events": [
+        {
+          "channels": {
+            "A": false,
+            "B": false,
+            "M": false,
+            "R": false
+          },
+          "frame": 0
+        },
+        {
+          "channels": {
+            "A": true,
+            "B": false,
+            "M": false,
+            "R": false
+          },
+          "frame": 111
+        },
+        {
+          "channels": {
+            "A": true,
+            "B": false,
+            "M": true,
+            "R": false
+          },
+          "frame": 719
+        },
+        {
+          "channels": {
+            "A": false,
+            "B": false,
+            "M": true,
+            "R": false
+          },
+          "frame": 893
+        }
+      ],
+      "frames": 1022,
+      "input_tape": [
+        {
+          "frames": 41,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 17,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 49,
+          "mask": 98
+        },
+        {
+          "frames": 1,
+          "mask": 34
+        },
+        {
+          "frames": 2,
+          "mask": 98
+        },
+        {
+          "frames": 14,
+          "mask": 66
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 26,
+          "mask": 70
+        },
+        {
+          "frames": 6,
+          "mask": 68
+        },
+        {
+          "frames": 17,
+          "mask": 4
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 48,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 147,
+          "mask": 0
+        },
+        {
+          "frames": 2,
+          "mask": 64
+        },
+        {
+          "frames": 8,
+          "mask": 68
+        },
+        {
+          "frames": 2,
+          "mask": 100
+        },
+        {
+          "frames": 17,
+          "mask": 102
+        },
+        {
+          "frames": 2,
+          "mask": 70
+        },
+        {
+          "frames": 2,
+          "mask": 84
+        },
+        {
+          "frames": 7,
+          "mask": 85
+        },
+        {
+          "frames": 2,
+          "mask": 5
+        },
+        {
+          "frames": 215,
+          "mask": 0
+        },
+        {
+          "frames": 16,
+          "mask": 34
+        },
+        {
+          "frames": 10,
+          "mask": 32
+        },
+        {
+          "frames": 7,
+          "mask": 33
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 6,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 23,
+          "mask": 34
+        },
+        {
+          "frames": 20,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 8
+        },
+        {
+          "frames": 4,
+          "mask": 0
+        },
+        {
+          "frames": 300,
+          "mask": 32
+        }
+      ],
+      "level": 9.0,
+      "passed": true,
+      "probe": "L9_water_cannot_repair_lava_tunnel",
+      "reason": "input tape exhausted before completion",
+      "snapshot": {
+        "blue": 2,
+        "box_resets": 0,
+        "boxes": [
+          {
+            "x": 593.997009277344,
+            "y": 657.998229980469
+          }
+        ],
+        "channels": {
+          "A": false,
+          "B": false,
+          "M": true,
+          "R": false
+        },
+        "completed": false,
+        "deaths": 2,
+        "ever_on": {
+          "A": true,
+          "B": false,
+          "M": true,
+          "R": false
+        },
+        "levers": {
+          "B": false,
+          "M": true,
+          "R": false
+        },
+        "max_y": {
+          "fire": 658.0,
+          "water": 658.0
+        },
+        "players": {
+          "fire": {
+            "alive": true,
+            "x": 1331.31884765625,
+            "y": 657.925231933594
+          },
+          "water": {
+            "alive": true,
+            "x": 570.990112304688,
+            "y": 657.996154785156
+          }
+        },
+        "red": 2
+      },
+      "verification": "Fresh Level; inherited Input-only controller; read-only observations"
+    },
+    {
+      "assertions": [
+        {
+          "actual": 1660,
+          "expected": 1660,
+          "field": "input_tape_fully_consumed",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "completed",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "box_resets",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "levers.R",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "field": "levers.B",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "field": "channels.R",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 2,
+          "expected": 1.0,
+          "field": "deaths",
+          "op": "gte",
+          "passed": true
+        },
+        {
+          "actual": 2134.99829101562,
+          "expected": 2136.0,
+          "field": "players.water.x",
+          "op": "lte",
+          "passed": true
+        },
+        {
+          "actual": 177.98828125,
+          "expected": 190.0,
+          "field": "players.water.y",
+          "op": "lte",
+          "passed": true
+        }
+      ],
+      "channel_events": [
+        {
+          "channels": {
+            "A": false,
+            "B": false,
+            "M": false,
+            "R": false
+          },
+          "frame": 0
+        },
+        {
+          "channels": {
+            "A": true,
+            "B": false,
+            "M": false,
+            "R": false
+          },
+          "frame": 111
+        },
+        {
+          "channels": {
+            "A": true,
+            "B": false,
+            "M": true,
+            "R": false
+          },
+          "frame": 719
+        },
+        {
+          "channels": {
+            "A": true,
+            "B": true,
+            "M": true,
+            "R": false
+          },
+          "frame": 1134
+        },
+        {
+          "channels": {
+            "A": false,
+            "B": true,
+            "M": true,
+            "R": false
+          },
+          "frame": 1228
+        }
+      ],
+      "frames": 1660,
+      "input_tape": [
+        {
+          "frames": 41,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 17,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 49,
+          "mask": 98
+        },
+        {
+          "frames": 1,
+          "mask": 34
+        },
+        {
+          "frames": 2,
+          "mask": 98
+        },
+        {
+          "frames": 14,
+          "mask": 66
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 26,
+          "mask": 70
+        },
+        {
+          "frames": 6,
+          "mask": 68
+        },
+        {
+          "frames": 17,
+          "mask": 4
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 48,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 147,
+          "mask": 0
+        },
+        {
+          "frames": 2,
+          "mask": 64
+        },
+        {
+          "frames": 8,
+          "mask": 68
+        },
+        {
+          "frames": 2,
+          "mask": 100
+        },
+        {
+          "frames": 17,
+          "mask": 102
+        },
+        {
+          "frames": 2,
+          "mask": 70
+        },
+        {
+          "frames": 2,
+          "mask": 84
+        },
+        {
+          "frames": 7,
+          "mask": 85
+        },
+        {
+          "frames": 2,
+          "mask": 5
+        },
+        {
+          "frames": 215,
+          "mask": 0
+        },
+        {
+          "frames": 16,
+          "mask": 34
+        },
+        {
+          "frames": 10,
+          "mask": 32
+        },
+        {
+          "frames": 7,
+          "mask": 33
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 6,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 23,
+          "mask": 34
+        },
+        {
+          "frames": 20,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 8
+        },
+        {
+          "frames": 4,
+          "mask": 0
+        },
+        {
+          "frames": 9,
+          "mask": 17
+        },
+        {
+          "frames": 1,
+          "mask": 1
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 48,
+          "mask": 68
+        },
+        {
+          "frames": 1,
+          "mask": 4
+        },
+        {
+          "frames": 127,
+          "mask": 0
+        },
+        {
+          "frames": 12,
+          "mask": 68
+        },
+        {
+          "frames": 19,
+          "mask": 102
+        },
+        {
+          "frames": 5,
+          "mask": 68
+        },
+        {
+          "frames": 80,
+          "mask": 0
+        },
+        {
+          "frames": 32,
+          "mask": 102
+        },
+        {
+          "frames": 1,
+          "mask": 70
+        },
+        {
+          "frames": 14,
+          "mask": 68
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 57,
+          "mask": 34
+        },
+        {
+          "frames": 2,
+          "mask": 2
+        },
+        {
+          "frames": 1,
+          "mask": 130
+        },
+        {
+          "frames": 3,
+          "mask": 2
+        },
+        {
+          "frames": 48,
+          "mask": 34
+        },
+        {
+          "frames": 105,
+          "mask": 2
+        },
+        {
+          "frames": 13,
+          "mask": 66
+        },
+        {
+          "frames": 18,
+          "mask": 98
+        },
+        {
+          "frames": 5,
+          "mask": 66
+        },
+        {
+          "frames": 50,
+          "mask": 2
+        },
+        {
+          "frames": 24,
+          "mask": 98
+        },
+        {
+          "frames": 20,
+          "mask": 66
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 240,
+          "mask": 34
+        }
+      ],
+      "level": 9.0,
+      "passed": true,
+      "probe": "L9_both_take_left_lifts_cannot_skip_fire_repair",
+      "reason": "input tape exhausted before completion",
+      "snapshot": {
+        "blue": 4,
+        "box_resets": 0,
+        "boxes": [
+          {
+            "x": 593.997009277344,
+            "y": 657.998229980469
+          }
+        ],
+        "channels": {
+          "A": false,
+          "B": true,
+          "M": true,
+          "R": false
+        },
+        "completed": false,
+        "deaths": 2,
+        "ever_on": {
+          "A": true,
+          "B": true,
+          "M": true,
+          "R": false
+        },
+        "levers": {
+          "B": true,
+          "M": true,
+          "R": false
+        },
+        "max_y": {
+          "fire": 658.0,
+          "water": 658.0
+        },
+        "players": {
+          "fire": {
+            "alive": true,
+            "x": 570.990112304688,
+            "y": 657.996154785156
+          },
+          "water": {
+            "alive": true,
+            "x": 2134.99829101562,
+            "y": 177.98828125
+          }
+        },
+        "red": 2
+      },
+      "verification": "Fresh Level; inherited Input-only controller; read-only observations"
+    },
+    {
+      "assertions": [
+        {
+          "actual": 873,
+          "expected": 873,
+          "field": "input_tape_fully_consumed",
+          "passed": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "field": "completed",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 3,
+          "expected": 3.0,
+          "field": "red",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 3,
+          "expected": 3.0,
+          "field": "blue",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "deaths",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 0,
+          "expected": 0.0,
+          "field": "box_resets",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "field": "channels.A",
+          "op": "eq",
+          "passed": true
+        },
+        {
+          "actual": 657.998718261719,
+          "expected": 657.0,
+          "field": "boxes.0.x",
+          "op": "gte",
+          "passed": true
+        },
+        {
+          "actual": 593.998229980469,
+          "expected": 590.0,
+          "field": "boxes.0.y",
+          "op": "gte",
+          "passed": true
+        }
+      ],
+      "channel_events": [
+        {
+          "channels": {
+            "A": false,
+            "H": false
+          },
+          "frame": 0
+        },
+        {
+          "channels": {
+            "A": false,
+            "H": true
+          },
+          "frame": 136
+        },
+        {
+          "channels": {
+            "A": true,
+            "H": true
+          },
+          "frame": 256
+        },
+        {
+          "channels": {
+            "A": true,
+            "H": false
+          },
+          "frame": 754
+        }
+      ],
+      "frames": 873,
+      "input_tape": [
+        {
+          "frames": 1,
+          "mask": 18
+        },
+        {
+          "frames": 8,
+          "mask": 82
+        },
+        {
+          "frames": 8,
+          "mask": 80
+        },
+        {
+          "frames": 24,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 17,
+          "mask": 80
+        },
+        {
+          "frames": 23,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 17,
+          "mask": 80
+        },
+        {
+          "frames": 23,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 16,
+          "mask": 16
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 79,
+          "mask": 2
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 14,
+          "mask": 2
+        },
+        {
+          "frames": 123,
+          "mask": 0
+        },
+        {
+          "frames": 5,
+          "mask": 1
+        },
+        {
+          "frames": 122,
+          "mask": 0
+        },
+        {
+          "frames": 46,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 4,
+          "mask": 2
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 9,
+          "mask": 1
+        },
+        {
+          "frames": 82,
+          "mask": 0
+        },
+        {
+          "frames": 6,
+          "mask": 2
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 14,
+          "mask": 2
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 2,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 46,
+          "mask": 4
+        },
+        {
+          "frames": 2,
+          "mask": 6
+        },
+        {
+          "frames": 1,
+          "mask": 4
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 17,
+          "mask": 1
+        },
+        {
+          "frames": 22,
+          "mask": 0
+        },
+        {
+          "frames": 25,
+          "mask": 33
+        },
+        {
+          "frames": 17,
+          "mask": 1
+        },
+        {
+          "frames": 14,
+          "mask": 33
+        },
+        {
+          "frames": 9,
+          "mask": 32
+        },
+        {
+          "frames": 18,
+          "mask": 33
+        },
+        {
+          "frames": 1,
+          "mask": 1
+        },
+        {
+          "frames": 6,
+          "mask": 33
+        },
+        {
+          "frames": 8,
+          "mask": 32
+        },
+        {
+          "frames": 30,
+          "mask": 33
+        }
+      ],
+      "level": 10.0,
+      "passed": true,
+      "probe": "L10 misplaced cargo at right wall stays on wide receiver and both escape",
+      "reason": "completed",
+      "snapshot": {
+        "blue": 3,
+        "box_resets": 0,
+        "boxes": [
+          {
+            "x": 657.998718261719,
+            "y": 593.998229980469
+          }
+        ],
+        "channels": {
+          "A": true,
+          "H": false
+        },
+        "completed": true,
+        "deaths": 0,
+        "ever_on": {
+          "A": true,
+          "H": true
+        },
+        "levers": {},
+        "max_y": {
+          "fire": 593.998229980469,
+          "water": 370.0
+        },
+        "players": {
+          "fire": {
+            "alive": true,
+            "x": 126.222427368164,
+            "y": 369.925262451172
+          },
+          "water": {
+            "alive": true,
+            "x": 1119.77465820312,
+            "y": 369.925262451172
+          }
+        },
+        "red": 3
+      },
+      "verification": "Fresh Level; inherited Input-only controller; read-only observations"
+    }
+  ],
+  "source_sha256": {
+    "project.godot": "72da6964c5c752dd2acf30ee7ec8e94d979b8240aef1d0153324c54ef9593d8e",
+    "scripts/autoload/event_bus.gd": "d815d29ed626a30604b94de422fadf96b6deb3f7f36385fffea81c12c7aabca4",
+    "scripts/autoload/game_state.gd": "28941e0f6edce8be1198b576b3923101a73ed61326852a1d260c31c75c056863",
+    "scripts/autoload/input_setup.gd": "0eda834f7c9306c33719edbdd8861f9f848b990d8def04114b4e058e4fe663d1",
+    "scripts/autoload/smoke.gd": "1858d9a99f706a558a6c0862ee1f009696721e86bf2e923dbf1ebd160711b722",
+    "scripts/autoload/sound.gd": "700094e3e877e8ad0bb5916476c5e22d48f20aac917182bab4aaf1f2f34a22b5",
+    "scripts/camera_rig.gd": "53706014c0a2c6110640744a814783068deae938be7a983a9d979bea4517a0d8",
+    "scripts/hud.gd": "e02dc40b619869f6f8b4056dee661c9e10cdfa496712551b7fb6faeecc57d274",
+    "scripts/level.gd": "9881bd863ba5453e73d37ebb832bb7b42c7468452cc3501eea1b2272d65e9234",
+    "scripts/level_builder.gd": "0dce75b4d216086a488c604b1b2c5e041268174eb13edd2885bbcba3e0d99e04",
+    "scripts/levels/levels.gd": "0d62c3c707ee24528d40ea671ad59e197edf829753cc134788b6a9d66b5a3aed",
+    "scripts/main_menu.gd": "dd99bf2efd9721b6177488c2b47dbf7b67f2477d9d2b2ae9de30c69b79e71c67",
+    "scripts/objects/box_recovery.gd": "b75c9cb4bcea36b658fc7412b90f2f35fdcab33abffa8825e26fcfe39afd7104",
+    "scripts/objects/door.gd": "93d5a96ef3860db7a20dc87154f8e7000f43c1e4217173d9b90b0fcb15bddefc",
+    "scripts/objects/double_plate.gd": "9396fa5fc7533e0ec817123b924101eafaea2826dbeb0b38fb3036093801990c",
+    "scripts/objects/exit_door.gd": "19a6fe5b8f8d86ab6b3750cc71555b1b83baff4721aed1326404cda05e9b526d",
+    "scripts/objects/gem.gd": "049164554a27ebfd4c7d71a102e16c95f93e2a7b45654ebc242d55c8544a1a05",
+    "scripts/objects/hazard_pool.gd": "e6900cbcccb3835b816e99f014d4d47ac00268fb80d7c64e64f7fa2441ea1e52",
+    "scripts/objects/lever.gd": "37334b92d81de4428d709e3827e0ca326f45f80f2395f4da756f0f305d5d04e6",
+    "scripts/objects/moving_platform.gd": "272435b2c1c1b89f58f5f3659d266c4198c8183ed37d5dcfeca37bd30a6f9e60",
+    "scripts/objects/plate.gd": "4726d270baecae5f7913af0d57d8725d7ba69b3567d9fdc6a4cca6b4264d9f8e",
+    "scripts/objects/portal.gd": "44d8c565a61828ba27ec9b389431775333d3784cd3ae6fd68ddae10829be02e6",
+    "scripts/objects/push_box.gd": "9f0a8ea9538137b8fc11349c295bb2af01f030af81f8f89db92c109380345a66",
+    "scripts/player.gd": "396ab86826ca60c3fcb02e445eaea022fe47aaea05a7d523a94ebef3b506a47a",
+    "scripts/util/tex.gd": "c46bb720d2b3c88948e562c169006bb34fbbbcfe2297b9ba1d0ff329f8b40123",
+    "tools/full_gem_routes.gd": "d7f20482e61c6897fe58999fbb63809dd32f5dac83e085c3c1abd03a03631374",
+    "tools/enrichment/late_probe.gd": "cba33cfba84b994f09fdf5dbcbed54a1f7b8300efa2ccf1dff6dd33b4904ea94",
+    "tools/enrichment/lift_coop_probes.gd": "16cb3a9544219d69bed35139bedc5769e12789e4239134a8dad71f9b0979826d",
+    "tools/enrichment/probe_replay_late.json": "9076c328f35b210b33e00d7efe08d15c6a610d02ac5abed95dd3cd97216e9063"
+  },
+  "sources_changed_during_run": false,
+  "engine_log_has_errors": false,
+  "route_file": "tools/enrichment/probe_replay_late.json"
+}

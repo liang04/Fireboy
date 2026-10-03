@@ -48,6 +48,7 @@ def main():
             ("Feedback regression", [binary, "--headless", "--path", str(ROOT), "res://tools/feedback_regression.tscn"]),
             ("Box recovery regression", [binary, "--headless", "--path", str(ROOT), "res://tools/recovery_regression.tscn"]),
             ("UI regression", [binary, "--headless", "--path", str(ROOT), "res://tools/ui_regression.tscn"]),
+            ("Enrichment cooperation and recovery", [sys.executable, "tools/run_enrichment_checks.py", "--godot", binary]),
         ]
         if not args.skip_smoke:
             checks.append(("10-level smoke", [binary, "--headless", "--path", str(ROOT), "--", "--smoke"]))

@@ -1,0 +1,3436 @@
+{
+  "engine": "4.6.3-stable (official)",
+  "physics_hz": 60,
+  "runs": [
+    {
+      "all_gems": true,
+      "blue": 4,
+      "blue_total": 4,
+      "box_resets": 0,
+      "case": "L5 early release stops lift, returning resumes and full-gem completion",
+      "completed": true,
+      "deaths": 0,
+      "final": {
+        "double_plates": [],
+        "frame": 2244,
+        "label": "final",
+        "platforms": [
+          {
+            "active": false,
+            "channel": "A",
+            "position": [
+              128.0,
+              693.25
+            ]
+          },
+          {
+            "active": true,
+            "channel": "B",
+            "position": [
+              1280.0,
+              729.333312988281
+            ]
+          },
+          {
+            "active": false,
+            "channel": "C",
+            "position": [
+              128.0,
+              409.333343505859
+            ]
+          },
+          {
+            "active": true,
+            "channel": "D",
+            "position": [
+              1280.0,
+              433.5
+            ]
+          }
+        ],
+        "players": {
+          "fire": [
+            688.17431640625,
+            145.925247192383
+          ],
+          "water": [
+            862.078002929688,
+            145.925247192383
+          ]
+        }
+      },
+      "frames": 2244,
+      "game_elapsed_seconds": 37.4166666666658,
+      "input_tape": [
+        {
+          "frames": 41,
+          "mask": 34
+        },
+        {
+          "frames": 36,
+          "mask": 2
+        },
+        {
+          "frames": 4,
+          "mask": 34
+        },
+        {
+          "frames": 14,
+          "mask": 32
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 21,
+          "mask": 80
+        },
+        {
+          "frames": 14,
+          "mask": 82
+        },
+        {
+          "frames": 1,
+          "mask": 18
+        },
+        {
+          "frames": 2,
+          "mask": 82
+        },
+        {
+          "frames": 1,
+          "mask": 66
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 35,
+          "mask": 69
+        },
+        {
+          "frames": 1,
+          "mask": 65
+        },
+        {
+          "frames": 2,
+          "mask": 69
+        },
+        {
+          "frames": 7,
+          "mask": 68
+        },
+        {
+          "frames": 1,
+          "mask": 4
+        },
+        {
+          "frames": 39,
+          "mask": 20
+        },
+        {
+          "frames": 1,
+          "mask": 16
+        },
+        {
+          "frames": 17,
+          "mask": 17
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 49,
+          "mask": 4
+        },
+        {
+          "frames": 143,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 4
+        },
+        {
+          "frames": 22,
+          "mask": 5
+        },
+        {
+          "frames": 1,
+          "mask": 4
+        },
+        {
+          "frames": 6,
+          "mask": 0
+        },
+        {
+          "frames": 18,
+          "mask": 32
+        },
+        {
+          "frames": 108,
+          "mask": 0
+        },
+        {
+          "frames": 18,
+          "mask": 16
+        },
+        {
+          "frames": 58,
+          "mask": 0
+        },
+        {
+          "frames": 16,
+          "mask": 6
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 13,
+          "mask": 6
+        },
+        {
+          "frames": 36,
+          "mask": 4
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 8
+        },
+        {
+          "frames": 4,
+          "mask": 0
+        },
+        {
+          "frames": 58,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 13,
+          "mask": 98
+        },
+        {
+          "frames": 1,
+          "mask": 96
+        },
+        {
+          "frames": 17,
+          "mask": 100
+        },
+        {
+          "frames": 16,
+          "mask": 102
+        },
+        {
+          "frames": 1,
+          "mask": 66
+        },
+        {
+          "frames": 1,
+          "mask": 70
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 3,
+          "mask": 32
+        },
+        {
+          "frames": 13,
+          "mask": 33
+        },
+        {
+          "frames": 6,
+          "mask": 1
+        },
+        {
+          "frames": 12,
+          "mask": 0
+        },
+        {
+          "frames": 51,
+          "mask": 1
+        },
+        {
+          "frames": 11,
+          "mask": 65
+        },
+        {
+          "frames": 18,
+          "mask": 97
+        },
+        {
+          "frames": 4,
+          "mask": 96
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 78,
+          "mask": 0
+        },
+        {
+          "frames": 22,
+          "mask": 80
+        },
+        {
+          "frames": 1,
+          "mask": 16
+        },
+        {
+          "frames": 19,
+          "mask": 80
+        },
+        {
+          "frames": 1,
+          "mask": 16
+        },
+        {
+          "frames": 11,
+          "mask": 80
+        },
+        {
+          "frames": 38,
+          "mask": 64
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 88,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 17,
+          "mask": 64
+        },
+        {
+          "frames": 16,
+          "mask": 80
+        },
+        {
+          "frames": 1,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 80
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 25,
+          "mask": 32
+        },
+        {
+          "frames": 9,
+          "mask": 0
+        },
+        {
+          "frames": 64,
+          "mask": 32
+        },
+        {
+          "frames": 210,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 4
+        },
+        {
+          "frames": 22,
+          "mask": 5
+        },
+        {
+          "frames": 1,
+          "mask": 4
+        },
+        {
+          "frames": 93,
+          "mask": 0
+        },
+        {
+          "frames": 38,
+          "mask": 6
+        },
+        {
+          "frames": 9,
+          "mask": 4
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 8
+        },
+        {
+          "frames": 3,
+          "mask": 0
+        },
+        {
+          "frames": 48,
+          "mask": 2
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 31,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 41,
+          "mask": 32
+        },
+        {
+          "frames": 99,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 64
+        },
+        {
+          "frames": 21,
+          "mask": 96
+        },
+        {
+          "frames": 2,
+          "mask": 64
+        },
+        {
+          "frames": 93,
+          "mask": 0
+        },
+        {
+          "frames": 37,
+          "mask": 80
+        },
+        {
+          "frames": 10,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 32,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 53,
+          "mask": 16
+        }
+      ],
+      "level": 5.0,
+      "mode": "input_only_coop_probe",
+      "observations": [
+        {
+          "double_plates": [],
+          "frame": 535,
+          "label": "A off after departure",
+          "passed": true,
+          "platforms": [
+            {
+              "active": false,
+              "channel": "A",
+              "position": [
+                128.0,
+                681.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "B",
+              "position": [
+                1280.0,
+                768.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "C",
+              "position": [
+                128.0,
+                448.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "D",
+              "position": [
+                1280.0,
+                448.0
+              ]
+            }
+          ],
+          "players": {
+            "fire": [
+              220.39518737793,
+              666.9990234375
+            ],
+            "water": [
+              851.950927734375,
+              817.925231933594
+            ]
+          }
+        },
+        {
+          "double_plates": [],
+          "frame": 597,
+          "label": "stationary platform",
+          "passed": true,
+          "platforms": [
+            {
+              "active": false,
+              "channel": "A",
+              "position": [
+                128.0,
+                681.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "B",
+              "position": [
+                1280.0,
+                768.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "C",
+              "position": [
+                128.0,
+                448.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "D",
+              "position": [
+                1280.0,
+                448.0
+              ]
+            }
+          ],
+          "players": {
+            "fire": [
+              220.39518737793,
+              666.9990234375
+            ],
+            "water": [
+              851.950927734375,
+              817.925231933594
+            ]
+          }
+        },
+        {
+          "double_plates": [],
+          "frame": 619,
+          "label": "A on after return",
+          "passed": true,
+          "platforms": [
+            {
+              "active": true,
+              "channel": "A",
+              "position": [
+                128.0,
+                666.5
+              ]
+            },
+            {
+              "active": false,
+              "channel": "B",
+              "position": [
+                1280.0,
+                768.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "C",
+              "position": [
+                128.0,
+                448.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "D",
+              "position": [
+                1280.0,
+                448.0
+              ]
+            }
+          ],
+          "players": {
+            "fire": [
+              220.39518737793,
+              654.9013671875
+            ],
+            "water": [
+              781.450866699219,
+              817.925231933594
+            ]
+          }
+        }
+      ],
+      "par_time": 65.0,
+      "passed": true,
+      "reason": "completed",
+      "red": 4,
+      "red_total": 4,
+      "simulation_seconds": 37.4,
+      "stars": 3,
+      "within_par": true
+    },
+    {
+      "all_gems": true,
+      "blue": 4,
+      "blue_total": 4,
+      "box_resets": 0,
+      "case": "L5 missed first lift returns to safe floor and reboards",
+      "completed": true,
+      "deaths": 0,
+      "final": {
+        "double_plates": [],
+        "frame": 2326,
+        "label": "final",
+        "platforms": [
+          {
+            "active": false,
+            "channel": "A",
+            "position": [
+              128.0,
+              693.25
+            ]
+          },
+          {
+            "active": true,
+            "channel": "B",
+            "position": [
+              1280.0,
+              729.333312988281
+            ]
+          },
+          {
+            "active": false,
+            "channel": "C",
+            "position": [
+              128.0,
+              409.333343505859
+            ]
+          },
+          {
+            "active": true,
+            "channel": "D",
+            "position": [
+              1280.0,
+              433.5
+            ]
+          }
+        ],
+        "players": {
+          "fire": [
+            688.952270507812,
+            145.925247192383
+          ],
+          "water": [
+            862.078002929688,
+            145.925247192383
+          ]
+        }
+      },
+      "frames": 2326,
+      "game_elapsed_seconds": 38.7833333333324,
+      "input_tape": [
+        {
+          "frames": 41,
+          "mask": 34
+        },
+        {
+          "frames": 36,
+          "mask": 2
+        },
+        {
+          "frames": 4,
+          "mask": 34
+        },
+        {
+          "frames": 14,
+          "mask": 32
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 21,
+          "mask": 80
+        },
+        {
+          "frames": 14,
+          "mask": 82
+        },
+        {
+          "frames": 1,
+          "mask": 18
+        },
+        {
+          "frames": 2,
+          "mask": 82
+        },
+        {
+          "frames": 1,
+          "mask": 66
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 35,
+          "mask": 69
+        },
+        {
+          "frames": 1,
+          "mask": 65
+        },
+        {
+          "frames": 2,
+          "mask": 69
+        },
+        {
+          "frames": 7,
+          "mask": 68
+        },
+        {
+          "frames": 1,
+          "mask": 4
+        },
+        {
+          "frames": 39,
+          "mask": 20
+        },
+        {
+          "frames": 1,
+          "mask": 16
+        },
+        {
+          "frames": 17,
+          "mask": 17
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 49,
+          "mask": 4
+        },
+        {
+          "frames": 143,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 4
+        },
+        {
+          "frames": 22,
+          "mask": 5
+        },
+        {
+          "frames": 1,
+          "mask": 4
+        },
+        {
+          "frames": 5,
+          "mask": 0
+        },
+        {
+          "frames": 22,
+          "mask": 6
+        },
+        {
+          "frames": 38,
+          "mask": 4
+        },
+        {
+          "frames": 113,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 4
+        },
+        {
+          "frames": 22,
+          "mask": 5
+        },
+        {
+          "frames": 1,
+          "mask": 4
+        },
+        {
+          "frames": 78,
+          "mask": 0
+        },
+        {
+          "frames": 16,
+          "mask": 6
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 12,
+          "mask": 6
+        },
+        {
+          "frames": 37,
+          "mask": 4
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 8
+        },
+        {
+          "frames": 4,
+          "mask": 0
+        },
+        {
+          "frames": 58,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 13,
+          "mask": 98
+        },
+        {
+          "frames": 1,
+          "mask": 96
+        },
+        {
+          "frames": 17,
+          "mask": 100
+        },
+        {
+          "frames": 16,
+          "mask": 102
+        },
+        {
+          "frames": 1,
+          "mask": 66
+        },
+        {
+          "frames": 1,
+          "mask": 70
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 3,
+          "mask": 32
+        },
+        {
+          "frames": 13,
+          "mask": 33
+        },
+        {
+          "frames": 6,
+          "mask": 1
+        },
+        {
+          "frames": 12,
+          "mask": 0
+        },
+        {
+          "frames": 51,
+          "mask": 1
+        },
+        {
+          "frames": 11,
+          "mask": 65
+        },
+        {
+          "frames": 18,
+          "mask": 97
+        },
+        {
+          "frames": 4,
+          "mask": 96
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 78,
+          "mask": 0
+        },
+        {
+          "frames": 22,
+          "mask": 80
+        },
+        {
+          "frames": 1,
+          "mask": 16
+        },
+        {
+          "frames": 19,
+          "mask": 80
+        },
+        {
+          "frames": 1,
+          "mask": 16
+        },
+        {
+          "frames": 11,
+          "mask": 80
+        },
+        {
+          "frames": 38,
+          "mask": 64
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 88,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 17,
+          "mask": 64
+        },
+        {
+          "frames": 16,
+          "mask": 80
+        },
+        {
+          "frames": 1,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 80
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 25,
+          "mask": 32
+        },
+        {
+          "frames": 9,
+          "mask": 0
+        },
+        {
+          "frames": 64,
+          "mask": 32
+        },
+        {
+          "frames": 210,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 4
+        },
+        {
+          "frames": 22,
+          "mask": 5
+        },
+        {
+          "frames": 1,
+          "mask": 4
+        },
+        {
+          "frames": 93,
+          "mask": 0
+        },
+        {
+          "frames": 38,
+          "mask": 6
+        },
+        {
+          "frames": 9,
+          "mask": 4
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 8
+        },
+        {
+          "frames": 3,
+          "mask": 0
+        },
+        {
+          "frames": 48,
+          "mask": 2
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 31,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 41,
+          "mask": 32
+        },
+        {
+          "frames": 99,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 64
+        },
+        {
+          "frames": 21,
+          "mask": 96
+        },
+        {
+          "frames": 2,
+          "mask": 64
+        },
+        {
+          "frames": 93,
+          "mask": 0
+        },
+        {
+          "frames": 37,
+          "mask": 80
+        },
+        {
+          "frames": 10,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 32,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 53,
+          "mask": 16
+        }
+      ],
+      "level": 5.0,
+      "mode": "input_only_coop_probe",
+      "observations": [
+        {
+          "double_plates": [],
+          "frame": 634,
+          "label": "Missed lift safe landing",
+          "passed": true,
+          "platforms": [
+            {
+              "active": true,
+              "channel": "A",
+              "position": [
+                128.0,
+                707.75
+              ]
+            },
+            {
+              "active": false,
+              "channel": "B",
+              "position": [
+                1280.0,
+                768.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "C",
+              "position": [
+                128.0,
+                448.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "D",
+              "position": [
+                1280.0,
+                448.0
+              ]
+            }
+          ],
+          "players": {
+            "fire": [
+              305.728515625,
+              817.981628417969
+            ],
+            "water": [
+              780.950866699219,
+              817.925231933594
+            ]
+          }
+        }
+      ],
+      "par_time": 65.0,
+      "passed": true,
+      "reason": "completed",
+      "red": 4,
+      "red_total": 4,
+      "simulation_seconds": 38.7666666666667,
+      "stars": 3,
+      "within_par": true
+    },
+    {
+      "all_gems": false,
+      "blue": 0,
+      "blue_total": 4,
+      "box_resets": 0,
+      "case": "L5 water idle; fire cannot chase its own remote supply",
+      "completed": false,
+      "deaths": 0,
+      "final": {
+        "double_plates": [],
+        "frame": 685,
+        "label": "final",
+        "platforms": [
+          {
+            "active": false,
+            "channel": "A",
+            "position": [
+              128.0,
+              726.916687011719
+            ]
+          },
+          {
+            "active": false,
+            "channel": "B",
+            "position": [
+              1280.0,
+              768.0
+            ]
+          },
+          {
+            "active": false,
+            "channel": "C",
+            "position": [
+              128.0,
+              448.0
+            ]
+          },
+          {
+            "active": false,
+            "channel": "D",
+            "position": [
+              1280.0,
+              448.0
+            ]
+          }
+        ],
+        "players": {
+          "fire": [
+            188.518951416016,
+            712.840698242188
+          ],
+          "water": [
+            912.0,
+            818.0
+          ]
+        }
+      },
+      "frames": 685,
+      "game_elapsed_seconds": 11.4333333333335,
+      "input_tape": [
+        {
+          "frames": 65,
+          "mask": 2
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 48,
+          "mask": 6
+        },
+        {
+          "frames": 1,
+          "mask": 4
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 55,
+          "mask": 2
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 60,
+          "mask": 1
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 48,
+          "mask": 5
+        },
+        {
+          "frames": 1,
+          "mask": 4
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 15,
+          "mask": 1
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 28,
+          "mask": 5
+        },
+        {
+          "frames": 1,
+          "mask": 1
+        },
+        {
+          "frames": 13,
+          "mask": 5
+        },
+        {
+          "frames": 36,
+          "mask": 4
+        },
+        {
+          "frames": 3,
+          "mask": 0
+        },
+        {
+          "frames": 180,
+          "mask": 4
+        },
+        {
+          "frames": 126,
+          "mask": 0
+        }
+      ],
+      "level": 5.0,
+      "mode": "input_only_coop_probe",
+      "observations": [
+        {
+          "double_plates": [],
+          "frame": 378,
+          "label": "Lift A remains stopped below middle",
+          "passed": true,
+          "platforms": [
+            {
+              "active": false,
+              "channel": "A",
+              "position": [
+                128.0,
+                726.916687011719
+              ]
+            },
+            {
+              "active": false,
+              "channel": "B",
+              "position": [
+                1280.0,
+                768.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "C",
+              "position": [
+                128.0,
+                448.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "D",
+              "position": [
+                1280.0,
+                448.0
+              ]
+            }
+          ],
+          "players": {
+            "fire": [
+              188.518951416016,
+              712.840942382812
+            ],
+            "water": [
+              912.0,
+              818.0
+            ]
+          }
+        },
+        {
+          "double_plates": [],
+          "frame": 561,
+          "label": "No ascent after solo jump attempts",
+          "passed": true,
+          "platforms": [
+            {
+              "active": false,
+              "channel": "A",
+              "position": [
+                128.0,
+                726.916687011719
+              ]
+            },
+            {
+              "active": false,
+              "channel": "B",
+              "position": [
+                1280.0,
+                768.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "C",
+              "position": [
+                128.0,
+                448.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "D",
+              "position": [
+                1280.0,
+                448.0
+              ]
+            }
+          ],
+          "players": {
+            "fire": [
+              188.518951416016,
+              712.840698242188
+            ],
+            "water": [
+              912.0,
+              818.0
+            ]
+          }
+        }
+      ],
+      "par_time": 65.0,
+      "passed": true,
+      "reason": "steps exhausted before both exits",
+      "red": 0,
+      "red_total": 4,
+      "simulation_seconds": 11.4166666666667,
+      "stars": 2,
+      "within_par": true
+    },
+    {
+      "all_gems": false,
+      "blue": 0,
+      "blue_total": 4,
+      "box_resets": 0,
+      "case": "L5 both on one first lift cannot bypass supply",
+      "completed": false,
+      "deaths": 0,
+      "final": {
+        "double_plates": [],
+        "frame": 515,
+        "label": "final",
+        "platforms": [
+          {
+            "active": false,
+            "channel": "A",
+            "position": [
+              128.0,
+              768.0
+            ]
+          },
+          {
+            "active": false,
+            "channel": "B",
+            "position": [
+              1280.0,
+              768.0
+            ]
+          },
+          {
+            "active": false,
+            "channel": "C",
+            "position": [
+              128.0,
+              448.0
+            ]
+          },
+          {
+            "active": false,
+            "channel": "D",
+            "position": [
+              1280.0,
+              448.0
+            ]
+          }
+        ],
+        "players": {
+          "fire": [
+            175.389007568359,
+            753.925231933594
+          ],
+          "water": [
+            207.276214599609,
+            753.999145507812
+          ]
+        }
+      },
+      "frames": 515,
+      "game_elapsed_seconds": 8.60000000000001,
+      "input_tape": [
+        {
+          "frames": 17,
+          "mask": 18
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 31,
+          "mask": 82
+        },
+        {
+          "frames": 1,
+          "mask": 80
+        },
+        {
+          "frames": 8,
+          "mask": 85
+        },
+        {
+          "frames": 9,
+          "mask": 69
+        },
+        {
+          "frames": 1,
+          "mask": 5
+        },
+        {
+          "frames": 20,
+          "mask": 21
+        },
+        {
+          "frames": 2,
+          "mask": 20
+        },
+        {
+          "frames": 10,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 47,
+          "mask": 80
+        },
+        {
+          "frames": 2,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 16,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 23,
+          "mask": 80
+        },
+        {
+          "frames": 17,
+          "mask": 64
+        },
+        {
+          "frames": 308,
+          "mask": 0
+        }
+      ],
+      "level": 5.0,
+      "mode": "input_only_coop_probe",
+      "observations": [
+        {
+          "double_plates": [],
+          "frame": 210,
+          "label": "Both share lower lift; no supply",
+          "passed": true,
+          "platforms": [
+            {
+              "active": false,
+              "channel": "A",
+              "position": [
+                128.0,
+                768.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "B",
+              "position": [
+                1280.0,
+                768.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "C",
+              "position": [
+                128.0,
+                448.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "D",
+              "position": [
+                1280.0,
+                448.0
+              ]
+            }
+          ],
+          "players": {
+            "fire": [
+              175.389007568359,
+              753.925231933594
+            ],
+            "water": [
+              207.276214599609,
+              753.999145507812
+            ]
+          }
+        },
+        {
+          "double_plates": [],
+          "frame": 392,
+          "label": "stationary platform",
+          "passed": true,
+          "platforms": [
+            {
+              "active": false,
+              "channel": "A",
+              "position": [
+                128.0,
+                768.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "B",
+              "position": [
+                1280.0,
+                768.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "C",
+              "position": [
+                128.0,
+                448.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "D",
+              "position": [
+                1280.0,
+                448.0
+              ]
+            }
+          ],
+          "players": {
+            "fire": [
+              175.389007568359,
+              753.925231933594
+            ],
+            "water": [
+              207.276214599609,
+              753.999145507812
+            ]
+          }
+        }
+      ],
+      "par_time": 65.0,
+      "passed": true,
+      "reason": "steps exhausted before both exits",
+      "red": 0,
+      "red_total": 4,
+      "simulation_seconds": 8.58333333333333,
+      "stars": 2,
+      "within_par": true
+    },
+    {
+      "all_gems": false,
+      "blue": 0,
+      "blue_total": 5,
+      "box_resets": 0,
+      "case": "L8 water idle; fire cannot open left ascent",
+      "completed": false,
+      "deaths": 0,
+      "final": {
+        "double_plates": [
+          {
+            "channel": "T",
+            "latched": false
+          }
+        ],
+        "frame": 507,
+        "label": "final",
+        "platforms": [
+          {
+            "active": true,
+            "channel": "R1",
+            "position": [
+              1248.0,
+              764.25
+            ]
+          },
+          {
+            "active": false,
+            "channel": "L1",
+            "position": [
+              608.0,
+              896.0
+            ]
+          },
+          {
+            "active": false,
+            "channel": "R2",
+            "position": [
+              1248.0,
+              640.0
+            ]
+          },
+          {
+            "active": false,
+            "channel": "L2",
+            "position": [
+              608.0,
+              640.0
+            ]
+          },
+          {
+            "active": false,
+            "channel": "T",
+            "position": [
+              608.0,
+              384.0
+            ]
+          },
+          {
+            "active": false,
+            "channel": "T",
+            "position": [
+              1248.0,
+              384.0
+            ]
+          }
+        ],
+        "players": {
+          "fire": [
+            655.888732910156,
+            881.925231933594
+          ],
+          "water": [
+            1808.0,
+            946.0
+          ]
+        }
+      },
+      "frames": 507,
+      "game_elapsed_seconds": 8.46666666666667,
+      "input_tape": [
+        {
+          "frames": 153,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 8
+        },
+        {
+          "frames": 3,
+          "mask": 0
+        },
+        {
+          "frames": 25,
+          "mask": 5
+        },
+        {
+          "frames": 15,
+          "mask": 4
+        },
+        {
+          "frames": 3,
+          "mask": 0
+        },
+        {
+          "frames": 180,
+          "mask": 4
+        },
+        {
+          "frames": 126,
+          "mask": 0
+        }
+      ],
+      "level": 8.0,
+      "mode": "input_only_coop_probe",
+      "observations": [
+        {
+          "double_plates": [
+            {
+              "channel": "T",
+              "latched": false
+            }
+          ],
+          "frame": 200,
+          "label": "Left first lift off",
+          "passed": true,
+          "platforms": [
+            {
+              "active": true,
+              "channel": "R1",
+              "position": [
+                1248.0,
+                782.333312988281
+              ]
+            },
+            {
+              "active": false,
+              "channel": "L1",
+              "position": [
+                608.0,
+                896.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "R2",
+              "position": [
+                1248.0,
+                640.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "L2",
+              "position": [
+                608.0,
+                640.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "T",
+              "position": [
+                608.0,
+                384.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "T",
+              "position": [
+                1248.0,
+                384.0
+              ]
+            }
+          ],
+          "players": {
+            "fire": [
+              655.888732910156,
+              881.998962402344
+            ],
+            "water": [
+              1808.0,
+              946.0
+            ]
+          }
+        },
+        {
+          "double_plates": [
+            {
+              "channel": "T",
+              "latched": false
+            }
+          ],
+          "frame": 383,
+          "label": "Solo fire remains low",
+          "passed": true,
+          "platforms": [
+            {
+              "active": true,
+              "channel": "R1",
+              "position": [
+                1248.0,
+                709.166625976562
+              ]
+            },
+            {
+              "active": false,
+              "channel": "L1",
+              "position": [
+                608.0,
+                896.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "R2",
+              "position": [
+                1248.0,
+                640.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "L2",
+              "position": [
+                608.0,
+                640.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "T",
+              "position": [
+                608.0,
+                384.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "T",
+              "position": [
+                1248.0,
+                384.0
+              ]
+            }
+          ],
+          "players": {
+            "fire": [
+              655.888732910156,
+              881.925231933594
+            ],
+            "water": [
+              1808.0,
+              946.0
+            ]
+          }
+        }
+      ],
+      "par_time": 55.0,
+      "passed": true,
+      "reason": "steps exhausted before both exits",
+      "red": 2,
+      "red_total": 5,
+      "simulation_seconds": 8.45,
+      "stars": 2,
+      "within_par": true
+    },
+    {
+      "all_gems": false,
+      "blue": 1,
+      "blue_total": 5,
+      "box_resets": 0,
+      "case": "L8 fire idle; water cannot open right ascent",
+      "completed": false,
+      "deaths": 0,
+      "final": {
+        "double_plates": [
+          {
+            "channel": "T",
+            "latched": false
+          }
+        ],
+        "frame": 454,
+        "label": "final",
+        "platforms": [
+          {
+            "active": false,
+            "channel": "R1",
+            "position": [
+              1248.0,
+              896.0
+            ]
+          },
+          {
+            "active": false,
+            "channel": "L1",
+            "position": [
+              608.0,
+              896.0
+            ]
+          },
+          {
+            "active": false,
+            "channel": "R2",
+            "position": [
+              1248.0,
+              640.0
+            ]
+          },
+          {
+            "active": false,
+            "channel": "L2",
+            "position": [
+              608.0,
+              640.0
+            ]
+          },
+          {
+            "active": false,
+            "channel": "T",
+            "position": [
+              608.0,
+              384.0
+            ]
+          },
+          {
+            "active": false,
+            "channel": "T",
+            "position": [
+              1248.0,
+              384.0
+            ]
+          }
+        ],
+        "players": {
+          "fire": [
+            144.0,
+            946.0
+          ],
+          "water": [
+            1292.12194824219,
+            881.925231933594
+          ]
+        }
+      },
+      "frames": 454,
+      "game_elapsed_seconds": 7.58333333333331,
+      "input_tape": [
+        {
+          "frames": 105,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 24,
+          "mask": 80
+        },
+        {
+          "frames": 16,
+          "mask": 64
+        },
+        {
+          "frames": 3,
+          "mask": 0
+        },
+        {
+          "frames": 180,
+          "mask": 64
+        },
+        {
+          "frames": 126,
+          "mask": 0
+        }
+      ],
+      "level": 8.0,
+      "mode": "input_only_coop_probe",
+      "observations": [
+        {
+          "double_plates": [
+            {
+              "channel": "T",
+              "latched": false
+            }
+          ],
+          "frame": 147,
+          "label": "Right first lift off",
+          "passed": true,
+          "platforms": [
+            {
+              "active": false,
+              "channel": "R1",
+              "position": [
+                1248.0,
+                896.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "L1",
+              "position": [
+                608.0,
+                896.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "R2",
+              "position": [
+                1248.0,
+                640.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "L2",
+              "position": [
+                608.0,
+                640.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "T",
+              "position": [
+                608.0,
+                384.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "T",
+              "position": [
+                1248.0,
+                384.0
+              ]
+            }
+          ],
+          "players": {
+            "fire": [
+              144.0,
+              946.0
+            ],
+            "water": [
+              1292.12194824219,
+              881.999145507812
+            ]
+          }
+        },
+        {
+          "double_plates": [
+            {
+              "channel": "T",
+              "latched": false
+            }
+          ],
+          "frame": 330,
+          "label": "Solo water remains low",
+          "passed": true,
+          "platforms": [
+            {
+              "active": false,
+              "channel": "R1",
+              "position": [
+                1248.0,
+                896.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "L1",
+              "position": [
+                608.0,
+                896.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "R2",
+              "position": [
+                1248.0,
+                640.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "L2",
+              "position": [
+                608.0,
+                640.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "T",
+              "position": [
+                608.0,
+                384.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "T",
+              "position": [
+                1248.0,
+                384.0
+              ]
+            }
+          ],
+          "players": {
+            "fire": [
+              144.0,
+              946.0
+            ],
+            "water": [
+              1292.12194824219,
+              881.925231933594
+            ]
+          }
+        }
+      ],
+      "par_time": 55.0,
+      "passed": true,
+      "reason": "steps exhausted before both exits",
+      "red": 0,
+      "red_total": 5,
+      "simulation_seconds": 7.56666666666667,
+      "stars": 2,
+      "within_par": true
+    },
+    {
+      "all_gems": true,
+      "blue": 5,
+      "blue_total": 5,
+      "box_resets": 0,
+      "case": "L8 early joint-plate departure stays locked, return latches and completes",
+      "completed": true,
+      "deaths": 0,
+      "final": {
+        "double_plates": [
+          {
+            "channel": "T",
+            "latched": true
+          }
+        ],
+        "frame": 1892,
+        "label": "final",
+        "platforms": [
+          {
+            "active": true,
+            "channel": "R1",
+            "position": [
+              1248.0,
+              732.416625976562
+            ]
+          },
+          {
+            "active": true,
+            "channel": "L1",
+            "position": [
+              608.0,
+              768.583312988281
+            ]
+          },
+          {
+            "active": true,
+            "channel": "R2",
+            "position": [
+              1248.0,
+              453.166656494141
+            ]
+          },
+          {
+            "active": true,
+            "channel": "L2",
+            "position": [
+              608.0,
+              489.333343505859
+            ]
+          },
+          {
+            "active": true,
+            "channel": "T",
+            "position": [
+              608.0,
+              213.5
+            ]
+          },
+          {
+            "active": true,
+            "channel": "T",
+            "position": [
+              1248.0,
+              213.5
+            ]
+          }
+        ],
+        "players": {
+          "fire": [
+            449.976318359375,
+            145.925247192383
+          ],
+          "water": [
+            1485.958984375,
+            145.925247192383
+          ]
+        }
+      },
+      "frames": 1892,
+      "game_elapsed_seconds": 31.5499999999995,
+      "input_tape": [
+        {
+          "frames": 153,
+          "mask": 18
+        },
+        {
+          "frames": 2,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 24
+        },
+        {
+          "frames": 5,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 60,
+          "mask": 32
+        },
+        {
+          "frames": 70,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 64
+        },
+        {
+          "frames": 21,
+          "mask": 80
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 49,
+          "mask": 0
+        },
+        {
+          "frames": 15,
+          "mask": 96
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 20,
+          "mask": 96
+        },
+        {
+          "frames": 29,
+          "mask": 64
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 128
+        },
+        {
+          "frames": 3,
+          "mask": 0
+        },
+        {
+          "frames": 24,
+          "mask": 32
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 44,
+          "mask": 16
+        },
+        {
+          "frames": 64,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 4
+        },
+        {
+          "frames": 21,
+          "mask": 5
+        },
+        {
+          "frames": 1,
+          "mask": 4
+        },
+        {
+          "frames": 49,
+          "mask": 0
+        },
+        {
+          "frames": 22,
+          "mask": 5
+        },
+        {
+          "frames": 1,
+          "mask": 1
+        },
+        {
+          "frames": 20,
+          "mask": 5
+        },
+        {
+          "frames": 1,
+          "mask": 1
+        },
+        {
+          "frames": 27,
+          "mask": 5
+        },
+        {
+          "frames": 22,
+          "mask": 4
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 8,
+          "mask": 1
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 8
+        },
+        {
+          "frames": 3,
+          "mask": 0
+        },
+        {
+          "frames": 33,
+          "mask": 2
+        },
+        {
+          "frames": 100,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 64
+        },
+        {
+          "frames": 21,
+          "mask": 80
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 49,
+          "mask": 0
+        },
+        {
+          "frames": 15,
+          "mask": 96
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 5,
+          "mask": 96
+        },
+        {
+          "frames": 44,
+          "mask": 64
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 128
+        },
+        {
+          "frames": 3,
+          "mask": 0
+        },
+        {
+          "frames": 32,
+          "mask": 32
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 12,
+          "mask": 16
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 19,
+          "mask": 32
+        },
+        {
+          "frames": 67,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 4
+        },
+        {
+          "frames": 21,
+          "mask": 6
+        },
+        {
+          "frames": 1,
+          "mask": 4
+        },
+        {
+          "frames": 49,
+          "mask": 0
+        },
+        {
+          "frames": 15,
+          "mask": 5
+        },
+        {
+          "frames": 1,
+          "mask": 1
+        },
+        {
+          "frames": 4,
+          "mask": 5
+        },
+        {
+          "frames": 45,
+          "mask": 4
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 33,
+          "mask": 1
+        },
+        {
+          "frames": 96,
+          "mask": 0
+        },
+        {
+          "frames": 18,
+          "mask": 16
+        },
+        {
+          "frames": 5,
+          "mask": 0
+        },
+        {
+          "frames": 24,
+          "mask": 18
+        },
+        {
+          "frames": 10,
+          "mask": 2
+        },
+        {
+          "frames": 117,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 68
+        },
+        {
+          "frames": 21,
+          "mask": 86
+        },
+        {
+          "frames": 1,
+          "mask": 68
+        },
+        {
+          "frames": 61,
+          "mask": 0
+        },
+        {
+          "frames": 29,
+          "mask": 101
+        },
+        {
+          "frames": 8,
+          "mask": 100
+        },
+        {
+          "frames": 10,
+          "mask": 68
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 32,
+          "mask": 1
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 32,
+          "mask": 32
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 28,
+          "mask": 16
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 14,
+          "mask": 2
+        }
+      ],
+      "level": 8.0,
+      "mode": "input_only_coop_probe",
+      "observations": [
+        {
+          "double_plates": [
+            {
+              "channel": "T",
+              "latched": false
+            }
+          ],
+          "frame": 1370,
+          "label": "T remains unlatched",
+          "passed": true,
+          "platforms": [
+            {
+              "active": true,
+              "channel": "R1",
+              "position": [
+                1248.0,
+                859.833312988281
+              ]
+            },
+            {
+              "active": true,
+              "channel": "L1",
+              "position": [
+                608.0,
+                823.666687011719
+              ]
+            },
+            {
+              "active": true,
+              "channel": "R2",
+              "position": [
+                1248.0,
+                627.083312988281
+              ]
+            },
+            {
+              "active": true,
+              "channel": "L2",
+              "position": [
+                608.0,
+                590.916687011719
+              ]
+            },
+            {
+              "active": false,
+              "channel": "T",
+              "position": [
+                608.0,
+                384.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "T",
+              "position": [
+                1248.0,
+                384.0
+              ]
+            }
+          ],
+          "players": {
+            "fire": [
+              429.254089355469,
+              433.925262451172
+            ],
+            "water": [
+              1555.34497070312,
+              433.925262451172
+            ]
+          }
+        },
+        {
+          "double_plates": [
+            {
+              "channel": "T",
+              "latched": false
+            }
+          ],
+          "frame": 1462,
+          "label": "stationary platform",
+          "passed": true,
+          "platforms": [
+            {
+              "active": true,
+              "channel": "R1",
+              "position": [
+                1248.0,
+                784.083312988281
+              ]
+            },
+            {
+              "active": true,
+              "channel": "L1",
+              "position": [
+                608.0,
+                820.25
+              ]
+            },
+            {
+              "active": true,
+              "channel": "R2",
+              "position": [
+                1248.0,
+                504.833312988281
+              ]
+            },
+            {
+              "active": true,
+              "channel": "L2",
+              "position": [
+                608.0,
+                541.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "T",
+              "position": [
+                608.0,
+                384.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "T",
+              "position": [
+                1248.0,
+                384.0
+              ]
+            }
+          ],
+          "players": {
+            "fire": [
+              428.754058837891,
+              433.925262451172
+            ],
+            "water": [
+              1555.34497070312,
+              433.925262451172
+            ]
+          }
+        },
+        {
+          "double_plates": [
+            {
+              "channel": "T",
+              "latched": true
+            }
+          ],
+          "frame": 1484,
+          "label": "T latched with both present",
+          "passed": true,
+          "platforms": [
+            {
+              "active": true,
+              "channel": "R1",
+              "position": [
+                1248.0,
+                840.916687011719
+              ]
+            },
+            {
+              "active": true,
+              "channel": "L1",
+              "position": [
+                608.0,
+                877.083312988281
+              ]
+            },
+            {
+              "active": true,
+              "channel": "R2",
+              "position": [
+                1248.0,
+                561.666687011719
+              ]
+            },
+            {
+              "active": true,
+              "channel": "L2",
+              "position": [
+                608.0,
+                597.833312988281
+              ]
+            },
+            {
+              "active": true,
+              "channel": "T",
+              "position": [
+                608.0,
+                368.5
+              ]
+            },
+            {
+              "active": true,
+              "channel": "T",
+              "position": [
+                1248.0,
+                368.5
+              ]
+            }
+          ],
+          "players": {
+            "fire": [
+              428.754058837891,
+              433.925262451172
+            ],
+            "water": [
+              1484.845703125,
+              433.925262451172
+            ]
+          }
+        }
+      ],
+      "par_time": 55.0,
+      "passed": true,
+      "reason": "completed",
+      "red": 5,
+      "red_total": 5,
+      "simulation_seconds": 31.5333333333333,
+      "stars": 3,
+      "within_par": true
+    },
+    {
+      "all_gems": true,
+      "blue": 5,
+      "blue_total": 5,
+      "box_resets": 0,
+      "case": "L8 missed second lift safely recovers through previous powered lift",
+      "completed": true,
+      "deaths": 0,
+      "final": {
+        "double_plates": [
+          {
+            "channel": "T",
+            "latched": true
+          }
+        ],
+        "frame": 2078,
+        "label": "final",
+        "platforms": [
+          {
+            "active": true,
+            "channel": "R1",
+            "position": [
+              1248.0,
+              825.416687011719
+            ]
+          },
+          {
+            "active": true,
+            "channel": "L1",
+            "position": [
+              608.0,
+              861.583312988281
+            ]
+          },
+          {
+            "active": true,
+            "channel": "R2",
+            "position": [
+              1248.0,
+              546.166687011719
+            ]
+          },
+          {
+            "active": true,
+            "channel": "L2",
+            "position": [
+              608.0,
+              582.333312988281
+            ]
+          },
+          {
+            "active": true,
+            "channel": "T",
+            "position": [
+              608.0,
+              213.5
+            ]
+          },
+          {
+            "active": true,
+            "channel": "T",
+            "position": [
+              1248.0,
+              213.5
+            ]
+          }
+        ],
+        "players": {
+          "fire": [
+            447.142944335938,
+            145.925247192383
+          ],
+          "water": [
+            1487.79272460938,
+            145.925247192383
+          ]
+        }
+      },
+      "frames": 2078,
+      "game_elapsed_seconds": 34.6499999999993,
+      "input_tape": [
+        {
+          "frames": 153,
+          "mask": 18
+        },
+        {
+          "frames": 2,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 24
+        },
+        {
+          "frames": 5,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 60,
+          "mask": 32
+        },
+        {
+          "frames": 70,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 64
+        },
+        {
+          "frames": 21,
+          "mask": 80
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 49,
+          "mask": 0
+        },
+        {
+          "frames": 15,
+          "mask": 96
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 20,
+          "mask": 96
+        },
+        {
+          "frames": 29,
+          "mask": 64
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 128
+        },
+        {
+          "frames": 3,
+          "mask": 0
+        },
+        {
+          "frames": 24,
+          "mask": 32
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 44,
+          "mask": 16
+        },
+        {
+          "frames": 64,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 4
+        },
+        {
+          "frames": 21,
+          "mask": 5
+        },
+        {
+          "frames": 1,
+          "mask": 4
+        },
+        {
+          "frames": 49,
+          "mask": 0
+        },
+        {
+          "frames": 22,
+          "mask": 5
+        },
+        {
+          "frames": 1,
+          "mask": 1
+        },
+        {
+          "frames": 20,
+          "mask": 5
+        },
+        {
+          "frames": 1,
+          "mask": 1
+        },
+        {
+          "frames": 27,
+          "mask": 5
+        },
+        {
+          "frames": 22,
+          "mask": 4
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 8,
+          "mask": 1
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 8
+        },
+        {
+          "frames": 3,
+          "mask": 0
+        },
+        {
+          "frames": 33,
+          "mask": 2
+        },
+        {
+          "frames": 100,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 64
+        },
+        {
+          "frames": 21,
+          "mask": 80
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 29,
+          "mask": 96
+        },
+        {
+          "frames": 15,
+          "mask": 64
+        },
+        {
+          "frames": 124,
+          "mask": 0
+        },
+        {
+          "frames": 9,
+          "mask": 16
+        },
+        {
+          "frames": 88,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 64
+        },
+        {
+          "frames": 21,
+          "mask": 80
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 49,
+          "mask": 0
+        },
+        {
+          "frames": 15,
+          "mask": 96
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 5,
+          "mask": 96
+        },
+        {
+          "frames": 44,
+          "mask": 64
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 128
+        },
+        {
+          "frames": 3,
+          "mask": 0
+        },
+        {
+          "frames": 32,
+          "mask": 32
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 12,
+          "mask": 16
+        },
+        {
+          "frames": 88,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 4
+        },
+        {
+          "frames": 21,
+          "mask": 6
+        },
+        {
+          "frames": 1,
+          "mask": 4
+        },
+        {
+          "frames": 49,
+          "mask": 0
+        },
+        {
+          "frames": 15,
+          "mask": 5
+        },
+        {
+          "frames": 1,
+          "mask": 1
+        },
+        {
+          "frames": 4,
+          "mask": 5
+        },
+        {
+          "frames": 45,
+          "mask": 4
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 33,
+          "mask": 1
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 24,
+          "mask": 18
+        },
+        {
+          "frames": 11,
+          "mask": 2
+        },
+        {
+          "frames": 119,
+          "mask": 0
+        },
+        {
+          "frames": 11,
+          "mask": 68
+        },
+        {
+          "frames": 21,
+          "mask": 86
+        },
+        {
+          "frames": 1,
+          "mask": 68
+        },
+        {
+          "frames": 61,
+          "mask": 0
+        },
+        {
+          "frames": 29,
+          "mask": 101
+        },
+        {
+          "frames": 8,
+          "mask": 100
+        },
+        {
+          "frames": 10,
+          "mask": 68
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 32,
+          "mask": 1
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 32,
+          "mask": 32
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 28,
+          "mask": 16
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 14,
+          "mask": 2
+        }
+      ],
+      "level": 8.0,
+      "mode": "input_only_coop_probe",
+      "observations": [
+        {
+          "double_plates": [
+            {
+              "channel": "T",
+              "latched": false
+            }
+          ],
+          "frame": 981,
+          "label": "Recovered at first middle floor",
+          "passed": true,
+          "platforms": [
+            {
+              "active": true,
+              "channel": "R1",
+              "position": [
+                1248.0,
+                704.0
+              ]
+            },
+            {
+              "active": true,
+              "channel": "L1",
+              "position": [
+                608.0,
+                740.166687011719
+              ]
+            },
+            {
+              "active": true,
+              "channel": "R2",
+              "position": [
+                1248.0,
+                469.5
+              ]
+            },
+            {
+              "active": false,
+              "channel": "L2",
+              "position": [
+                608.0,
+                640.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "T",
+              "position": [
+                608.0,
+                384.0
+              ]
+            },
+            {
+              "active": false,
+              "channel": "T",
+              "position": [
+                1248.0,
+                384.0
+              ]
+            }
+          ],
+          "players": {
+            "fire": [
+              560.532104492188,
+              689.925231933594
+            ],
+            "water": [
+              1424.56994628906,
+              689.929321289062
+            ]
+          }
+        }
+      ],
+      "par_time": 55.0,
+      "passed": true,
+      "reason": "completed",
+      "red": 5,
+      "red_total": 5,
+      "simulation_seconds": 34.6333333333333,
+      "stars": 3,
+      "within_par": true
+    }
+  ],
+  "source_sha256": {
+    "project.godot": "72da6964c5c752dd2acf30ee7ec8e94d979b8240aef1d0153324c54ef9593d8e",
+    "scripts/autoload/event_bus.gd": "d815d29ed626a30604b94de422fadf96b6deb3f7f36385fffea81c12c7aabca4",
+    "scripts/autoload/game_state.gd": "28941e0f6edce8be1198b576b3923101a73ed61326852a1d260c31c75c056863",
+    "scripts/autoload/input_setup.gd": "0eda834f7c9306c33719edbdd8861f9f848b990d8def04114b4e058e4fe663d1",
+    "scripts/autoload/smoke.gd": "1858d9a99f706a558a6c0862ee1f009696721e86bf2e923dbf1ebd160711b722",
+    "scripts/autoload/sound.gd": "700094e3e877e8ad0bb5916476c5e22d48f20aac917182bab4aaf1f2f34a22b5",
+    "scripts/camera_rig.gd": "53706014c0a2c6110640744a814783068deae938be7a983a9d979bea4517a0d8",
+    "scripts/hud.gd": "e02dc40b619869f6f8b4056dee661c9e10cdfa496712551b7fb6faeecc57d274",
+    "scripts/level.gd": "9881bd863ba5453e73d37ebb832bb7b42c7468452cc3501eea1b2272d65e9234",
+    "scripts/level_builder.gd": "0dce75b4d216086a488c604b1b2c5e041268174eb13edd2885bbcba3e0d99e04",
+    "scripts/levels/levels.gd": "0d62c3c707ee24528d40ea671ad59e197edf829753cc134788b6a9d66b5a3aed",
+    "scripts/main_menu.gd": "dd99bf2efd9721b6177488c2b47dbf7b67f2477d9d2b2ae9de30c69b79e71c67",
+    "scripts/objects/box_recovery.gd": "b75c9cb4bcea36b658fc7412b90f2f35fdcab33abffa8825e26fcfe39afd7104",
+    "scripts/objects/door.gd": "93d5a96ef3860db7a20dc87154f8e7000f43c1e4217173d9b90b0fcb15bddefc",
+    "scripts/objects/double_plate.gd": "9396fa5fc7533e0ec817123b924101eafaea2826dbeb0b38fb3036093801990c",
+    "scripts/objects/exit_door.gd": "19a6fe5b8f8d86ab6b3750cc71555b1b83baff4721aed1326404cda05e9b526d",
+    "scripts/objects/gem.gd": "049164554a27ebfd4c7d71a102e16c95f93e2a7b45654ebc242d55c8544a1a05",
+    "scripts/objects/hazard_pool.gd": "e6900cbcccb3835b816e99f014d4d47ac00268fb80d7c64e64f7fa2441ea1e52",
+    "scripts/objects/lever.gd": "37334b92d81de4428d709e3827e0ca326f45f80f2395f4da756f0f305d5d04e6",
+    "scripts/objects/moving_platform.gd": "272435b2c1c1b89f58f5f3659d266c4198c8183ed37d5dcfeca37bd30a6f9e60",
+    "scripts/objects/plate.gd": "4726d270baecae5f7913af0d57d8725d7ba69b3567d9fdc6a4cca6b4264d9f8e",
+    "scripts/objects/portal.gd": "44d8c565a61828ba27ec9b389431775333d3784cd3ae6fd68ddae10829be02e6",
+    "scripts/objects/push_box.gd": "9f0a8ea9538137b8fc11349c295bb2af01f030af81f8f89db92c109380345a66",
+    "scripts/player.gd": "396ab86826ca60c3fcb02e445eaea022fe47aaea05a7d523a94ebef3b506a47a",
+    "scripts/util/tex.gd": "c46bb720d2b3c88948e562c169006bb34fbbbcfe2297b9ba1d0ff329f8b40123",
+    "scenes/hud.tscn": "b28b919392d7f921a12a8bddef528632f10f0fcdb2a49894346f8e46ac551e8f",
+    "scenes/level.tscn": "c225970fdf5e4495d0ace1f9d4b4356e489d0df315239e08f7f779ca745248dd",
+    "scenes/main_menu.tscn": "21f02259263629a99162ed8aa9e7dfe2a1326afec8d7c7c6832e2a5e9418299b",
+    "scenes/player.tscn": "87d5228ebeddabf05ea07eae182377576c4ddb5745be3866d2fc41ae97ed0e63",
+    "tools/full_gem_routes.gd": "d7f20482e61c6897fe58999fbb63809dd32f5dac83e085c3c1abd03a03631374",
+    "tools/full_gem_routes.tscn": "5c431a3c257564759ffcf33aa492707ea0fd6cf86feef3fcab3845e4b053f252",
+    "tools/enrichment/lift_coop_probes.gd": "16cb3a9544219d69bed35139bedc5769e12789e4239134a8dad71f9b0979826d",
+    "tools/enrichment/lift_coop_probes.tscn": "40dcaa03142af16495d674f2cdc4d9a65819fae8df76de025ab9e00345b67e3e",
+    "tools/run_full_gem_routes.py": "5a693fd912d83ddc5236de262e445f8f3b44bd76d831f8500e28e057bea8a63a",
+    "tools/enrichment/run_lift_coop_probes.py": "5903fa2e20b55f67934c34dcdd09fd565916220ac4c39830292d8473600dbe0c",
+    "tools/enrichment/lift_coop_probes.json": "a27df85bbb86fe5a59a40a21c464058a863ee9e7232a5261e7c7f4ae52fab29d"
+  },
+  "sources_changed_during_run": false,
+  "route_file": "tools/enrichment/lift_coop_probes.json",
+  "verification": "Fresh Level; real Player physics; Input actions only; 60 Hz; isolated saves",
+  "engine_log_has_errors": false
+}

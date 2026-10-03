@@ -93,9 +93,9 @@ static func build(parent: Node2D, data: Dictionary) -> Dictionary:
 				gems_total[String(col)] = int(gems_total.get(String(col), 0)) + 1
 			"plate":
 				var p := PressurePlate.new()
-				p.setup(_vec(o.get("cell", [0, 0])), StringName(o.get("channel", "A")), CELL)
+				p.setup(_vec(o.get("cell", [0, 0])), StringName(o.get("channel", "A")), CELL, int(o.get("width", 1)))
 				objects.add_child(p)
-				_channel_label(p, p.channel, Vector2(-8, -12))
+				_channel_label(p, p.channel, Vector2((p.width_cells - 1) * 16 - 8, -12))
 			"double_plate":
 				# 双钥匙板：一个对象管多块板，靠 "cells" 数组而不是多次声明。
 				# 做成单节点是有意的 —— 跨节点同步「队友踩了没有」需要新信号，
@@ -135,6 +135,7 @@ static func build(parent: Node2D, data: Dictionary) -> Dictionary:
 				var po := Portal.new()
 				po.setup(_vec(o.get("cell", [0, 0])), StringName(o.get("pair", "")), CELL)
 				objects.add_child(po)
+				_channel_label(po, po.pair_id, Vector2(-24, 18))
 				portals.append({"node": po, "pair": StringName(o.get("pair", ""))})
 			_:
 				push_warning("LevelBuilder: 未知对象类型 %s" % o.get("type"))

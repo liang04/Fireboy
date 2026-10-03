@@ -1,0 +1,407 @@
+[
+  {
+    "level": 7,
+    "name": "L7 early final release blocks partner",
+    "max_frames": 2000,
+    "phases": [
+      {
+        "label": "open walking route",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 5,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 18
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 18
+          }
+        ]
+      },
+      {
+        "label": "deliver box onto lift",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 27,
+            "timeout": 1800
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 16,
+            "y": 18
+          },
+          {
+            "kind": "jump",
+            "x": 17,
+            "y": 16
+          },
+          {
+            "kind": "jump",
+            "x": 22,
+            "y": 14
+          }
+        ]
+      },
+      {
+        "label": "escort box upstairs",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 32,
+            "timeout": 1800
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 18
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 1800
+          },
+          {
+            "kind": "ride",
+            "until": 390
+          },
+          {
+            "kind": "jump",
+            "x": 30,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "walk together",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 34,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 39,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 41,
+            "y": 10
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 34,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "water stops before D",
+        "fire": [],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 43,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "fire leaves final plate early",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 43,
+            "y": 11
+          }
+        ],
+        "water": [
+          {
+            "kind": "wait",
+            "frames": 40
+          }
+        ]
+      },
+      {
+        "label": "water cannot cross closed D",
+        "water": [
+          {
+            "kind": "go",
+            "x": 48,
+            "y": 11,
+            "timeout": 240
+          }
+        ]
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "water_x_max": 1431,
+      "gates": {
+        "B": true,
+        "D": false
+      },
+      "frames": 1335,
+      "reason_prefix": "task timeout: phase 6 water task 0"
+    }
+  },
+  {
+    "level": 7,
+    "name": "L7 box cannot substitute on raised final plate",
+    "max_frames": 1800,
+    "phases": [
+      {
+        "label": "open walking route",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 5,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 18
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 18
+          }
+        ]
+      },
+      {
+        "label": "deliver box onto lift",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 27,
+            "timeout": 1800
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 16,
+            "y": 18
+          },
+          {
+            "kind": "jump",
+            "x": 17,
+            "y": 16
+          },
+          {
+            "kind": "jump",
+            "x": 22,
+            "y": 14
+          }
+        ]
+      },
+      {
+        "label": "escort box upstairs",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 32,
+            "timeout": 1800
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 18
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 1800
+          },
+          {
+            "kind": "ride",
+            "until": 390
+          },
+          {
+            "kind": "jump",
+            "x": 30,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "water takes box plate temporarily",
+        "water": [
+          {
+            "kind": "jump",
+            "x": 32,
+            "y": 10
+          }
+        ],
+        "fire": []
+      },
+      {
+        "label": "box cannot climb final step",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 41,
+            "timeout": 300
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 32,
+            "y": 11
+          }
+        ]
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_x_max": 1290,
+      "gates": {
+        "B": true,
+        "D": false
+      },
+      "box_x_max": 1299,
+      "box_y_min": 365,
+      "box_y_max": 375,
+      "frames": 1152,
+      "reason_prefix": "task timeout: phase 4 fire task 0"
+    }
+  },
+  {
+    "level": 7,
+    "name": "L7 idle partner prevents final held gate",
+    "max_frames": 2000,
+    "phases": [
+      {
+        "label": "open walking route",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 5,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 18
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "deliver box onto lift",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 27,
+            "timeout": 1800
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "escort box upstairs",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 32,
+            "timeout": 1800
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "walk together",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 34,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 39,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 41,
+            "y": 10
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "attempt water-side exit without partner",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 43,
+            "y": 11
+          },
+          {
+            "kind": "wait",
+            "frames": 40
+          },
+          {
+            "kind": "go",
+            "x": 48,
+            "y": 11,
+            "timeout": 240
+          }
+        ]
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_x_max": 1431,
+      "gates": {
+        "D": false
+      },
+      "frames": 1242,
+      "reason_prefix": "task timeout: phase 4 fire task 2"
+    }
+  }
+]

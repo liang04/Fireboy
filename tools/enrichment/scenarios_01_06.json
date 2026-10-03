@@ -1,0 +1,728 @@
+[
+  {
+    "level": 1,
+    "name": "L1 idle water",
+    "replay_tape": [
+      {
+        "frames": 33,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 39,
+        "mask": 2
+      },
+      {
+        "frames": 9,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 26,
+        "mask": 0
+      },
+      {
+        "frames": 18,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 34,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 80,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 15,
+        "mask": 6
+      },
+      {
+        "frames": 24,
+        "mask": 6
+      },
+      {
+        "frames": 10,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 18,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 20,
+        "mask": 4
+      },
+      {
+        "frames": 6,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 6
+      },
+      {
+        "frames": 8,
+        "mask": 4
+      },
+      {
+        "frames": 8,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 33,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 22,
+        "mask": 6
+      },
+      {
+        "frames": 7,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 71,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 40,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 29,
+        "mask": 2
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "gates": {
+        "B": false
+      },
+      "box_resets": 0,
+      "frames": 640,
+      "reason_prefix": "input tape exhausted before completion"
+    }
+  },
+  {
+    "level": 1,
+    "name": "L1 idle fire",
+    "replay_tape": [
+      {
+        "frames": 33,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 39,
+        "mask": 96
+      },
+      {
+        "frames": 9,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 26,
+        "mask": 0
+      },
+      {
+        "frames": 18,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 34,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 80,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 15,
+        "mask": 32
+      },
+      {
+        "frames": 24,
+        "mask": 0
+      },
+      {
+        "frames": 10,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 18,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 20,
+        "mask": 96
+      },
+      {
+        "frames": 6,
+        "mask": 96
+      },
+      {
+        "frames": 9,
+        "mask": 64
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 32
+      },
+      {
+        "frames": 8,
+        "mask": 32
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 33,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 22,
+        "mask": 0
+      },
+      {
+        "frames": 7,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 71,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 128
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 40,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 29,
+        "mask": 0
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "gates": {
+        "B": false
+      },
+      "box_resets": 0,
+      "water_x_max": 1152,
+      "frames": 640,
+      "reason_prefix": "input tape exhausted before completion"
+    }
+  },
+  {
+    "level": 6,
+    "name": "L6 idle water",
+    "replay_tape": [
+      {
+        "frames": 6,
+        "mask": 1
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 10,
+        "mask": 1
+      },
+      {
+        "frames": 1,
+        "mask": 1
+      },
+      {
+        "frames": 6,
+        "mask": 1
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 41,
+        "mask": 6
+      },
+      {
+        "frames": 6,
+        "mask": 6
+      },
+      {
+        "frames": 2,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 70,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 88,
+        "mask": 2
+      },
+      {
+        "frames": 31,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 6
+      },
+      {
+        "frames": 25,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 5,
+        "mask": 2
+      },
+      {
+        "frames": 26,
+        "mask": 2
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 15,
+        "mask": 0
+      },
+      {
+        "frames": 30,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 3,
+        "mask": 4
+      },
+      {
+        "frames": 45,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 5,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 33,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 15,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 7,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 1
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "gates": {
+        "B": false
+      },
+      "box_resets": 0,
+      "frames": 553,
+      "reason_prefix": "input tape exhausted before completion"
+    }
+  },
+  {
+    "level": 6,
+    "name": "L6 idle fire",
+    "replay_tape": [
+      {
+        "frames": 6,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 10,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 6,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 41,
+        "mask": 32
+      },
+      {
+        "frames": 6,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 70,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 128
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 88,
+        "mask": 0
+      },
+      {
+        "frames": 31,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 32
+      },
+      {
+        "frames": 25,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 5,
+        "mask": 0
+      },
+      {
+        "frames": 26,
+        "mask": 96
+      },
+      {
+        "frames": 8,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 4,
+        "mask": 96
+      },
+      {
+        "frames": 15,
+        "mask": 64
+      },
+      {
+        "frames": 30,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 3,
+        "mask": 96
+      },
+      {
+        "frames": 45,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 5,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 33,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 15,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 7,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "gates": {
+        "B": false
+      },
+      "box_resets": 0,
+      "water_x_max": 512,
+      "frames": 553,
+      "reason_prefix": "input tape exhausted before completion"
+    }
+  }
+]

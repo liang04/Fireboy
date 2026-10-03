@@ -10,7 +10,7 @@ const MENU_SCENE := "res://scenes/main_menu.tscn"
 # ---------------------------------------------------------------- 星级门槛
 ## 三星 = 全宝石且用时 <= par_time。每关目标来自 tools/gen_levels.py。
 ## 现有数值保留为暂定真人难度目标；十关已有真实输入全宝石达标回放，
-## 见 docs/full_gem_routes_round2.md，但它不等于真人合作难度已标定。
+## 见 docs/enrichment_2026-10-03.md，但它不等于真人合作难度已标定。
 ## 死亡等待仍计时；木箱恢复继续计时并加时，不额外增加星级判据。
 
 var _players: Array = []
@@ -61,6 +61,8 @@ func _ready() -> void:
 		_exits[StringName(el)] = false
 
 	var cam: CameraRig = $CameraRig
+	# Delivery level needs the receiver visible while one actor guards the high bridge.
+	cam.margin = float(data.get("camera_margin", cam.margin))
 	cam.setup(_players, info.get("bounds", Rect2(0, 0, 1280, 720)))
 
 	_hud = HUD_SCENE.instantiate()

@@ -1,0 +1,143 @@
+[
+  {
+    "level": 6,
+    "phases": [
+      {
+        "label": "P1 observation post",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 2,
+            "y_less": 450
+          },
+          {
+            "kind": "go",
+            "x": 4,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 9,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 11
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 14,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "partner opens B return",
+        "fire": [],
+        "water": [
+          {
+            "kind": "go",
+            "x": 22,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          }
+        ]
+      },
+      {
+        "label": "rejoin under observation deck",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 22,
+            "y": 20
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "elemental shallows",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 28,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 32,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 35,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 25,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 29,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 35,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "P2 rooftop reunion",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 36,
+            "y_less": 300
+          },
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 7
+          },
+          {
+            "kind": "go",
+            "x": 45,
+            "y": 7
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 36,
+            "y_less": 300
+          },
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 7
+          },
+          {
+            "kind": "go",
+            "x": 47,
+            "y": 7
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,1019 @@
+{
+  "engine": "4.6.3-stable (official)",
+  "physics_hz": 60,
+  "runs": [
+    {
+      "all_gems": true,
+      "blue": 3,
+      "blue_total": 3,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 1377,
+      "game_elapsed_seconds": 22.9666666666666,
+      "input_tape": [
+        {
+          "frames": 30,
+          "mask": 18
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 18,
+          "mask": 18
+        },
+        {
+          "frames": 1,
+          "mask": 16
+        },
+        {
+          "frames": 11,
+          "mask": 22
+        },
+        {
+          "frames": 19,
+          "mask": 20
+        },
+        {
+          "frames": 3,
+          "mask": 4
+        },
+        {
+          "frames": 12,
+          "mask": 20
+        },
+        {
+          "frames": 1,
+          "mask": 16
+        },
+        {
+          "frames": 9,
+          "mask": 17
+        },
+        {
+          "frames": 23,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 9,
+          "mask": 32
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 238,
+          "mask": 2
+        },
+        {
+          "frames": 33,
+          "mask": 0
+        },
+        {
+          "frames": 18,
+          "mask": 38
+        },
+        {
+          "frames": 22,
+          "mask": 36
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 1,
+          "mask": 36
+        },
+        {
+          "frames": 3,
+          "mask": 37
+        },
+        {
+          "frames": 19,
+          "mask": 36
+        },
+        {
+          "frames": 7,
+          "mask": 4
+        },
+        {
+          "frames": 3,
+          "mask": 20
+        },
+        {
+          "frames": 22,
+          "mask": 4
+        },
+        {
+          "frames": 336,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 4
+        },
+        {
+          "frames": 9,
+          "mask": 68
+        },
+        {
+          "frames": 1,
+          "mask": 70
+        },
+        {
+          "frames": 11,
+          "mask": 102
+        },
+        {
+          "frames": 1,
+          "mask": 100
+        },
+        {
+          "frames": 2,
+          "mask": 68
+        },
+        {
+          "frames": 1,
+          "mask": 69
+        },
+        {
+          "frames": 7,
+          "mask": 85
+        },
+        {
+          "frames": 1,
+          "mask": 84
+        },
+        {
+          "frames": 4,
+          "mask": 68
+        },
+        {
+          "frames": 1,
+          "mask": 69
+        },
+        {
+          "frames": 1,
+          "mask": 85
+        },
+        {
+          "frames": 1,
+          "mask": 80
+        },
+        {
+          "frames": 200,
+          "mask": 0
+        },
+        {
+          "frames": 8,
+          "mask": 34
+        },
+        {
+          "frames": 3,
+          "mask": 32
+        },
+        {
+          "frames": 3,
+          "mask": 33
+        },
+        {
+          "frames": 1,
+          "mask": 1
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 2,
+          "mask": 16
+        },
+        {
+          "frames": 3,
+          "mask": 17
+        },
+        {
+          "frames": 2,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 17
+        },
+        {
+          "frames": 1,
+          "mask": 16
+        },
+        {
+          "frames": 3,
+          "mask": 17
+        },
+        {
+          "frames": 8,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 3,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 2,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 3,
+          "mask": 2
+        },
+        {
+          "frames": 4,
+          "mask": 0
+        },
+        {
+          "frames": 4,
+          "mask": 2
+        },
+        {
+          "frames": 5,
+          "mask": 0
+        },
+        {
+          "frames": 3,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 2,
+          "mask": 2
+        },
+        {
+          "frames": 18,
+          "mask": 0
+        },
+        {
+          "frames": 10,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 8
+        },
+        {
+          "frames": 4,
+          "mask": 0
+        },
+        {
+          "frames": 28,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 11,
+          "mask": 38
+        },
+        {
+          "frames": 15,
+          "mask": 6
+        },
+        {
+          "frames": 17,
+          "mask": 102
+        },
+        {
+          "frames": 6,
+          "mask": 100
+        },
+        {
+          "frames": 1,
+          "mask": 96
+        },
+        {
+          "frames": 7,
+          "mask": 102
+        },
+        {
+          "frames": 1,
+          "mask": 38
+        },
+        {
+          "frames": 2,
+          "mask": 102
+        },
+        {
+          "frames": 15,
+          "mask": 70
+        },
+        {
+          "frames": 20,
+          "mask": 68
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 11,
+          "mask": 70
+        },
+        {
+          "frames": 1,
+          "mask": 6
+        },
+        {
+          "frames": 13,
+          "mask": 102
+        },
+        {
+          "frames": 20,
+          "mask": 100
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 8,
+          "mask": 66
+        },
+        {
+          "frames": 3,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 6,
+          "mask": 16
+        }
+      ],
+      "level": 2.0,
+      "mode": "waypoint_controller",
+      "par_time": 45.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          1618.33203125,
+          625.925231933594
+        ],
+        "water": [
+          1505.88586425781,
+          657.925231933594
+        ]
+      },
+      "reason": "completed",
+      "red": 3,
+      "red_total": 3,
+      "simulation_seconds": 22.95,
+      "stars": 3,
+      "within_par": true
+    },
+    {
+      "all_gems": true,
+      "blue": 3,
+      "blue_total": 3,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 1338,
+      "game_elapsed_seconds": 22.3166666666667,
+      "input_tape": [
+        {
+          "frames": 9,
+          "mask": 34
+        },
+        {
+          "frames": 40,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 31,
+          "mask": 2
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 32,
+          "mask": 6
+        },
+        {
+          "frames": 17,
+          "mask": 4
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 16,
+          "mask": 32
+        },
+        {
+          "frames": 31,
+          "mask": 0
+        },
+        {
+          "frames": 17,
+          "mask": 16
+        },
+        {
+          "frames": 30,
+          "mask": 0
+        },
+        {
+          "frames": 170,
+          "mask": 1
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 24,
+          "mask": 98
+        },
+        {
+          "frames": 25,
+          "mask": 66
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 26,
+          "mask": 34
+        },
+        {
+          "frames": 38,
+          "mask": 32
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 8,
+          "mask": 34
+        },
+        {
+          "frames": 127,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 64
+        },
+        {
+          "frames": 9,
+          "mask": 68
+        },
+        {
+          "frames": 1,
+          "mask": 100
+        },
+        {
+          "frames": 18,
+          "mask": 102
+        },
+        {
+          "frames": 1,
+          "mask": 70
+        },
+        {
+          "frames": 2,
+          "mask": 68
+        },
+        {
+          "frames": 3,
+          "mask": 85
+        },
+        {
+          "frames": 5,
+          "mask": 68
+        },
+        {
+          "frames": 1,
+          "mask": 4
+        },
+        {
+          "frames": 156,
+          "mask": 0
+        },
+        {
+          "frames": 29,
+          "mask": 34
+        },
+        {
+          "frames": 5,
+          "mask": 0
+        },
+        {
+          "frames": 17,
+          "mask": 32
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 64,
+          "mask": 2
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 32,
+          "mask": 2
+        },
+        {
+          "frames": 20,
+          "mask": 0
+        },
+        {
+          "frames": 34,
+          "mask": 6
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 7,
+          "mask": 6
+        },
+        {
+          "frames": 42,
+          "mask": 4
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 8,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 8
+        },
+        {
+          "frames": 4,
+          "mask": 0
+        },
+        {
+          "frames": 9,
+          "mask": 17
+        },
+        {
+          "frames": 8,
+          "mask": 16
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 19,
+          "mask": 96
+        },
+        {
+          "frames": 21,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 32,
+          "mask": 96
+        },
+        {
+          "frames": 8,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 9,
+          "mask": 32
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 15,
+          "mask": 32
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 39,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 1,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 6,
+          "mask": 38
+        },
+        {
+          "frames": 25,
+          "mask": 6
+        },
+        {
+          "frames": 14,
+          "mask": 4
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 5,
+          "mask": 2
+        }
+      ],
+      "level": 4.0,
+      "mode": "waypoint_controller",
+      "par_time": 45.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          1823.11328125,
+          625.925231933594
+        ],
+        "water": [
+          1427.97290039062,
+          529.925231933594
+        ]
+      },
+      "reason": "completed",
+      "red": 3,
+      "red_total": 3,
+      "simulation_seconds": 22.3,
+      "stars": 3,
+      "within_par": true
+    },
+    {
+      "all_gems": true,
+      "blue": 3,
+      "blue_total": 3,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 1128,
+      "game_elapsed_seconds": 18.8166666666669,
+      "input_tape": [
+        {
+          "frames": 17,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 7,
+          "mask": 34
+        },
+        {
+          "frames": 25,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 1,
+          "mask": 8
+        },
+        {
+          "frames": 4,
+          "mask": 0
+        },
+        {
+          "frames": 56,
+          "mask": 34
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 19,
+          "mask": 98
+        },
+        {
+          "frames": 21,
+          "mask": 66
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 40,
+          "mask": 98
+        },
+        {
+          "frames": 102,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 9,
+          "mask": 34
+        },
+        {
+          "frames": 225,
+          "mask": 2
+        },
+        {
+          "frames": 13,
+          "mask": 66
+        },
+        {
+          "frames": 25,
+          "mask": 98
+        },
+        {
+          "frames": 6,
+          "mask": 66
+        },
+        {
+          "frames": 161,
+          "mask": 2
+        },
+        {
+          "frames": 33,
+          "mask": 98
+        },
+        {
+          "frames": 10,
+          "mask": 66
+        },
+        {
+          "frames": 1,
+          "mask": 2
+        },
+        {
+          "frames": 2,
+          "mask": 66
+        },
+        {
+          "frames": 6,
+          "mask": 82
+        },
+        {
+          "frames": 13,
+          "mask": 66
+        },
+        {
+          "frames": 30,
+          "mask": 64
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 26,
+          "mask": 102
+        },
+        {
+          "frames": 6,
+          "mask": 100
+        },
+        {
+          "frames": 17,
+          "mask": 68
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 40,
+          "mask": 2
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 16,
+          "mask": 6
+        },
+        {
+          "frames": 29,
+          "mask": 4
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 49,
+          "mask": 96
+        },
+        {
+          "frames": 1,
+          "mask": 32
+        },
+        {
+          "frames": 30,
+          "mask": 96
+        },
+        {
+          "frames": 19,
+          "mask": 64
+        },
+        {
+          "frames": 1,
+          "mask": 0
+        },
+        {
+          "frames": 40,
+          "mask": 32
+        },
+        {
+          "frames": 2,
+          "mask": 0
+        },
+        {
+          "frames": 13,
+          "mask": 2
+        }
+      ],
+      "level": 7.0,
+      "mode": "waypoint_controller",
+      "par_time": 40.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          1377.72314453125,
+          346.091918945312
+        ],
+        "water": [
+          1554.44702148438,
+          369.925262451172
+        ]
+      },
+      "reason": "completed",
+      "red": 3,
+      "red_total": 3,
+      "simulation_seconds": 18.8,
+      "stars": 3,
+      "within_par": true
+    },
+    {
+      "all_gems": true,
+      "blue": 3,
+      "blue_total": 3,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 873,
+      "game_elapsed_seconds": 14.566666666667,
+      "level": 10.0,
+      "mode": "input_replay",
+      "par_time": 35.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          126.222427368164,
+          369.925262451172
+        ],
+        "water": [
+          1119.77465820312,
+          369.925262451172
+        ]
+      },
+      "reason": "completed",
+      "red": 3,
+      "red_total": 3,
+      "simulation_seconds": 14.55,
+      "stars": 3,
+      "within_par": true,
+      "input_frames": 873
+    }
+  ],
+  "source_sha256": {
+    "project.godot": "72da6964c5c752dd2acf30ee7ec8e94d979b8240aef1d0153324c54ef9593d8e",
+    "scripts/autoload/event_bus.gd": "d815d29ed626a30604b94de422fadf96b6deb3f7f36385fffea81c12c7aabca4",
+    "scripts/autoload/game_state.gd": "28941e0f6edce8be1198b576b3923101a73ed61326852a1d260c31c75c056863",
+    "scripts/autoload/input_setup.gd": "0eda834f7c9306c33719edbdd8861f9f848b990d8def04114b4e058e4fe663d1",
+    "scripts/autoload/smoke.gd": "1858d9a99f706a558a6c0862ee1f009696721e86bf2e923dbf1ebd160711b722",
+    "scripts/autoload/sound.gd": "700094e3e877e8ad0bb5916476c5e22d48f20aac917182bab4aaf1f2f34a22b5",
+    "scripts/camera_rig.gd": "53706014c0a2c6110640744a814783068deae938be7a983a9d979bea4517a0d8",
+    "scripts/hud.gd": "e02dc40b619869f6f8b4056dee661c9e10cdfa496712551b7fb6faeecc57d274",
+    "scripts/level.gd": "9881bd863ba5453e73d37ebb832bb7b42c7468452cc3501eea1b2272d65e9234",
+    "scripts/level_builder.gd": "0dce75b4d216086a488c604b1b2c5e041268174eb13edd2885bbcba3e0d99e04",
+    "scripts/levels/levels.gd": "0d62c3c707ee24528d40ea671ad59e197edf829753cc134788b6a9d66b5a3aed",
+    "scripts/main_menu.gd": "dd99bf2efd9721b6177488c2b47dbf7b67f2477d9d2b2ae9de30c69b79e71c67",
+    "scripts/objects/box_recovery.gd": "b75c9cb4bcea36b658fc7412b90f2f35fdcab33abffa8825e26fcfe39afd7104",
+    "scripts/objects/door.gd": "93d5a96ef3860db7a20dc87154f8e7000f43c1e4217173d9b90b0fcb15bddefc",
+    "scripts/objects/double_plate.gd": "9396fa5fc7533e0ec817123b924101eafaea2826dbeb0b38fb3036093801990c",
+    "scripts/objects/exit_door.gd": "19a6fe5b8f8d86ab6b3750cc71555b1b83baff4721aed1326404cda05e9b526d",
+    "scripts/objects/gem.gd": "049164554a27ebfd4c7d71a102e16c95f93e2a7b45654ebc242d55c8544a1a05",
+    "scripts/objects/hazard_pool.gd": "e6900cbcccb3835b816e99f014d4d47ac00268fb80d7c64e64f7fa2441ea1e52",
+    "scripts/objects/lever.gd": "37334b92d81de4428d709e3827e0ca326f45f80f2395f4da756f0f305d5d04e6",
+    "scripts/objects/moving_platform.gd": "272435b2c1c1b89f58f5f3659d266c4198c8183ed37d5dcfeca37bd30a6f9e60",
+    "scripts/objects/plate.gd": "4726d270baecae5f7913af0d57d8725d7ba69b3567d9fdc6a4cca6b4264d9f8e",
+    "scripts/objects/portal.gd": "44d8c565a61828ba27ec9b389431775333d3784cd3ae6fd68ddae10829be02e6",
+    "scripts/objects/push_box.gd": "9f0a8ea9538137b8fc11349c295bb2af01f030af81f8f89db92c109380345a66",
+    "scripts/player.gd": "396ab86826ca60c3fcb02e445eaea022fe47aaea05a7d523a94ebef3b506a47a",
+    "scripts/util/tex.gd": "c46bb720d2b3c88948e562c169006bb34fbbbcfe2297b9ba1d0ff329f8b40123",
+    "scenes/hud.tscn": "b28b919392d7f921a12a8bddef528632f10f0fcdb2a49894346f8e46ac551e8f",
+    "scenes/level.tscn": "c225970fdf5e4495d0ace1f9d4b4356e489d0df315239e08f7f779ca745248dd",
+    "scenes/main_menu.tscn": "21f02259263629a99162ed8aa9e7dfe2a1326afec8d7c7c6832e2a5e9418299b",
+    "scenes/player.tscn": "87d5228ebeddabf05ea07eae182377576c4ddb5745be3866d2fc41ae97ed0e63",
+    "tools/full_gem_routes.gd": "d7f20482e61c6897fe58999fbb63809dd32f5dac83e085c3c1abd03a03631374",
+    "tools/full_gem_routes.tscn": "5c431a3c257564759ffcf33aa492707ea0fd6cf86feef3fcab3845e4b053f252",
+    "tools/run_full_gem_routes.py": "5a693fd912d83ddc5236de262e445f8f3b44bd76d831f8500e28e057bea8a63a",
+    "tools/gen_levels.py": "c2d60c8e9d005bffeafc4e8fd2b01ddb185c4851676f2f28b5f44cc61aeecfe4",
+    "tools/enrichment/level_01.py": "bc8920543d25fdbc324859deaf773684ce4dd085967270ec8b2f677765653c30",
+    "tools/enrichment/level_02.py": "97560b90a48758785c48fd0f1a7fc3c5ed9b62affe5a7ee23c51a0cb09849e22",
+    "tools/enrichment/level_03.py": "4d2c901238ea4b434c5104e92e4147b4c57725155be5092c93861c76029eef6d",
+    "tools/enrichment/level_04.py": "e22b3cbe43194631076e986fdbcd5d5f8ed988cf673eb2c35a06343bf146f36e",
+    "tools/enrichment/level_05.py": "0b96b385819cffe64f0b946c1705fab0f6cb351f958c174f6f5d3d5e220a8fad",
+    "tools/enrichment/level_06.py": "a82a4d7aa18750e536d8d8e64c82d8053fa494d9f2fd618b5e8cf4d7f5bf6765",
+    "tools/enrichment/level_07.py": "fb45f2e546340a4a80573b2994f0926d48b7cefe0e47c362e99531e912cf6f75",
+    "tools/enrichment/level_08.py": "66463f0156d28060fadd669947d0faae9389025035af50b51b6f141d91d3657d",
+    "tools/enrichment/level_09.py": "964536911a4f17c497d6b71abf34ba13fd9b5efd46d813c52d430e7028d341b0",
+    "tools/enrichment/level_10.py": "0ff2b491b12959b9bbae622749d4916062ad0889286677f2e1bd6bca4782765d",
+    "tools/enrichment/relay_validator.py": "86b0cafd3f5ceb51c7026a7b3ea0d2fc5e1a40941f0db805c8789e7a2d74a64a",
+    "tools/enrichment/run_late_probes.py": "11f0eaaaee43cca44bf6fa48a13913747e16e08b022f409a4148e4ac924f84f6",
+    "tools/enrichment/run_lift_coop_probes.py": "5903fa2e20b55f67934c34dcdd09fd565916220ac4c39830292d8473600dbe0c",
+    "tools/enrichment/verify_late_geometry.py": "044e3d8bb03b32327c72df0615ca9baa0871d2d0e36736d217a7e7385e1a2a00",
+    "/tmp/fireboy-enrichment-f9gdn9bg/recoveries.json": "bc93a698ffafd2b06759c4edba7687a838ad85f97e7a414b35a1c10551f9d39f"
+  },
+  "sources_changed_during_run": false,
+  "route_file": "/tmp/fireboy-enrichment-f9gdn9bg/recoveries.json",
+  "verification": "Fresh Level; real Player physics; Input actions only; 60 Hz; isolated saves",
+  "engine_log_has_errors": false
+}

@@ -1,0 +1,1465 @@
+[
+  {
+    "probe": "L10_idle_holder_blocks_delivery",
+    "level": 10,
+    "max_frames": 500,
+    "phases": [
+      {
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 16,
+            "timeout": 240
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "channels.H",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "channels.A",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "boxes.0.x",
+        "op": "lte",
+        "value": 466
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "probe": "L10_idle_pusher_leaves_return_paths_closed",
+    "level": 10,
+    "max_frames": 4000,
+    "phases": [
+      {
+        "label": "hold elevated delivery plate",
+        "water": [
+          {
+            "kind": "jump",
+            "x": 27,
+            "y": 9
+          },
+          {
+            "kind": "jump",
+            "x": 25,
+            "y": 7
+          },
+          {
+            "kind": "jump",
+            "x": 23,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 21,
+            "y": 5
+          }
+        ],
+        "fire": [
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "water": [
+          {
+            "kind": "wait",
+            "frames": 180
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "channels.H",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "channels.A",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "boxes.0.x",
+        "op": "gte",
+        "value": 399
+      },
+      {
+        "field": "boxes.0.x",
+        "op": "lte",
+        "value": 401
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "probe": "L10_early_departure_closes_delivery_gate",
+    "level": 10,
+    "max_frames": 4000,
+    "phases": [
+      {
+        "label": "hold elevated delivery plate",
+        "water": [
+          {
+            "kind": "jump",
+            "x": 27,
+            "y": 9
+          },
+          {
+            "kind": "jump",
+            "x": 25,
+            "y": 7
+          },
+          {
+            "kind": "jump",
+            "x": 23,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 21,
+            "y": 5
+          }
+        ],
+        "fire": [
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 14
+          }
+        ]
+      },
+      {
+        "water": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 5
+          }
+        ]
+      },
+      {
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 16,
+            "timeout": 240
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "ever_on.H",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "channels.H",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "channels.A",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "boxes.0.x",
+        "op": "lte",
+        "value": 466
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "probe": "L10_fall_rescue_without_delivered_box_or_powered_return_gate",
+    "level": 10,
+    "max_frames": 4000,
+    "phases": [
+      {
+        "water": [
+          {
+            "kind": "go",
+            "x": 20,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 19,
+            "y_less": 120
+          },
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 5
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "max_y.water",
+        "op": "gte",
+        "value": 580
+      },
+      {
+        "field": "players.water.y",
+        "op": "lte",
+        "value": 190
+      },
+      {
+        "field": "players.water.alive",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "ever_on.H",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "channels.A",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "boxes.0.x",
+        "op": "lte",
+        "value": 410
+      }
+    ]
+  },
+  {
+    "probe": "L10_person_on_delivery_plate_cannot_leave_it_latched",
+    "level": 10,
+    "max_frames": 4000,
+    "phases": [
+      {
+        "water": [
+          {
+            "kind": "go",
+            "x": 16,
+            "y": 18
+          },
+          {
+            "kind": "wait",
+            "frames": 30
+          },
+          {
+            "kind": "go",
+            "x": 19,
+            "y_less": 120
+          },
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 5
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "ever_on.A",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "channels.A",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "boxes.0.y",
+        "op": "lte",
+        "value": 370
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "probe": "L10_delivered_box_cannot_climb_well_wall",
+    "level": 10,
+    "max_frames": 4000,
+    "phases": [
+      {
+        "label": "hold elevated delivery plate",
+        "water": [
+          {
+            "kind": "jump",
+            "x": 27,
+            "y": 9
+          },
+          {
+            "kind": "jump",
+            "x": 25,
+            "y": 7
+          },
+          {
+            "kind": "jump",
+            "x": 23,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 21,
+            "y": 5
+          }
+        ],
+        "fire": [
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "deliver box while partner holds H",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 16
+          },
+          {
+            "kind": "go",
+            "x": 14,
+            "y": 11
+          },
+          {
+            "kind": "wait",
+            "frames": 60
+          }
+        ]
+      },
+      {
+        "water": [
+          {
+            "kind": "go",
+            "x": 24,
+            "y": 7
+          },
+          {
+            "kind": "go",
+            "x": 29,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 18,
+            "y": 18
+          },
+          {
+            "kind": "push",
+            "box_x": 14,
+            "timeout": 180
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "channels.H",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "channels.A",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "boxes.0.y",
+        "op": "gte",
+        "value": 590
+      },
+      {
+        "field": "boxes.0.x",
+        "op": "gte",
+        "value": 526
+      },
+      {
+        "field": "boxes.0.x",
+        "op": "lte",
+        "value": 532
+      },
+      {
+        "field": "max_y.water",
+        "op": "gte",
+        "value": 580
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "probe": "L10_return_gate_jump_shortcut_is_blocked",
+    "level": 10,
+    "max_frames": 4000,
+    "phases": [
+      {
+        "water": [
+          {
+            "kind": "jump",
+            "x": 35,
+            "y": 11,
+            "timeout": 240
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "channels.A",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "players.water.x",
+        "op": "lte",
+        "value": 1016
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "probe": "L9_missing_water_repair_blocks_fire_roof_approach",
+    "level": 9,
+    "max_frames": 4000,
+    "phases": [
+      {
+        "label": "weight",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 20
+          },
+          {
+            "kind": "push",
+            "box_x": 15
+          },
+          {
+            "kind": "jump",
+            "x": 17,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 17,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "cross acid",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1050,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1050,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 38,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "fire": [
+          {
+            "kind": "go",
+            "x": 53,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "kind": "go",
+            "x": 76,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 2,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 222,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 75,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 69,
+            "y": 5,
+            "timeout": 240
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "levers.M",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "levers.R",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "levers.B",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "channels.B",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "players.fire.x",
+        "op": "gte",
+        "value": 2338
+      },
+      {
+        "field": "players.fire.y",
+        "op": "lte",
+        "value": 190
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "probe": "L9_missing_fire_repair_blocks_water_roof_approach",
+    "level": 9,
+    "max_frames": 4000,
+    "phases": [
+      {
+        "label": "weight",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 20
+          },
+          {
+            "kind": "push",
+            "box_x": 15
+          },
+          {
+            "kind": "jump",
+            "x": 17,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 17,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "cross acid",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1050,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1050,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 38,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "water": [
+          {
+            "kind": "go",
+            "x": 40,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 1,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 420,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 46,
+            "y": 12
+          },
+          {
+            "kind": "go",
+            "x": 53,
+            "y": 12
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "kind": "go",
+            "x": 59,
+            "y": 12
+          },
+          {
+            "kind": "board",
+            "platform": 3,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 222,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 64,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 70,
+            "y": 5,
+            "timeout": 240
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "levers.M",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "levers.R",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "levers.B",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "channels.R",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "players.water.x",
+        "op": "lte",
+        "value": 2136
+      },
+      {
+        "field": "players.water.y",
+        "op": "lte",
+        "value": 190
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "probe": "L9_fire_cannot_repair_water_tunnel",
+    "level": 9,
+    "max_frames": 4000,
+    "phases": [
+      {
+        "label": "weight",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 20
+          },
+          {
+            "kind": "push",
+            "box_x": 15
+          },
+          {
+            "kind": "jump",
+            "x": 17,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 17,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "cross acid",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1050,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1050,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 38,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "fire": [
+          {
+            "kind": "go",
+            "x": 40,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 1,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 420,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 46,
+            "y": 12
+          },
+          {
+            "kind": "go",
+            "x": 53,
+            "y": 12,
+            "timeout": 300
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "levers.R",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "levers.B",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "deaths",
+        "op": "gte",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "probe": "L9_water_cannot_repair_lava_tunnel",
+    "level": 9,
+    "max_frames": 4000,
+    "phases": [
+      {
+        "label": "weight",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 20
+          },
+          {
+            "kind": "push",
+            "box_x": 15
+          },
+          {
+            "kind": "jump",
+            "x": 17,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 17,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "cross acid",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1050,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1050,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 38,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "water": [
+          {
+            "kind": "go",
+            "x": 53,
+            "y": 20,
+            "timeout": 300
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "levers.R",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "levers.B",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "deaths",
+        "op": "gte",
+        "value": 1
+      }
+    ]
+  },
+  {
+    "probe": "L9_both_take_left_lifts_cannot_skip_fire_repair",
+    "level": 9,
+    "max_frames": 3500,
+    "phases": [
+      {
+        "label": "weight",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 20
+          },
+          {
+            "kind": "push",
+            "box_x": 15
+          },
+          {
+            "kind": "jump",
+            "x": 17,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 17,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "cross acid",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1050,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1050,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 38,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "fire": [
+          {
+            "kind": "go",
+            "x": 40,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 1,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 420,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 46,
+            "y": 12
+          },
+          {
+            "kind": "go",
+            "x": 53,
+            "y": 12,
+            "timeout": 700
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 40,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 1,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 420,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 46,
+            "y": 12
+          },
+          {
+            "kind": "go",
+            "x": 53,
+            "y": 12
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "kind": "go",
+            "x": 59,
+            "y": 12
+          },
+          {
+            "kind": "board",
+            "platform": 3,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 222,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 64,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 70,
+            "y": 5,
+            "timeout": 240
+          }
+        ]
+      }
+    ],
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "levers.R",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "levers.B",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "channels.R",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "deaths",
+        "op": "gte",
+        "value": 1
+      },
+      {
+        "field": "players.water.x",
+        "op": "lte",
+        "value": 2136
+      },
+      {
+        "field": "players.water.y",
+        "op": "lte",
+        "value": 190
+      }
+    ]
+  }
+]

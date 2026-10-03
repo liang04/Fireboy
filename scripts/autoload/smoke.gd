@@ -918,6 +918,19 @@ func _probe_mechanisms(lvl: Node) -> int:
 		if players.is_empty():
 			continue
 		var pb := players[0] as Player
+		# Mechanism integration probes may place a player directly on a lever.
+		# Elemental repair levers need the matching actor; using Fire in water
+		# tests death instead of the lever. Wrong-element rejection has its own
+		# real-input adversarial route, separate from this component probe.
+		var grid: Array = Levels.get_level(GameState.current_level_index).grid
+		var cell := Vector2i(lever.position / 32.0)
+		var liquid: String = grid[cell.y][cell.x]
+		var required: StringName = &"water" if liquid == "~" else (&"fire" if liquid == "^" else &"")
+		for candidate: Player in players:
+			if candidate.alive and (required == &"" or candidate.element == required):
+				pb = candidate
+				break
+		pb.velocity = Vector2.ZERO
 		var saved := pb.global_position
 		# 杠杆也可能是在给平台供电（第 5 关就是），那时改用平台位移验收，
 		# 并且要额外验证「人走开之后平台照样在跑」—— 那才是自锁

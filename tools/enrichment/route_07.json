@@ -1,0 +1,144 @@
+[
+  {
+    "level": 7,
+    "phases": [
+      {
+        "label": "open walking route",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 5,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 18
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 18
+          }
+        ]
+      },
+      {
+        "label": "deliver box onto lift",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 27,
+            "timeout": 1800
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 16,
+            "y": 18
+          },
+          {
+            "kind": "jump",
+            "x": 17,
+            "y": 16
+          },
+          {
+            "kind": "jump",
+            "x": 22,
+            "y": 14
+          }
+        ]
+      },
+      {
+        "label": "escort box upstairs",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 32,
+            "timeout": 1800
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 18
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 1800
+          },
+          {
+            "kind": "ride",
+            "until": 390
+          },
+          {
+            "kind": "jump",
+            "x": 30,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "walk together",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 34,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 39,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 41,
+            "y": 10
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 34,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "final held gate",
+        "fire": [],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 43,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 48,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "fire exit",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 43,
+            "y": 11
+          }
+        ],
+        "water": []
+      }
+    ]
+  }
+]

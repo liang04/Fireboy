@@ -1,0 +1,118 @@
+[
+  {
+    "level": 2,
+    "name": "L2 idle guard blocks courier",
+    "max_frames": 480,
+    "phases": [
+      {
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 22,
+            "timeout": 420
+          }
+        ],
+        "water": []
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_x_max": 570,
+      "gates": {
+        "A": false,
+        "B": false
+      },
+      "frames": 420,
+      "reason_prefix": "task timeout: phase 0 fire task 0"
+    }
+  },
+  {
+    "level": 2,
+    "name": "L2 early guard release closes A",
+    "max_frames": 900,
+    "phases": [
+      {
+        "label": "water guard, fire stages courier",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 10,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 21
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 2,
+            "y_less": 550,
+            "timeout": 200
+          },
+          {
+            "kind": "go",
+            "x": 15,
+            "y": 16
+          }
+        ]
+      },
+      {
+        "label": "stage box at live gate",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 17
+          }
+        ]
+      },
+      {
+        "label": "guard leaves too early",
+        "water": [
+          {
+            "kind": "go",
+            "x": 16.5,
+            "y": 16
+          }
+        ],
+        "fire": [
+          {
+            "kind": "wait",
+            "frames": 45
+          }
+        ]
+      },
+      {
+        "label": "closed gate blocks courier",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 22,
+            "timeout": 240
+          }
+        ]
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_x_max": 570,
+      "gates": {
+        "A": false,
+        "B": false
+      },
+      "frames": 539,
+      "reason_prefix": "task timeout: phase 3 fire task 0"
+    }
+  }
+]
