@@ -36,6 +36,7 @@ var _binding: StringName = &""
 var _binding_button: Button
 ## 「一对多」通电时的强调闪屏。
 var _pulse_rect: ColorRect
+var _pulse_tween: Tween
 
 
 func _ready() -> void:
@@ -80,7 +81,29 @@ func _ready() -> void:
 	audio_toggle.text = "音效"
 	audio_toggle.button_pressed = Sound.enabled
 	audio_toggle.toggled.connect(func(value: bool): Sound.set_enabled(value))
-	box.add_child(audio_toggle)
+	var presentation := HBoxContainer.new()
+	presentation.alignment = BoxContainer.ALIGNMENT_CENTER
+	presentation.add_theme_constant_override("separation", 14)
+	box.add_child(presentation)
+	presentation.add_child(audio_toggle)
+	var motion_toggle := CheckButton.new()
+	motion_toggle.name = "ReducedMotion"
+	motion_toggle.text = "减少动态"
+	motion_toggle.button_pressed = VisualEffects.reduced_motion
+	motion_toggle.toggled.connect(VisualEffects.set_reduced_motion)
+	presentation.add_child(motion_toggle)
+	var detail_toggle := CheckButton.new()
+	detail_toggle.name = "LowDetail"
+	detail_toggle.text = "精简特效"
+	detail_toggle.button_pressed = VisualEffects.low_detail
+	detail_toggle.toggled.connect(VisualEffects.set_low_detail)
+	presentation.add_child(detail_toggle)
+	VisualEffects.settings_changed.connect(func():
+		if VisualEffects.reduced_motion:
+			if _pulse_tween != null and _pulse_tween.is_valid():
+				_pulse_tween.kill()
+			_pulse_rect.color.a = 0.0
+			_center.scale = Vector2.ONE)
 	var help := Label.new()
 	help.text = "点击下方改键，Esc 取消；手柄 1 / 2 分别控制火娃 / 水娃\n手柄：方向键 / 左摇杆移动，A 跳跃，X 交互，Start 暂停\n红宝石只有火娃能拿，蓝宝石只有水娃能拿。\n死亡回到出生点；机关状态和已拾取宝石保留。\n木箱落水会回到原位，并加时 3 秒；原位被挡时请先让开。"
 	help.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -160,11 +183,13 @@ func _build_pulse() -> void:
 ## 玩家不关心 channel 解耦多优雅，只关心「这一下拉得爽」——
 ## 把设计意图翻译成一次生理级的即时反馈。
 func pulse_power() -> void:
-	if _pulse_rect == null:
+	if _pulse_rect == null or VisualEffects.reduced_motion:
 		return
-	var tw := create_tween()
-	tw.tween_property(_pulse_rect, "color:a", 0.16, 0.06)
-	tw.tween_property(_pulse_rect, "color:a", 0.0, 0.32)
+	if _pulse_tween != null and _pulse_tween.is_valid():
+		_pulse_tween.kill()
+	_pulse_tween = create_tween()
+	_pulse_tween.tween_property(_pulse_rect, "color:a", 0.065, 0.12)
+	_pulse_tween.tween_property(_pulse_rect, "color:a", 0.0, 0.42)
 
 
 ## 普通提示限流；死亡提示立即抢占并保留完整阅读时间。
@@ -329,11 +354,11 @@ func show_result(stats: Dictionary, has_next: bool) -> void:
 	_hint.text = "跳跃键 / 手柄 A：下一关　R：重玩　Esc：暂停 / 菜单" if has_next \
 		else "已是最后一关　R：重玩　Esc：暂停 / 菜单"
 	# 弹入动画
-	_center.scale = Vector2(0.85, 0.85)
+	_apply_result_scale(Vector2(0.85, 0.85))
 	_center.modulate = Color(1, 1, 1, 0)
 	var tw := create_tween()
 	tw.set_parallel(true)
-	tw.tween_property(_center, "scale", Vector2.ONE, 0.28).set_trans(Tween.TRANS_BACK)
+	tw.tween_method(_apply_result_scale, Vector2(0.85, 0.85), Vector2.ONE, 0.28).set_trans(Tween.TRANS_BACK)
 	tw.tween_property(_center, "modulate:a", 1.0, 0.28)
 
 
@@ -355,3 +380,7 @@ static func fmt_time(t: float) -> String:
 	var s := int(t) % 60
 	var d := int((t - floorf(t)) * 100.0)
 	return "%02d:%02d.%02d" % [m, s, d]
+
+
+func _apply_result_scale(value: Vector2) -> void:
+	_center.scale = Vector2.ONE if VisualEffects.reduced_motion else value

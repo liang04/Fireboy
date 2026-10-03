@@ -12,6 +12,7 @@ const MAX_FALL := 900.0
 const FRICTION := 1600.0
 
 var cell_size := 32
+var _scrape_cooldown := 0.0
 
 
 func setup(cell: Vector2i, cell_px: int) -> void:
@@ -51,7 +52,14 @@ func _physics_process(delta: float) -> void:
 	velocity.y += GRAVITY * delta
 	if velocity.y > MAX_FALL:
 		velocity.y = MAX_FALL
+	var before_move := global_position
 	move_and_slide()
+	_scrape_cooldown = maxf(_scrape_cooldown - delta, 0.0)
+	if push != 0.0 and is_on_floor() and absf(global_position.x - before_move.x) > 0.25 \
+			and _scrape_cooldown <= 0.0:
+		_scrape_cooldown = 0.28
+		Sound.play(&"push")
+		VisualEffects.burst(self, global_position + Vector2(-signf(push) * 11.0, 14.0), &"push")
 
 
 ## 返回 -1 / 0 / +1：玩家想把箱子往哪个方向推
@@ -75,7 +83,9 @@ func _detect_push() -> float:
 			- float(Input.is_action_pressed(p.move_left))
 		if d.x > 0.0 and direction < 0.0:
 			push -= 1.0
+			p.show_push_feedback()
 		if d.x < 0.0 and direction > 0.0:
 			push += 1.0
+			p.show_push_feedback()
 	# 合力与玩家/节点顺序无关：对推抵消，同向合作不会加倍速度。
 	return clampf(push, -1.0, 1.0)

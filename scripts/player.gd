@@ -60,6 +60,8 @@ var _was_on_floor := false
 var _land_squash := 0.0
 var _jump_stretch := 0.0
 var _land_anim_time := 0.0
+## Presentation-only push contact, refreshed by the box without affecting velocity.
+var _push_feedback_time := 0.0
 ## walk 动画的帧数，用于把身体起伏的相位锁到精灵帧上
 var _walk_frame_count := 4
 const FIREBOY_SHEET := preload("res://assets/characters/fireboy-spritesheet-v2.png")
@@ -94,6 +96,7 @@ func _ready() -> void:
 	_mask = collision_mask
 	spawn_position = global_position
 	_build_visual()
+	VisualEffects.settings_changed.connect(_on_visual_settings_changed)
 	set_up_direction(Vector2.UP)
 	floor_stop_on_slope = true
 	floor_snap_length = 4.0
@@ -211,11 +214,13 @@ func die(cause: StringName) -> void:
 	set_physics_process(false)
 	collision_layer = 0
 	collision_mask = 0
+	VisualEffects.burst(self, global_position, &"death", element)
 	EventBus.player_died.emit(element, cause)
 
 	var tw := create_tween()
 	tw.set_parallel(true)
-	tw.tween_property(_visual, "scale", Vector2(0.15, 0.15), 0.26)
+	if not VisualEffects.reduced_motion:
+		tw.tween_method(_apply_death_scale, _visual.scale, Vector2(0.15, 0.15), 0.26)
 	tw.tween_property(_visual, "modulate:a", 0.0, 0.26)
 	tw.set_parallel(false)
 	tw.tween_callback(respawn)
@@ -238,6 +243,13 @@ func respawn() -> void:
 	set_physics_process(true)
 	_visual.scale = Vector2.ONE
 	_visual.modulate = Color.WHITE
+	_visual.rotation = 0.0
+	_visual.position = Vector2.ZERO
+	_push_feedback_time = 0.0
+	_land_squash = 0.0
+	_jump_stretch = 0.0
+	_land_anim_time = 0.0
+	VisualEffects.burst(self, global_position + Vector2(0, BODY_H * 0.5), &"respawn", element)
 	EventBus.player_respawned.emit(element)
 
 
@@ -282,7 +294,8 @@ func _physics_process(delta: float) -> void:
 		_coyote = 0.0
 		_jump_held = true
 		_jump_stretch = 1.0
-		Sound.play(&"jump")
+		Sound.play(&"jump_fire" if element == &"fire" else &"jump_water")
+		VisualEffects.burst(self, global_position + Vector2(0, BODY_H * 0.5), &"jump", element)
 
 	# --- 可变跳跃高度：提前松手就砍掉上升速度
 	if _jump_held and not Input.is_action_pressed(jump_action) and velocity.y < 0.0:
@@ -301,11 +314,16 @@ func _physics_process(delta: float) -> void:
 	elif velocity.y > MAX_FALL:
 		velocity.y = MAX_FALL
 
+	var impact_speed := velocity.y
 	move_and_slide()
 	var landed := is_on_floor() and not _was_on_floor and velocity.y >= 0.0
 	if landed:
 		_land_squash = 1.0
 		_land_anim_time = 0.13
+		if impact_speed >= 140.0:
+			Sound.play(&"land_fire" if element == &"fire" else &"land_water")
+			VisualEffects.burst(self, global_position + Vector2(0, BODY_H * 0.5),
+				&"land", element, clampf(impact_speed / 500.0, 0.65, 1.3))
 	_was_on_floor = is_on_floor()
 
 
@@ -313,11 +331,19 @@ func _process(delta: float) -> void:
 	if _visual == null:
 		return
 	_time += delta
+	_push_feedback_time = maxf(_push_feedback_time - delta, 0.0)
 	# 死亡缩放补间 / 过关冻结都由其它逻辑接管视觉，这里只在存活且未冻结时
 	# 更新朝向与走动晃动，否则会每帧把 scale.x 拉回 ±1，覆盖 die() 的死亡补间。
 	if not alive or frozen:
 		return
 	_update_character_animation(delta)
+	if VisualEffects.reduced_motion:
+		_visual.scale = Vector2(float(_facing), 1.0)
+		_visual.rotation = 0.0
+		_visual.position = Vector2.ZERO
+		_jump_stretch = move_toward(_jump_stretch, 0.0, delta * 6.5)
+		_land_squash = 0.0
+		return
 	# 单张立绘的程序动画：待机呼吸、走路步频、起跳拉伸、下落收拢、落地回弹。
 	# 步频跟随实际速度，减速时动作会自然停下来，避免原地“踏步”。
 	var speed_ratio := clampf(absf(velocity.x) / SPEED, 0.0, 1.0)
@@ -354,6 +380,10 @@ func _process(delta: float) -> void:
 	var land_bounce := sin(_land_squash * PI * 2.5) * _land_squash
 	target_scale.x += _land_squash * 0.14 + land_bounce * 0.055
 	target_scale.y -= _land_squash * 0.13 + land_bounce * 0.04
+	if _push_feedback_time > 0.0 and is_on_floor():
+		target_rotation = deg_to_rad(9.0) * float(_facing)
+		target_scale *= Vector2(1.035, 0.965)
+		bob = -0.5 - absf(sin(_time * 14.0)) * 0.6
 	# 这几个平滑是「一阶低通」，对周期信号会同时造成幅度衰减与相位滞后：
 	# 滞后量 ≈ atan(ω/k)，ω 是步态角频率（12fps 锁相后约 22 rad/s）。
 	# 原来的 13 / 12 / 90 对走路摆动来说太肉（rotation 滞后接近 80°、幅度只剩 58%），
@@ -419,3 +449,19 @@ func _apply_frame_anchor(animation: StringName, frame: int) -> void:
 ## 10fps 下每 100ms 抽一下。
 func _on_frame_changed() -> void:
 	_apply_frame_anchor(_sprite.animation, _sprite.frame)
+
+
+func show_push_feedback() -> void:
+	if alive and not frozen:
+		_push_feedback_time = 0.10
+
+
+func _apply_death_scale(value: Vector2) -> void:
+	_visual.scale = Vector2.ONE if VisualEffects.reduced_motion else value
+
+
+func _on_visual_settings_changed() -> void:
+	if VisualEffects.reduced_motion and _visual != null:
+		_visual.scale = Vector2(float(_facing), 1.0) if alive else Vector2.ONE
+		_visual.rotation = 0.0
+		_visual.position = Vector2.ZERO

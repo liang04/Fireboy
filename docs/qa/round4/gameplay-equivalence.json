@@ -1,0 +1,87 @@
+{
+  "baseline_commit": "c1b2cc297f9a9a569a40e0103773bcc32e29232f",
+  "comparison_fields": [
+    "frames",
+    "red",
+    "red_total",
+    "blue",
+    "blue_total",
+    "deaths",
+    "box_resets",
+    "stars",
+    "positions",
+    "par_time",
+    "game_elapsed_seconds"
+  ],
+  "runs": [
+    {
+      "level": 1,
+      "same": true,
+      "differences": {},
+      "frames": 640
+    },
+    {
+      "level": 2,
+      "same": true,
+      "differences": {},
+      "frames": 1377
+    },
+    {
+      "level": 3,
+      "same": true,
+      "differences": {},
+      "frames": 953
+    },
+    {
+      "level": 4,
+      "same": true,
+      "differences": {},
+      "frames": 1338
+    },
+    {
+      "level": 5,
+      "same": true,
+      "differences": {},
+      "frames": 2114
+    },
+    {
+      "level": 6,
+      "same": true,
+      "differences": {},
+      "frames": 553
+    },
+    {
+      "level": 7,
+      "same": true,
+      "differences": {},
+      "frames": 1098
+    },
+    {
+      "level": 8,
+      "same": true,
+      "differences": {},
+      "frames": 1780
+    },
+    {
+      "level": 9,
+      "same": true,
+      "differences": {},
+      "frames": 1469
+    },
+    {
+      "level": 10,
+      "same": true,
+      "differences": {},
+      "frames": 644
+    }
+  ],
+  "unchanged_gameplay_files_sha256": {
+    "scripts/levels/levels.gd": "0d62c3c707ee24528d40ea671ad59e197edf829753cc134788b6a9d66b5a3aed",
+    "scripts/autoload/game_state.gd": "28941e0f6edce8be1198b576b3923101a73ed61326852a1d260c31c75c056863",
+    "scripts/level_builder.gd": "0dce75b4d216086a488c604b1b2c5e041268174eb13edd2885bbcba3e0d99e04",
+    "scripts/camera_rig.gd": "53706014c0a2c6110640744a814783068deae938be7a983a9d979bea4517a0d8",
+    "tools/full_gem_route_replay.json": "df40f4a00ef520bfdd66e7fa4c841deee40943b43cadb1a0b4cc98424d7afb81",
+    "tools/gen_levels.py": "c2d60c8e9d005bffeafc4e8fd2b01ddb185c4851676f2f28b5f44cc61aeecfe4",
+    "scenes/player.tscn": "87d5228ebeddabf05ea07eae182377576c4ddb5745be3866d2fc41ae97ed0e63"
+  }
+}

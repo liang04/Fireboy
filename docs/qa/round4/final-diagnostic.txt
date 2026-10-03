@@ -1,0 +1,42 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+[visual-feedback] PASS real jump emits scene-owned feedback
+[visual-feedback] PASS real jump still rises
+[visual-feedback] PASS jump visual never scales physics or collision
+[visual-feedback] PASS original landing remains solid
+[visual-feedback] PASS landing emits one impact burst
+[visual-feedback] PASS burst storm respects 96-particle / 12-ring cap
+[visual-feedback] PASS effects allocate no particle nodes
+[visual-feedback] PASS pause freezes feedback lifetime
+[visual-feedback] PASS changing detail while paused clears old effects
+[visual-feedback] PASS low-detail storm stays within 24 particles
+[visual-feedback] PASS all feedback expires and idle canvas stops processing
+[visual-feedback] PASS reduced motion retains a static local marker without particles
+[visual-feedback] PASS reduced motion suppresses cosmetic bob and tilt
+[visual-feedback] PASS reduced motion suppresses full-screen power pulse
+[visual-feedback] PASS reduced motion also suppresses wrong-owner squash
+[visual-feedback] PASS reduced motion preserves original rejection overlap transform
+[visual-feedback] PASS reduced motion suppresses result zoom/back-ease
+[visual-feedback] PASS enabling reduced motion snaps active collection to stable scale
+[visual-feedback] PASS collection tween cannot restore motion after settings change
+[visual-feedback] PASS enabling reduced motion cancels active death shrink
+[visual-feedback] PASS death tween cannot restore shrink after settings change
+[visual-feedback] PASS visual preferences persist
+[visual-feedback] PASS pickup still counts once
+[visual-feedback] PASS pickup feedback outlives freed gem safely
+[visual-feedback] PASS push pose touches only the visual child
+[visual-feedback] PASS push pose releases when contact stops
+[visual-feedback] PASS captured action-death-diagnostic
+[visual-feedback] PASS death emits local elemental feedback
+[visual-feedback] PASS early respawn cancels death tween and preserves collision size
+[visual-feedback] PASS no stale death tween fires after early respawn
+[visual-feedback] PASS captured settings-pause
+[visual-feedback] PASS pause settings fit viewport
+[visual-feedback] PASS ReducedMotion control fits panel
+[visual-feedback] PASS LowDetail control fits panel
+[visual-feedback] PASS leaving level destroys its entire effect canvas
+[visual-feedback] PASS five restarts leave no orphaned effects
+[visual-feedback] finished, checks=36, errors=0

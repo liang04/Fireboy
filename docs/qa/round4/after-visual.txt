@@ -1,0 +1,63 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+[routes] START level 1
+[visual] action-jump-level-01 OK
+[visual] action-land-level-01 OK
+[visual] action-gem-level-01 OK
+[visual] level-01-frame-0450 OK
+[visual] level-01-finish OK
+[routes] PASS L1 frames=640 time=10.6833 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 2
+[visual] action-push-level-02 OK
+[visual] level-02-frame-0400 OK
+[visual] level-02-frame-0800 OK
+[visual] level-02-finish OK
+[routes] PASS L2 frames=1377 time=22.9667 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 3
+[visual] level-03-frame-0449 OK
+[visual] level-03-frame-0600 OK
+[visual] level-03-frame-0808 OK
+[visual] level-03-finish OK
+[routes] PASS L3 frames=953 time=15.9000 gems=4/4+4/4 deaths=0 resets=0 reason=completed
+[routes] START level 4
+[visual] level-04-frame-0600 OK
+[visual] level-04-frame-1000 OK
+[visual] level-04-finish OK
+[routes] PASS L4 frames=1338 time=22.3167 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 5
+[visual] level-05-frame-0800 OK
+[visual] level-05-frame-1400 OK
+[visual] level-05-finish OK
+[routes] PASS L5 frames=2114 time=35.2500 gems=4/4+4/4 deaths=0 resets=0 reason=completed
+[routes] START level 6
+[visual] level-06-frame-0150 OK
+[visual] level-06-frame-0300 OK
+[visual] level-06-finish OK
+[routes] PASS L6 frames=553 time=9.2333 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 7
+[visual] level-07-frame-0500 OK
+[visual] level-07-frame-0900 OK
+[visual] level-07-finish OK
+[routes] PASS L7 frames=1098 time=18.3167 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 8
+[visual] level-08-frame-0600 OK
+[visual] level-08-frame-1200 OK
+[visual] level-08-frame-1600 OK
+[visual] level-08-finish OK
+[routes] PASS L8 frames=1780 time=29.6833 gems=5/5+5/5 deaths=0 resets=0 reason=completed
+[routes] START level 9
+[visual] level-09-frame-0800 OK
+[visual] level-09-frame-1100 OK
+[visual] level-09-frame-1350 OK
+[visual] level-09-finish OK
+[routes] PASS L9 frames=1469 time=24.5000 gems=4/4+4/4 deaths=0 resets=0 reason=completed
+[routes] START level 10
+[visual] level-10-frame-0250 OK
+[visual] level-10-frame-0450 OK
+[visual] level-10-frame-0600 OK
+[visual] level-10-finish OK
+[routes] PASS L10 frames=644 time=10.7500 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] wrote /workspace/shared/fireboy-polish-qa/after-routes.json

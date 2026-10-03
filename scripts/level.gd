@@ -5,6 +5,7 @@ class_name Level
 ## 具体机关的行为一概不在这里，避免这个类变成上帝对象。
 
 const HUD_SCENE := preload("res://scenes/hud.tscn")
+const ATMOSPHERE_SCRIPT := preload("res://scripts/util/level_atmosphere.gd")
 const MENU_SCENE := "res://scenes/main_menu.tscn"
 
 # ---------------------------------------------------------------- 星级门槛
@@ -44,6 +45,10 @@ func _ready() -> void:
 
 	var data := Levels.get_level(index)
 	var info := LevelBuilder.build(self, data)
+	var atmosphere := ATMOSPHERE_SCRIPT.new()
+	atmosphere.name = "Atmosphere"
+	atmosphere.setup(index, info.get("bounds", Rect2(0, 0, 1280, 720)))
+	add_child(atmosphere)
 	_level_name = String(info.get("level_name", ""))
 	_subtitle = String(info.get("subtitle", ""))
 	_players = info.get("players", [])

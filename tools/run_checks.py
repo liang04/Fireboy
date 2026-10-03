@@ -9,7 +9,7 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
-SUPPORTED_GODOT = "4.6.3"
+SUPPORTED_GODOT = ("4.6.3", "4.7")
 
 
 def main():
@@ -35,8 +35,8 @@ def main():
         version = subprocess.run([binary, "--version"], env=env, capture_output=True,
                                  text=True, encoding="utf-8", errors="replace", timeout=30)
         actual = version.stdout.strip()
-        if version.returncode or not actual.startswith(SUPPORTED_GODOT + "."):
-            print(f"FAIL: supported Godot version is {SUPPORTED_GODOT}; got {actual!r}", file=sys.stderr)
+        if version.returncode or not any(actual.startswith(version + ".") for version in SUPPORTED_GODOT):
+            print(f"FAIL: tested Godot versions are {', '.join(SUPPORTED_GODOT)}; got {actual!r}", file=sys.stderr)
             return 1
         print(f"Godot: {actual}", flush=True)
         checks = [
@@ -46,6 +46,9 @@ def main():
             ("Controls regression", [binary, "--headless", "--path", str(ROOT), "res://tools/control_regression.tscn"]),
             ("Box co-op regression", [binary, "--headless", "--path", str(ROOT), "res://tools/box_regression.tscn"]),
             ("Feedback regression", [binary, "--headless", "--path", str(ROOT), "res://tools/feedback_regression.tscn"]),
+            ("Audio regression", [binary, "--headless", "--path", str(ROOT), "res://tools/audio_regression.tscn"]),
+            ("Visual feedback regression", [binary, "--headless", "--path", str(ROOT), "res://tools/visual_feedback_regression.tscn"]),
+            ("Atmosphere regression", [binary, "--headless", "--path", str(ROOT), "res://tools/atmosphere_regression.tscn"]),
             ("Box recovery regression", [binary, "--headless", "--path", str(ROOT), "res://tools/recovery_regression.tscn"]),
             ("UI regression", [binary, "--headless", "--path", str(ROOT), "res://tools/ui_regression.tscn"]),
             ("Enrichment cooperation and recovery", [sys.executable, "tools/run_enrichment_checks.py", "--godot", binary]),

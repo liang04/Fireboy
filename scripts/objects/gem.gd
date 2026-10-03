@@ -19,6 +19,7 @@ var _t := 0.0
 var _collected := false
 var _spin: Polygon2D
 var _ring: Line2D
+var _feedback_visual: Node2D
 ## 拒绝反馈的补间句柄。必须持有：玩家可能在动画播完前就叫同色队友来拾取，
 ## 两个补间会抢同一个 scale / modulate，所以拾取时要先把它杀掉。
 var _reject_tween: Tween = null
@@ -74,24 +75,28 @@ func setup(cell: Vector2i, col: StringName, cell_px: int, owner_el: StringName =
 	collision_mask = 2
 	monitoring = true
 
+	_feedback_visual = Node2D.new()
+	_feedback_visual.name = "FeedbackVisual"
+	add_child(_feedback_visual)
 	var col_c := Tex.C_GEM_RED if color == &"red" else Tex.C_GEM_BLUE
 	_spin = Polygon2D.new()
 	_spin.polygon = Tex.diamond_points(cell_px * 0.32, cell_px * 0.42)
 	_spin.color = col_c
 	_spin.z_index = 5
-	add_child(_spin)
+	_feedback_visual.add_child(_spin)
 
 	var glow := Polygon2D.new()
 	glow.polygon = Tex.diamond_points(cell_px * 0.44, cell_px * 0.54)
 	glow.color = Color(col_c.r, col_c.g, col_c.b, 0.28)
 	glow.z_index = 4
-	add_child(glow)
+	_feedback_visual.add_child(glow)
 
 	# 归属环：用【元素主题色】而不是宝石色，一眼看出这颗归谁。
 	_ring = _make_ring(cell_px, owner_element)
-	add_child(_ring)
+	_feedback_visual.add_child(_ring)
 
 	body_entered.connect(_on_body_entered)
+	VisualEffects.settings_changed.connect(_on_visual_settings_changed)
 
 
 static func _make_ring(cell_px: int, el: StringName) -> Line2D:
@@ -106,6 +111,10 @@ static func _make_ring(cell_px: int, el: StringName) -> Line2D:
 
 func _process(delta: float) -> void:
 	if _spin == null:
+		return
+	if VisualEffects.reduced_motion:
+		_spin.scale.x = 1.0
+		_spin.position.y = 0.0
 		return
 	_t += delta
 	_spin.scale.x = 0.72 + absf(sin(_t * 2.4)) * 0.42
@@ -127,13 +136,14 @@ func _collect() -> void:
 	# 否则收起动画会从一个「灰掉 / 压扁」的状态开始。
 	_kill_reject_tween()
 	modulate = Color(1, 1, 1, 1)
-	scale = Vector2.ONE
+	_apply_feedback_scale(Vector2.ONE)
 
+	VisualEffects.burst(self, global_position, &"gem", owner_element)
 	EventBus.gem_collected.emit(color)
 	# 收起动画：先放大再消失
 	var tw := create_tween()
 	tw.set_parallel(true)
-	tw.tween_property(self, "scale", Vector2(1.9, 1.9), 0.18)
+	tw.tween_method(_apply_feedback_scale, scale, Vector2(1.9, 1.9), 0.18)
 	tw.tween_property(self, "modulate:a", 0.0, 0.18)
 	tw.set_parallel(false)
 	tw.tween_callback(queue_free)
@@ -147,10 +157,10 @@ func _reject() -> void:
 	_kill_reject_tween()
 	_reject_tween = create_tween()
 	_reject_tween.set_parallel(true)
-	_reject_tween.tween_property(self, "scale", Vector2(0.76, 1.22), 0.07)
+	_reject_tween.tween_method(_apply_feedback_scale, scale, Vector2(0.76, 1.22), 0.07)
 	_reject_tween.tween_property(self, "modulate", Color(0.45, 0.45, 0.45, 1.0), 0.07)
 	_reject_tween.set_parallel(false)
-	_reject_tween.tween_property(self, "scale", Vector2.ONE, 0.22).set_trans(Tween.TRANS_BACK)
+	_reject_tween.tween_method(_apply_feedback_scale, Vector2(0.76, 1.22), Vector2.ONE, 0.22).set_trans(Tween.TRANS_BACK)
 	_reject_tween.tween_property(self, "modulate", Color(1, 1, 1, 1), 0.22)
 
 
@@ -158,3 +168,16 @@ func _kill_reject_tween() -> void:
 	if _reject_tween != null and _reject_tween.is_valid():
 		_reject_tween.kill()
 	_reject_tween = null
+
+
+func _apply_feedback_scale(value: Vector2) -> void:
+	# Preserve the original Area2D rejection transform/timing in both modes.
+	# Reduced motion compensates rendered children only; overlap rules stay identical.
+	scale = value
+	_on_visual_settings_changed()
+
+
+func _on_visual_settings_changed() -> void:
+	if _feedback_visual != null:
+		_feedback_visual.scale = Vector2(1.0 / scale.x, 1.0 / scale.y) \
+			if VisualEffects.reduced_motion else Vector2.ONE
