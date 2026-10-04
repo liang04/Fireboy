@@ -33,8 +33,8 @@ var _level_name := ""
 var _subtitle := ""
 ## channel → 受控物数量。用来识别「一杆控多物」的总闸时刻（第 8 关）。
 var _channel_fanout: Dictionary = {}
-## 闪屏冷却的到期时刻（毫秒）。防止玩家在板上反复起跳时把强调反馈刷成噪音。
-var _power_flash_until := 0
+## 强调音效冷却的到期时刻（毫秒）。防止玩家在板上反复起跳时把强调反馈刷成噪音。
+var _power_sound_until := 0
 
 
 func _ready() -> void:
@@ -168,18 +168,17 @@ func _count_channel_fanout() -> void:
 			_channel_fanout[ch] = int(_channel_fanout.get(ch, 0)) + 1
 
 
-## 一个触发器同时驱动 ≥2 个受控物时，给一次强调反馈（音效 + 闪屏）。
+## 一个触发器同时驱动 ≥2 个受控物时，给一次受限流保护的强调音效。
 ## 这是第 8 关「总闸」的情绪高点：拉一下，整张地图下半场同时活过来。
 func _on_channel_state_changed(ch: StringName, active: bool) -> void:
 	if not active or int(_channel_fanout.get(ch, 0)) < 2:
 		return
 	var now := Time.get_ticks_msec()
-	if now < _power_flash_until:
+	if now < _power_sound_until:
 		return
-	_power_flash_until = now + 1200
+	_power_sound_until = now + 1200
 	Sound.play(&"power")
-	if _hud != null and _hud.has_method("pulse_power"):
-		_hud.pulse_power()
+	# 对应门/平台在原地标示状态；不再用全屏闪光代替机关定位。
 
 
 # ---------------------------------------------------------------- 过关
@@ -193,11 +192,12 @@ func _complete() -> void:
 			pl.freeze()
 
 	var stats := _build_stats()
+	var previous_best := GameState.comparable_result(GameState.current_level_index)
 	GameState.record_result(GameState.current_level_index, stats)
 	EventBus.level_completed.emit(stats)
 
 	var has_next := GameState.next_level_index() >= 0
-	_hud.show_result(stats, has_next)
+	_hud.show_result(stats, has_next, previous_best)
 
 
 func _build_stats() -> Dictionary:

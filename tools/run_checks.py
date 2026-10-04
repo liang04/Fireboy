@@ -51,6 +51,10 @@ def main():
             ("Atmosphere regression", [binary, "--headless", "--path", str(ROOT), "res://tools/atmosphere_regression.tscn"]),
             ("Box recovery regression", [binary, "--headless", "--path", str(ROOT), "res://tools/recovery_regression.tscn"]),
             ("UI regression", [binary, "--headless", "--path", str(ROOT), "res://tools/ui_regression.tscn"]),
+            ("Replay records regression", [binary, "--headless", "--path", str(ROOT), "res://tools/replay_regression.tscn"]),
+            ("Replay transitions regression", [binary, "--headless", "--path", str(ROOT), "res://tools/replay_flow_regression.tscn"]),
+            ("Menu replay regression", [binary, "--headless", "--path", str(ROOT), "res://tools/menu_replay_regression.tscn"]),
+            ("Mechanism feedback regression", [binary, "--headless", "--path", str(ROOT), "res://tools/mechanism_feedback_regression.tscn"]),
             ("Enrichment cooperation and recovery", [sys.executable, "tools/run_enrichment_checks.py", "--godot", binary]),
         ]
         if not args.skip_smoke:

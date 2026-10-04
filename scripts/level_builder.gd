@@ -10,6 +10,7 @@ class_name LevelBuilder
 const CELL := 32
 static var _tilesets: Dictionary = {}
 const PLAYER_SCENE := preload("res://scenes/player.tscn")
+const MECHANISM_FEEDBACK_SCRIPT := preload("res://scripts/util/mechanism_feedback.gd")
 
 const TERRAIN_STONE := 0
 const TERRAIN_WOOD := 1
@@ -39,6 +40,9 @@ static func build(parent: Node2D, data: Dictionary) -> Dictionary:
 	exits.name = "Exits"
 	for n in [terrain, hazards, objects, gems, players, exits]:
 		parent.add_child(n)
+	var mechanism_feedback := MECHANISM_FEEDBACK_SCRIPT.new()
+	mechanism_feedback.name = "MechanismFeedback"
+	parent.add_child(mechanism_feedback)
 
 	var spawns := {}
 	var exit_cells := {}
@@ -111,6 +115,8 @@ static func build(parent: Node2D, data: Dictionary) -> Dictionary:
 					int(o.get("height", 3)), CELL)
 				objects.add_child(d)
 				_channel_label(d, d.channel, Vector2(-8, 4))
+				mechanism_feedback.register_target(d, d.channel, &"door",
+					Vector2(CELL, d.height_cells * CELL))
 			"lever":
 				var lv := Lever.new()
 				lv.setup(_vec(o.get("cell", [0, 0])), StringName(o.get("channel", "A")), CELL)
@@ -123,6 +129,8 @@ static func build(parent: Node2D, data: Dictionary) -> Dictionary:
 				objects.add_child(mp)
 				if mp.channel != &"":
 					_channel_label(mp, mp.channel, Vector2(0, 12))
+					mechanism_feedback.register_target(mp, mp.channel, &"platform",
+						Vector2(mp.width_cells * CELL, CELL * 0.5))
 			"box":
 				var b := PushBox.new()
 				b.setup(_vec(o.get("cell", [0, 0])), CELL)

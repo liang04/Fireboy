@@ -1,0 +1,90 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+[mechanism-feedback] PASS builder registers only controlled targets, with no startup feedback
+[mechanism-feedback] PASS normal feedback has only a short tail fade, with no position animation
+[mechanism-feedback] PASS permanent matching channel IDs stay intact
+[mechanism-feedback] PASS duplicate registration does not duplicate feedback
+[mechanism-feedback] PASS unrelated channels and unchanged initial state stay quiet
+[mechanism-feedback] PASS real lever interaction still activates matching mechanisms
+[mechanism-feedback] PASS one trigger creates one local badge per matching target
+[mechanism-feedback] PASS target badges include channel and explicit state
+[mechanism-feedback] PASS duplicate trigger spam does not refresh or multiply badges
+[mechanism-feedback] PASS gate retains its original 0.35-second physical opening
+[mechanism-feedback] PASS opening badge stays at the doorway while the gate sinks
+[mechanism-feedback] PASS platform badge follows the moving target rather than its starting point
+[mechanism-feedback] PASS captured mechanism-targets-on
+[mechanism-feedback] PASS pause freezes badge lifetime and leaves mechanism motion paused
+[mechanism-feedback] PASS reduced motion immediately applies static feedback while paused
+[mechanism-feedback] PASS reduced motion also makes an already-fading marker immediately static
+[mechanism-feedback] PASS paused settings cannot age feedback or restart an energy pulse
+[mechanism-feedback] PASS reduced motion keeps actual platform travel unchanged
+[mechanism-feedback] PASS normal setting restores the existing energy-band pulse
+[mechanism-feedback] PASS low detail immediately simplifies target feedback and stops the decorative pulse
+[mechanism-feedback] PASS switching off names both resulting target states
+[mechanism-feedback] PASS alternating chatter coalesces latest truth without extending lifetime or allocating nodes
+[mechanism-feedback] PASS feedback never changes controlled or always-on trigger rules
+[mechanism-feedback] PASS feedback preserves target collision shape and layers
+[mechanism-feedback] PASS captured mechanism-targets-off-static
+[mechanism-feedback] PASS all badges expire and the idle canvas stops processing
+[mechanism-feedback] PASS unchanged states cannot revive expired badges
+[mechanism-feedback] PASS actual pressure-plate overlap activates both local target badges
+[mechanism-feedback] PASS leaving a pressure plate changes local feedback back to the off state
+[mechanism-feedback] PASS large fan-out stays within the eight-marker cap
+[mechanism-feedback] PASS queued or freed targets are discarded safely even during new signals
+[mechanism-feedback] PASS leaving a world destroys all local mechanism feedback
+[mechanism-feedback] PASS teardown releases channel and visual-settings signal subscriptions
+[mechanism-feedback] PASS level 1 target retains permanent channel label
+[mechanism-feedback] PASS level 1 target retains permanent channel label
+[mechanism-feedback] PASS level 1 registers every controlled target
+[mechanism-feedback] PASS level 2 target retains permanent channel label
+[mechanism-feedback] PASS level 2 target retains permanent channel label
+[mechanism-feedback] PASS level 2 target retains permanent channel label
+[mechanism-feedback] PASS level 2 target retains permanent channel label
+[mechanism-feedback] PASS level 2 registers every controlled target
+[mechanism-feedback] PASS level 3 target retains permanent channel label
+[mechanism-feedback] PASS level 3 target retains permanent channel label
+[mechanism-feedback] PASS level 3 target retains permanent channel label
+[mechanism-feedback] PASS level 3 target retains permanent channel label
+[mechanism-feedback] PASS level 3 target retains permanent channel label
+[mechanism-feedback] PASS level 3 registers every controlled target
+[mechanism-feedback] PASS level 4 target retains permanent channel label
+[mechanism-feedback] PASS level 4 target retains permanent channel label
+[mechanism-feedback] PASS level 4 target retains permanent channel label
+[mechanism-feedback] PASS level 4 target retains permanent channel label
+[mechanism-feedback] PASS level 4 registers every controlled target
+[mechanism-feedback] PASS level 5 target retains permanent channel label
+[mechanism-feedback] PASS level 5 target retains permanent channel label
+[mechanism-feedback] PASS level 5 target retains permanent channel label
+[mechanism-feedback] PASS level 5 target retains permanent channel label
+[mechanism-feedback] PASS level 5 registers every controlled target
+[mechanism-feedback] PASS level 6 target retains permanent channel label
+[mechanism-feedback] PASS level 6 target retains permanent channel label
+[mechanism-feedback] PASS level 6 registers every controlled target
+[mechanism-feedback] PASS level 7 target retains permanent channel label
+[mechanism-feedback] PASS level 7 target retains permanent channel label
+[mechanism-feedback] PASS level 7 target retains permanent channel label
+[mechanism-feedback] PASS level 7 registers every controlled target
+[mechanism-feedback] PASS level 8 target retains permanent channel label
+[mechanism-feedback] PASS level 8 target retains permanent channel label
+[mechanism-feedback] PASS level 8 target retains permanent channel label
+[mechanism-feedback] PASS level 8 target retains permanent channel label
+[mechanism-feedback] PASS level 8 target retains permanent channel label
+[mechanism-feedback] PASS level 8 target retains permanent channel label
+[mechanism-feedback] PASS level 8 registers every controlled target
+[mechanism-feedback] PASS level 9 target retains permanent channel label
+[mechanism-feedback] PASS level 9 target retains permanent channel label
+[mechanism-feedback] PASS level 9 target retains permanent channel label
+[mechanism-feedback] PASS level 9 target retains permanent channel label
+[mechanism-feedback] PASS level 9 target retains permanent channel label
+[mechanism-feedback] PASS level 9 target retains permanent channel label
+[mechanism-feedback] PASS level 9 target retains permanent channel label
+[mechanism-feedback] PASS level 9 registers every controlled target
+[mechanism-feedback] PASS level 10 target retains permanent channel label
+[mechanism-feedback] PASS level 10 target retains permanent channel label
+[mechanism-feedback] PASS level 10 target retains permanent channel label
+[mechanism-feedback] PASS level 10 registers every controlled target
+[mechanism-feedback] PASS ten level builds and restarts leave no canvases or signal subscriptions
+[mechanism-feedback] finished, checks=84, errors=0

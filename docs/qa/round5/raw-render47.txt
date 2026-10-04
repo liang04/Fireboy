@@ -1,0 +1,47 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+[routes] START level 1
+[replay-visual] raw-route-01-door-mechanism OK
+[replay-visual] raw-route-01-result OK
+[routes] PASS L1 frames=640 time=10.6833 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 2
+[replay-visual] raw-route-02-door-mechanism OK
+[replay-visual] raw-route-02-result OK
+[routes] PASS L2 frames=1377 time=22.9667 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 3
+[replay-visual] raw-route-03-door-mechanism OK
+[replay-visual] raw-route-03-result OK
+[routes] PASS L3 frames=953 time=15.9000 gems=4/4+4/4 deaths=0 resets=0 reason=completed
+[routes] START level 4
+[replay-visual] raw-route-04-door-mechanism OK
+[replay-visual] raw-route-04-result OK
+[routes] PASS L4 frames=1338 time=22.3167 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 5
+[replay-visual] raw-route-05-platform-mechanism OK
+[replay-visual] raw-route-05-result OK
+[routes] PASS L5 frames=2114 time=35.2500 gems=4/4+4/4 deaths=0 resets=0 reason=completed
+[routes] START level 6
+[replay-visual] raw-route-06-door-mechanism OK
+[replay-visual] raw-route-06-result OK
+[routes] PASS L6 frames=553 time=9.2333 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 7
+[replay-visual] raw-route-07-door-mechanism OK
+[replay-visual] raw-route-07-result OK
+[routes] PASS L7 frames=1098 time=18.3167 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 8
+[replay-visual] raw-route-08-platform-mechanism OK
+[replay-visual] raw-route-08-result OK
+[routes] PASS L8 frames=1780 time=29.6833 gems=5/5+5/5 deaths=0 resets=0 reason=completed
+[routes] START level 9
+[replay-visual] raw-route-09-door-mechanism OK
+[replay-visual] raw-route-09-platform-mechanism OK
+[replay-visual] raw-route-09-result OK
+[routes] PASS L9 frames=1469 time=24.5000 gems=4/4+4/4 deaths=0 resets=0 reason=completed
+[routes] START level 10
+[replay-visual] raw-route-10-door-mechanism OK
+[replay-visual] raw-route-10-result OK
+[routes] PASS L10 frames=644 time=10.7500 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] wrote /workspace/shared/fireboy/docs/qa/round5/raw-render47.json

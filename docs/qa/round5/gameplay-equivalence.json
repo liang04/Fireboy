@@ -1,0 +1,138 @@
+{
+  "baseline_commit": "2795e27efcb153c13649659b48b00b4b444fc840",
+  "baseline_tree": "0dc8fb0e4d3edf02149a4155a1c44c469837abd4",
+  "comparison_fields": [
+    "frames",
+    "game_elapsed_seconds",
+    "red",
+    "red_total",
+    "blue",
+    "blue_total",
+    "deaths",
+    "box_resets",
+    "stars",
+    "par_time",
+    "within_par",
+    "positions",
+    "completed",
+    "all_gems"
+  ],
+  "engines": {
+    "46": {
+      "engine": "4.6.3-stable (official)",
+      "all_equal": true,
+      "source_hashes_stable": true,
+      "all_passed": true,
+      "runs": [
+        {
+          "level": 1.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 2.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 3.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 4.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 5.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 6.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 7.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 8.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 9.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 10.0,
+          "equal": true,
+          "differences": {}
+        }
+      ]
+    },
+    "47": {
+      "engine": "4.7-stable (official)",
+      "all_equal": true,
+      "source_hashes_stable": true,
+      "all_passed": true,
+      "runs": [
+        {
+          "level": 1.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 2.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 3.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 4.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 5.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 6.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 7.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 8.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 9.0,
+          "equal": true,
+          "differences": {}
+        },
+        {
+          "level": 10.0,
+          "equal": true,
+          "differences": {}
+        }
+      ]
+    }
+  }
+}

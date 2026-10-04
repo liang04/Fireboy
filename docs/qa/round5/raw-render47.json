@@ -1,0 +1,307 @@
+{
+  "engine": "4.7-stable (official)",
+  "physics_hz": 60,
+  "runs": [
+    {
+      "all_gems": true,
+      "blue": 3,
+      "blue_total": 3,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 640,
+      "game_elapsed_seconds": 10.6833333333334,
+      "level": 1.0,
+      "mode": "input_replay",
+      "par_time": 30.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          1599.97741699219,
+          497.925231933594
+        ],
+        "water": [
+          1520.98522949219,
+          625.925231933594
+        ]
+      },
+      "reason": "completed",
+      "red": 3,
+      "red_total": 3,
+      "simulation_seconds": 10.6666666666667,
+      "stars": 3,
+      "within_par": true
+    },
+    {
+      "all_gems": true,
+      "blue": 3,
+      "blue_total": 3,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 1377,
+      "game_elapsed_seconds": 22.9666666666666,
+      "level": 2.0,
+      "mode": "input_replay",
+      "par_time": 45.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          1618.32922363281,
+          625.925231933594
+        ],
+        "water": [
+          1505.88586425781,
+          657.925231933594
+        ]
+      },
+      "reason": "completed",
+      "red": 3,
+      "red_total": 3,
+      "simulation_seconds": 22.95,
+      "stars": 3,
+      "within_par": true
+    },
+    {
+      "all_gems": true,
+      "blue": 4,
+      "blue_total": 4,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 953,
+      "game_elapsed_seconds": 15.9000000000004,
+      "level": 3.0,
+      "mode": "input_replay",
+      "par_time": 35.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          1856.15454101562,
+          657.925231933594
+        ],
+        "water": [
+          1903.2353515625,
+          657.925231933594
+        ]
+      },
+      "reason": "completed",
+      "red": 4,
+      "red_total": 4,
+      "simulation_seconds": 15.8833333333333,
+      "stars": 3,
+      "within_par": true
+    },
+    {
+      "all_gems": true,
+      "blue": 3,
+      "blue_total": 3,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 1338,
+      "game_elapsed_seconds": 22.3166666666667,
+      "level": 4.0,
+      "mode": "input_replay",
+      "par_time": 45.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          1823.11328125,
+          625.925231933594
+        ],
+        "water": [
+          1427.97290039062,
+          529.925231933594
+        ]
+      },
+      "reason": "completed",
+      "red": 3,
+      "red_total": 3,
+      "simulation_seconds": 22.3,
+      "stars": 3,
+      "within_par": true
+    },
+    {
+      "all_gems": true,
+      "blue": 4,
+      "blue_total": 4,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 2114,
+      "game_elapsed_seconds": 35.2499999999993,
+      "level": 5.0,
+      "mode": "input_replay",
+      "par_time": 65.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          688.17431640625,
+          145.925247192383
+        ],
+        "water": [
+          862.075317382812,
+          145.925247192383
+        ]
+      },
+      "reason": "completed",
+      "red": 4,
+      "red_total": 4,
+      "simulation_seconds": 35.2333333333333,
+      "stars": 3,
+      "within_par": true
+    },
+    {
+      "all_gems": true,
+      "blue": 3,
+      "blue_total": 3,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 553,
+      "game_elapsed_seconds": 9.23333333333337,
+      "level": 6.0,
+      "mode": "input_replay",
+      "par_time": 30.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          1472.828125,
+          241.925262451172
+        ],
+        "water": [
+          1521.16027832031,
+          241.925262451172
+        ]
+      },
+      "reason": "completed",
+      "red": 3,
+      "red_total": 3,
+      "simulation_seconds": 9.21666666666667,
+      "stars": 3,
+      "within_par": true
+    },
+    {
+      "all_gems": true,
+      "blue": 3,
+      "blue_total": 3,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 1098,
+      "game_elapsed_seconds": 18.3166666666669,
+      "level": 7.0,
+      "mode": "input_replay",
+      "par_time": 40.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          1377.47302246094,
+          346.091918945312
+        ],
+        "water": [
+          1554.44738769531,
+          369.925262451172
+        ]
+      },
+      "reason": "completed",
+      "red": 3,
+      "red_total": 3,
+      "simulation_seconds": 18.3,
+      "stars": 3,
+      "within_par": true
+    },
+    {
+      "all_gems": true,
+      "blue": 5,
+      "blue_total": 5,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 1780,
+      "game_elapsed_seconds": 29.6833333333329,
+      "level": 8.0,
+      "mode": "input_replay",
+      "par_time": 55.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          447.142944335938,
+          145.925247192383
+        ],
+        "water": [
+          1484.81188964844,
+          145.925247192383
+        ]
+      },
+      "reason": "completed",
+      "red": 5,
+      "red_total": 5,
+      "simulation_seconds": 29.6666666666667,
+      "stars": 3,
+      "within_par": true
+    },
+    {
+      "all_gems": true,
+      "blue": 4,
+      "blue_total": 4,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 1469,
+      "game_elapsed_seconds": 24.4999999999999,
+      "level": 9.0,
+      "mode": "input_replay",
+      "par_time": 55.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          2238.53051757812,
+          177.925247192383
+        ],
+        "water": [
+          2254.34985351562,
+          177.925247192383
+        ]
+      },
+      "reason": "completed",
+      "red": 4,
+      "red_total": 4,
+      "simulation_seconds": 24.4833333333333,
+      "stars": 3,
+      "within_par": true
+    },
+    {
+      "all_gems": true,
+      "blue": 3,
+      "blue_total": 3,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 644,
+      "game_elapsed_seconds": 10.7500000000001,
+      "level": 10.0,
+      "mode": "input_replay",
+      "par_time": 35.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          128.856338500977,
+          369.925262451172
+        ],
+        "water": [
+          1136.77416992188,
+          369.925262451172
+        ]
+      },
+      "reason": "completed",
+      "red": 3,
+      "red_total": 3,
+      "simulation_seconds": 10.7333333333333,
+      "stars": 3,
+      "within_par": true
+    }
+  ],
+  "verification": "Graphical Linux llvmpipe; original raw Input action tapes; real physics; 60 Hz; isolated fixture saves; screenshots do not alter gameplay. Seeded old record exists for level 1 only."
+}

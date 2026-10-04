@@ -51,7 +51,7 @@ func _run() -> void:
 	GameState.unlocked_levels = Levels.count()
 	GameState.current_level_index = Levels.count() - 1
 	for i in Levels.count():
-		GameState.results[i] = {"time": 123.45, "gems_time": 234.56, "red": 4,
+		GameState.results[i] = {"rev": GameState.level_revision(i), "time": 123.45, "gems_time": 234.56, "red": 4,
 			"red_total": 4, "blue": 4, "blue_total": 4, "stars": 2}
 	InputSetup.rebind(&"fire_jump", KEY_T)
 	menu = preload("res://scenes/main_menu.tscn").instantiate() as MainMenu

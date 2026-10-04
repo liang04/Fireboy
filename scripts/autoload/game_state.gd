@@ -3,6 +3,9 @@ extends Node
 ## 只存「元进度」，不存关卡内的运行期数据（那是 Level 的职责）。
 
 const SAVE_PATH := "user://progress.cfg"
+## 可选挑战只接受新版完整团队局的显式计数，不从旧字段缺省值授予。
+const CHALLENGE_VERSION := 1
+const CHALLENGE_COUNTERS := {"no_deaths": "deaths", "no_box_resets": "box_resets"}
 
 ## 评星规则版本。**改动评星判据、或改动任何关卡的三星时间门槛（par_time），都必须 +1。**
 ##
@@ -73,14 +76,29 @@ func record_result(index: int, stats: Dictionary) -> void:
 		return
 	unlocked_levels = mini(level_count(), maxi(unlocked_levels, index + 2))
 	var time: float = float(stats.get("time", 9999.0))
-	var old: Dictionary = results.get(index, {})
+	var old := comparable_result(index)
 	var best := stats.duplicate(true) if old.is_empty() else old.duplicate(true)
 	if time < float(best.get("time", 9999.0)):
 		best["time"] = time
 	for color in ["red", "blue"]:
 		best[color] = maxi(int(old.get(color, 0)), int(stats.get(color, 0)))
 		best[color + "_total"] = int(stats.get(color + "_total", 0))
-	best["deaths"] = mini(int(old.get("deaths", stats.get("deaths", 0))), int(stats.get("deaths", 0)))
+	for field in CHALLENGE_COUNTERS.values():
+		if _has_run_count(stats, field):
+			best[field] = mini(int(old.get(field, stats[field])), int(stats[field]))
+	# 两个挑战独立累计；零死亡与零复位可以分别在不同完整通关局获得。
+	# 不合并两局计数来伪造「双零同局」，也不更改三星判据。
+	var challenges: Dictionary = {}
+	for key in CHALLENGE_COUNTERS:
+		var status := challenge_status_for(old, key)
+		if status != "unknown":
+			challenges[key] = status == "earned"
+	for key in CHALLENGE_COUNTERS:
+		var field: String = CHALLENGE_COUNTERS[key]
+		if _has_run_count(stats, field):
+			challenges[key] = challenges.get(key, false) == true or int(stats[field]) == 0
+	best["challenges"] = challenges
+	best["challenge_version"] = CHALLENGE_VERSION
 	# 星级取历史最高：它是「最佳表现」而不是「最近一次」，和别的纪录一致。
 	best["stars"] = maxi(int(old.get("stars", 0)), int(stats.get("stars", 0)))
 	best["all_gems"] = bool(old.get("all_gems", false)) or (
@@ -102,6 +120,40 @@ func record_result(index: int, stats: Dictionary) -> void:
 	best["rev"] = level_revision(index)
 	results[index] = best
 	save_progress()
+
+
+## 必须在写入本局之前取得快照；只比较同一内容修订，调用方不能修改原纪录。
+func comparable_result(index: int) -> Dictionary:
+	var record: Variant = results.get(index, {})
+	if not has_level(index) or not record is Dictionary:
+		return {}
+	if not record.get("rev", 1) is int or record.get("rev", 1) != level_revision(index):
+		return {}
+	return record.duplicate(true)
+
+
+func challenge_status(index: int, key: String) -> String:
+	return challenge_status_for(comparable_result(index), key)
+
+
+func challenge_status_for(record: Dictionary, key: String) -> String:
+	if not CHALLENGE_COUNTERS.has(key) or not _has_challenge_version(record):
+		return "unknown"
+	var challenges: Variant = record.get("challenges", {})
+	if not challenges is Dictionary or not challenges.get(key) is bool:
+		return "unknown"
+	return "earned" if challenges[key] else "unearned"
+
+
+func _has_challenge_version(record: Dictionary) -> bool:
+	var version: Variant = record.get("challenge_version")
+	return version is int and version == CHALLENGE_VERSION
+
+
+func _has_run_count(stats: Dictionary, field: String) -> bool:
+	var value: Variant = stats.get(field)
+	return (value is int or value is float) and is_finite(float(value)) \
+		and float(value) >= 0.0 and float(value) == floorf(float(value))
 
 
 ## 该关当前的内容修订号（由 tools/gen_levels.py 生成到关卡数据里）。
@@ -162,18 +214,27 @@ func load_progress() -> void:
 			# 而且那个数还是下一轮标定 par 的输入。
 			# 缺 rev 字段的老记录按 1 算，所以只有真正改过的关会被清掉。
 			# 解锁进度（unlocked_levels）不在这里，天然不受影响。
-			if int(record.get("rev", 1)) != level_revision(index):
+			if not record.get("rev", 1) is int or record.get("rev", 1) != level_revision(index):
 				rev_stale = true
 				continue
 			var valid := true
 			for field in ["time", "gems_time", "red", "blue", "red_total", "blue_total",
-					"deaths", "stars"]:
+					"deaths", "box_resets", "stars"]:
 				var value: Variant = record.get(field, 0)
 				if not (value is int or value is float):
 					valid = false
 				elif not is_finite(float(value)) or float(value) < 0.0:
 					valid = false
 			if valid:
+				# 旧存档保持成绩/解锁；缺少挑战记录表示未知，绝不把缺失计数当零。
+				var challenges: Variant = record.get("challenges", {})
+				if not _has_challenge_version(record) or not challenges is Dictionary:
+					record.erase("challenges")
+					record.erase("challenge_version")
+				else:
+					for key_challenge in challenges.keys():
+						if not CHALLENGE_COUNTERS.has(key_challenge) or not challenges[key_challenge] is bool:
+							challenges.erase(key_challenge)
 				if rating_stale:
 					(record as Dictionary).erase("stars")
 				results[index] = record

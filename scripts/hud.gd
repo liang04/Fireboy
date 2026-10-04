@@ -16,6 +16,8 @@ class_name HUD
 var _stars: Label
 ## 结算面板里的评星归因（动态创建，见 _build_criteria）。
 var _criteria: Label
+var _comparison: Label
+var _challenges: Label
 ## 计时标签当前是否处于「已超三星门槛」的告警态。缓存起来避免逐帧写主题覆盖。
 var _time_over := false
 
@@ -44,6 +46,7 @@ func _ready() -> void:
 	_build_warn()
 	_build_stars()
 	_build_criteria()
+	_build_replay_summary()
 	_build_pulse()
 	_shade = ColorRect.new()
 	_shade.color = Color(0, 0, 0, 0.55)
@@ -167,6 +170,79 @@ func _build_criteria() -> void:
 	var box := $Center/Box as VBoxContainer
 	box.add_child(_criteria)
 	box.move_child(_criteria, 3)   # Title / Stars / Stats / Criteria / Hint
+
+
+func _build_replay_summary() -> void:
+	var box := $Center/Box as VBoxContainer
+	_comparison = Label.new()
+	_comparison.name = "RecordComparison"
+	_comparison.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_comparison.add_theme_font_size_override("font_size", 17)
+	_comparison.add_theme_color_override("font_color", Color("#c6def2"))
+	box.add_child(_comparison)
+	box.move_child(_comparison, 4)
+	_challenges = Label.new()
+	_challenges.name = "OptionalChallenges"
+	_challenges.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_challenges.add_theme_font_size_override("font_size", 16)
+	_challenges.add_theme_color_override("font_color", Color("#b6e8cf"))
+	box.add_child(_challenges)
+	box.move_child(_challenges, 5)
+
+
+func _comparison_text(stats: Dictionary, previous: Dictionary) -> String:
+	var elapsed := float(stats.get("time", 0.0))
+	var lines := PackedStringArray()
+	if previous.is_empty():
+		lines.append("首次通关 · 已建立本关纪录")
+	else:
+		lines.append(_time_comparison("历史最快", elapsed, float(previous.get("time", 0.0))))
+	if bool(stats.get("all_gems", false)):
+		var old_gems := float(previous.get("gems_time", 0.0))
+		lines.append(_time_comparison("全宝最快", elapsed, old_gems) if old_gems > 0.0 \
+			else "首次全宝石通关 · 已记录全宝最快 %s" % fmt_time(elapsed))
+	else:
+		var old_gems := float(previous.get("gems_time", 0.0))
+		lines.append("全宝最快 %s · 本局未全收集，不参与这项比较" % \
+			(fmt_time(old_gems) if old_gems > 0.0 else "尚未记录"))
+	if not previous.is_empty():
+		var stars := int(stats.get("stars", 1))
+		var old_stars := int(previous.get("stars", 0))
+		if not previous.has("stars"):
+			lines.append("首次按当前规则评星 · 本局 %d 星" % stars)
+		else:
+			lines.append("星级纪录 %d → %d · 新纪录！" % [old_stars, stars] if stars > old_stars \
+				else "历史最高 %d 星 · 本局 %d 星" % [old_stars, stars])
+	return "\n".join(lines)
+
+
+func _time_comparison(label: String, elapsed: float, previous: float) -> String:
+	if previous <= 0.0:
+		return "%s：首次记录 %s" % [label, fmt_time(elapsed)]
+	var delta := elapsed - previous
+	# 显示精度内相同只说精度内持平，存储仍保留完整精度的最快值。
+	if absf(delta) < 0.01:
+		return "%s %s · 本局接近（差不足 0.01 秒）" % [label, fmt_time(previous)]
+	if delta < 0.0:
+		return "%s %s → %s · 快了 %.2f 秒！" % [label, fmt_time(previous), fmt_time(elapsed), -delta]
+	return "%s %s · 本局慢了 %.2f 秒" % [label, fmt_time(previous), delta]
+
+
+func _challenge_text(stats: Dictionary, previous: Dictionary) -> String:
+	var parts := PackedStringArray()
+	for entry in [["no_deaths", "deaths", "无死亡"], ["no_box_resets", "box_resets", "无箱复位"]]:
+		var status := GameState.challenge_status_for(previous, entry[0])
+		var value: Variant = stats.get(entry[1])
+		var outcome := "未记录"
+		if GameState._has_run_count(stats, entry[1]):
+			if status == "earned":
+				outcome = "已获 ✓（本局 %d 次）" % int(value)
+			elif int(value) == 0:
+				outcome = "首次记录 ✓" if status == "unknown" else "新达成 ✓"
+			else:
+				outcome = "本局 %d 次" % int(value)
+		parts.append("%s：%s" % [entry[2], outcome])
+	return "可选挑战 · 两人整局累计，不影响星级\n" + "　　".join(parts)
 
 
 ## 全屏闪屏层。z_index = -1 让它落在顶栏（Bar）之下、但仍盖在游戏画面之上。
@@ -327,7 +403,7 @@ func update_stats(elapsed: float, red: int, red_total: int,
 	_deaths.text = "失误 %d" % deaths
 
 
-func show_result(stats: Dictionary, has_next: bool) -> void:
+func show_result(stats: Dictionary, has_next: bool, previous_best: Dictionary = {}) -> void:
 	_center.visible = true
 	var red := int(stats.get("red", 0))
 	var red_total := int(stats.get("red_total", 0))
@@ -351,6 +427,8 @@ func show_result(stats: Dictionary, has_next: bool) -> void:
 	if box_resets > 0:
 		_stats.text += "\n木箱复位 %d 次（已计入 +%.0f 秒）" % [box_resets, box_resets * BoxRecovery.TIME_PENALTY]
 	_criteria.text = _criteria_text(all_gems, in_time, elapsed, par)
+	_comparison.text = _comparison_text(stats, previous_best)
+	_challenges.text = _challenge_text(stats, previous_best)
 	_hint.text = "跳跃键 / 手柄 A：下一关　R：重玩　Esc：暂停 / 菜单" if has_next \
 		else "已是最后一关　R：重玩　Esc：暂停 / 菜单"
 	# 弹入动画

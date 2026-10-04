@@ -1,0 +1,27 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+[replay-flow] PASS menu button opens real current level
+[replay-flow] PASS Esc pauses real level
+[replay-flow] PASS paused real timer stays unchanged
+[replay-flow] PASS pause checkbox applies reduced motion
+[replay-flow] PASS capture pause-flow
+[replay-flow] PASS Esc resumes real level
+[replay-flow] PASS R destroys old scene and reloads real level
+[replay-flow] PASS R resets whole-team run counters
+[replay-flow] PASS visual preference survives restart
+[replay-flow] PASS pause retry unpauses and reloads
+[replay-flow] PASS pause menu return cleans old scene and pause state
+[replay-flow] PASS return restores current level focus
+[replay-flow] PASS diagnostic completed scene shows result
+[replay-flow] PASS result can be paused without losing summary
+[replay-flow] PASS jump from result opens next level once
+[replay-flow] PASS R from result retries same level
+[replay-flow] PASS return after replay restores second card focus
+[replay-flow] PASS jump from final result returns to menu
+[replay-flow] PASS last level menu focus remains visible after completion
+[replay-flow] PASS capture menu-last-return-flow
+[replay-flow] PASS all flow fixtures respect smoke recording suppression
+[replay-flow] finished checks=21 errors=0

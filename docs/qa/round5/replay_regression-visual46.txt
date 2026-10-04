@@ -1,0 +1,109 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+[replay] PASS panel contains Title
+[replay] PASS panel contains @Label@81
+[replay] PASS panel contains Stats
+[replay] PASS panel contains @Label@82
+[replay] PASS panel contains RecordComparison
+[replay] PASS panel contains OptionalChallenges
+[replay] PASS panel contains Hint
+[replay] PASS result panel fits viewport
+[replay] PASS first completion has no invented comparison
+[replay] PASS first clean team run records both optional challenges
+[replay] PASS both team challenge awards persisted
+[replay] PASS first completion still unlocks next level
+[replay] PASS capture result-first-diagnostic
+[replay] PASS panel contains Title
+[replay] PASS panel contains @Label@174
+[replay] PASS panel contains Stats
+[replay] PASS panel contains @Label@175
+[replay] PASS panel contains RecordComparison
+[replay] PASS panel contains OptionalChallenges
+[replay] PASS panel contains Hint
+[replay] PASS result panel fits viewport
+[replay] PASS faster result compares old fastest and old full-gem snapshot
+[replay] PASS later imperfect run retains earned records while showing current team counts
+[replay] PASS existing box-reset penalty explained without a new penalty
+[replay] PASS capture result-faster-diagnostic
+[replay] PASS panel contains Title
+[replay] PASS panel contains @Label@267
+[replay] PASS panel contains Stats
+[replay] PASS panel contains @Label@268
+[replay] PASS panel contains RecordComparison
+[replay] PASS panel contains OptionalChallenges
+[replay] PASS panel contains Hint
+[replay] PASS result panel fits viewport
+[replay] PASS slower repeat shows delta rather than claiming record
+[replay] PASS slower repeat preserves both best times
+[replay] PASS capture result-slower-diagnostic
+[replay] PASS duplicate completion is idempotent
+[replay] PASS panel contains Title
+[replay] PASS panel contains @Label@360
+[replay] PASS panel contains Stats
+[replay] PASS panel contains @Label@361
+[replay] PASS panel contains RecordComparison
+[replay] PASS panel contains OptionalChallenges
+[replay] PASS panel contains Hint
+[replay] PASS result panel fits viewport
+[replay] PASS fast non-full-gem run does not improve full-gem record
+[replay] PASS non-full-gem run can improve overall fastest
+[replay] PASS sub-centisecond delta does not print slow 0.00
+[replay] PASS exact repeat has no invented delta
+[replay] PASS missing historical rating is unknown rather than a fabricated zero-star record
+[replay] PASS save isolated legacy fixture
+[replay] PASS legacy scores and unlocks preserved
+[replay] PASS missing historical team counts stay absent
+[replay] PASS legacy missing counts do not become zero awards
+[replay] PASS panel contains Title
+[replay] PASS panel contains @Label@453
+[replay] PASS panel contains Stats
+[replay] PASS panel contains @Label@454
+[replay] PASS panel contains RecordComparison
+[replay] PASS panel contains OptionalChallenges
+[replay] PASS panel contains Hint
+[replay] PASS result panel fits viewport
+[replay] PASS legacy fastest and full-gem remain separate
+[replay] PASS first explicit counts initialize rather than inheriting zero
+[replay] PASS failed first tracked run remains unearned
+[replay] PASS capture result-legacy-diagnostic
+[replay] PASS death challenge can be earned independently
+[replay] PASS separate challenge awards survive save/load
+[replay] PASS optional tracking leaves all prior best values intact
+[replay] PASS comparison snapshot deeply detached from save
+[replay] PASS stale in-memory revision cannot supply comparison or awards
+[replay] PASS new revision does not mix old best or old challenges
+[replay] PASS save isolated legacy fixture
+[replay] PASS revision migration isolates affected level and keeps unlocks
+[replay] PASS save isolated legacy fixture
+[replay] PASS malformed challenge values are not treated as booleans
+[replay] PASS save isolated legacy fixture
+[replay] PASS malformed challenge version preserves ordinary records []
+[replay] PASS malformed challenge version cannot grant awards []
+[replay] PASS save isolated legacy fixture
+[replay] PASS malformed challenge version preserves ordinary records {  }
+[replay] PASS malformed challenge version cannot grant awards {  }
+[replay] PASS save isolated legacy fixture
+[replay] PASS malformed challenge version preserves ordinary records 1.5
+[replay] PASS malformed challenge version cannot grant awards 1.5
+[replay] PASS save isolated legacy fixture
+[replay] PASS malformed challenge version preserves ordinary records true
+[replay] PASS malformed challenge version cannot grant awards true
+[replay] PASS save isolated legacy fixture
+[replay] PASS malformed challenge version preserves ordinary records 1
+[replay] PASS malformed challenge version cannot grant awards 1
+[replay] PASS invalid in-memory challenge payload safely replaced by explicit run
+[replay] PASS API missing counters cannot award a challenge
+[replay] PASS reject invalid team count -1
+[replay] PASS reject invalid team count 0.5
+[replay] PASS reject invalid team count true
+[replay] PASS reject invalid team count 0
+[replay] PASS reject invalid team count nan
+[replay] PASS reject invalid team count inf
+[replay] PASS smoke suppression protects records and file
+[replay] PASS team counts include both players and all box recoveries
+[replay] PASS pause does not advance run timer
+[replay] PASS fresh retry resets whole-run counts
+[replay] finished checks=103 errors=0

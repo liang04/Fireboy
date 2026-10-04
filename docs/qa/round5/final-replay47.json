@@ -1,0 +1,374 @@
+{
+  "engine": "4.7-stable (official)",
+  "physics_hz": 60,
+  "runs": [
+    {
+      "all_gems": true,
+      "blue": 3,
+      "blue_total": 3,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 640,
+      "game_elapsed_seconds": 10.6833333333334,
+      "level": 1.0,
+      "mode": "input_replay",
+      "par_time": 30.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          1599.97741699219,
+          497.925231933594
+        ],
+        "water": [
+          1520.98522949219,
+          625.925231933594
+        ]
+      },
+      "reason": "completed",
+      "red": 3,
+      "red_total": 3,
+      "simulation_seconds": 10.6666666666667,
+      "stars": 3,
+      "within_par": true,
+      "input_frames": 640
+    },
+    {
+      "all_gems": true,
+      "blue": 3,
+      "blue_total": 3,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 1377,
+      "game_elapsed_seconds": 22.9666666666666,
+      "level": 2.0,
+      "mode": "input_replay",
+      "par_time": 45.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          1618.32922363281,
+          625.925231933594
+        ],
+        "water": [
+          1505.88586425781,
+          657.925231933594
+        ]
+      },
+      "reason": "completed",
+      "red": 3,
+      "red_total": 3,
+      "simulation_seconds": 22.95,
+      "stars": 3,
+      "within_par": true,
+      "input_frames": 1377
+    },
+    {
+      "all_gems": true,
+      "blue": 4,
+      "blue_total": 4,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 953,
+      "game_elapsed_seconds": 15.9000000000004,
+      "level": 3.0,
+      "mode": "input_replay",
+      "par_time": 35.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          1856.15454101562,
+          657.925231933594
+        ],
+        "water": [
+          1903.2353515625,
+          657.925231933594
+        ]
+      },
+      "reason": "completed",
+      "red": 4,
+      "red_total": 4,
+      "simulation_seconds": 15.8833333333333,
+      "stars": 3,
+      "within_par": true,
+      "input_frames": 953
+    },
+    {
+      "all_gems": true,
+      "blue": 3,
+      "blue_total": 3,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 1338,
+      "game_elapsed_seconds": 22.3166666666667,
+      "level": 4.0,
+      "mode": "input_replay",
+      "par_time": 45.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          1823.11328125,
+          625.925231933594
+        ],
+        "water": [
+          1427.97290039062,
+          529.925231933594
+        ]
+      },
+      "reason": "completed",
+      "red": 3,
+      "red_total": 3,
+      "simulation_seconds": 22.3,
+      "stars": 3,
+      "within_par": true,
+      "input_frames": 1338
+    },
+    {
+      "all_gems": true,
+      "blue": 4,
+      "blue_total": 4,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 2114,
+      "game_elapsed_seconds": 35.2499999999993,
+      "level": 5.0,
+      "mode": "input_replay",
+      "par_time": 65.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          688.17431640625,
+          145.925247192383
+        ],
+        "water": [
+          862.075317382812,
+          145.925247192383
+        ]
+      },
+      "reason": "completed",
+      "red": 4,
+      "red_total": 4,
+      "simulation_seconds": 35.2333333333333,
+      "stars": 3,
+      "within_par": true,
+      "input_frames": 2114
+    },
+    {
+      "all_gems": true,
+      "blue": 3,
+      "blue_total": 3,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 553,
+      "game_elapsed_seconds": 9.23333333333337,
+      "level": 6.0,
+      "mode": "input_replay",
+      "par_time": 30.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          1472.828125,
+          241.925262451172
+        ],
+        "water": [
+          1521.16027832031,
+          241.925262451172
+        ]
+      },
+      "reason": "completed",
+      "red": 3,
+      "red_total": 3,
+      "simulation_seconds": 9.21666666666667,
+      "stars": 3,
+      "within_par": true,
+      "input_frames": 553
+    },
+    {
+      "all_gems": true,
+      "blue": 3,
+      "blue_total": 3,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 1098,
+      "game_elapsed_seconds": 18.3166666666669,
+      "level": 7.0,
+      "mode": "input_replay",
+      "par_time": 40.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          1377.47302246094,
+          346.091918945312
+        ],
+        "water": [
+          1554.44738769531,
+          369.925262451172
+        ]
+      },
+      "reason": "completed",
+      "red": 3,
+      "red_total": 3,
+      "simulation_seconds": 18.3,
+      "stars": 3,
+      "within_par": true,
+      "input_frames": 1098
+    },
+    {
+      "all_gems": true,
+      "blue": 5,
+      "blue_total": 5,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 1780,
+      "game_elapsed_seconds": 29.6833333333329,
+      "level": 8.0,
+      "mode": "input_replay",
+      "par_time": 55.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          447.142944335938,
+          145.925247192383
+        ],
+        "water": [
+          1484.81188964844,
+          145.925247192383
+        ]
+      },
+      "reason": "completed",
+      "red": 5,
+      "red_total": 5,
+      "simulation_seconds": 29.6666666666667,
+      "stars": 3,
+      "within_par": true,
+      "input_frames": 1780
+    },
+    {
+      "all_gems": true,
+      "blue": 4,
+      "blue_total": 4,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 1469,
+      "game_elapsed_seconds": 24.4999999999999,
+      "level": 9.0,
+      "mode": "input_replay",
+      "par_time": 55.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          2238.53051757812,
+          177.925247192383
+        ],
+        "water": [
+          2254.34985351562,
+          177.925247192383
+        ]
+      },
+      "reason": "completed",
+      "red": 4,
+      "red_total": 4,
+      "simulation_seconds": 24.4833333333333,
+      "stars": 3,
+      "within_par": true,
+      "input_frames": 1469
+    },
+    {
+      "all_gems": true,
+      "blue": 3,
+      "blue_total": 3,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 644,
+      "game_elapsed_seconds": 10.7500000000001,
+      "level": 10.0,
+      "mode": "input_replay",
+      "par_time": 35.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          128.856338500977,
+          369.925262451172
+        ],
+        "water": [
+          1136.77416992188,
+          369.925262451172
+        ]
+      },
+      "reason": "completed",
+      "red": 3,
+      "red_total": 3,
+      "simulation_seconds": 10.7333333333333,
+      "stars": 3,
+      "within_par": true,
+      "input_frames": 644
+    }
+  ],
+  "source_sha256": {
+    "project.godot": "7e2d555e5bdc355a32a1d5d216dc8bb3d7c32db75fa5b8c061e425479c50e717",
+    "scripts/autoload/event_bus.gd": "d815d29ed626a30604b94de422fadf96b6deb3f7f36385fffea81c12c7aabca4",
+    "scripts/autoload/game_state.gd": "04ae5f35c387ce2731f8df9c5f8cf52ddbb5d9df75f5746a0cb2044391efffa3",
+    "scripts/autoload/input_setup.gd": "0eda834f7c9306c33719edbdd8861f9f848b990d8def04114b4e058e4fe663d1",
+    "scripts/autoload/smoke.gd": "1858d9a99f706a558a6c0862ee1f009696721e86bf2e923dbf1ebd160711b722",
+    "scripts/autoload/sound.gd": "67221ded374669440e3edf51037bb063e6652fc6e15067dca99be0b0228691cf",
+    "scripts/autoload/visual_effects.gd": "d14bdb9cb09e5bbe923420314136d86402b67fdbc924fa621d990bd9d58da2f4",
+    "scripts/camera_rig.gd": "53706014c0a2c6110640744a814783068deae938be7a983a9d979bea4517a0d8",
+    "scripts/hud.gd": "74c997d39d3b607aaab6c98d3e55c362822f1146f7a27beb4b9c68cc6f3b3363",
+    "scripts/level.gd": "a19794ebe2e2d964d85efad97e79b5044f0fb96af380d1e39cd3f7244893fec8",
+    "scripts/level_builder.gd": "45fad4395013e5be587607a8f76429bfd398ea77803eca10a02c4c95842718f2",
+    "scripts/levels/levels.gd": "0d62c3c707ee24528d40ea671ad59e197edf829753cc134788b6a9d66b5a3aed",
+    "scripts/main_menu.gd": "46218ddc41b51108703af26ff1ea92a48afcb3b4998fa2f28905b157f165f46b",
+    "scripts/objects/box_recovery.gd": "b75c9cb4bcea36b658fc7412b90f2f35fdcab33abffa8825e26fcfe39afd7104",
+    "scripts/objects/door.gd": "93d5a96ef3860db7a20dc87154f8e7000f43c1e4217173d9b90b0fcb15bddefc",
+    "scripts/objects/double_plate.gd": "9396fa5fc7533e0ec817123b924101eafaea2826dbeb0b38fb3036093801990c",
+    "scripts/objects/exit_door.gd": "19a6fe5b8f8d86ab6b3750cc71555b1b83baff4721aed1326404cda05e9b526d",
+    "scripts/objects/gem.gd": "08202deba5b119f4b4d70f46c621666b1b316083d9c6d61404601c1f78752989",
+    "scripts/objects/hazard_pool.gd": "e6900cbcccb3835b816e99f014d4d47ac00268fb80d7c64e64f7fa2441ea1e52",
+    "scripts/objects/lever.gd": "37334b92d81de4428d709e3827e0ca326f45f80f2395f4da756f0f305d5d04e6",
+    "scripts/objects/moving_platform.gd": "075b8cc45591028778be1a69a8fc8c437c539278a003e5da41393eedf3a8e844",
+    "scripts/objects/plate.gd": "4726d270baecae5f7913af0d57d8725d7ba69b3567d9fdc6a4cca6b4264d9f8e",
+    "scripts/objects/portal.gd": "44d8c565a61828ba27ec9b389431775333d3784cd3ae6fd68ddae10829be02e6",
+    "scripts/objects/push_box.gd": "e20e9147f4a51585f435bf8de83d60ce6855bcb8c93c8c1e1f6c78cc84700e7e",
+    "scripts/player.gd": "7768eb09d82f4a7a5e2e12eafa2ceb6dbcf43bffc6893881b3dfe58ff34111f6",
+    "scripts/util/feedback_canvas.gd": "38828e20c9d358eb8baae51e30ae0276605ca2a3ef834d6c2440b1e975ffeec0",
+    "scripts/util/level_atmosphere.gd": "70e415c6445f79f124a89bb003ca5fe52d50c82dff58e3316dd24efca380badc",
+    "scripts/util/mechanism_feedback.gd": "43eebac8d476484caaad828db3cfcaf5ad2ab3e57b49d9edd415298dd40442ee",
+    "scripts/util/tex.gd": "c46bb720d2b3c88948e562c169006bb34fbbbcfe2297b9ba1d0ff329f8b40123",
+    "scenes/hud.tscn": "f6fc10bdaecc90643d20251428f3fc364cdf465f7d253385d61e4119187f4113",
+    "scenes/level.tscn": "c225970fdf5e4495d0ace1f9d4b4356e489d0df315239e08f7f779ca745248dd",
+    "scenes/main_menu.tscn": "21f02259263629a99162ed8aa9e7dfe2a1326afec8d7c7c6832e2a5e9418299b",
+    "scenes/player.tscn": "87d5228ebeddabf05ea07eae182377576c4ddb5745be3866d2fc41ae97ed0e63",
+    "tools/full_gem_routes.gd": "d7f20482e61c6897fe58999fbb63809dd32f5dac83e085c3c1abd03a03631374",
+    "tools/full_gem_routes.tscn": "5c431a3c257564759ffcf33aa492707ea0fd6cf86feef3fcab3845e4b053f252",
+    "tools/run_full_gem_routes.py": "5a693fd912d83ddc5236de262e445f8f3b44bd76d831f8500e28e057bea8a63a",
+    "tools/gen_levels.py": "c2d60c8e9d005bffeafc4e8fd2b01ddb185c4851676f2f28b5f44cc61aeecfe4",
+    "tools/enrichment/level_01.py": "bc8920543d25fdbc324859deaf773684ce4dd085967270ec8b2f677765653c30",
+    "tools/enrichment/level_02.py": "97560b90a48758785c48fd0f1a7fc3c5ed9b62affe5a7ee23c51a0cb09849e22",
+    "tools/enrichment/level_03.py": "4d2c901238ea4b434c5104e92e4147b4c57725155be5092c93861c76029eef6d",
+    "tools/enrichment/level_04.py": "e22b3cbe43194631076e986fdbcd5d5f8ed988cf673eb2c35a06343bf146f36e",
+    "tools/enrichment/level_05.py": "0b96b385819cffe64f0b946c1705fab0f6cb351f958c174f6f5d3d5e220a8fad",
+    "tools/enrichment/level_06.py": "a82a4d7aa18750e536d8d8e64c82d8053fa494d9f2fd618b5e8cf4d7f5bf6765",
+    "tools/enrichment/level_07.py": "fb45f2e546340a4a80573b2994f0926d48b7cefe0e47c362e99531e912cf6f75",
+    "tools/enrichment/level_08.py": "66463f0156d28060fadd669947d0faae9389025035af50b51b6f141d91d3657d",
+    "tools/enrichment/level_09.py": "964536911a4f17c497d6b71abf34ba13fd9b5efd46d813c52d430e7028d341b0",
+    "tools/enrichment/level_10.py": "0ff2b491b12959b9bbae622749d4916062ad0889286677f2e1bd6bca4782765d",
+    "tools/enrichment/relay_validator.py": "86b0cafd3f5ceb51c7026a7b3ea0d2fc5e1a40941f0db805c8789e7a2d74a64a",
+    "tools/enrichment/run_late_probes.py": "11f0eaaaee43cca44bf6fa48a13913747e16e08b022f409a4148e4ac924f84f6",
+    "tools/enrichment/run_lift_coop_probes.py": "5903fa2e20b55f67934c34dcdd09fd565916220ac4c39830292d8473600dbe0c",
+    "tools/enrichment/verify_late_geometry.py": "044e3d8bb03b32327c72df0615ca9baa0871d2d0e36736d217a7e7385e1a2a00",
+    "tools/full_gem_route_replay.json": "df40f4a00ef520bfdd66e7fa4c841deee40943b43cadb1a0b4cc98424d7afb81"
+  },
+  "sources_changed_during_run": false,
+  "route_file": "tools/full_gem_route_replay.json",
+  "verification": "Fresh Level; real Player physics; Input actions only; 60 Hz; isolated saves",
+  "engine_log_has_errors": false
+}

@@ -32,6 +32,19 @@ var _power_light: Sprite2D
 var _width_px := 0
 var _pulse := 0.0
 var _powered := false
+var _static_power_light := false
+
+
+func _ready() -> void:
+	VisualEffects.settings_changed.connect(_on_visual_settings_changed)
+	_on_visual_settings_changed()
+
+
+func _on_visual_settings_changed() -> void:
+	_static_power_light = VisualEffects.reduced_motion or VisualEffects.low_detail
+	_pulse = 0.0
+	if _power_light != null:
+		_power_light.modulate.a = 1.0
 
 
 func setup(from_cell: Vector2i, to_cell: Vector2i, width: int, spd: float,
@@ -108,7 +121,7 @@ func _set_powered(value: bool) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if _powered and _power_light != null:
+	if _powered and _power_light != null and not _static_power_light:
 		_pulse += delta
 		_power_light.modulate.a = 0.55 + sin(_pulse * 6.0) * 0.45
 	if not _active or _length <= 0.001:

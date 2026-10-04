@@ -304,9 +304,9 @@ func _run() -> void:
 
 	# ---- 总闸：高扇出 channel 必须触发强调反馈
 	level._channel_fanout = {"__test__": 3}
-	level._power_flash_until = 0
+	level._power_sound_until = 0
 	level._on_channel_state_changed(&"__test__", true)
-	check(level._power_flash_until > 0, "high-fanout channel triggers power feedback")
+	check(level._power_sound_until > 0, "high-fanout channel triggers power feedback")
 	level._channel_fanout = {}
 
 	# ---- 供电可视化：受控平台收到信号后必须进入 powered 状态

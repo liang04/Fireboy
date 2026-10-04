@@ -1,0 +1,24 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[routes] START level 1
+[routes] PASS L1 frames=640 time=10.6833 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 2
+[routes] PASS L2 frames=1377 time=22.9667 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 3
+[routes] PASS L3 frames=953 time=15.9000 gems=4/4+4/4 deaths=0 resets=0 reason=completed
+[routes] START level 4
+[routes] PASS L4 frames=1338 time=22.3167 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 5
+[routes] PASS L5 frames=2114 time=35.2500 gems=4/4+4/4 deaths=0 resets=0 reason=completed
+[routes] START level 6
+[routes] PASS L6 frames=553 time=9.2333 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 7
+[routes] PASS L7 frames=1098 time=18.3167 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 8
+[routes] PASS L8 frames=1780 time=29.6833 gems=5/5+5/5 deaths=0 resets=0 reason=completed
+[routes] START level 9
+[routes] PASS L9 frames=1469 time=24.5000 gems=4/4+4/4 deaths=0 resets=0 reason=completed
+[routes] START level 10
+[routes] PASS L10 frames=644 time=10.7500 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] wrote /tmp/fireboy-routes-oorgqn_f/results.json
+Evidence saved to /workspace/shared/fireboy/docs/qa/round5/final-replay46.json
