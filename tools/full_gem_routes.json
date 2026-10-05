@@ -436,18 +436,124 @@
         "water": []
       },
       {
-        "label": "vault and reunion",
+        "label": "water chooses the upper return route",
+        "fire": [],
+        "water": [
+          {
+            "kind": "go",
+            "x": 56,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 59,
+            "y": 18
+          },
+          {
+            "kind": "jump",
+            "x": 62,
+            "y": 16
+          },
+          {
+            "kind": "jump",
+            "x": 59,
+            "y": 14
+          },
+          {
+            "kind": "jump",
+            "x": 55,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 51,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "water holds D while fire crosses to the lower route",
         "fire": [
           {
             "kind": "go",
-            "x": 58,
+            "x": 57,
             "y": 20
           },
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 20
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "fire holds C for water’s upper gem and return",
+        "fire": [],
+        "water": [
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 51,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "water holds D for the returning fire",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 60,
+            "y": 20
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "optional vault and reunion",
+        "fire": [
           {
             "kind": "go",
             "x": 63,
             "y": 20
           },
+          {
+            "kind": "go",
+            "x": 60,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 57,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 65,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 60,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "choose the courtyard exits after both optional loops",
+        "fire": [
           {
             "kind": "go",
             "x": 57,
@@ -457,17 +563,13 @@
         "water": [
           {
             "kind": "go",
-            "x": 65,
-            "y": 20
-          },
-          {
-            "kind": "go",
             "x": 59,
             "y": 20
           }
         ]
       }
-    ]
+    ],
+    "verify_store": true
   },
   {
     "level": 4,
@@ -622,7 +724,7 @@
         ]
       },
       {
-        "label": "paired plates",
+        "label": "release six-second B, climb upper gate, take optional gem shelf, then double key",
         "fire": [
           {
             "kind": "go",
@@ -649,6 +751,17 @@
           {
             "kind": "go",
             "x": 36,
+            "y": 16
+          },
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 14,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 40,
             "y": 16
           },
           {
@@ -690,7 +803,8 @@
           }
         ]
       }
-    ]
+    ],
+    "verify_store": true
   },
   {
     "level": 5,
@@ -1217,254 +1331,258 @@
   },
   {
     "level": 8,
+    "max_frames": 18000,
     "phases": [
       {
-        "label": "First remote launch",
+        "label": "Fire chooses upper A; Water waits at safe near console",
         "fire": [
           {
-            "kind": "go",
-            "x": 23,
-            "y": 29
+            "x": 7,
+            "y": 19
           },
           {
-            "kind": "interact"
-          }
-        ],
-        "water": [
-          {
-            "kind": "go",
-            "x": 36,
-            "y": 29
+            "x": 7,
+            "y": 19
           },
           {
-            "kind": "go",
-            "x": 43,
-            "y": 29
-          }
-        ]
-      },
-      {
-        "label": "Water first mid-floor relay",
-        "fire": [],
-        "water": [
-          {
-            "kind": "board",
-            "platform": 0,
-            "timeout": 2400,
-            "range": 145
-          },
-          {
-            "kind": "ride",
-            "until": 714,
-            "timeout": 2400
-          },
-          {
+            "x": 8.5,
+            "y": 16,
             "kind": "jump",
-            "x": 45,
-            "y": 21
+            "rise_first": true,
+            "timeout": 800
           },
           {
-            "kind": "interact"
+            "x": 8,
+            "y": 16
           },
           {
-            "kind": "go",
-            "x": 48,
-            "y": 21
-          },
-          {
-            "kind": "go",
-            "x": 43,
-            "y": 21
-          }
-        ]
-      },
-      {
-        "label": "Fire first mid-floor relay",
-        "fire": [
-          {
-            "kind": "go",
-            "x": 23,
-            "y": 29
-          },
-          {
-            "kind": "board",
-            "platform": 1,
-            "timeout": 2400,
-            "range": 145
-          },
-          {
-            "kind": "ride",
-            "until": 714,
-            "timeout": 2400
-          },
-          {
+            "x": 7,
+            "y": 13,
             "kind": "jump",
-            "x": 14,
-            "y": 21
+            "rise_first": true,
+            "timeout": 800
           },
           {
-            "kind": "go",
-            "x": 13,
-            "y": 21
-          },
-          {
-            "kind": "interact"
-          },
-          {
-            "kind": "go",
-            "x": 17,
-            "y": 21
-          }
-        ],
-        "water": []
-      },
-      {
-        "label": "Water second mid-floor relay",
-        "fire": [],
-        "water": [
-          {
-            "kind": "board",
-            "platform": 2,
-            "timeout": 2400,
-            "range": 145
-          },
-          {
-            "kind": "ride",
-            "until": 458,
-            "timeout": 2400
-          },
-          {
+            "x": 8.5,
+            "y": 10,
             "kind": "jump",
-            "x": 43,
-            "y": 13
+            "rise_first": true,
+            "timeout": 800
           },
           {
-            "kind": "interact"
-          },
-          {
-            "kind": "go",
-            "x": 47,
-            "y": 13
-          },
-          {
-            "kind": "go",
-            "x": 46,
-            "y": 13
-          }
-        ]
-      },
-      {
-        "label": "Fire second mid-floor and joint launch",
-        "fire": [
-          {
-            "kind": "board",
-            "platform": 3,
-            "timeout": 2400,
-            "range": 145
-          },
-          {
-            "kind": "ride",
-            "until": 458,
-            "timeout": 2400
-          },
-          {
-            "kind": "jump",
-            "x": 17,
-            "y": 13
-          },
-          {
-            "kind": "go",
-            "x": 13,
-            "y": 13
-          }
-        ],
-        "water": []
-      },
-      {
-        "label": "Both top lifts",
-        "fire": [
-          {
-            "kind": "go",
-            "x": 17,
-            "y": 13
-          },
-          {
-            "kind": "board",
-            "platform": 4,
-            "timeout": 2400,
-            "range": 145
-          },
-          {
-            "kind": "ride",
-            "until": 170,
-            "timeout": 2400
-          },
-          {
-            "kind": "jump",
-            "x": 16,
-            "y": 4
-          }
-        ],
-        "water": [
-          {
-            "kind": "go",
-            "x": 43,
-            "y": 13
-          },
-          {
-            "kind": "board",
-            "platform": 5,
-            "timeout": 2400,
-            "range": 145
-          },
-          {
-            "kind": "ride",
-            "until": 170,
-            "timeout": 2400
-          },
-          {
-            "kind": "jump",
-            "x": 45,
-            "y": 4
-          }
-        ]
-      },
-      {
-        "label": "Fire roof detour",
-        "fire": [
-          {
-            "kind": "go",
             "x": 12,
-            "y": 4
+            "y": 10
           }
-        ]
-      },
-      {
-        "label": "Water roof detour",
+        ],
         "water": [
           {
-            "kind": "go",
-            "x": 49,
-            "y": 4
-          },
-          {
-            "kind": "go",
-            "x": 46,
-            "y": 4
+            "x": 12,
+            "y": 19
           }
         ]
       },
       {
-        "label": "Both tower exits",
+        "label": "Fire takes A to far landing and selects lower B remotely",
         "fire": [
           {
-            "kind": "go",
-            "x": 14,
-            "y": 4
+            "x": 44,
+            "y": 10
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "x": 43,
+            "y": 10
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Water takes B; both separated K keys open return exits",
+        "fire": [],
+        "water": [
+          {
+            "x": 43,
+            "y": 19
+          },
+          {
+            "kind": "wait",
+            "frames": 20
+          }
+        ]
+      },
+      {
+        "label": "Water reverses to A for Fire return",
+        "fire": [],
+        "water": [
+          {
+            "x": 44,
+            "y": 19
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "x": 43,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "Fire returns safely on A, then selects B for partner",
+        "fire": [
+          {
+            "x": 12,
+            "y": 10
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Partner returns on B while Fire changes branches",
+        "fire": [
+          {
+            "x": 7,
+            "y": 13
+          },
+          {
+            "x": 12,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "x": 12,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "Swap branches: Fire B, Water climbs safely",
+        "fire": [
+          {
+            "x": 44,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "x": 7,
+            "y": 19
+          },
+          {
+            "x": 8.5,
+            "y": 16,
+            "kind": "jump",
+            "rise_first": true,
+            "timeout": 800
+          },
+          {
+            "x": 8,
+            "y": 16
+          },
+          {
+            "x": 7,
+            "y": 13,
+            "kind": "jump",
+            "rise_first": true,
+            "timeout": 800
+          },
+          {
+            "x": 8.5,
+            "y": 10,
+            "kind": "jump",
+            "rise_first": true,
+            "timeout": 800
+          },
+          {
+            "x": 12,
+            "y": 10
+          }
+        ]
+      },
+      {
+        "label": "Fire provides reverse support by selecting A",
+        "fire": [
+          {
+            "kind": "interact"
+          },
+          {
+            "x": 43,
+            "y": 19
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Water crosses A and restores B for Fire return",
+        "fire": [],
+        "water": [
+          {
+            "x": 44,
+            "y": 10
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "x": 43,
+            "y": 10
+          }
+        ]
+      },
+      {
+        "label": "Fire returns on B and restores A from near console",
+        "fire": [
+          {
+            "x": 12,
+            "y": 19
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Water returns on A and descends",
+        "fire": [],
+        "water": [
+          {
+            "x": 12,
+            "y": 10
+          },
+          {
+            "x": 7,
+            "y": 13
+          },
+          {
+            "x": 12,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "Reunion at unlocked exits",
+        "fire": [
+          {
+            "x": 1,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "x": 2,
+            "y": 19
           }
         ]
       }
-    ]
+    ],
+    "verify_store": true
   },
   {
     "level": 9,

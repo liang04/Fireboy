@@ -1,0 +1,57 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+[delayed] PASS unrelated body cannot charge the relay
+[delayed] PASS wide plate begins visibly idle
+[delayed] PASS holding freezes full charge indefinitely
+[delayed] PASS duplicate entry and holding emit only one activation
+[delayed] PASS source and destination show held state together
+[delayed] PASS second occupant keeps relay fully charged
+[delayed] PASS last departure starts the complete grace period
+[delayed] PASS countdown keeps channel open before deadline
+[delayed] PASS destination readout follows remaining seconds
+[delayed] PASS repeated activation recharges without spurious off/on pulses
+[delayed] PASS expiry deactivates exactly once
+[delayed] PASS idle frames do not repeat expiry signals
+[delayed] PASS death removes its holder and begins the safe release countdown
+[delayed] PASS a dead holder cannot leave the gate stuck open
+[delayed] PASS dead players cannot reactivate
+[delayed] PASS freed holder is pruned without invalid-object errors
+[delayed] PASS recovering box cannot keep a stale pressure contact
+[delayed] PASS box recovery eventually releases its channel
+[delayed] PASS actual tree pause freezes countdown and visible time
+[delayed] PASS resume consumes only unpaused time and expires normally
+[delayed] PASS in-place reset clears occupancy, charge and channel
+[delayed] PASS reset is idempotent
+[delayed] PASS fresh activation works after reset
+[delayed] PASS removed destination label cannot interrupt countdown
+[delayed] PASS scene exit has no deferred timer or late global signal
+[delayed] PASS retry starts a fresh uncharged relay
+[delayed] PASS L4 uses a generous six-second window
+[delayed] PASS L4 delayed relay drives both safe-closing branches
+[delayed] PASS touching an unpowered closed gate cannot bypass the relay
+[delayed] PASS standing in the doorway delays timed closure
+[delayed] PASS safe closing explains why the gate is waiting
+[delayed] PASS clearing the doorway starts closure
+[delayed] PASS actual pause freezes in-flight gate motion
+[delayed] PASS unpaused gate finishes closing after the doorway clears
+[delayed] PASS a box in the doorway receives the same non-crushing protection
+[delayed] PASS removing the box permits closure
+[delayed] PASS entering after closure starts stops and reopens the gate
+[delayed] PASS late-entering actor is not translated or killed by the gate
+[delayed] PASS late-entry retry closes safely once clear
+[delayed] PASS touching an unpowered closed gate cannot bypass the relay
+[delayed] PASS standing in the doorway delays timed closure
+[delayed] PASS safe closing explains why the gate is waiting
+[delayed] PASS clearing the doorway starts closure
+[delayed] PASS actual pause freezes in-flight gate motion
+[delayed] PASS unpaused gate finishes closing after the doorway clears
+[delayed] PASS a box in the doorway receives the same non-crushing protection
+[delayed] PASS removing the box permits closure
+[delayed] PASS entering after closure starts stops and reopens the gate
+[delayed] PASS late-entering actor is not translated or killed by the gate
+[delayed] PASS late-entry retry closes safely once clear
+[delayed] finished checks=50 errors=0
+graphical_test_exit=0

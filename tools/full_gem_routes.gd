@@ -61,6 +61,10 @@ func _next() -> void:
 		return
 	completed_stats = {}
 	route = routes[route_index]
+	# Explicit opt-in exercises persistence only after the isolation guard above.
+	GameState.suppress_recording = not bool(route.get("verify_store", false))
+	if not GameState.suppress_recording:
+		GameState.results.erase(int(route.level) - 1)
 	GameState.current_level_index = int(route.level) - 1
 	level = preload("res://scenes/level.tscn").instantiate()
 	add_child(level)
@@ -244,7 +248,10 @@ func _finish(reason: String) -> void:
 	var expected_gems := "宝石 火 %d/%d · 水 %d/%d" % [stats.red, stats.red_total, stats.blue, stats.blue_total]
 	var snapshot_consistent := not completed_stats.is_empty() and completed_stats == final_stats \
 		and hud._stars.text == expected_stars and hud._stats.text.contains(expected_gems)
-	var passed := level._completed and bool(stats.all_gems) and snapshot_consistent
+	var store_consistent := true
+	if bool(route.get("verify_store", false)):
+		store_consistent = _check_saved_result(stats)
+	var passed := level._completed and bool(stats.all_gems) and snapshot_consistent and store_consistent
 	if route.has("expected"):
 		var expected: Dictionary = route.expected
 		passed = passed and tick == int(expected.frames)
@@ -252,12 +259,37 @@ func _finish(reason: String) -> void:
 			if expected.has(field): passed = passed and int(stats.get(field, 0)) == int(expected[field])
 		if not passed and level._completed and bool(stats.all_gems):
 			reason = "replay completed but exact frame count or expected result statistics differ"
+	if level._completed and not store_consistent:
+		reason = "completion event, live record, and persisted record disagree"
 	if level._completed and not snapshot_consistent:
 		reason = "completion event, final state, and displayed result disagree"
 	failure = failure or not passed
 	var positions := {}
 	for player in level._players: positions[String(player.element)] = [player.position.x, player.position.y]
-	var result := {"level": route.level, "snapshot_consistent": snapshot_consistent, "completed": level._completed, "all_gems": stats.all_gems, "frames": tick, "simulation_seconds": tick / 60.0, "game_elapsed_seconds": stats.time, "deaths": stats.deaths, "box_resets": stats.get("box_resets", 0), "par_time": stats.par_time, "within_par": stats.in_time, "stars": stats.stars, "red": stats.red, "red_total": stats.red_total, "blue": stats.blue, "blue_total": stats.blue_total, "reason": reason, "positions": positions, "passed": passed, "mode": "input_replay" if route.has("replay_tape") else "waypoint_controller", "input_tape": tape}
+	var result := {"level": route.level, "snapshot_consistent": snapshot_consistent, "store_verified": bool(route.get("verify_store", false)), "store_consistent": store_consistent, "completed": level._completed, "all_gems": stats.all_gems, "frames": tick, "simulation_seconds": tick / 60.0, "game_elapsed_seconds": stats.time, "deaths": stats.deaths, "box_resets": stats.get("box_resets", 0), "par_time": stats.par_time, "within_par": stats.in_time, "stars": stats.stars, "red": stats.red, "red_total": stats.red_total, "blue": stats.blue, "blue_total": stats.blue_total, "reason": reason, "positions": positions, "passed": passed, "mode": "input_replay" if route.has("replay_tape") else "waypoint_controller", "input_tape": tape}
 	results.append(result)
 	print("[routes] %s L%d frames=%d time=%.4f gems=%d/%d+%d/%d deaths=%d resets=%d reason=%s" % ["PASS" if passed else "FAIL", route.level, tick, stats.time, stats.red, stats.red_total, stats.blue, stats.blue_total, stats.deaths, stats.get("box_resets", 0), reason])
 	_next.call_deferred()
+
+
+func _check_saved_result(stats: Dictionary) -> bool:
+	var index := int(route.level) - 1
+	var saved: Dictionary = GameState.results.get(index, {})
+	var disk := ConfigFile.new()
+	if disk.load(GameState.SAVE_PATH) != OK:
+		return false
+	var persisted: Dictionary = disk.get_value("results", str(index), {})
+	var expected_config := ConfigFile.new()
+	expected_config.set_value("results", str(index), saved)
+	var parsed_expected := ConfigFile.new()
+	if parsed_expected.parse(expected_config.encode_to_text()) != OK:
+		return false
+	if saved.is_empty() or persisted != parsed_expected.get_value("results", str(index), {}) or int(saved.get("rev", -1)) != GameState.level_revision(index):
+		return false
+	for field in ["time", "red", "blue", "red_total", "blue_total", "deaths", "box_resets", "stars", "all_gems"]:
+		if saved.get(field) != stats.get(field):
+			return false
+	if bool(stats.get("all_gems", false)) and saved.get("gems_time") != stats.time:
+		return false
+	return GameState.unlocked_levels >= mini(Levels.count(), index + 2) \
+		and int(disk.get_value("progress", "unlocked_levels", 0)) == GameState.unlocked_levels

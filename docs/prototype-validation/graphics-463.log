@@ -1,0 +1,22 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+[routes] START level 3
+[prototype-visual] level03-cross-support-0900 OK
+[prototype-visual] level03-cross-support-1250 OK
+[prototype-visual] level03-cross-support-1650 OK
+[prototype-visual] level03-result OK
+[routes] PASS L3 frames=1890 time=31.5000 gems=5/5+5/5 deaths=0 resets=0 reason=completed
+[routes] START level 4
+[prototype-visual] level04-released-countdown OK
+[prototype-visual] level04-result OK
+[routes] PASS L4 frames=1416 time=23.6000 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 8
+[prototype-visual] level08-bridge-A OK
+[prototype-visual] level08-bridge-B OK
+[prototype-visual] level08-result OK
+[routes] PASS L8 frames=2499 time=41.6500 gems=5/5+5/5 deaths=0 resets=0 reason=completed
+[routes] wrote /workspace/shared/fireboy-prototype-qa/graphics-463-results.json
+graphical_route_exit=0

@@ -1,0 +1,261 @@
+[
+  {
+    "level": 8,
+    "max_frames": 18000,
+    "phases": [
+      {
+        "label": "Choose B first while Water climbs to upper waiting area",
+        "fire": [
+          {
+            "x": 12,
+            "y": 19
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": [
+          {
+            "x": 12,
+            "y": 19
+          },
+          {
+            "x": 7,
+            "y": 19
+          },
+          {
+            "x": 8.5,
+            "y": 16,
+            "kind": "jump",
+            "rise_first": true,
+            "timeout": 800
+          },
+          {
+            "x": 8,
+            "y": 16
+          },
+          {
+            "x": 7,
+            "y": 13,
+            "kind": "jump",
+            "rise_first": true,
+            "timeout": 800
+          },
+          {
+            "x": 8.5,
+            "y": 10,
+            "kind": "jump",
+            "rise_first": true,
+            "timeout": 800
+          },
+          {
+            "x": 12,
+            "y": 10
+          }
+        ]
+      },
+      {
+        "label": "Fire crosses B and remotely selects A",
+        "fire": [
+          {
+            "x": 44,
+            "y": 19
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "x": 43,
+            "y": 19
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Water crosses A and both far K pads latch",
+        "fire": [],
+        "water": [
+          {
+            "x": 43,
+            "y": 10
+          },
+          {
+            "kind": "wait",
+            "frames": 20
+          }
+        ]
+      },
+      {
+        "label": "Water reverses support to B",
+        "fire": [],
+        "water": [
+          {
+            "x": 44,
+            "y": 10
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "x": 43,
+            "y": 10
+          }
+        ]
+      },
+      {
+        "label": "Fire returns on B and selects A for partner",
+        "fire": [
+          {
+            "x": 12,
+            "y": 19
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Water returns on A and descends",
+        "fire": [],
+        "water": [
+          {
+            "x": 12,
+            "y": 10
+          },
+          {
+            "x": 7,
+            "y": 13
+          },
+          {
+            "x": 12,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "Choose B for Water and prepare Fire upper route",
+        "fire": [
+          {
+            "kind": "interact"
+          },
+          {
+            "x": 7,
+            "y": 19
+          },
+          {
+            "x": 8.5,
+            "y": 16,
+            "kind": "jump",
+            "rise_first": true,
+            "timeout": 800
+          },
+          {
+            "x": 8,
+            "y": 16
+          },
+          {
+            "x": 7,
+            "y": 13,
+            "kind": "jump",
+            "rise_first": true,
+            "timeout": 800
+          },
+          {
+            "x": 8.5,
+            "y": 10,
+            "kind": "jump",
+            "rise_first": true,
+            "timeout": 800
+          },
+          {
+            "x": 12,
+            "y": 10
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Water crosses B and reverses support to A",
+        "fire": [],
+        "water": [
+          {
+            "x": 44,
+            "y": 19
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "x": 43,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "Fire crosses A and restores B",
+        "fire": [
+          {
+            "x": 44,
+            "y": 10
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "x": 43,
+            "y": 10
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Water returns on B and restores A",
+        "fire": [],
+        "water": [
+          {
+            "x": 12,
+            "y": 19
+          },
+          {
+            "kind": "interact"
+          }
+        ]
+      },
+      {
+        "label": "Fire returns on A and descends",
+        "fire": [
+          {
+            "x": 12,
+            "y": 10
+          },
+          {
+            "x": 7,
+            "y": 13
+          },
+          {
+            "x": 12,
+            "y": 19
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Reunion at unlocked exits",
+        "fire": [
+          {
+            "x": 1,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "x": 2,
+            "y": 19
+          }
+        ]
+      }
+    ],
+    "verify_store": true
+  }
+]

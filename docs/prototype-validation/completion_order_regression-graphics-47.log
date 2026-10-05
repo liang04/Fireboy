@@ -1,0 +1,29 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+[completion-order] PASS overlap callbacks do not commit immediately
+[completion-order] PASS both signal orders complete exactly once
+[completion-order] PASS completion event uses final same-frame statistics
+[completion-order] PASS result shows final gems and three stars
+[completion-order] PASS top bar agrees with result
+[completion-order] PASS recorded result agrees with emitted and displayed statistics
+[completion-order] PASS isolated disk record contains three stars
+[completion-order] PASS late events and duplicate completion leave committed result unchanged
+[completion-order] PASS overlap callbacks do not commit immediately
+[completion-order] PASS both signal orders complete exactly once
+[completion-order] PASS completion event uses final same-frame statistics
+[completion-order] PASS result shows final gems and three stars
+[completion-order] PASS top bar agrees with result
+[completion-order] PASS recorded result agrees with emitted and displayed statistics
+[completion-order] PASS isolated disk record contains three stars
+[completion-order] PASS late events and duplicate completion leave committed result unchanged
+[completion-order] PASS same-frame enter then leave cancels pending completion
+[completion-order] PASS legitimate reentry completes while save suppression remains effective
+[completion-order] PASS same-frame death vetoes completion before exit leave arrives
+[completion-order] PASS later living reentry completes with death recorded
+[completion-order] PASS queued scene replacement cannot commit old result
+[completion-order] PASS detached scene cannot commit old result
+[completion-order] 22 checks, 0 errors
+graphical_test_exit=0

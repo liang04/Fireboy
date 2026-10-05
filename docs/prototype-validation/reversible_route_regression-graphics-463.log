@@ -1,0 +1,28 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+[reversible-route] PASS initial A/B gate states are complementary
+[reversible-route] PASS remote consoles expose the same permanent route state
+[reversible-route] PASS one real press selects B; holding never retriggers
+[reversible-route] PASS released second press reverses back to A
+[reversible-route] PASS occupied A doorway defers both halves of transition, preventing player crush
+[reversible-route] PASS blocked transition is visible at every console
+[reversible-route] PASS repeat choice cancels obstructed request without collider changes
+[reversible-route] PASS clearing doorway safely settles pending transition
+[reversible-route] PASS box in B doorway is neither crushed nor moved
+[reversible-route] PASS moving box out allows ordinary retry with no reset
+[reversible-route] PASS box riding closed gate retains its standing support
+[reversible-route] PASS player riding closed gate retains standing support when opening requested
+[reversible-route] PASS pause freezes pending state and all collision decisions
+[reversible-route] PASS unpause safely applies now-clear transition
+[reversible-route] PASS player leaning against closed gate can open it without stepping away
+[reversible-route] PASS simultaneous partner presses select once, not twice
+[reversible-route] PASS frozen actors cannot alter a completed route
+[reversible-route] PASS death/respawn leaves reversible selector recoverable and stable
+[reversible-route] PASS many reversals never move gate geometry or permanent deck
+[reversible-route] PASS scene exit discards pending changes without delayed signal leakage
+[reversible-route] PASS restart/new scene resets selector and pending state to initial A
+[reversible-route] 21 checks, 0 failures
+graphical_test_exit=0

@@ -1,0 +1,359 @@
+[
+  {
+    "level": 3,
+    "name": "L3 cross-route all-gem proof",
+    "replay_tape": [
+      {
+        "frames": 65,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 24,
+        "mask": 38
+      },
+      {
+        "frames": 16,
+        "mask": 36
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 6,
+        "mask": 38
+      },
+      {
+        "frames": 18,
+        "mask": 6
+      },
+      {
+        "frames": 2,
+        "mask": 4
+      },
+      {
+        "frames": 14,
+        "mask": 36
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 11,
+        "mask": 38
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 13,
+        "mask": 102
+      },
+      {
+        "frames": 15,
+        "mask": 100
+      },
+      {
+        "frames": 1,
+        "mask": 96
+      },
+      {
+        "frames": 2,
+        "mask": 102
+      },
+      {
+        "frames": 4,
+        "mask": 70
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 25,
+        "mask": 38
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 8,
+        "mask": 6
+      },
+      {
+        "frames": 41,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 80,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 23,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 6
+      },
+      {
+        "frames": 7,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 56,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 224,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 128
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 16
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 2
+      },
+      {
+        "frames": 28,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 16
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 31,
+        "mask": 96
+      },
+      {
+        "frames": 9,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 8,
+        "mask": 96
+      },
+      {
+        "frames": 41,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 26,
+        "mask": 80
+      },
+      {
+        "frames": 14,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 33,
+        "mask": 80
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 31,
+        "mask": 16
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 2
+      },
+      {
+        "frames": 38,
+        "mask": 0
+      },
+      {
+        "frames": 90,
+        "mask": 1
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 127,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 56,
+        "mask": 16
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 60,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 241,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 23,
+        "mask": 33
+      },
+      {
+        "frames": 6,
+        "mask": 1
+      },
+      {
+        "frames": 32,
+        "mask": 0
+      },
+      {
+        "frames": 64,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 44,
+        "mask": 16
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 7,
+        "mask": 17
+      },
+      {
+        "frames": 15,
+        "mask": 1
+      }
+    ],
+    "expected": {
+      "frames": 1890,
+      "deaths": 0,
+      "box_resets": 0,
+      "red": 5,
+      "red_total": 5,
+      "blue": 5,
+      "blue_total": 5,
+      "stars": 3
+    },
+    "verify_store": true
+  }
+]

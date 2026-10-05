@@ -100,6 +100,15 @@ static func build(parent: Node2D, data: Dictionary) -> Dictionary:
 				p.setup(_vec(o.get("cell", [0, 0])), StringName(o.get("channel", "A")), CELL, int(o.get("width", 1)))
 				objects.add_child(p)
 				_channel_label(p, p.channel, Vector2((p.width_cells - 1) * 16 - 8, -12))
+			"delayed_plate":
+				var p := DelayedPressurePlate.new()
+				p.setup(_vec(o.get("cell", [0, 0])), StringName(o.get("channel", "A")), CELL,
+					float(o.get("delay_seconds", 6.0)), int(o.get("width", 1)))
+				objects.add_child(p)
+			"reversible_route":
+				var rr := ReversibleRoute.new()
+				rr.setup(o, CELL)
+				objects.add_child(rr)
 			"double_plate":
 				# 双钥匙板：一个对象管多块板，靠 "cells" 数组而不是多次声明。
 				# 做成单节点是有意的 —— 跨节点同步「队友踩了没有」需要新信号，
@@ -111,6 +120,8 @@ static func build(parent: Node2D, data: Dictionary) -> Dictionary:
 					_channel_label(zone, dp.channel, Vector2(-8, -12))
 			"door":
 				var d := GateDoor.new()
+				d.safe_close = bool(o.get("safe_close", false))
+				d.open_up = bool(o.get("open_up", false))
 				d.setup(_vec(o.get("cell", [0, 0])), StringName(o.get("channel", "A")),
 					int(o.get("height", 3)), CELL)
 				objects.add_child(d)
@@ -147,6 +158,13 @@ static func build(parent: Node2D, data: Dictionary) -> Dictionary:
 				portals.append({"node": po, "pair": StringName(o.get("pair", ""))})
 			_:
 				push_warning("LevelBuilder: 未知对象类型 %s" % o.get("type"))
+
+	# Keep timed status visible at its stationary destination, even when the gate retracts.
+	for source in objects.get_children():
+		if source is DelayedPressurePlate:
+			for target in objects.get_children():
+				if target is GateDoor and target.channel == source.channel:
+					source.add_readout(objects, target.position + Vector2(-50, -34))
 
 	# 传送门两两配对（同一 pair_id 互相连通）
 	for i in portals.size():

@@ -1,0 +1,31 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+[ui] PASS all ten levels are listed
+[ui] PASS quit button fits in the viewport
+[ui] PASS keyboard and gamepad help remain visible
+[ui] PASS menu works from keyboard without an initial click
+[ui] PASS locked levels remain disabled
+[ui] PASS menu explains both interaction keys
+[ui] PASS save screenshot menu-fresh
+[ui] PASS menu help uses saved bindings
+[ui] PASS records cannot push Quit off-screen
+[ui] PASS keyboard focus scrolls the final level fully into view
+[ui] PASS record cards do not create horizontal overflow
+[ui] PASS star progress agrees with records
+[ui] PASS save screenshot menu-records
+[ui] PASS leaving the menu before deferred focus is safe
+[ui] PASS save screenshot level-08-coop
+[ui] PASS save screenshot pause
+[ui] PASS resuming cancels pending rebinding
+[ui] PASS reopening pause does not capture the next gameplay key
+[ui] PASS result panel contains Title
+[ui] PASS result panel contains @Label@158
+[ui] PASS result panel contains Stats
+[ui] PASS result panel contains @Label@159
+[ui] PASS result panel contains Hint
+[ui] PASS save screenshot result
+[ui] finished, errors=0
+graphical_test_exit=0

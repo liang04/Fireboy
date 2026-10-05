@@ -850,7 +850,12 @@ func _probe_mechanisms(lvl: Node) -> int:
 		for i in 30:
 			await get_tree().physics_frame
 		var y2 := gate.position.y
-		if y1 - y0 < 16.0:
+		# Stacked timed routes can retract upward; check the configured endpoint
+		# and direction, rather than treating only downward travel as opening.
+		var travel := float(gate.height_cells * gate.cell_size) + 8.0
+		var direction := -1.0 if gate.open_up else 1.0
+		var expected_open := gate._closed_y + direction * travel
+		if absf(y1 - expected_open) > 1.0 or (y1 - y0) * direction < 16.0:
 			printerr("[smoke] 门收到信号后没有打开：%s (Δ=%.1f)" % [gate.get_path(), y1 - y0])
 			errs += 1
 		elif absf(y2 - y0) > 1.0:

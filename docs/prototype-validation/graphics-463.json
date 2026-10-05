@@ -1,0 +1,108 @@
+{
+  "engine": "4.6.3-stable (official)",
+  "physics_hz": 60,
+  "runs": [
+    {
+      "all_gems": true,
+      "blue": 5,
+      "blue_total": 5,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 1890,
+      "game_elapsed_seconds": 31.4999999999995,
+      "level": 3.0,
+      "mode": "input_replay",
+      "par_time": 65.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          1850.32006835938,
+          657.925231933594
+        ],
+        "water": [
+          1902.40051269531,
+          657.925231933594
+        ]
+      },
+      "reason": "completed",
+      "red": 5,
+      "red_total": 5,
+      "simulation_seconds": 31.5,
+      "snapshot_consistent": true,
+      "stars": 3,
+      "store_consistent": true,
+      "store_verified": true,
+      "within_par": true,
+      "input_frames": 1890
+    },
+    {
+      "all_gems": true,
+      "blue": 3,
+      "blue_total": 3,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 1416,
+      "game_elapsed_seconds": 23.5999999999999,
+      "level": 4.0,
+      "mode": "input_replay",
+      "par_time": 50.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          1827.11315917969,
+          625.925231933594
+        ],
+        "water": [
+          1424.97497558594,
+          529.925231933594
+        ]
+      },
+      "reason": "completed",
+      "red": 3,
+      "red_total": 3,
+      "simulation_seconds": 23.6,
+      "snapshot_consistent": true,
+      "stars": 3,
+      "store_consistent": true,
+      "store_verified": true,
+      "within_par": true,
+      "input_frames": 1416
+    },
+    {
+      "all_gems": true,
+      "blue": 5,
+      "blue_total": 5,
+      "box_resets": 0,
+      "completed": true,
+      "deaths": 0,
+      "frames": 2499,
+      "game_elapsed_seconds": 41.6499999999989,
+      "level": 8.0,
+      "mode": "input_replay",
+      "par_time": 90.0,
+      "passed": true,
+      "positions": {
+        "fire": [
+          59.41455078125,
+          625.925231933594
+        ],
+        "water": [
+          79.9445953369141,
+          625.925231933594
+        ]
+      },
+      "reason": "completed",
+      "red": 5,
+      "red_total": 5,
+      "simulation_seconds": 41.65,
+      "snapshot_consistent": true,
+      "stars": 3,
+      "store_consistent": true,
+      "store_verified": true,
+      "within_par": true,
+      "input_frames": 2499
+    }
+  ]
+}

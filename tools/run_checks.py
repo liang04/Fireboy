@@ -62,10 +62,11 @@ def main():
             ("Replay transitions regression", [binary, "--headless", "--path", str(ROOT), "res://tools/replay_flow_regression.tscn"]),
             ("Menu replay regression", [binary, "--headless", "--path", str(ROOT), "res://tools/menu_replay_regression.tscn"]),
             ("Mechanism feedback regression", [binary, "--headless", "--path", str(ROOT), "res://tools/mechanism_feedback_regression.tscn"]),
+            ("Prototype temporal/cooperation/recovery", [sys.executable, "tools/run_prototype_checks.py", "--godot", binary]),
             ("Enrichment cooperation and recovery", [sys.executable, "tools/run_enrichment_checks.py", "--godot", binary]),
         ]
         if not args.skip_smoke:
-            checks.append(("10-level smoke", [binary, "--headless", "--path", str(ROOT), "--", "--smoke"]))
+            checks.append(("10-level smoke", [binary, "--headless", "--path", str(ROOT), "--fixed-fps", "60", "--", "--smoke"]))
         if not args.skip_routes:
             checks.append(("10-level full-gem input replay", [sys.executable,
                            "tools/run_full_gem_routes.py", "--godot", binary, "--replay",

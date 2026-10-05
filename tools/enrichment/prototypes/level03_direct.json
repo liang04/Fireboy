@@ -1,0 +1,139 @@
+[
+  {
+    "level": 3,
+    "name": "L3 direct completion skips cross-route gems and vault",
+    "phases": [
+      {
+        "label": "separate lanes",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 14,
+            "y": 18
+          },
+          {
+            "kind": "jump",
+            "x": 17,
+            "y": 16
+          },
+          {
+            "kind": "jump",
+            "x": 20,
+            "y": 14
+          },
+          {
+            "kind": "jump",
+            "x": 24,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 34,
+            "y": 12
+          },
+          {
+            "kind": "go",
+            "x": 37,
+            "y": 12
+          },
+          {
+            "kind": "swim",
+            "x": 40,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 11
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 20,
+            "y": 22
+          },
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 27,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "fire takes over D",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 51,
+            "y": 11
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "water opens return E",
+        "fire": [],
+        "water": [
+          {
+            "kind": "go",
+            "x": 58,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "kind": "go",
+            "x": 57,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "choose the short reunion route",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 57,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 59,
+            "y": 20
+          }
+        ]
+      }
+    ],
+    "scenario": {
+      "completed": true,
+      "deaths": 0,
+      "box_resets": 0,
+      "gates": {
+        "E": true,
+        "V": false
+      }
+    }
+  }
+]

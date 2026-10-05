@@ -1,0 +1,310 @@
+[
+  {
+    "level": 4,
+    "verify_store": true,
+    "replay_tape": [
+      {
+        "frames": 9,
+        "mask": 34
+      },
+      {
+        "frames": 40,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 31,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 6
+      },
+      {
+        "frames": 17,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 170,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 98
+      },
+      {
+        "frames": 25,
+        "mask": 66
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 26,
+        "mask": 34
+      },
+      {
+        "frames": 38,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 8,
+        "mask": 34
+      },
+      {
+        "frames": 222,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 9,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 100
+      },
+      {
+        "frames": 18,
+        "mask": 102
+      },
+      {
+        "frames": 1,
+        "mask": 70
+      },
+      {
+        "frames": 2,
+        "mask": 68
+      },
+      {
+        "frames": 3,
+        "mask": 85
+      },
+      {
+        "frames": 5,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 156,
+        "mask": 0
+      },
+      {
+        "frames": 29,
+        "mask": 34
+      },
+      {
+        "frames": 5,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 64,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 2
+      },
+      {
+        "frames": 20,
+        "mask": 0
+      },
+      {
+        "frames": 34,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 7,
+        "mask": 6
+      },
+      {
+        "frames": 42,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 8,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 17
+      },
+      {
+        "frames": 8,
+        "mask": 16
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 19,
+        "mask": 96
+      },
+      {
+        "frames": 21,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 96
+      },
+      {
+        "frames": 8,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 10,
+        "mask": 64
+      },
+      {
+        "frames": 17,
+        "mask": 96
+      },
+      {
+        "frames": 13,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 32
+      },
+      {
+        "frames": 16,
+        "mask": 0
+      },
+      {
+        "frames": 18,
+        "mask": 16
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 41,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 38
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 7,
+        "mask": 38
+      },
+      {
+        "frames": 22,
+        "mask": 6
+      },
+      {
+        "frames": 14,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 6,
+        "mask": 2
+      }
+    ],
+    "expected": {
+      "frames": 1416,
+      "deaths": 0,
+      "box_resets": 0,
+      "red": 3,
+      "red_total": 3,
+      "blue": 3,
+      "blue_total": 3,
+      "stars": 3
+    }
+  }
+]

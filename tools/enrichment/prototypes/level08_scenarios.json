@@ -1,0 +1,116 @@
+[
+  {
+    "level": 8,
+    "name": "L8 wrong initial branch cannot cross closed B",
+    "max_frames": 500,
+    "phases": [
+      {
+        "fire": [
+          {
+            "x": 40,
+            "y": 19,
+            "timeout": 220
+          }
+        ]
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_x_max": 824,
+      "fire_x_min": 820,
+      "gates": {
+        "K": false
+      },
+      "reason_prefix": "task timeout:",
+      "frames": 220
+    }
+  },
+  {
+    "level": 8,
+    "name": "L8 one remote key cannot replace separated partner",
+    "max_frames": 1500,
+    "phases": [
+      {
+        "label": "Fire chooses upper A; Water waits at safe near console",
+        "fire": [
+          {
+            "x": 7,
+            "y": 19
+          },
+          {
+            "x": 7,
+            "y": 19
+          },
+          {
+            "x": 8.5,
+            "y": 16,
+            "kind": "jump",
+            "rise_first": true,
+            "timeout": 800
+          },
+          {
+            "x": 8,
+            "y": 16
+          },
+          {
+            "x": 7,
+            "y": 13,
+            "kind": "jump",
+            "rise_first": true,
+            "timeout": 800
+          },
+          {
+            "x": 8.5,
+            "y": 10,
+            "kind": "jump",
+            "rise_first": true,
+            "timeout": 800
+          },
+          {
+            "x": 12,
+            "y": 10
+          }
+        ],
+        "water": [
+          {
+            "x": 12,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "Fire takes A to far landing and selects lower B remotely",
+        "fire": [
+          {
+            "x": 44,
+            "y": 10
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "x": 43,
+            "y": 10
+          }
+        ],
+        "water": []
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_x_min": 1380,
+      "fire_y_max": 340,
+      "water_x_max": 405,
+      "water_y_min": 620,
+      "gates": {
+        "K": false
+      },
+      "reason_prefix": "steps exhausted",
+      "frames": 553
+    }
+  }
+]

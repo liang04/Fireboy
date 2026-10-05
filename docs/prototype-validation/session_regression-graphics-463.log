@@ -1,0 +1,44 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+[session] PASS unknown action rejected
+[session] PASS empty key rejected
+[session] PASS invalid rebind keeps previous key
+[session] PASS invalid key rejected -1
+[session] PASS invalid key rejected 33554519
+[session] PASS invalid key rejected 4194999
+[session] PASS restart key remains reserved
+[session] PASS valid swapped keys survive reload
+[session] PASS duplicate bindings and fallback chain repair together
+[session] PASS malformed binding falls back to default
+[session] PASS unrelated custom controls retained during repair
+[session] PASS broken saved controls cannot steal restart
+[session] PASS save damaged isolated settings fixture
+[session] PASS reload settings from disk
+[session] PASS disk reload installs repaired keys
+[session] PASS reloading keeps gamepad events without duplicate keys
+[session] PASS held Esc repeat cannot resume pause
+[session] PASS resuming releases hidden pause button focus
+[session] PASS pause clears held movement
+[session] PASS focus loss pauses live game
+[session] PASS focus loss clears buffered jump and held input
+[session] PASS background freezes timer and player physics
+[session] PASS returning focus waits for explicit resume
+[session] PASS repeat pause clears both players' menu input 0
+[session] PASS menu jump edge cannot trigger player after resume 0
+[session] PASS repeat pause clears both players' menu input 1
+[session] PASS menu jump edge cannot trigger player after resume 1
+[session] PASS repeat pause clears both players' menu input 2
+[session] PASS menu jump edge cannot trigger player after resume 2
+[session] PASS fresh gameplay jump still responds after resume
+[session] PASS focus loss preserves finished result
+[session] PASS expanded pause help fits viewport
+[session] PASS capture pause with new help
+[session] PASS diagnostic completion does not touch progress
+[session] PASS restore isolated settings after fixture
+[session] finished checks=35 errors=0
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2663)
+graphical_test_exit=0

@@ -43,10 +43,16 @@ static func save_progress(cfg: ConfigFile, path: String, rating_version: int, la
 	var error := cfg.save(temporary)
 	if error != OK:
 		return error
+	# ConfigFile decimal floats can normalize by one ULP on parse (e.g. 1891/60).
+	# Compare against the same parser-normalized expected payload, retaining exact
+	# full-document validation rather than accepting a broad numeric tolerance.
+	var expected := ConfigFile.new()
+	if expected.parse(cfg.encode_to_text()) != OK:
+		return ERR_INVALID_DATA
 	var verified := ConfigFile.new()
 	if verified.load(temporary) != OK \
 			or metadata_status(verified, rating_version, layout_version) != "valid" \
-			or verified.encode_to_text() != cfg.encode_to_text():
+			or verified.encode_to_text() != expected.encode_to_text():
 		return ERR_INVALID_DATA
 	var current := ConfigFile.new()
 	if current.load(path) == OK:

@@ -1774,6 +1774,11 @@ def validate(lv, index):
     """返回问题列表（空 = 完全通过）。"""
     errs = []
     grid, objects = lv["grid"], lv["objects"]
+    from enrichment.prototype_validator import project
+    objects, projection_errors, temporal = project(grid, objects)
+    errs.extend(projection_errors)
+    if temporal:
+        print("      （动态机关：静态仅检查可达上界；时序与互斥由引擎测试和真实按键回放验证）")
     H, W = len(grid), len(grid[0])
     tag = "关卡%d" % (index + 1)
 

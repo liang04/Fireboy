@@ -11,7 +11,8 @@ var _recovery_notice: String = ""
 const CHALLENGE_VERSION := 1
 const CHALLENGE_COUNTERS := {"no_deaths": "deaths", "no_box_resets": "box_resets"}
 
-## 评星规则版本。**改动评星判据、或改动任何关卡的三星时间门槛（par_time），都必须 +1。**
+## 评星规则版本。全局评星判据变化，或不改内容修订而改变 par_time 时必须 +1。
+## 随关卡内容修订一起调整该关 par_time 时，由该关 rev 隔离旧成绩；不清其余关的星级。
 ##
 ## 为什么 par_time 也算「判据变更」：门槛是判据的**输入**，输入变了，旧星级就和新的不可比。
 ## 而 stars 取历史最高，不收口就永远覆盖不掉 —— 玩家重玩也看不到新评级，

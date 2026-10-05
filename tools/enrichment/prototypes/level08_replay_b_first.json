@@ -1,0 +1,384 @@
+[
+  {
+    "level": 8,
+    "verify_store": true,
+    "max_frames": 18000,
+    "label": "B-first reversible bridge full-gem route",
+    "replay_tape": [
+      {
+        "frames": 41,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 15,
+        "mask": 18
+      },
+      {
+        "frames": 2,
+        "mask": 16
+      },
+      {
+        "frames": 1,
+        "mask": 24
+      },
+      {
+        "frames": 26,
+        "mask": 16
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 64
+      },
+      {
+        "frames": 15,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 7,
+        "mask": 16
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 64
+      },
+      {
+        "frames": 10,
+        "mask": 80
+      },
+      {
+        "frames": 6,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 64
+      },
+      {
+        "frames": 15,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 256,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 248,
+        "mask": 32
+      },
+      {
+        "frames": 23,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 128
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 10,
+        "mask": 16
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 248,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 248,
+        "mask": 16
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 39,
+        "mask": 16
+      },
+      {
+        "frames": 21,
+        "mask": 0
+      },
+      {
+        "frames": 41,
+        "mask": 32
+      },
+      {
+        "frames": 23,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 40,
+        "mask": 1
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 4
+      },
+      {
+        "frames": 15,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 7,
+        "mask": 1
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 4
+      },
+      {
+        "frames": 10,
+        "mask": 5
+      },
+      {
+        "frames": 6,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 4
+      },
+      {
+        "frames": 15,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 256,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 128
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 16
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 256,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 248,
+        "mask": 16
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 128
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 248,
+        "mask": 1
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 40,
+        "mask": 1
+      },
+      {
+        "frames": 21,
+        "mask": 0
+      },
+      {
+        "frames": 42,
+        "mask": 2
+      },
+      {
+        "frames": 22,
+        "mask": 0
+      },
+      {
+        "frames": 80,
+        "mask": 17
+      },
+      {
+        "frames": 7,
+        "mask": 1
+      }
+    ],
+    "expected": {
+      "frames": 2871,
+      "deaths": 0,
+      "box_resets": 0,
+      "red": 5,
+      "red_total": 5,
+      "blue": 5,
+      "blue_total": 5,
+      "stars": 3
+    }
+  }
+]
