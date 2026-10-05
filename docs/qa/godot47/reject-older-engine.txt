@@ -1,0 +1,1 @@
+FAIL: this project requires Godot 4.7; got '4.6.3.stable.official.7d41c59c4'

@@ -9,7 +9,7 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
-SUPPORTED_GODOT = ("4.6.3", "4.7")
+SUPPORTED_GODOT = ("4.7",)
 
 
 def main():
@@ -39,11 +39,12 @@ def main():
                                  text=True, encoding="utf-8", errors="replace", timeout=30)
         actual = version.stdout.strip()
         if version.returncode or not any(actual.startswith(version + ".") for version in SUPPORTED_GODOT):
-            print(f"FAIL: tested Godot versions are {', '.join(SUPPORTED_GODOT)}; got {actual!r}", file=sys.stderr)
+            print(f"FAIL: this project requires Godot {', '.join(SUPPORTED_GODOT)}; got {actual!r}", file=sys.stderr)
             return 1
         print(f"Godot: {actual}", flush=True)
         checks = [
             ("Import", [binary, "--headless", "--path", str(ROOT), "--editor", "--import", "--quit"]),
+            ("Clean and upgrade normal startup", [sys.executable, "tools/test_normal_startup.py", "--godot", binary]),
             ("Level validator", [sys.executable, "tools/gen_levels.py"]),
             ("Existing regression", [binary, "--headless", "--path", str(ROOT), "res://tools/regression.tscn"]),
             ("Controls regression", [binary, "--headless", "--path", str(ROOT), "res://tools/control_regression.tscn"]),

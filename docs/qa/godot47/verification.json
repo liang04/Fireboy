@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-05",
+  "base_remote_commit": "9c85a8300c146ffebca80f2c3ba7f504c7bffa67",
+  "engine": "4.7.stable.official.5b4e0cb0f",
+  "platform": "Linux",
+  "full_checks": {
+    "exit_code": 0,
+    "smoke_skipped": false,
+    "routes_skipped": false,
+    "log": "full-checks-4.7.txt"
+  },
+  "startup_regression": {
+    "clean_import": true,
+    "pre_upgrade_class_cache": true,
+    "normal_main_scene": true,
+    "menu_to_first_level": true,
+    "saves_isolated": true
+  },
+  "graphics": {
+    "renderer": "Mesa llvmpipe / OpenGL compatibility",
+    "menu": true,
+    "first_level": true,
+    "pause": true,
+    "audio": "Dummy",
+    "return_to_menu": true
+  },
+  "older_version_guard": {
+    "4.6.3_checks_exit": 1,
+    "4.6.3_playtest_exit": 2,
+    "4.6.3_node_wrapper_exit": 1,
+    "4.7_node_wrapper_exit": 0
+  },
+  "gameplay_and_save_schema_changed": false,
+  "windows_automated_test": false,
+  "remote_published": false
+}

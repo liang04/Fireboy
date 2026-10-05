@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        godot: ["4.6.3", "4.7"]
+        godot: ["4.7"]
     name: Linux Godot ${{ matrix.godot }}
     runs-on: ubuntu-24.04
     timeout-minutes: 15

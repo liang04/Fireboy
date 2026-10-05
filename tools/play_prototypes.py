@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Launch one of the three co-op prototypes with disposable, isolated user data."""
+"""Launch a co-op prototype with Godot 4.7 and disposable, isolated user data."""
 import argparse
 import os
 from pathlib import Path
@@ -25,13 +25,18 @@ def main():
             path = Path(temporary) / 'Fireboy-prototype-playtest' / leaf
             path.mkdir(parents=True)
             env[key] = str(path)
+        version = subprocess.run([binary, '--version'], env=env, capture_output=True,
+                                 text=True, encoding='utf-8', errors='replace', timeout=30)
+        actual = version.stdout.strip()
+        if version.returncode or not actual.startswith('4.7.'):
+            parser.error(f'This project requires Godot 4.7 (4.7.x); got {actual!r}.')
         # Fresh source packages need imported fonts and the global script cache.
         imported = subprocess.run([binary, '--headless', '--path', str(ROOT), '--editor', '--import', '--quit'],
-                                  cwd=ROOT, env=env, capture_output=True, text=True, timeout=300)
+                                  cwd=ROOT, env=env, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=300)
         log = imported.stdout + imported.stderr
         if 'ERROR: Error loading custom project font' in log:
             imported = subprocess.run([binary, '--headless', '--path', str(ROOT), '--editor', '--import', '--quit'],
-                                      cwd=ROOT, env=env, capture_output=True, text=True, timeout=300)
+                                      cwd=ROOT, env=env, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=300)
             log = imported.stdout + imported.stderr
         if imported.returncode or any(line.startswith(('SCRIPT ERROR:', 'ERROR:')) for line in log.splitlines()):
             print(log); return 1

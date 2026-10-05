@@ -2,7 +2,7 @@
 
 双人同屏合作解谜平台跳跃游戏原型。角色使用工程内精灵表，场景机关图形程序生成，打开即可玩。
 
-- 引擎：Godot 4.6.3（GL Compatibility，60Hz 物理）
+- 引擎：Godot 4.7（GL Compatibility，60Hz 物理）
 - 状态：可运行原型，10 个关卡
 - 运行：Godot 打开 `project.godot` 直接 F5
 

@@ -11,6 +11,10 @@ const CELL := 32
 static var _tilesets: Dictionary = {}
 const PLAYER_SCENE := preload("res://scenes/player.tscn")
 const MECHANISM_FEEDBACK_SCRIPT := preload("res://scripts/util/mechanism_feedback.gd")
+# These classes were added after the original project was imported. Resolve them
+# by path so an editor still holding the pre-upgrade class index can start safely.
+const DELAYED_PLATE_SCRIPT := preload("res://scripts/objects/delayed_plate.gd")
+const REVERSIBLE_ROUTE_SCRIPT := preload("res://scripts/objects/reversible_route.gd")
 
 const TERRAIN_STONE := 0
 const TERRAIN_WOOD := 1
@@ -101,12 +105,12 @@ static func build(parent: Node2D, data: Dictionary) -> Dictionary:
 				objects.add_child(p)
 				_channel_label(p, p.channel, Vector2((p.width_cells - 1) * 16 - 8, -12))
 			"delayed_plate":
-				var p := DelayedPressurePlate.new()
+				var p := DELAYED_PLATE_SCRIPT.new()
 				p.setup(_vec(o.get("cell", [0, 0])), StringName(o.get("channel", "A")), CELL,
 					float(o.get("delay_seconds", 6.0)), int(o.get("width", 1)))
 				objects.add_child(p)
 			"reversible_route":
-				var rr := ReversibleRoute.new()
+				var rr := REVERSIBLE_ROUTE_SCRIPT.new()
 				rr.setup(o, CELL)
 				objects.add_child(rr)
 			"double_plate":
@@ -161,7 +165,7 @@ static func build(parent: Node2D, data: Dictionary) -> Dictionary:
 
 	# Keep timed status visible at its stationary destination, even when the gate retracts.
 	for source in objects.get_children():
-		if source is DelayedPressurePlate:
+		if source is DELAYED_PLATE_SCRIPT:
 			for target in objects.get_children():
 				if target is GateDoor and target.channel == source.channel:
 					source.add_readout(objects, target.position + Vector2(-50, -34))
