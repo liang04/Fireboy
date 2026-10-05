@@ -3,6 +3,11 @@ extends "res://tools/full_gem_routes.gd"
 var shots_dir := OS.get_environment("FIREBOY_QA_DIR")
 var captured := {}
 
+func _ready() -> void:
+	# Unattended rendering must not steal desktop focus or pause on tool windows.
+	get_window().unfocusable = true
+	super._ready()
+
 func _physics_process(delta: float) -> void:
 	super._physics_process(delta)
 	if not is_instance_valid(level) or level._completed: return

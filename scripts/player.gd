@@ -48,6 +48,7 @@ var frozen := false
 var _coyote := 0.0
 var _buffer := 0.0
 var _jump_held := false
+var _discard_released_jump := false
 var _fluids: Dictionary = {}
 var _facing := 1
 var _time := 0.0
@@ -260,6 +261,11 @@ func freeze() -> void:
 
 
 # ---------------------------------------------------------------- 物理
+func clear_pending_input() -> void:
+	_buffer = 0.0
+	_discard_released_jump = true
+
+
 func _physics_process(delta: float) -> void:
 	var on_floor := is_on_floor()
 	var in_fluid := _in_fluid()
@@ -279,8 +285,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0.0, FRICTION * delta)
 
 	# --- 跳跃：coyote time + 输入缓冲
-	if Input.is_action_just_pressed(jump_action):
+	# action_release leaves a same-frame just_pressed edge after resuming a menu.
+	if Input.is_action_just_pressed(jump_action) \
+			and (not _discard_released_jump or Input.is_action_pressed(jump_action)):
 		_buffer = JUMP_BUFFER
+	_discard_released_jump = false
 	_buffer = maxf(_buffer - delta, 0.0)
 
 	if on_floor:

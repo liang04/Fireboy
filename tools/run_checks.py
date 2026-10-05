@@ -13,6 +13,9 @@ SUPPORTED_GODOT = ("4.6.3", "4.7")
 
 
 def main():
+    # Windows consoles may default to GBK, which cannot print Godot's check marks.
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--godot", default=os.environ.get("GODOT_BIN", "godot"))
     parser.add_argument("--skip-smoke", action="store_true", help="Skip the longer 10-level probe")
@@ -51,6 +54,10 @@ def main():
             ("Atmosphere regression", [binary, "--headless", "--path", str(ROOT), "res://tools/atmosphere_regression.tscn"]),
             ("Box recovery regression", [binary, "--headless", "--path", str(ROOT), "res://tools/recovery_regression.tscn"]),
             ("UI regression", [binary, "--headless", "--path", str(ROOT), "res://tools/ui_regression.tscn"]),
+            ("Session input regression", [binary, "--headless", "--path", str(ROOT), "res://tools/session_regression.tscn"]),
+            ("Completion event ordering regression", [binary, "--headless", "--path", str(ROOT), "res://tools/completion_order_regression.tscn"]),
+            ("Binding recovery regression", [binary, "--headless", "--path", str(ROOT), "res://tools/binding_regression.tscn"]),
+            ("Save recovery regression", [binary, "--headless", "--path", str(ROOT), "res://tools/save_recovery_regression.tscn"]),
             ("Replay records regression", [binary, "--headless", "--path", str(ROOT), "res://tools/replay_regression.tscn"]),
             ("Replay transitions regression", [binary, "--headless", "--path", str(ROOT), "res://tools/replay_flow_regression.tscn"]),
             ("Menu replay regression", [binary, "--headless", "--path", str(ROOT), "res://tools/menu_replay_regression.tscn"]),

@@ -1,0 +1,2840 @@
+{
+	"engine": "4.7-stable (official)",
+	"physics_hz": 60,
+	"runs": [
+		{
+			"all_gems": true,
+			"blue": 3,
+			"blue_total": 3,
+			"box_resets": 0,
+			"completed": true,
+			"deaths": 0,
+			"frames": 640,
+			"game_elapsed_seconds": 10.6916666666667,
+			"input_tape": [
+				{
+					"frames": 33,
+					"mask": 34
+				},
+				{
+					"frames": 1,
+					"mask": 2
+				},
+				{
+					"frames": 39,
+					"mask": 98
+				},
+				{
+					"frames": 9,
+					"mask": 96
+				},
+				{
+					"frames": 1,
+					"mask": 64
+				},
+				{
+					"frames": 26,
+					"mask": 0
+				},
+				{
+					"frames": 18,
+					"mask": 2
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 34,
+					"mask": 6
+				},
+				{
+					"frames": 1,
+					"mask": 4
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 80,
+					"mask": 34
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 15,
+					"mask": 38
+				},
+				{
+					"frames": 24,
+					"mask": 6
+				},
+				{
+					"frames": 10,
+					"mask": 4
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 6
+				},
+				{
+					"frames": 18,
+					"mask": 38
+				},
+				{
+					"frames": 1,
+					"mask": 4
+				},
+				{
+					"frames": 20,
+					"mask": 100
+				},
+				{
+					"frames": 6,
+					"mask": 96
+				},
+				{
+					"frames": 9,
+					"mask": 64
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 24,
+					"mask": 38
+				},
+				{
+					"frames": 8,
+					"mask": 36
+				},
+				{
+					"frames": 8,
+					"mask": 4
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 33,
+					"mask": 2
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 32,
+					"mask": 6
+				},
+				{
+					"frames": 1,
+					"mask": 2
+				},
+				{
+					"frames": 22,
+					"mask": 6
+				},
+				{
+					"frames": 7,
+					"mask": 4
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 71,
+					"mask": 32
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 128
+				},
+				{
+					"frames": 3,
+					"mask": 0
+				},
+				{
+					"frames": 40,
+					"mask": 32
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 29,
+					"mask": 2
+				}
+			],
+			"level": 1.0,
+			"mode": "input_replay",
+			"par_time": 30.0,
+			"passed": true,
+			"positions": {
+				"fire": [
+					1603.97729492188,
+					497.925231933594
+				],
+				"water": [
+					1520.98522949219,
+					625.925231933594
+				]
+			},
+			"reason": "completed",
+			"red": 3,
+			"red_total": 3,
+			"simulation_seconds": 10.6666666666667,
+			"snapshot_consistent": true,
+			"stars": 3,
+			"within_par": true
+		},
+		{
+			"all_gems": true,
+			"blue": 3,
+			"blue_total": 3,
+			"box_resets": 0,
+			"completed": true,
+			"deaths": 0,
+			"frames": 1377,
+			"game_elapsed_seconds": 22.966666666666,
+			"input_tape": [
+				{
+					"frames": 30,
+					"mask": 18
+				},
+				{
+					"frames": 1,
+					"mask": 2
+				},
+				{
+					"frames": 9,
+					"mask": 34
+				},
+				{
+					"frames": 9,
+					"mask": 2
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 11,
+					"mask": 6
+				},
+				{
+					"frames": 34,
+					"mask": 4
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 9,
+					"mask": 1
+				},
+				{
+					"frames": 7,
+					"mask": 0
+				},
+				{
+					"frames": 239,
+					"mask": 2
+				},
+				{
+					"frames": 33,
+					"mask": 0
+				},
+				{
+					"frames": 18,
+					"mask": 38
+				},
+				{
+					"frames": 22,
+					"mask": 36
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 23,
+					"mask": 36
+				},
+				{
+					"frames": 7,
+					"mask": 4
+				},
+				{
+					"frames": 3,
+					"mask": 20
+				},
+				{
+					"frames": 3,
+					"mask": 4
+				},
+				{
+					"frames": 3,
+					"mask": 20
+				},
+				{
+					"frames": 2,
+					"mask": 4
+				},
+				{
+					"frames": 2,
+					"mask": 20
+				},
+				{
+					"frames": 2,
+					"mask": 4
+				},
+				{
+					"frames": 3,
+					"mask": 20
+				},
+				{
+					"frames": 1,
+					"mask": 4
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 4
+				},
+				{
+					"frames": 3,
+					"mask": 20
+				},
+				{
+					"frames": 3,
+					"mask": 4
+				},
+				{
+					"frames": 3,
+					"mask": 20
+				},
+				{
+					"frames": 45,
+					"mask": 4
+				},
+				{
+					"frames": 313,
+					"mask": 0
+				},
+				{
+					"frames": 10,
+					"mask": 68
+				},
+				{
+					"frames": 12,
+					"mask": 102
+				},
+				{
+					"frames": 3,
+					"mask": 68
+				},
+				{
+					"frames": 7,
+					"mask": 85
+				},
+				{
+					"frames": 1,
+					"mask": 84
+				},
+				{
+					"frames": 2,
+					"mask": 68
+				},
+				{
+					"frames": 3,
+					"mask": 69
+				},
+				{
+					"frames": 2,
+					"mask": 85
+				},
+				{
+					"frames": 201,
+					"mask": 0
+				},
+				{
+					"frames": 3,
+					"mask": 32
+				},
+				{
+					"frames": 8,
+					"mask": 34
+				},
+				{
+					"frames": 3,
+					"mask": 32
+				},
+				{
+					"frames": 2,
+					"mask": 1
+				},
+				{
+					"frames": 3,
+					"mask": 17
+				},
+				{
+					"frames": 5,
+					"mask": 16
+				},
+				{
+					"frames": 3,
+					"mask": 17
+				},
+				{
+					"frames": 2,
+					"mask": 16
+				},
+				{
+					"frames": 2,
+					"mask": 17
+				},
+				{
+					"frames": 4,
+					"mask": 16
+				},
+				{
+					"frames": 1,
+					"mask": 18
+				},
+				{
+					"frames": 2,
+					"mask": 2
+				},
+				{
+					"frames": 3,
+					"mask": 0
+				},
+				{
+					"frames": 4,
+					"mask": 2
+				},
+				{
+					"frames": 5,
+					"mask": 0
+				},
+				{
+					"frames": 3,
+					"mask": 2
+				},
+				{
+					"frames": 3,
+					"mask": 0
+				},
+				{
+					"frames": 4,
+					"mask": 2
+				},
+				{
+					"frames": 5,
+					"mask": 0
+				},
+				{
+					"frames": 3,
+					"mask": 2
+				},
+				{
+					"frames": 19,
+					"mask": 0
+				},
+				{
+					"frames": 10,
+					"mask": 2
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 8
+				},
+				{
+					"frames": 4,
+					"mask": 0
+				},
+				{
+					"frames": 28,
+					"mask": 34
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 11,
+					"mask": 38
+				},
+				{
+					"frames": 15,
+					"mask": 6
+				},
+				{
+					"frames": 17,
+					"mask": 102
+				},
+				{
+					"frames": 6,
+					"mask": 100
+				},
+				{
+					"frames": 1,
+					"mask": 96
+				},
+				{
+					"frames": 7,
+					"mask": 102
+				},
+				{
+					"frames": 1,
+					"mask": 38
+				},
+				{
+					"frames": 2,
+					"mask": 102
+				},
+				{
+					"frames": 15,
+					"mask": 70
+				},
+				{
+					"frames": 20,
+					"mask": 68
+				},
+				{
+					"frames": 1,
+					"mask": 64
+				},
+				{
+					"frames": 11,
+					"mask": 70
+				},
+				{
+					"frames": 1,
+					"mask": 6
+				},
+				{
+					"frames": 13,
+					"mask": 102
+				},
+				{
+					"frames": 20,
+					"mask": 100
+				},
+				{
+					"frames": 1,
+					"mask": 64
+				},
+				{
+					"frames": 8,
+					"mask": 66
+				},
+				{
+					"frames": 3,
+					"mask": 64
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 6,
+					"mask": 16
+				}
+			],
+			"level": 2.0,
+			"mode": "input_replay",
+			"par_time": 45.0,
+			"passed": true,
+			"positions": {
+				"fire": [
+					1618.32922363281,
+					625.925231933594
+				],
+				"water": [
+					1501.88598632812,
+					657.925231933594
+				]
+			},
+			"reason": "completed",
+			"red": 3,
+			"red_total": 3,
+			"simulation_seconds": 22.95,
+			"snapshot_consistent": true,
+			"stars": 3,
+			"within_par": true
+		},
+		{
+			"all_gems": true,
+			"blue": 4,
+			"blue_total": 4,
+			"box_resets": 0,
+			"completed": true,
+			"deaths": 0,
+			"frames": 953,
+			"game_elapsed_seconds": 15.8999999999997,
+			"input_tape": [
+				{
+					"frames": 65,
+					"mask": 34
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 24,
+					"mask": 38
+				},
+				{
+					"frames": 16,
+					"mask": 36
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 6,
+					"mask": 38
+				},
+				{
+					"frames": 18,
+					"mask": 6
+				},
+				{
+					"frames": 2,
+					"mask": 4
+				},
+				{
+					"frames": 14,
+					"mask": 36
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 11,
+					"mask": 38
+				},
+				{
+					"frames": 1,
+					"mask": 6
+				},
+				{
+					"frames": 13,
+					"mask": 102
+				},
+				{
+					"frames": 15,
+					"mask": 100
+				},
+				{
+					"frames": 1,
+					"mask": 96
+				},
+				{
+					"frames": 2,
+					"mask": 102
+				},
+				{
+					"frames": 4,
+					"mask": 70
+				},
+				{
+					"frames": 1,
+					"mask": 6
+				},
+				{
+					"frames": 25,
+					"mask": 38
+				},
+				{
+					"frames": 1,
+					"mask": 6
+				},
+				{
+					"frames": 1,
+					"mask": 2
+				},
+				{
+					"frames": 8,
+					"mask": 6
+				},
+				{
+					"frames": 41,
+					"mask": 4
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 80,
+					"mask": 2
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 23,
+					"mask": 2
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 24,
+					"mask": 6
+				},
+				{
+					"frames": 7,
+					"mask": 4
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 32,
+					"mask": 2
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 8
+				},
+				{
+					"frames": 4,
+					"mask": 0
+				},
+				{
+					"frames": 56,
+					"mask": 2
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 224,
+					"mask": 32
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 128
+				},
+				{
+					"frames": 3,
+					"mask": 0
+				},
+				{
+					"frames": 9,
+					"mask": 16
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 32,
+					"mask": 2
+				},
+				{
+					"frames": 28,
+					"mask": 0
+				},
+				{
+					"frames": 25,
+					"mask": 34
+				},
+				{
+					"frames": 30,
+					"mask": 32
+				},
+				{
+					"frames": 10,
+					"mask": 34
+				},
+				{
+					"frames": 1,
+					"mask": 2
+				},
+				{
+					"frames": 29,
+					"mask": 18
+				},
+				{
+					"frames": 1,
+					"mask": 16
+				},
+				{
+					"frames": 22,
+					"mask": 17
+				},
+				{
+					"frames": 27,
+					"mask": 1
+				}
+			],
+			"level": 3.0,
+			"mode": "input_replay",
+			"par_time": 35.0,
+			"passed": true,
+			"positions": {
+				"fire": [
+					1852.15466308594,
+					657.925231933594
+				],
+				"water": [
+					1903.2353515625,
+					657.925231933594
+				]
+			},
+			"reason": "completed",
+			"red": 4,
+			"red_total": 4,
+			"simulation_seconds": 15.8833333333333,
+			"snapshot_consistent": true,
+			"stars": 3,
+			"within_par": true
+		},
+		{
+			"all_gems": true,
+			"blue": 3,
+			"blue_total": 3,
+			"box_resets": 0,
+			"completed": true,
+			"deaths": 0,
+			"frames": 1338,
+			"game_elapsed_seconds": 22.316666666666,
+			"input_tape": [
+				{
+					"frames": 9,
+					"mask": 34
+				},
+				{
+					"frames": 40,
+					"mask": 2
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 31,
+					"mask": 2
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 32,
+					"mask": 6
+				},
+				{
+					"frames": 17,
+					"mask": 4
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 170,
+					"mask": 1
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 24,
+					"mask": 98
+				},
+				{
+					"frames": 25,
+					"mask": 66
+				},
+				{
+					"frames": 1,
+					"mask": 2
+				},
+				{
+					"frames": 26,
+					"mask": 34
+				},
+				{
+					"frames": 38,
+					"mask": 32
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 8,
+					"mask": 34
+				},
+				{
+					"frames": 222,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 64
+				},
+				{
+					"frames": 9,
+					"mask": 68
+				},
+				{
+					"frames": 1,
+					"mask": 100
+				},
+				{
+					"frames": 18,
+					"mask": 102
+				},
+				{
+					"frames": 1,
+					"mask": 70
+				},
+				{
+					"frames": 2,
+					"mask": 68
+				},
+				{
+					"frames": 3,
+					"mask": 85
+				},
+				{
+					"frames": 5,
+					"mask": 68
+				},
+				{
+					"frames": 1,
+					"mask": 4
+				},
+				{
+					"frames": 156,
+					"mask": 0
+				},
+				{
+					"frames": 29,
+					"mask": 34
+				},
+				{
+					"frames": 5,
+					"mask": 0
+				},
+				{
+					"frames": 17,
+					"mask": 32
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 64,
+					"mask": 2
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 32,
+					"mask": 2
+				},
+				{
+					"frames": 20,
+					"mask": 0
+				},
+				{
+					"frames": 34,
+					"mask": 6
+				},
+				{
+					"frames": 1,
+					"mask": 2
+				},
+				{
+					"frames": 7,
+					"mask": 6
+				},
+				{
+					"frames": 42,
+					"mask": 4
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 8,
+					"mask": 2
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 8
+				},
+				{
+					"frames": 4,
+					"mask": 0
+				},
+				{
+					"frames": 9,
+					"mask": 17
+				},
+				{
+					"frames": 8,
+					"mask": 16
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 19,
+					"mask": 96
+				},
+				{
+					"frames": 21,
+					"mask": 64
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 32,
+					"mask": 96
+				},
+				{
+					"frames": 8,
+					"mask": 64
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 9,
+					"mask": 32
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 15,
+					"mask": 32
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 39,
+					"mask": 34
+				},
+				{
+					"frames": 1,
+					"mask": 2
+				},
+				{
+					"frames": 1,
+					"mask": 34
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 6,
+					"mask": 38
+				},
+				{
+					"frames": 25,
+					"mask": 6
+				},
+				{
+					"frames": 14,
+					"mask": 4
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 5,
+					"mask": 2
+				}
+			],
+			"level": 4.0,
+			"mode": "input_replay",
+			"par_time": 45.0,
+			"passed": true,
+			"positions": {
+				"fire": [
+					1827.11315917969,
+					625.925231933594
+				],
+				"water": [
+					1427.97290039062,
+					529.925231933594
+				]
+			},
+			"reason": "completed",
+			"red": 3,
+			"red_total": 3,
+			"simulation_seconds": 22.3,
+			"snapshot_consistent": true,
+			"stars": 3,
+			"within_par": true
+		},
+		{
+			"all_gems": true,
+			"blue": 4,
+			"blue_total": 4,
+			"box_resets": 0,
+			"completed": true,
+			"deaths": 0,
+			"frames": 2114,
+			"game_elapsed_seconds": 35.2499999999986,
+			"input_tape": [
+				{
+					"frames": 41,
+					"mask": 34
+				},
+				{
+					"frames": 36,
+					"mask": 2
+				},
+				{
+					"frames": 4,
+					"mask": 34
+				},
+				{
+					"frames": 14,
+					"mask": 32
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 21,
+					"mask": 80
+				},
+				{
+					"frames": 14,
+					"mask": 82
+				},
+				{
+					"frames": 1,
+					"mask": 18
+				},
+				{
+					"frames": 2,
+					"mask": 82
+				},
+				{
+					"frames": 1,
+					"mask": 66
+				},
+				{
+					"frames": 1,
+					"mask": 64
+				},
+				{
+					"frames": 35,
+					"mask": 69
+				},
+				{
+					"frames": 1,
+					"mask": 65
+				},
+				{
+					"frames": 2,
+					"mask": 69
+				},
+				{
+					"frames": 7,
+					"mask": 68
+				},
+				{
+					"frames": 1,
+					"mask": 4
+				},
+				{
+					"frames": 39,
+					"mask": 20
+				},
+				{
+					"frames": 1,
+					"mask": 16
+				},
+				{
+					"frames": 17,
+					"mask": 17
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 49,
+					"mask": 4
+				},
+				{
+					"frames": 143,
+					"mask": 0
+				},
+				{
+					"frames": 11,
+					"mask": 4
+				},
+				{
+					"frames": 22,
+					"mask": 5
+				},
+				{
+					"frames": 1,
+					"mask": 4
+				},
+				{
+					"frames": 78,
+					"mask": 0
+				},
+				{
+					"frames": 16,
+					"mask": 6
+				},
+				{
+					"frames": 1,
+					"mask": 2
+				},
+				{
+					"frames": 13,
+					"mask": 6
+				},
+				{
+					"frames": 36,
+					"mask": 4
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 8
+				},
+				{
+					"frames": 4,
+					"mask": 0
+				},
+				{
+					"frames": 58,
+					"mask": 34
+				},
+				{
+					"frames": 1,
+					"mask": 2
+				},
+				{
+					"frames": 13,
+					"mask": 98
+				},
+				{
+					"frames": 1,
+					"mask": 96
+				},
+				{
+					"frames": 17,
+					"mask": 100
+				},
+				{
+					"frames": 16,
+					"mask": 102
+				},
+				{
+					"frames": 1,
+					"mask": 66
+				},
+				{
+					"frames": 1,
+					"mask": 70
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 3,
+					"mask": 32
+				},
+				{
+					"frames": 13,
+					"mask": 33
+				},
+				{
+					"frames": 6,
+					"mask": 1
+				},
+				{
+					"frames": 12,
+					"mask": 0
+				},
+				{
+					"frames": 51,
+					"mask": 1
+				},
+				{
+					"frames": 11,
+					"mask": 65
+				},
+				{
+					"frames": 18,
+					"mask": 97
+				},
+				{
+					"frames": 4,
+					"mask": 96
+				},
+				{
+					"frames": 1,
+					"mask": 64
+				},
+				{
+					"frames": 78,
+					"mask": 0
+				},
+				{
+					"frames": 22,
+					"mask": 80
+				},
+				{
+					"frames": 1,
+					"mask": 16
+				},
+				{
+					"frames": 19,
+					"mask": 80
+				},
+				{
+					"frames": 1,
+					"mask": 16
+				},
+				{
+					"frames": 11,
+					"mask": 80
+				},
+				{
+					"frames": 38,
+					"mask": 64
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 88,
+					"mask": 16
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 17,
+					"mask": 64
+				},
+				{
+					"frames": 16,
+					"mask": 80
+				},
+				{
+					"frames": 1,
+					"mask": 16
+				},
+				{
+					"frames": 1,
+					"mask": 80
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 25,
+					"mask": 32
+				},
+				{
+					"frames": 9,
+					"mask": 0
+				},
+				{
+					"frames": 64,
+					"mask": 32
+				},
+				{
+					"frames": 210,
+					"mask": 0
+				},
+				{
+					"frames": 11,
+					"mask": 4
+				},
+				{
+					"frames": 22,
+					"mask": 5
+				},
+				{
+					"frames": 1,
+					"mask": 4
+				},
+				{
+					"frames": 93,
+					"mask": 0
+				},
+				{
+					"frames": 38,
+					"mask": 6
+				},
+				{
+					"frames": 9,
+					"mask": 4
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 8
+				},
+				{
+					"frames": 3,
+					"mask": 0
+				},
+				{
+					"frames": 48,
+					"mask": 2
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 31,
+					"mask": 2
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 41,
+					"mask": 32
+				},
+				{
+					"frames": 99,
+					"mask": 0
+				},
+				{
+					"frames": 11,
+					"mask": 64
+				},
+				{
+					"frames": 21,
+					"mask": 96
+				},
+				{
+					"frames": 2,
+					"mask": 64
+				},
+				{
+					"frames": 93,
+					"mask": 0
+				},
+				{
+					"frames": 37,
+					"mask": 80
+				},
+				{
+					"frames": 10,
+					"mask": 64
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 32,
+					"mask": 16
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 53,
+					"mask": 16
+				}
+			],
+			"level": 5.0,
+			"mode": "input_replay",
+			"par_time": 65.0,
+			"passed": true,
+			"positions": {
+				"fire": [
+					688.17431640625,
+					145.925247192383
+				],
+				"water": [
+					858.075317382812,
+					145.925247192383
+				]
+			},
+			"reason": "completed",
+			"red": 4,
+			"red_total": 4,
+			"simulation_seconds": 35.2333333333333,
+			"snapshot_consistent": true,
+			"stars": 3,
+			"within_par": true
+		},
+		{
+			"all_gems": true,
+			"blue": 3,
+			"blue_total": 3,
+			"box_resets": 0,
+			"completed": true,
+			"deaths": 0,
+			"frames": 553,
+			"game_elapsed_seconds": 9.23333333333345,
+			"input_tape": [
+				{
+					"frames": 6,
+					"mask": 33
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 10,
+					"mask": 33
+				},
+				{
+					"frames": 1,
+					"mask": 1
+				},
+				{
+					"frames": 6,
+					"mask": 33
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 41,
+					"mask": 38
+				},
+				{
+					"frames": 6,
+					"mask": 6
+				},
+				{
+					"frames": 2,
+					"mask": 4
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 24,
+					"mask": 2
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 70,
+					"mask": 32
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 128
+				},
+				{
+					"frames": 4,
+					"mask": 0
+				},
+				{
+					"frames": 88,
+					"mask": 2
+				},
+				{
+					"frames": 31,
+					"mask": 0
+				},
+				{
+					"frames": 24,
+					"mask": 38
+				},
+				{
+					"frames": 25,
+					"mask": 6
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 5,
+					"mask": 2
+				},
+				{
+					"frames": 26,
+					"mask": 98
+				},
+				{
+					"frames": 8,
+					"mask": 96
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 4,
+					"mask": 96
+				},
+				{
+					"frames": 15,
+					"mask": 64
+				},
+				{
+					"frames": 30,
+					"mask": 70
+				},
+				{
+					"frames": 1,
+					"mask": 6
+				},
+				{
+					"frames": 3,
+					"mask": 100
+				},
+				{
+					"frames": 45,
+					"mask": 96
+				},
+				{
+					"frames": 1,
+					"mask": 64
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 5,
+					"mask": 34
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 33,
+					"mask": 34
+				},
+				{
+					"frames": 1,
+					"mask": 2
+				},
+				{
+					"frames": 15,
+					"mask": 34
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 7,
+					"mask": 33
+				},
+				{
+					"frames": 2,
+					"mask": 1
+				}
+			],
+			"level": 6.0,
+			"mode": "input_replay",
+			"par_time": 30.0,
+			"passed": true,
+			"positions": {
+				"fire": [
+					1468.82824707031,
+					241.925262451172
+				],
+				"water": [
+					1521.66027832031,
+					241.925262451172
+				]
+			},
+			"reason": "completed",
+			"red": 3,
+			"red_total": 3,
+			"simulation_seconds": 9.21666666666667,
+			"snapshot_consistent": true,
+			"stars": 3,
+			"within_par": true
+		},
+		{
+			"all_gems": true,
+			"blue": 3,
+			"blue_total": 3,
+			"box_resets": 0,
+			"completed": true,
+			"deaths": 0,
+			"frames": 1098,
+			"game_elapsed_seconds": 18.3166666666663,
+			"input_tape": [
+				{
+					"frames": 17,
+					"mask": 34
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 7,
+					"mask": 34
+				},
+				{
+					"frames": 25,
+					"mask": 2
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 8
+				},
+				{
+					"frames": 4,
+					"mask": 0
+				},
+				{
+					"frames": 56,
+					"mask": 34
+				},
+				{
+					"frames": 1,
+					"mask": 2
+				},
+				{
+					"frames": 19,
+					"mask": 98
+				},
+				{
+					"frames": 21,
+					"mask": 66
+				},
+				{
+					"frames": 1,
+					"mask": 2
+				},
+				{
+					"frames": 40,
+					"mask": 98
+				},
+				{
+					"frames": 102,
+					"mask": 2
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 9,
+					"mask": 34
+				},
+				{
+					"frames": 24,
+					"mask": 2
+				},
+				{
+					"frames": 10,
+					"mask": 66
+				},
+				{
+					"frames": 24,
+					"mask": 98
+				},
+				{
+					"frames": 72,
+					"mask": 2
+				},
+				{
+					"frames": 34,
+					"mask": 98
+				},
+				{
+					"frames": 13,
+					"mask": 66
+				},
+				{
+					"frames": 318,
+					"mask": 2
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 12,
+					"mask": 102
+				},
+				{
+					"frames": 14,
+					"mask": 70
+				},
+				{
+					"frames": 23,
+					"mask": 68
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 40,
+					"mask": 2
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 16,
+					"mask": 6
+				},
+				{
+					"frames": 29,
+					"mask": 4
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 49,
+					"mask": 96
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 30,
+					"mask": 96
+				},
+				{
+					"frames": 19,
+					"mask": 64
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 40,
+					"mask": 32
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 13,
+					"mask": 2
+				}
+			],
+			"level": 7.0,
+			"mode": "input_replay",
+			"par_time": 40.0,
+			"passed": true,
+			"positions": {
+				"fire": [
+					1381.47302246094,
+					348.814147949219
+				],
+				"water": [
+					1554.44738769531,
+					369.925262451172
+				]
+			},
+			"reason": "completed",
+			"red": 3,
+			"red_total": 3,
+			"simulation_seconds": 18.3,
+			"snapshot_consistent": true,
+			"stars": 3,
+			"within_par": true
+		},
+		{
+			"all_gems": true,
+			"blue": 5,
+			"blue_total": 5,
+			"box_resets": 0,
+			"completed": true,
+			"deaths": 0,
+			"frames": 1780,
+			"game_elapsed_seconds": 29.6833333333323,
+			"input_tape": [
+				{
+					"frames": 153,
+					"mask": 18
+				},
+				{
+					"frames": 2,
+					"mask": 16
+				},
+				{
+					"frames": 1,
+					"mask": 24
+				},
+				{
+					"frames": 5,
+					"mask": 16
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 60,
+					"mask": 32
+				},
+				{
+					"frames": 70,
+					"mask": 0
+				},
+				{
+					"frames": 11,
+					"mask": 64
+				},
+				{
+					"frames": 21,
+					"mask": 80
+				},
+				{
+					"frames": 1,
+					"mask": 64
+				},
+				{
+					"frames": 49,
+					"mask": 0
+				},
+				{
+					"frames": 15,
+					"mask": 96
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 20,
+					"mask": 96
+				},
+				{
+					"frames": 29,
+					"mask": 64
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 128
+				},
+				{
+					"frames": 3,
+					"mask": 0
+				},
+				{
+					"frames": 24,
+					"mask": 32
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 44,
+					"mask": 16
+				},
+				{
+					"frames": 64,
+					"mask": 0
+				},
+				{
+					"frames": 11,
+					"mask": 4
+				},
+				{
+					"frames": 21,
+					"mask": 5
+				},
+				{
+					"frames": 1,
+					"mask": 4
+				},
+				{
+					"frames": 49,
+					"mask": 0
+				},
+				{
+					"frames": 22,
+					"mask": 5
+				},
+				{
+					"frames": 1,
+					"mask": 1
+				},
+				{
+					"frames": 20,
+					"mask": 5
+				},
+				{
+					"frames": 1,
+					"mask": 1
+				},
+				{
+					"frames": 27,
+					"mask": 5
+				},
+				{
+					"frames": 22,
+					"mask": 4
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 8,
+					"mask": 1
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 8
+				},
+				{
+					"frames": 3,
+					"mask": 0
+				},
+				{
+					"frames": 33,
+					"mask": 2
+				},
+				{
+					"frames": 100,
+					"mask": 0
+				},
+				{
+					"frames": 11,
+					"mask": 64
+				},
+				{
+					"frames": 21,
+					"mask": 80
+				},
+				{
+					"frames": 1,
+					"mask": 64
+				},
+				{
+					"frames": 49,
+					"mask": 0
+				},
+				{
+					"frames": 15,
+					"mask": 96
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 5,
+					"mask": 96
+				},
+				{
+					"frames": 44,
+					"mask": 64
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 128
+				},
+				{
+					"frames": 3,
+					"mask": 0
+				},
+				{
+					"frames": 32,
+					"mask": 32
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 12,
+					"mask": 16
+				},
+				{
+					"frames": 88,
+					"mask": 0
+				},
+				{
+					"frames": 11,
+					"mask": 4
+				},
+				{
+					"frames": 21,
+					"mask": 6
+				},
+				{
+					"frames": 1,
+					"mask": 4
+				},
+				{
+					"frames": 49,
+					"mask": 0
+				},
+				{
+					"frames": 15,
+					"mask": 5
+				},
+				{
+					"frames": 1,
+					"mask": 1
+				},
+				{
+					"frames": 4,
+					"mask": 5
+				},
+				{
+					"frames": 45,
+					"mask": 4
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 33,
+					"mask": 1
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 25,
+					"mask": 18
+				},
+				{
+					"frames": 10,
+					"mask": 2
+				},
+				{
+					"frames": 119,
+					"mask": 0
+				},
+				{
+					"frames": 11,
+					"mask": 68
+				},
+				{
+					"frames": 21,
+					"mask": 86
+				},
+				{
+					"frames": 1,
+					"mask": 68
+				},
+				{
+					"frames": 61,
+					"mask": 0
+				},
+				{
+					"frames": 29,
+					"mask": 101
+				},
+				{
+					"frames": 8,
+					"mask": 100
+				},
+				{
+					"frames": 10,
+					"mask": 68
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 32,
+					"mask": 1
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 33,
+					"mask": 32
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 29,
+					"mask": 16
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 14,
+					"mask": 2
+				}
+			],
+			"level": 8.0,
+			"mode": "input_replay",
+			"par_time": 55.0,
+			"passed": true,
+			"positions": {
+				"fire": [
+					451.142944335938,
+					145.925247192383
+				],
+				"water": [
+					1484.81188964844,
+					145.925247192383
+				]
+			},
+			"reason": "completed",
+			"red": 5,
+			"red_total": 5,
+			"simulation_seconds": 29.6666666666667,
+			"snapshot_consistent": true,
+			"stars": 3,
+			"within_par": true
+		},
+		{
+			"all_gems": true,
+			"blue": 4,
+			"blue_total": 4,
+			"box_resets": 0,
+			"completed": true,
+			"deaths": 0,
+			"frames": 1469,
+			"game_elapsed_seconds": 24.4999999999993,
+			"input_tape": [
+				{
+					"frames": 41,
+					"mask": 34
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 17,
+					"mask": 34
+				},
+				{
+					"frames": 1,
+					"mask": 2
+				},
+				{
+					"frames": 49,
+					"mask": 98
+				},
+				{
+					"frames": 1,
+					"mask": 34
+				},
+				{
+					"frames": 2,
+					"mask": 98
+				},
+				{
+					"frames": 14,
+					"mask": 66
+				},
+				{
+					"frames": 1,
+					"mask": 64
+				},
+				{
+					"frames": 26,
+					"mask": 70
+				},
+				{
+					"frames": 6,
+					"mask": 68
+				},
+				{
+					"frames": 17,
+					"mask": 4
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 48,
+					"mask": 34
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 147,
+					"mask": 0
+				},
+				{
+					"frames": 2,
+					"mask": 64
+				},
+				{
+					"frames": 8,
+					"mask": 68
+				},
+				{
+					"frames": 2,
+					"mask": 100
+				},
+				{
+					"frames": 17,
+					"mask": 102
+				},
+				{
+					"frames": 2,
+					"mask": 70
+				},
+				{
+					"frames": 2,
+					"mask": 84
+				},
+				{
+					"frames": 7,
+					"mask": 85
+				},
+				{
+					"frames": 2,
+					"mask": 5
+				},
+				{
+					"frames": 215,
+					"mask": 0
+				},
+				{
+					"frames": 16,
+					"mask": 34
+				},
+				{
+					"frames": 10,
+					"mask": 32
+				},
+				{
+					"frames": 7,
+					"mask": 33
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 6,
+					"mask": 34
+				},
+				{
+					"frames": 1,
+					"mask": 2
+				},
+				{
+					"frames": 23,
+					"mask": 34
+				},
+				{
+					"frames": 20,
+					"mask": 2
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 8
+				},
+				{
+					"frames": 4,
+					"mask": 0
+				},
+				{
+					"frames": 9,
+					"mask": 18
+				},
+				{
+					"frames": 1,
+					"mask": 2
+				},
+				{
+					"frames": 49,
+					"mask": 66
+				},
+				{
+					"frames": 37,
+					"mask": 2
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 8
+				},
+				{
+					"frames": 3,
+					"mask": 0
+				},
+				{
+					"frames": 85,
+					"mask": 2
+				},
+				{
+					"frames": 12,
+					"mask": 66
+				},
+				{
+					"frames": 19,
+					"mask": 98
+				},
+				{
+					"frames": 5,
+					"mask": 66
+				},
+				{
+					"frames": 63,
+					"mask": 2
+				},
+				{
+					"frames": 17,
+					"mask": 0
+				},
+				{
+					"frames": 32,
+					"mask": 96
+				},
+				{
+					"frames": 15,
+					"mask": 64
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 57,
+					"mask": 32
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 1,
+					"mask": 128
+				},
+				{
+					"frames": 3,
+					"mask": 0
+				},
+				{
+					"frames": 48,
+					"mask": 32
+				},
+				{
+					"frames": 5,
+					"mask": 0
+				},
+				{
+					"frames": 12,
+					"mask": 4
+				},
+				{
+					"frames": 18,
+					"mask": 6
+				},
+				{
+					"frames": 4,
+					"mask": 4
+				},
+				{
+					"frames": 66,
+					"mask": 0
+				},
+				{
+					"frames": 13,
+					"mask": 64
+				},
+				{
+					"frames": 18,
+					"mask": 96
+				},
+				{
+					"frames": 5,
+					"mask": 64
+				},
+				{
+					"frames": 50,
+					"mask": 0
+				},
+				{
+					"frames": 4,
+					"mask": 96
+				},
+				{
+					"frames": 20,
+					"mask": 101
+				},
+				{
+					"frames": 6,
+					"mask": 69
+				},
+				{
+					"frames": 14,
+					"mask": 68
+				},
+				{
+					"frames": 1,
+					"mask": 4
+				},
+				{
+					"frames": 3,
+					"mask": 36
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 45,
+					"mask": 33
+				}
+			],
+			"level": 9.0,
+			"mode": "input_replay",
+			"par_time": 55.0,
+			"passed": true,
+			"positions": {
+				"fire": [
+					2234.53051757812,
+					177.925247192383
+				],
+				"water": [
+					2258.34985351562,
+					177.925247192383
+				]
+			},
+			"reason": "completed",
+			"red": 4,
+			"red_total": 4,
+			"simulation_seconds": 24.4833333333333,
+			"snapshot_consistent": true,
+			"stars": 3,
+			"within_par": true
+		},
+		{
+			"all_gems": true,
+			"blue": 3,
+			"blue_total": 3,
+			"box_resets": 0,
+			"completed": true,
+			"deaths": 0,
+			"frames": 644,
+			"game_elapsed_seconds": 10.75,
+			"input_tape": [
+				{
+					"frames": 1,
+					"mask": 18
+				},
+				{
+					"frames": 8,
+					"mask": 82
+				},
+				{
+					"frames": 8,
+					"mask": 80
+				},
+				{
+					"frames": 24,
+					"mask": 64
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 17,
+					"mask": 80
+				},
+				{
+					"frames": 23,
+					"mask": 64
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 17,
+					"mask": 80
+				},
+				{
+					"frames": 23,
+					"mask": 64
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 16,
+					"mask": 16
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 79,
+					"mask": 2
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 14,
+					"mask": 1
+				},
+				{
+					"frames": 63,
+					"mask": 0
+				},
+				{
+					"frames": 25,
+					"mask": 33
+				},
+				{
+					"frames": 7,
+					"mask": 1
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 9,
+					"mask": 5
+				},
+				{
+					"frames": 7,
+					"mask": 37
+				},
+				{
+					"frames": 1,
+					"mask": 33
+				},
+				{
+					"frames": 2,
+					"mask": 37
+				},
+				{
+					"frames": 31,
+					"mask": 36
+				},
+				{
+					"frames": 1,
+					"mask": 4
+				},
+				{
+					"frames": 15,
+					"mask": 36
+				},
+				{
+					"frames": 1,
+					"mask": 32
+				},
+				{
+					"frames": 27,
+					"mask": 38
+				},
+				{
+					"frames": 4,
+					"mask": 36
+				},
+				{
+					"frames": 9,
+					"mask": 4
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 27,
+					"mask": 6
+				},
+				{
+					"frames": 13,
+					"mask": 4
+				},
+				{
+					"frames": 1,
+					"mask": 0
+				},
+				{
+					"frames": 32,
+					"mask": 2
+				},
+				{
+					"frames": 2,
+					"mask": 0
+				},
+				{
+					"frames": 59,
+					"mask": 1
+				},
+				{
+					"frames": 8,
+					"mask": 0
+				},
+				{
+					"frames": 25,
+					"mask": 1
+				},
+				{
+					"frames": 8,
+					"mask": 0
+				},
+				{
+					"frames": 29,
+					"mask": 1
+				}
+			],
+			"level": 10.0,
+			"mode": "input_replay",
+			"par_time": 35.0,
+			"passed": true,
+			"positions": {
+				"fire": [
+					124.856338500977,
+					369.925262451172
+				],
+				"water": [
+					1136.77416992188,
+					369.925262451172
+				]
+			},
+			"reason": "completed",
+			"red": 3,
+			"red_total": 3,
+			"simulation_seconds": 10.7333333333333,
+			"snapshot_consistent": true,
+			"stars": 3,
+			"within_par": true
+		}
+	]
+}

@@ -8,6 +8,7 @@ const LEVEL_SCENE := "res://scenes/level.tscn"
 @onready var _quit: Button = $Margin/VBox/QuitButton
 @onready var _help: Label = $Margin/VBox/Help
 @onready var _progress: Label = $Margin/VBox/Progress
+@onready var _save_notice: Label = $Margin/VBox/SaveNotice
 
 var _initial_focus: Button
 var _focus_sync_queued := false
@@ -22,6 +23,8 @@ func _ready() -> void:
 	_list.sort_children.connect(_queue_focus_sync)
 	_quit.pressed.connect(_on_quit_pressed)
 	_build_level_buttons()
+	_save_notice.text = GameState.persistence_notice
+	_save_notice.visible = not _save_notice.text.is_empty()
 	_help.text = "火娃：%s / %s 移动 · %s 跳跃 · %s 交互　　水娃：%s / %s 移动 · %s 跳跃 · %s 交互\nR 重玩 · Esc 暂停 / 改键 / 音效　　双手柄：左摇杆 / 方向键移动 · A 跳跃 · X 交互" % [
 		InputSetup.key_text(&"fire_left"), InputSetup.key_text(&"fire_right"),
 		InputSetup.key_text(&"fire_jump"), InputSetup.key_text(&"fire_action"),
@@ -100,7 +103,7 @@ func _badge(index: int, unlocked: bool) -> String:
 			HUD.fmt_time(gems_time) if gems_time > 0.0 else "—")
 	return "\n%s 最快 %s%s\n火 %d/%d · 水 %d/%d · %s" % [
 		"★".repeat(stars) + "☆".repeat(3 - stars),
-		HUD.fmt_time(fastest), gems_part,
+		HUD.fmt_time(fastest) if rec.has("time") else "—", gems_part,
 		int(rec.get("red", 0)), int(rec.get("red_total", 0)),
 		int(rec.get("blue", 0)), int(rec.get("blue_total", 0)),
 		_challenge_badge(index),

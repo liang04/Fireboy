@@ -36,6 +36,9 @@ var _pause_panel: PanelContainer
 var _shade: ColorRect
 var _binding: StringName = &""
 var _binding_button: Button
+var _binding_buttons: Dictionary = {}
+var _cancel_binding_button: Button
+var _binding_status: Label
 ## 「一对多」通电时的强调闪屏。
 var _pulse_rect: ColorRect
 var _pulse_tween: Tween
@@ -62,11 +65,11 @@ func _ready() -> void:
 	_pause_panel.offset_bottom = 270
 	var style := StyleBoxFlat.new()
 	style.bg_color = Color("#202b3b")
-	style.set_content_margin_all(20)
+	style.set_content_margin_all(16)
 	style.set_corner_radius_all(12)
 	_pause_panel.add_theme_stylebox_override("panel", style)
 	var box := VBoxContainer.new()
-	box.add_theme_constant_override("separation", 8)
+	box.add_theme_constant_override("separation", 6)
 	_pause_panel.add_child(box)
 	var title := Label.new()
 	title.text = "已暂停"
@@ -108,7 +111,8 @@ func _ready() -> void:
 			_pulse_rect.color.a = 0.0
 			_center.scale = Vector2.ONE)
 	var help := Label.new()
-	help.text = "点击下方改键，Esc 取消；手柄 1 / 2 分别控制火娃 / 水娃\n手柄：方向键 / 左摇杆移动，A 跳跃，X 交互，Start 暂停\n红宝石只有火娃能拿，蓝宝石只有水娃能拿。\n死亡回到出生点；机关状态和已拾取宝石保留。\n木箱落水会回到原位，并加时 3 秒；原位被挡时请先让开。"
+	help.text = "改键：Esc / 手柄 B、Start 取消；手柄 1 / 2 控制火娃 / 水娃\n手柄：方向键 / 左摇杆移动，A 跳跃，X 交互，Start 暂停\n切出窗口自动暂停；继续后请重新按移动 / 跳跃键。\n红宝石只有火娃能拿，蓝宝石只有水娃能拿。\n死亡回到出生点；机关状态和已拾取宝石保留。\n木箱落水会回到原位，并加时 3 秒；原位被挡时请先让开。"
+	help.add_theme_font_size_override("font_size", 16)
 	help.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	box.add_child(help)
 	var grid := GridContainer.new()
@@ -121,13 +125,30 @@ func _ready() -> void:
 		var button := Button.new()
 		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		button.text = InputSetup.action_label(action)
-		button.pressed.connect(func():
-			if _binding_button != null:
-				_binding_button.text = InputSetup.action_label(_binding)
-			_binding = action
-			_binding_button = button
-			button.text = "请按新键（Esc 取消）")
+		button.pressed.connect(func(): _begin_binding(action, button))
+		_binding_buttons[action] = button
 		grid.add_child(button)
+	var binding_tools := HBoxContainer.new()
+	binding_tools.add_theme_constant_override("separation", 12)
+	box.add_child(binding_tools)
+	_cancel_binding_button = Button.new()
+	_cancel_binding_button.name = "CancelBinding"
+	_cancel_binding_button.text = "取消改键"
+	_cancel_binding_button.disabled = true
+	_cancel_binding_button.pressed.connect(_cancel_binding)
+	binding_tools.add_child(_cancel_binding_button)
+	var reset := Button.new()
+	reset.name = "ResetBindings"
+	reset.text = "恢复默认按键"
+	reset.pressed.connect(_reset_bindings)
+	binding_tools.add_child(reset)
+	_binding_status = Label.new()
+	_binding_status.name = "BindingStatus"
+	_binding_status.add_theme_font_size_override("font_size", 14)
+	_binding_status.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	binding_tools.add_child(_binding_status)
+	box.sort_children.connect(_center_pause_panel.call_deferred)
+	_center_pause_panel.call_deferred()
 	_pause_panel.hide()
 
 
@@ -331,11 +352,13 @@ func _add_button(parent: Node, text: String, callback: Callable) -> void:
 
 
 func set_paused(value: bool) -> void:
-	if not value and _binding != &"":
-		if is_instance_valid(_binding_button):
-			_binding_button.text = InputSetup.action_label(_binding)
-		_binding = &""
-		_binding_button = null
+	if get_tree().paused != value:
+		for entry in InputSetup._ACTIONS:
+			Input.action_release(entry["action"])
+		for player in get_tree().get_nodes_in_group("players"):
+			player.clear_pending_input()
+	if not value:
+		_cancel_binding()
 	get_tree().paused = value
 	_pause_panel.visible = value
 	_shade.visible = value
@@ -343,20 +366,65 @@ func set_paused(value: bool) -> void:
 		(_pause_panel.get_child(0).get_child(1) as Button).grab_focus()
 
 
+func _center_pause_panel() -> void:
+	if not is_inside_tree():
+		return
+	_pause_panel.size = _pause_panel.get_combined_minimum_size().max(Vector2(680, 0))
+	_pause_panel.position = (get_viewport().get_visible_rect().size - _pause_panel.size) * 0.5
+
+
+func _begin_binding(action: StringName, button: Button) -> void:
+	_cancel_binding()
+	_binding = action
+	_binding_button = button
+	button.text = "请按新键（Esc 取消）"
+	_cancel_binding_button.disabled = false
+	_binding_status.text = "Esc / 手柄 B、Start 取消"
+
+
+func _cancel_binding() -> void:
+	var previous := _binding_button
+	if _binding != &"" and is_instance_valid(previous):
+		previous.text = InputSetup.action_label(_binding)
+	_binding = &""
+	_binding_button = null
+	if is_instance_valid(_cancel_binding_button):
+		_cancel_binding_button.disabled = true
+	if is_instance_valid(_binding_status):
+		_binding_status.text = ""
+	if is_instance_valid(previous) and previous.is_visible_in_tree():
+		previous.grab_focus()
+
+
+func _reset_bindings() -> void:
+	_cancel_binding()
+	if not InputSetup.reset_defaults():
+		_binding_status.text = InputSetup.last_binding_error
+		return
+	for action in _binding_buttons:
+		_binding_buttons[action].text = InputSetup.action_label(action)
+	_binding_status.text = "已恢复默认按键"
+
+
 func _input(event: InputEvent) -> void:
 	if not get_tree().paused:
 		return
 	if _binding != &"":
-		if event is InputEventKey and event.pressed and not event.echo:
-			if event.physical_keycode != KEY_ESCAPE:
-				if not InputSetup.rebind(_binding, event.physical_keycode):
-					_binding_button.text = "按键已占用，请换一个"
-					get_viewport().set_input_as_handled()
-					return
-			_binding_button.text = InputSetup.action_label(_binding)
-			_binding = &""
-			_binding_button = null
-		get_viewport().set_input_as_handled()
+		if event is InputEventJoypadButton and event.pressed \
+				and event.button_index in [JOY_BUTTON_START, JOY_BUTTON_B]:
+			_cancel_binding()
+		elif event is InputEventKey and event.pressed and not event.echo:
+			if event.physical_keycode == KEY_ESCAPE:
+				_cancel_binding()
+			elif InputSetup.rebind(_binding, event.physical_keycode):
+				_cancel_binding()
+				_binding_status.text = "按键已保存"
+			else:
+				_binding_status.text = InputSetup.last_binding_error
+		# Keep pointer buttons usable, especially the explicit cancel control.
+		# Swallow navigation/accept while capturing so those cannot also activate UI.
+		if not event is InputEventMouse:
+			get_viewport().set_input_as_handled()
 	elif event.is_action_pressed(&"pause"):
 		set_paused(false)
 		get_viewport().set_input_as_handled()
@@ -431,6 +499,8 @@ func show_result(stats: Dictionary, has_next: bool, previous_best: Dictionary = 
 	_challenges.text = _challenge_text(stats, previous_best)
 	_hint.text = "跳跃键 / 手柄 A：下一关　R：重玩　Esc：暂停 / 菜单" if has_next \
 		else "已是最后一关　R：重玩　Esc：暂停 / 菜单"
+	if not GameState.persistence_notice.is_empty():
+		_hint.text += "\n" + GameState.persistence_notice
 	# 弹入动画
 	_apply_result_scale(Vector2(0.85, 0.85))
 	_center.modulate = Color(1, 1, 1, 0)

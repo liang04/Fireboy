@@ -20,6 +20,7 @@ var output_path := "/tmp/full-gem-routes-results.json"
 var failure := false
 var replay_index := 0
 var replay_remaining := 0
+var completed_stats: Dictionary = {}
 
 func _ready() -> void:
 	if not OS.get_user_data_dir().replace("\\", "/").contains("/Fireboy-optimization-tests/"):
@@ -28,6 +29,7 @@ func _ready() -> void:
 		return
 	process_physics_priority = -1000
 	GameState.suppress_recording = true
+	EventBus.level_completed.connect(func(stats: Dictionary): completed_stats = stats.duplicate(true))
 	var data_path := "res://tools/full_gem_routes.json"
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--routes="): data_path = arg.trim_prefix("--routes=")
@@ -57,6 +59,7 @@ func _next() -> void:
 		await get_tree().create_timer(0.5).timeout
 		get_tree().quit(1 if failure else 0)
 		return
+	completed_stats = {}
 	route = routes[route_index]
 	GameState.current_level_index = int(route.level) - 1
 	level = preload("res://scenes/level.tscn").instantiate()
@@ -102,6 +105,12 @@ func _physics_process(_delta: float) -> void:
 	if route.has("replay_tape"):
 		if replay_remaining <= 0:
 			if replay_index >= route.replay_tape.size():
+				# Settle only an already-queued win at the tape boundary. Earlier
+				# transient exit overlaps must not terminate remaining playback.
+				if level._completion_pending:
+					set_physics_process(false)
+					_finish_after_pending_completion.call_deferred()
+					return
 				_finish("input tape exhausted before completion")
 				return
 			var segment: Dictionary = route.replay_tape[replay_index]
@@ -222,11 +231,20 @@ func _task(who: String, task: Dictionary) -> bool:
 	_controls(who, direction, jumping)
 	return arrived and age >= int(task.get("min_frames", 2))
 
+func _finish_after_pending_completion() -> void:
+	_finish("completed" if level._completed else "pending completion was revoked")
+
 func _finish(reason: String) -> void:
 	set_physics_process(false)
 	_release_all()
-	var stats := level._build_stats()
-	var passed := level._completed and bool(stats.all_gems)
+	var final_stats := level._build_stats()
+	var stats := completed_stats.duplicate(true) if not completed_stats.is_empty() else final_stats
+	var hud := level._hud as HUD
+	var expected_stars := "★".repeat(int(stats.stars)) + "☆".repeat(3 - int(stats.stars))
+	var expected_gems := "宝石 火 %d/%d · 水 %d/%d" % [stats.red, stats.red_total, stats.blue, stats.blue_total]
+	var snapshot_consistent := not completed_stats.is_empty() and completed_stats == final_stats \
+		and hud._stars.text == expected_stars and hud._stats.text.contains(expected_gems)
+	var passed := level._completed and bool(stats.all_gems) and snapshot_consistent
 	if route.has("expected"):
 		var expected: Dictionary = route.expected
 		passed = passed and tick == int(expected.frames)
@@ -234,10 +252,12 @@ func _finish(reason: String) -> void:
 			if expected.has(field): passed = passed and int(stats.get(field, 0)) == int(expected[field])
 		if not passed and level._completed and bool(stats.all_gems):
 			reason = "replay completed but exact frame count or expected result statistics differ"
+	if level._completed and not snapshot_consistent:
+		reason = "completion event, final state, and displayed result disagree"
 	failure = failure or not passed
 	var positions := {}
 	for player in level._players: positions[String(player.element)] = [player.position.x, player.position.y]
-	var result := {"level": route.level, "completed": level._completed, "all_gems": stats.all_gems, "frames": tick, "simulation_seconds": tick / 60.0, "game_elapsed_seconds": stats.time, "deaths": stats.deaths, "box_resets": stats.get("box_resets", 0), "par_time": stats.par_time, "within_par": stats.in_time, "stars": stats.stars, "red": stats.red, "red_total": stats.red_total, "blue": stats.blue, "blue_total": stats.blue_total, "reason": reason, "positions": positions, "passed": passed, "mode": "input_replay" if route.has("replay_tape") else "waypoint_controller", "input_tape": tape}
+	var result := {"level": route.level, "snapshot_consistent": snapshot_consistent, "completed": level._completed, "all_gems": stats.all_gems, "frames": tick, "simulation_seconds": tick / 60.0, "game_elapsed_seconds": stats.time, "deaths": stats.deaths, "box_resets": stats.get("box_resets", 0), "par_time": stats.par_time, "within_par": stats.in_time, "stars": stats.stars, "red": stats.red, "red_total": stats.red_total, "blue": stats.blue, "blue_total": stats.blue_total, "reason": reason, "positions": positions, "passed": passed, "mode": "input_replay" if route.has("replay_tape") else "waypoint_controller", "input_tape": tape}
 	results.append(result)
 	print("[routes] %s L%d frames=%d time=%.4f gems=%d/%d+%d/%d deaths=%d resets=%d reason=%s" % ["PASS" if passed else "FAIL", route.level, tick, stats.time, stats.red, stats.red_total, stats.blue, stats.blue_total, stats.deaths, stats.get("box_resets", 0), reason])
 	_next.call_deferred()

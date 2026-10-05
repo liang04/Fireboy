@@ -3,6 +3,10 @@ extends Node
 ## 只存「元进度」，不存关卡内的运行期数据（那是 Level 的职责）。
 
 const SAVE_PATH := "user://progress.cfg"
+const PROGRESS_STORE := preload("res://scripts/util/progress_store.gd")
+var _persistence_blocked := false
+var persistence_notice: String = ""
+var _recovery_notice: String = ""
 ## 可选挑战只接受新版完整团队局的显式计数，不从旧字段缺省值授予。
 const CHALLENGE_VERSION := 1
 const CHALLENGE_COUNTERS := {"no_deaths": "deaths", "no_box_resets": "box_resets"}
@@ -65,7 +69,7 @@ func has_level(index: int) -> bool:
 
 
 func is_unlocked(index: int) -> bool:
-	return index < unlocked_levels
+	return has_level(index) and index < unlocked_levels
 
 
 ## 记录一次通关成绩：仅在成绩更好时覆盖
@@ -168,22 +172,43 @@ func next_level_index() -> int:
 	return current_level_index + 1 if has_level(current_level_index + 1) else -1
 
 
+func _writes_suppressed() -> bool:
+	return suppress_recording or OS.get_cmdline_args().has("--smoke") \
+		or OS.get_cmdline_user_args().has("--smoke")
+
+
 func save_progress() -> void:
+	if _writes_suppressed() or _persistence_blocked:
+		return
 	var cfg := ConfigFile.new()
 	cfg.set_value("progress", "unlocked_levels", unlocked_levels)
 	cfg.set_value("progress", "rating_version", RATING_VERSION)
 	cfg.set_value("progress", "layout_version", LEVEL_LAYOUT_VERSION)
 	for key in results:
 		cfg.set_value("results", str(key), results[key])
-	var error := cfg.save(SAVE_PATH)
+	var error: Error = PROGRESS_STORE.save_progress(cfg, SAVE_PATH, RATING_VERSION, LEVEL_LAYOUT_VERSION)
 	if error != OK:
+		persistence_notice = "本次进度尚未保存，请检查可用空间与文件权限后重试。"
 		push_warning("无法保存进度：%s" % error_string(error))
+	else:
+		persistence_notice = _recovery_notice
 
 
 func load_progress() -> void:
-	var cfg := ConfigFile.new()
-	if cfg.load(SAVE_PATH) != OK:
+	var loaded: Dictionary = PROGRESS_STORE.load_progress(SAVE_PATH, RATING_VERSION, LEVEL_LAYOUT_VERSION)
+	_persistence_blocked = loaded["blocked"]
+	var cfg: ConfigFile = loaded["config"]
+	if cfg == null:
+		if _persistence_blocked:
+			persistence_notice = "进度来自更新版本，请使用更新版游戏；原文件已保留，本次游玩暂不保存。" \
+				if loaded.get("reason") == "future" else "进度文件无法读取，原文件已保留；本次游玩暂不保存。"
+			push_warning(persistence_notice)
+		else:
+			persistence_notice = _recovery_notice
 		return
+	if loaded["recovered"]:
+		_recovery_notice = "已从备份恢复进度，最近一次记录可能需要重玩。"
+	persistence_notice = _recovery_notice
 	var unlocked: Variant = cfg.get_value("progress", "unlocked_levels", 1)
 	unlocked_levels = clampi(int(unlocked), 1, level_count()) if unlocked is int else 1
 	# 存档里没有 rating_version（或版本对不上）= 星级是旧规则评的，作废重评。
@@ -217,26 +242,35 @@ func load_progress() -> void:
 			if not record.get("rev", 1) is int or record.get("rev", 1) != level_revision(index):
 				rev_stale = true
 				continue
-			var valid := true
+			# Salvage independent objective records: one bad optional field must not
+			# delete a player's valid time, gems, stars, or other challenge history.
 			for field in ["time", "gems_time", "red", "blue", "red_total", "blue_total",
 					"deaths", "box_resets", "stars"]:
-				var value: Variant = record.get(field, 0)
-				if not (value is int or value is float):
-					valid = false
-				elif not is_finite(float(value)) or float(value) < 0.0:
-					valid = false
-			if valid:
-				# 旧存档保持成绩/解锁；缺少挑战记录表示未知，绝不把缺失计数当零。
-				var challenges: Variant = record.get("challenges", {})
-				if not _has_challenge_version(record) or not challenges is Dictionary:
-					record.erase("challenges")
-					record.erase("challenge_version")
-				else:
-					for key_challenge in challenges.keys():
-						if not CHALLENGE_COUNTERS.has(key_challenge) or not challenges[key_challenge] is bool:
-							challenges.erase(key_challenge)
-				if rating_stale:
-					(record as Dictionary).erase("stars")
-				results[index] = record
-	if rating_stale or layout_stale or rev_stale:
+				if not record.has(field):
+					continue
+				var value: Variant = record[field]
+				var valid := (value is int or value is float)
+				if valid:
+					valid = is_finite(float(value)) and float(value) >= 0.0
+				if valid and field not in ["time", "gems_time"]:
+					valid = float(value) == floorf(float(value)) and float(value) < 9223372036854775808.0
+				if valid and field == "stars":
+					valid = float(value) <= 3.0
+				if not valid:
+					record.erase(field)
+			if record.has("all_gems") and not record["all_gems"] is bool:
+				record.erase("all_gems")
+			# Missing historical counts remain absent and never become zero awards.
+			var challenges: Variant = record.get("challenges", {})
+			if not _has_challenge_version(record) or not challenges is Dictionary:
+				record.erase("challenges")
+				record.erase("challenge_version")
+			else:
+				for key_challenge in challenges.keys():
+					if not CHALLENGE_COUNTERS.has(key_challenge) or not challenges[key_challenge] is bool:
+						challenges.erase(key_challenge)
+			if rating_stale:
+				record.erase("stars")
+			results[index] = record
+	if rating_stale or layout_stale or rev_stale or loaded["recovered"]:
 		save_progress()   # 迁移只做一次，下次启动版本已对齐

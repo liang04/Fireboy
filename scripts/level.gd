@@ -24,6 +24,7 @@ var _elapsed := 0.0
 ## 此时速度判据不生效 —— 三星拿不到，而不是静默地白送。
 var _par_time := 0.0
 var _completed := false
+var _completion_pending := false
 ## 各元素出口门的占用状态。键是元素名（fire/water/...），值是否有人站入。
 ## 由 _ready 按本关实际出口动态初始化，不写死 fire/water，
 ## 这样加第三个角色/元素时只要关卡数据里有对应出口门即可，无需改代码。
@@ -92,6 +93,13 @@ func _process(delta: float) -> void:
 	_hud.update_time(_elapsed, _par_time)
 
 
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_FOCUS_OUT and DisplayServer.get_name() != "headless" \
+			and is_instance_valid(_hud) \
+			and is_inside_tree() and not is_queued_for_deletion() and not _completed:
+		_hud.set_paused(true)
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_echo():
 		return
@@ -108,6 +116,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # ---------------------------------------------------------------- 事件
 func _on_gem_collected(color: StringName) -> void:
+	if _completed:
+		return
 	var key := String(color)
 	_gems_got[key] = int(_gems_got.get(key, 0)) + 1
 	_refresh_hud()
@@ -121,6 +131,8 @@ func _on_gem_rejected(color: StringName, element: StringName) -> void:
 
 
 func _on_player_died(id: StringName, cause: StringName) -> void:
+	if _completed:
+		return
 	_deaths += 1
 	_refresh_hud()
 	# 死因必须回传给玩家：得让他知道是哪种液体杀了他，
@@ -140,15 +152,37 @@ func _on_box_recovery_started() -> void:
 
 
 func _on_exit_occupied(player_id: StringName, occupied: bool) -> void:
+	if _completed:
+		return
 	_exits[player_id] = occupied
-	# 所有出口门都被占住才算过关（动态适配双人或更多角色）
-	var all := true
-	for v in _exits.values():
-		if not v:
-			all = false
-			break
-	if all and not _exits.is_empty():
-		_complete()
+	if not _completion_pending and _all_exits_occupied():
+		_completion_pending = true
+		# Area2D overlap signals have no guaranteed ordering. Finish after this
+		# physics flush so a gem in the exit is counted before recording the run.
+		_finish_pending_completion.call_deferred()
+
+
+func _all_exits_occupied() -> bool:
+	if _exits.is_empty():
+		return false
+	for occupied in _exits.values():
+		if not occupied:
+			return false
+	return true
+
+
+func _finish_pending_completion() -> void:
+	_completion_pending = false
+	if _completed or not is_inside_tree() or is_queued_for_deletion():
+		return
+	# A later overlap signal can revoke occupancy, or kill an actor, before
+	# the deferred check runs. Neither transient overlap constitutes a win.
+	if not _all_exits_occupied():
+		return
+	for actor in _players:
+		if not is_instance_valid(actor) or not (actor is Player) or not actor.alive:
+			return
+	_complete()
 
 
 ## 统计每个 channel 背后挂了几个受控物（门 / 平台）。
@@ -194,7 +228,7 @@ func _complete() -> void:
 	var stats := _build_stats()
 	var previous_best := GameState.comparable_result(GameState.current_level_index)
 	GameState.record_result(GameState.current_level_index, stats)
-	EventBus.level_completed.emit(stats)
+	EventBus.level_completed.emit(stats.duplicate(true))
 
 	var has_next := GameState.next_level_index() >= 0
 	_hud.show_result(stats, has_next, previous_best)

@@ -1,0 +1,1853 @@
+Godot: 4.6.3.stable.official.7d41c59c4
+
+=== Import ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (54 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   1% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   3% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   5% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   7% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   9% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  10% ] [90m[1mupdate_scripts_classes[22m | Levels[39m[0m
+[  12% ] [90m[1mupdate_scripts_classes[22m | BoxRecovery[39m[0m
+[  14% ] [90m[1mupdate_scripts_classes[22m | GateDoor[39m[0m
+[  16% ] [90m[1mupdate_scripts_classes[22m | DoublePlate[39m[0m
+[  18% ] [90m[1mupdate_scripts_classes[22m | ExitDoor[39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | Gem[39m[0m
+[  21% ] [90m[1mupdate_scripts_classes[22m | HazardPool[39m[0m
+[  23% ] [90m[1mupdate_scripts_classes[22m | Lever[39m[0m
+[  25% ] [90m[1mupdate_scripts_classes[22m | MovingPlatform[39m[0m
+[  27% ] [90m[1mupdate_scripts_classes[22m | PressurePlate[39m[0m
+[  29% ] [90m[1mupdate_scripts_classes[22m | Portal[39m[0m
+[  30% ] [90m[1mupdate_scripts_classes[22m | PushBox[39m[0m
+[  32% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  34% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  36% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  38% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  40% ] [90m[1mupdate_scripts_classes[22m | Tex[39m[0m
+[  41% ] [90m[1mupdate_scripts_classes[22m | CameraRig[39m[0m
+[  43% ] [90m[1mupdate_scripts_classes[22m | HUD[39m[0m
+[  45% ] [90m[1mupdate_scripts_classes[22m | Level[39m[0m
+[  47% ] [90m[1mupdate_scripts_classes[22m | LevelBuilder[39m[0m
+[  49% ] [90m[1mupdate_scripts_classes[22m | MainMenu[39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | Player[39m[0m
+[  52% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  54% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  56% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  58% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  61% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  63% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  65% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  67% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  69% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  70% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  72% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  74% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  76% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  78% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  80% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  81% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  83% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  85% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  87% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  89% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  90% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  92% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  94% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  96% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (19 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | fireboy-spritesheet-v2.png[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | watergirl-spritesheet-v2.png[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | NotoSansSC-Regular.otf[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | level-01-frame-0450.png[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | level-02-frame-0400.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | level-03-frame-0600.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | level-03-frame-0808.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | level-04-frame-1000.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | level-05-frame-0800.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | level-06-frame-0150.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | level-07-frame-0500.png[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | level-08-frame-1600.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | level-09-frame-1100.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | level-10-frame-0250.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | level-10-frame-0450.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | box-recovery.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | linked-mechanisms.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | pause-round2.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | priority-death.png[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (16 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   5% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  11% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  17% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  23% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  29% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  35% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  41% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  47% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  52% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  58% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  64% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  70% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  76% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  82% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[  88% ] [90m[1mreimport[22m | Preparing files to reimport...[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing pre-reimport operations...[39m[0m
+[   0% ] [90m[1mreimport[22m | level-01-frame-0450.png[39m[0m
+[   5% ] [90m[1mreimport[22m | level-02-frame-0400.png[39m[0m
+[  11% ] [90m[1mreimport[22m | level-03-frame-0600.png[39m[0m
+[  17% ] [90m[1mreimport[22m | level-03-frame-0808.png[39m[0m
+[  23% ] [90m[1mreimport[22m | level-04-frame-1000.png[39m[0m
+[  29% ] [90m[1mreimport[22m | level-05-frame-0800.png[39m[0m
+[  35% ] [90m[1mreimport[22m | level-06-frame-0150.png[39m[0m
+[  41% ] [90m[1mreimport[22m | level-07-frame-0500.png[39m[0m
+[  47% ] [90m[1mreimport[22m | level-08-frame-1600.png[39m[0m
+[  52% ] [90m[1mreimport[22m | level-09-frame-1100.png[39m[0m
+[  58% ] [90m[1mreimport[22m | level-10-frame-0250.png[39m[0m
+[  64% ] [90m[1mreimport[22m | level-10-frame-0450.png[39m[0m
+[  70% ] [90m[1mreimport[22m | box-recovery.png[39m[0m
+[  76% ] [90m[1mreimport[22m | linked-mechanisms.png[39m[0m
+[  82% ] [90m[1mreimport[22m | pause-round2.png[39m[0m
+[  88% ] [90m[1mreimport[22m | priority-death.png[39m[0m
+[  94% ] [90m[1mreimport[22m | Finalizing Asset Import...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started (Re)Importing Assets (16 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Executing post-reimport operations...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+ERROR: Cannot open file 'res://.godot/imported/NotoSansSC-Regular.otf-c0c85f3b3b2ad6d96b65df5f3103bb43.fontdata'.
+   at: load (core/io/resource_format_binary.cpp:1220)
+ERROR: Failed loading resource: res://.godot/imported/NotoSansSC-Regular.otf-c0c85f3b3b2ad6d96b65df5f3103bb43.fontdata.
+   at: _load (core/io/resource_loader.cpp:343)
+ERROR: Failed loading resource: res://assets/fonts/NotoSansSC-Regular.otf.
+   at: _load (core/io/resource_loader.cpp:343)
+ERROR: Error loading custom project font 'res://assets/fonts/NotoSansSC-Regular.otf'
+   at: initialize_theme (scene/theme/theme_db.cpp:79)
+Rechecking import after the first font import...
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Scanning file structure...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | Verifying GDExtensions...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Initializing plugins...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Loading editor (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+
+=== Level validator ===
+=== 校验器自检（每个夹具都必须命中指定规则）===
+  [OK]   gap_too_wide             -> 关卡1: 【致命】水娃 走不到自己的出口 (20,13)，本关无法通关
+  [OK]   step_too_high            -> 关卡1: 【致命】火娃 走不到自己的出口 (26,12)，本关无法通关
+  [OK]   door_circular            -> 关卡1: 【致命】channel 'A' 的门解不开 —— 触发它的开关要么够不着，要么在门后面（循环依赖）
+  [OK]   box_cannot_reach_plate   -> 关卡1: 【致命】channel 'A' 的门解不开 —— 触发它的开关要么够不着，要么在门后面（循环依赖）
+  [OK]   pool_too_deep            -> 关卡1: 【致命】(10,10) 的water池深 5 格，water 掉进去游不上来（上浮上限 3 格）
+  [OK]   gem_unreachable          -> 关卡1: 【警告】red 色宝石 (9,7) 对 fire 不可达
+  [OK]   plate_unreachable        -> 关卡1: 【致命】channel 'A' 的门解不开 —— 触发它的开关要么够不着，要么在门后面（循环依赖）
+  [OK]   element_gate_blocks      -> 关卡1: 【致命】水娃 走不到自己的出口 (20,13)，本关无法通关
+  [OK]   low_door_jumpable        -> 关卡1: 【警告】门 (16,11) 门顶离落脚面只有 3 格，熟练玩家可能跳过门顶抄近路（跳高实测 3.35 格，需 ≥4 格）
+  [OK]   double_plate_one_side_unreachable -> (20,8)—— 它是「永远差一个人」的谜题，不是难题
+  [OK]   box_no_landing           -> 关卡1: 【致命】木箱 (14,8) 从 (14,9) 被推出边缘后会一路掉出关卡底部 —— 箱子是跨区唯一资源，丢下去就再也拿不回
+  [OK]   box_drop_too_far         -> 关卡1: 【警告】木箱 (14,4) 从 (14,5) 被推出后落差 9 格，超过上限 7 —— 推手看不清落点，玩家无法规划下一步
+  [OK]   box_drop_into_hazard     -> 关卡1: 【致命】木箱 (14,8) 从 (14,9) 被推出后会落进(15,11) 的液体里 —— 箱子会沉底取不回（永久软锁）。
+  [OK]   shaft_escapes            -> 关卡1: 【致命】水娃 走不到自己的出口 (8,20)，本关无法通关
+  [OK]   trap_region              -> 到不了出口、也够不到任何液体自杀）—— 几乎肯定是地形少画了一层底
+      （通关需要 水娃按住 C）
+  [OK]   coop_hold_plate          判定为可通关（正确放行），另有 3 条已授权警告
+  [OK]   double_plate_solvable    判定为可通关（正确放行），另有 1 条已授权警告
+  [OK]   box_drop_to_plate        判定为可通关（正确放行），另有 2 条已授权警告
+  [OK]   door_lock_on_exit        判定为可通关（正确放行），另有 2 条已授权警告
+自检通过
+
+      （通关需要 火娃按住 A）
+1 - 初识元素       54x23  对象 10 个  三星≤30s  校验通过  新回放校准的暂定真人目标
+2 - 哨台交接       52x24  对象 17 个  三星≤45s  1 个问题  新回放校准的暂定真人目标
+   - 关卡2: 【警告】red 色宝石 (10,20) 对 fire 不可达
+      （连续接力状态搜索通过：35 个状态）
+3 - 分头行动       68x24  对象 18 个  三星≤35s  校验通过  新回放校准的暂定真人目标
+4 - 时序接力       62x24  对象 16 个  三星≤45s  1 个问题  新回放校准的暂定真人目标
+   - 关卡4: 【警告】木箱 (14,20) 从 (18,21) 平推进(19,21) 的液体池（同高）—— 虽说玩家不多推一下就没事，但箱子和池子齐平等于把「毁掉资源」做成了顺手动作
+5 - 中途接力       48x29  对象 16 个  三星≤65s  校验通过  新回放校准的暂定真人目标
+6 - 传送终局       50x24  对象 14 个  三星≤30s  校验通过  新回放校准的暂定真人目标
+      （通关需要 火娃按住 D）
+7 - 一路同行       52x22  对象 14 个  三星≤40s  校验通过  新回放校准的暂定真人目标
+8 - 遥供接力塔      62x33  对象 21 个  三星≤55s  校验通过  新回放校准的暂定真人目标
+9 - 总闸·双路修复    84x24  对象 21 个  三星≤55s  1 个问题  新回放校准的暂定真人目标
+   - 关卡9: 【警告】木箱 (10,20) 从 (23,21) 平推进(24,21) 的液体池（同高）—— 虽说玩家不多推一下就没事，但箱子和池子齐平等于把「毁掉资源」做成了顺手动作
+10 - 合力投递      38x20  对象 14 个  三星≤35s  校验通过  新回放校准的暂定真人目标
+
+已生成 /workspace/shared/fireboy-round6-final-463/scripts/levels/levels.gd（10 关，34877 字节）
+注意：有 3 条警告（不阻断生成）
+
+=== Existing regression ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[regression] PASS two players enter one portal together
+[regression] PASS destination does not bounce stationary arrival
+[regression] PASS leave and re-enter permits return
+[regression] PASS platform carries both players and a box once
+[regression] PASS jumping player detaches from platform
+[regression] PASS carried player does not pass through ceiling
+[regression] PASS same body cannot press both plates
+[regression] PASS both plates pressed at once latches the channel
+[regression] PASS latched double plate stays active after releasing
+[regression] PASS a latched double plate never emits again
+[regression] PASS reversing a gate cancels old animation
+[regression] PASS rapid gate changes settle at latest target
+[regression] PASS independent records survive save/load
+[regression] PASS stale rating version drops old stars
+[regression] PASS migration keeps objective records (time/gems/deaths untouched)
+[regression] PASS layout migration leaves the inserted level's index empty
+[regression] PASS layout migration shifts records at/after the insertion point
+[regression] PASS old level 7 (遥供双塔) record follows to its new index 7
+[regression] PASS old level 8 (总闸) record follows to its new index 8
+[regression] PASS layout migration keeps stars (the levels themselves did not change)
+[regression] PASS layout migration extends the unlock range so the new last level is not re-locked
+[regression] PASS level 4 declares a bumped revision
+[regression] PASS a current-revision record survives content migration
+[regression] PASS legacy missing-revision record expires after content changes
+[regression] PASS a changed level's stale record is dropped
+[regression] PASS dropping a stale record keeps the unlock progress
+[regression] PASS an all-gem run records gems_time
+[regression] PASS fastest time still takes the minimum across runs
+[regression] PASS a faster run without all gems must NOT overwrite gems_time
+[regression] PASS gem counts still take the maximum across runs
+[regression] PASS a faster all-gem run does improve gems_time
+[regression] PASS pause stops both timer and player physics
+[regression] PASS Escape resumes from pause
+[regression] PASS timer resumes
+[regression] PASS rebind rejects reserved or occupied keys
+[regression] PASS rebind accepts an unused key
+[regression] PASS new binding drives gameplay action
+[regression] PASS second gamepad controls only water player
+[regression] PASS level exposes one fire and one water player
+[regression] PASS water cannot collect a red gem
+[regression] PASS gem counts only once
+[regression] PASS fire cannot collect a blue gem
+[regression] PASS blue gem is owned by water
+[regression] PASS water collects a blue gem
+[regression] PASS plate detects player
+[regression] PASS death clears plate occupancy
+[regression] PASS death cause names the killer liquid
+[regression] PASS all gems within par rates 3 stars
+[regression] PASS all gems but over par rates 2 stars
+[regression] PASS fast but no gems rates 2 stars
+[regression] PASS bare clear rates 1 star
+[regression] PASS speed alone must never reach 3 stars
+[regression] PASS missing par_time must not silently grant 3 stars
+[regression] PASS every level declares par_time (missing [])
+[regression] PASS result panel shows 2 stars for over-par full-gem clear
+[regression] PASS result panel attributes the missing star (says how much slower)
+[regression] PASS attribution omits the time axis only when the level has no par_time
+[regression] PASS high-fanout channel triggers power feedback
+[regression] PASS gated platform starts unpowered
+[regression] PASS gated platform reports powered after signal
+[regression] finished, errors=0
+
+=== Controls regression ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[controls] PASS level 8 frames both real spawns immediately
+[controls] PASS level 9 spawn/exit separation overrides minimum zoom without clipping bodies
+[controls] PASS bounds clamp keeps opposite-edge targets visible
+[controls] PASS ordinary camera following remains smooth
+[controls] PASS smooth camera converges to target center
+[controls] PASS sudden separation remains visible in first update
+[controls] PASS freed first camera target is removed safely
+[controls] PASS camera tolerates all targets freed
+[controls] PASS real physics side push direction -1.0 works
+[controls] PASS real physics side push direction 1.0 works
+[controls] PASS holding both directions leaves player and box stationary
+[controls] PASS top-rider fixture settles on the box
+[controls] PASS walking on top does not side-push the box
+[controls] finished, errors=0
+
+=== Box co-op regression ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[boxes] PASS same-side two-player force clamps to -1.0, reversed=false
+[boxes] PASS same-direction co-op moves at capped speed, direction=-1.0 reversed=false travel=47.50 speed=95.00
+[boxes] PASS same-side two-player force clamps to -1.0, reversed=true
+[boxes] PASS same-direction co-op moves at capped speed, direction=-1.0 reversed=true travel=47.50 speed=95.00
+[boxes] PASS same-side two-player force clamps to 1.0, reversed=false
+[boxes] PASS same-direction co-op moves at capped speed, direction=1.0 reversed=false travel=47.50 speed=95.00
+[boxes] PASS same-side two-player force clamps to 1.0, reversed=true
+[boxes] PASS same-direction co-op moves at capped speed, direction=1.0 reversed=true travel=47.50 speed=95.00
+[boxes] PASS opposing players cancel independent of order, reversed=false
+[boxes] PASS opposing real-physics pushes stay balanced for 40 ticks, reversed=false drift=0.000
+[boxes] PASS releasing one pusher hands control to the other, reversed=false
+[boxes] PASS opposing players cancel independent of order, reversed=true
+[boxes] PASS opposing real-physics pushes stay balanced for 40 ticks, reversed=true drift=0.000
+[boxes] PASS releasing one pusher hands control to the other, reversed=true
+[boxes] PASS opposite inputs on one player cancel
+[boxes] PASS one player's opposite inputs leave both bodies stationary
+[boxes] PASS frozen player contributes no force
+[boxes] PASS dead player contributes no force
+[boxes] PASS distant player contributes no force
+[boxes] PASS walking away does not pull the box
+[boxes] PASS rider settles on the box with real collision support
+[boxes] PASS standing on box stays stable for 40 ticks
+[boxes] PASS top rider input cannot side-push
+[boxes] PASS walking along the top leaves the box stationary
+[boxes] PASS side pusher moves a box carrying a rider
+[boxes] PASS idle rider follows the pushed box without slipping, relative drift=1.583
+[boxes] PASS box settles onto platform headed to (24, 10)
+[boxes] PASS moving platform carries box once, target=(24, 10) max relative drift=0.000
+[boxes] PASS box settles onto platform headed to (8, 6)
+[boxes] PASS moving platform carries box once, target=(8, 6) max relative drift=0.999
+[boxes] PASS box settles onto platform headed to (8, 14)
+[boxes] PASS moving platform carries box once, target=(8, 14) max relative drift=1.000
+[boxes] PASS box can be pushed relative to a moving platform, relative travel=63.334
+[boxes] PASS pushing transfers the box cleanly from parked platform to adjacent ground
+[boxes] PASS box stays on terrain after the departed platform moves away
+[boxes] finished, checks=35 errors=0
+
+=== Feedback regression ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[feedback] PASS gem spam retains its original cooldown and animation
+[feedback] PASS death preempts a fresh wrong-color gem hint
+[feedback] PASS death cause is visible immediately
+[feedback] PASS death cancels the earlier gem fade
+[feedback] PASS death owns the highest priority hold
+[feedback] PASS gem, recovery, and generic hint spam cannot replace death
+[feedback] PASS suppressed hints do not extend the death hold
+[feedback] PASS a newer death updates the cause during the hold
+[feedback] PASS a newer death refreshes its hold and cancels the old animation
+[feedback] PASS repeated identical deaths remain opaque and refresh their full hold
+[feedback] PASS unknown causes do not consume or reset the feedback hold
+[feedback] PASS acid explains the hazard for fire
+[feedback] PASS acid explains the hazard for water
+[feedback] PASS death stays readable throughout its real hold interval
+[feedback] PASS gem feedback resumes after the death hold expires
+[feedback] PASS resumed feedback cancels the remaining death fade
+[feedback] PASS box recovery preempts gem hints and explains its time penalty
+[feedback] PASS recovery suppresses gem hints and throttles repeated recovery events
+[feedback] PASS death immediately preempts recovery feedback
+[feedback] PASS pause help explains box recovery
+[feedback] PASS expanded pause help fits its panel
+[feedback] PASS legacy results omit absent recovery statistics
+[feedback] PASS zero-recovery results stay uncluttered
+[feedback] PASS results explain the recovery count and total applied penalty
+[feedback] PASS result display does not apply the time penalty twice
+[feedback] PASS recovery result panel contains Title
+[feedback] PASS recovery result panel contains @Label@11
+[feedback] PASS recovery result panel contains Stats
+[feedback] PASS recovery result panel contains @Label@12
+[feedback] PASS recovery result panel contains Hint
+[feedback] PASS unoccupied lever keeps its channel and off state visible
+[feedback] PASS unoccupied lever has no interaction prompt
+[feedback] PASS initial handle color agrees with the off state
+[feedback] PASS real fire-player overlap shows the current interaction binding
+[feedback] PASS nearby prompt does not replace channel identity
+[feedback] PASS test can rebind fire interaction
+[feedback] PASS nearby prompt refreshes after live rebinding
+[feedback] PASS held interaction toggles only once and updates state
+[feedback] PASS lever still powers its matching gate and platform
+[feedback] PASS leaving retains latched channel state and hides only the prompt
+[feedback] PASS leaving does not interrupt latched mechanisms
+[feedback] PASS water-player entry shows its own interaction binding
+[feedback] PASS two nearby players see both current bindings
+[feedback] PASS interaction and persistent state labels do not overlap
+[feedback] PASS frozen players do not advertise an unusable interaction
+[feedback] PASS dead and frozen players leave the persistent label intact
+[feedback] PASS another interaction restores off state and matching mechanisms
+[feedback] PASS freed nearby players are safely removed without losing channel identity
+[feedback] PASS test restores the default binding
+[feedback] finished, checks=49, errors=0
+
+=== Audio regression ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[audio] PASS exactly eight voices
+[audio] PASS original seven and five new cues cached
+[audio] PASS jump exact bounded sample count
+[audio] PASS jump zero endpoints
+[audio] PASS jump audible PCM range without clipping
+[audio] PASS jump deterministic generation
+[audio] WAVE jump peak=15100 rms=0.175 bytes=4410
+[audio] PASS gem exact bounded sample count
+[audio] PASS gem zero endpoints
+[audio] PASS gem audible PCM range without clipping
+[audio] PASS gem deterministic generation
+[audio] WAVE gem peak=15331 rms=0.178 bytes=7056
+[audio] PASS mechanism exact bounded sample count
+[audio] PASS mechanism zero endpoints
+[audio] PASS mechanism audible PCM range without clipping
+[audio] PASS mechanism deterministic generation
+[audio] WAVE mechanism peak=15013 rms=0.135 bytes=5292
+[audio] PASS death exact bounded sample count
+[audio] PASS death zero endpoints
+[audio] PASS death audible PCM range without clipping
+[audio] PASS death deterministic generation
+[audio] WAVE death peak=17363 rms=0.193 bytes=11024
+[audio] PASS reject exact bounded sample count
+[audio] PASS reject zero endpoints
+[audio] PASS reject audible PCM range without clipping
+[audio] PASS reject deterministic generation
+[audio] WAVE reject peak=14789 rms=0.149 bytes=5732
+[audio] PASS complete exact bounded sample count
+[audio] PASS complete zero endpoints
+[audio] PASS complete audible PCM range without clipping
+[audio] PASS complete deterministic generation
+[audio] WAVE complete peak=15625 rms=0.188 bytes=19844
+[audio] PASS power exact bounded sample count
+[audio] PASS power zero endpoints
+[audio] PASS power audible PCM range without clipping
+[audio] PASS power deterministic generation
+[audio] WAVE power peak=14581 rms=0.182 bytes=14994
+[audio] PASS jump_fire exact bounded sample count
+[audio] PASS jump_fire zero endpoints
+[audio] PASS jump_fire audible PCM range without clipping
+[audio] PASS jump_fire deterministic generation
+[audio] WAVE jump_fire peak=14648 rms=0.146 bytes=4850
+[audio] PASS jump_water exact bounded sample count
+[audio] PASS jump_water zero endpoints
+[audio] PASS jump_water audible PCM range without clipping
+[audio] PASS jump_water deterministic generation
+[audio] WAVE jump_water peak=13538 rms=0.160 bytes=6174
+[audio] PASS land_fire exact bounded sample count
+[audio] PASS land_fire zero endpoints
+[audio] PASS land_fire audible PCM range without clipping
+[audio] PASS land_fire deterministic generation
+[audio] WAVE land_fire peak=7675 rms=0.074 bytes=3748
+[audio] PASS land_water exact bounded sample count
+[audio] PASS land_water zero endpoints
+[audio] PASS land_water audible PCM range without clipping
+[audio] PASS land_water deterministic generation
+[audio] WAVE land_water peak=7625 rms=0.078 bytes=4850
+[audio] PASS push exact bounded sample count
+[audio] PASS push zero endpoints
+[audio] PASS push audible PCM range without clipping
+[audio] PASS push deterministic generation
+[audio] WAVE push peak=5704 rms=0.051 bytes=3968
+[audio] MIX bytes=91942 max_pcm_peak=17363 worst_case_amplitude=0.6446
+[audio] PASS landing energy is subordinate to jumping
+[audio] PASS push texture is subordinate to mechanisms
+[audio] PASS all cues occupy less than 100 KB
+[audio] PASS eight worst-case aligned voices cannot clip
+[audio] PASS element jumps are different PCM
+[audio] PASS element landings are different PCM
+[audio] PASS first element jump plays
+[audio] PASS same cue spam is rate limited
+[audio] PASS water jump is not suppressed by simultaneous fire jump
+[audio] PASS expired jump cooldown allows next cue
+[audio] PASS unknown cue remains a harmless no-op
+[audio] PASS jump repeated event is rate limited
+[audio] PASS gem repeated event is rate limited
+[audio] PASS mechanism repeated event is rate limited
+[audio] PASS death repeated event is rate limited
+[audio] PASS reject repeated event is rate limited
+[audio] PASS complete repeated event is rate limited
+[audio] PASS power repeated event is rate limited
+[audio] PASS jump_fire repeated event is rate limited
+[audio] PASS jump_water repeated event is rate limited
+[audio] PASS land_fire repeated event is rate limited
+[audio] PASS land_water repeated event is rate limited
+[audio] PASS push repeated event is rate limited
+[audio] PASS pool can hold eight important cues
+[audio] PASS all lower priorities preserve a full completion pool
+[audio] PASS quiet cue fills only free voices
+[audio] PASS quiet landing never steals from a busy pool
+[audio] PASS death steals a quiet voice without growing pool
+[audio] PASS pause immediately stops all tails
+[audio] PASS play calls during pause remain silent
+[audio] PASS unpause does not retain prior cooldown
+[audio] PASS mute immediately stops all tails
+[audio] PASS mute preference saved
+[audio] PASS muted cues do not play
+[audio] PASS unmute preference saved
+[audio] PASS cue plays before scene exit
+[audio] PASS scene exit immediately clears tails and cooldowns
+[audio] PASS preserved event hookup gem_collected
+[audio] PASS preserved event hookup gem_rejected
+[audio] PASS preserved event hookup player_died
+[audio] PASS preserved event hookup level_completed
+[audio] PASS preserved event hookup channel_state_changed
+[audio] finished checks=92 errors=0
+
+=== Visual feedback regression ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[visual-feedback] PASS real jump emits scene-owned feedback
+[visual-feedback] PASS real jump still rises
+[visual-feedback] PASS jump visual never scales physics or collision
+[visual-feedback] PASS original landing remains solid
+[visual-feedback] PASS landing emits one impact burst
+[visual-feedback] PASS burst storm respects 96-particle / 12-ring cap
+[visual-feedback] PASS effects allocate no particle nodes
+[visual-feedback] PASS pause freezes feedback lifetime
+[visual-feedback] PASS changing detail while paused clears old effects
+[visual-feedback] PASS low-detail storm stays within 24 particles
+[visual-feedback] PASS all feedback expires and idle canvas stops processing
+[visual-feedback] PASS reduced motion retains a static local marker without particles
+[visual-feedback] PASS reduced motion suppresses cosmetic bob and tilt
+[visual-feedback] PASS reduced motion suppresses full-screen power pulse
+[visual-feedback] PASS reduced motion also suppresses wrong-owner squash
+[visual-feedback] PASS reduced motion preserves original rejection overlap transform
+[visual-feedback] PASS reduced motion suppresses result zoom/back-ease
+[visual-feedback] PASS enabling reduced motion snaps active collection to stable scale
+[visual-feedback] PASS collection tween cannot restore motion after settings change
+[visual-feedback] PASS enabling reduced motion cancels active death shrink
+[visual-feedback] PASS death tween cannot restore shrink after settings change
+[visual-feedback] PASS visual preferences persist
+[visual-feedback] PASS pickup still counts once
+[visual-feedback] PASS pickup feedback outlives freed gem safely
+[visual-feedback] PASS push pose touches only the visual child
+[visual-feedback] PASS push pose releases when contact stops
+[visual-feedback] PASS death emits local elemental feedback
+[visual-feedback] PASS early respawn cancels death tween and preserves collision size
+[visual-feedback] PASS no stale death tween fires after early respawn
+[visual-feedback] PASS pause settings fit viewport
+[visual-feedback] PASS ReducedMotion control fits panel
+[visual-feedback] PASS LowDetail control fits panel
+[visual-feedback] PASS leaving level destroys its entire effect canvas
+[visual-feedback] PASS five restarts leave no orphaned effects
+[visual-feedback] finished, checks=34, errors=0
+
+=== Atmosphere regression ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[atmosphere] level 01 theme=roots background=151a21ff nodes=2
+[atmosphere] level 02 theme=sentry background=1b191eff nodes=2
+[atmosphere] level 03 theme=cloister background=1a1824ff nodes=2
+[atmosphere] level 04 theme=clockwork background=1b1b20ff nodes=2
+[atmosphere] level 05 theme=shaft background=171b28ff nodes=2
+[atmosphere] level 06 theme=archive background=1b1728ff nodes=2
+[atmosphere] level 07 theme=courtyard background=20201fff nodes=2
+[atmosphere] level 08 theme=towers background=161a28ff nodes=2
+[atmosphere] level 09 theme=works background=1c1b1eff nodes=2
+[atmosphere] level 10 theme=atrium background=201a26ff nodes=2
+[atmosphere] 141 checks, 0 errors
+
+=== Box recovery regression ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[recovery] PASS lava drop hides/disables box before it can become a liquid bridge
+[recovery] PASS lava emits one penalty event
+[recovery] PASS lava returns to original position
+[recovery] PASS lava duplicate requests do not double-charge; collisions restored
+[recovery] PASS water drop hides/disables box before it can become a liquid bridge
+[recovery] PASS water emits one penalty event
+[recovery] PASS water returns to original position
+[recovery] PASS water duplicate requests do not double-charge; collisions restored
+[recovery] PASS acid drop hides/disables box before it can become a liquid bridge
+[recovery] PASS acid emits one penalty event
+[recovery] PASS acid returns to original position
+[recovery] PASS acid duplicate requests do not double-charge; collisions restored
+[recovery] PASS occupied origin delays return without overlapping player
+[recovery] PASS blocked return keeps the recovery point visible
+[recovery] PASS moving aside completes the delayed return
+[recovery] PASS out-of-bounds box returns to the same original point
+[recovery] PASS ordinary safe lower landing stays in place
+[recovery] PASS level 2 configures box recovery
+[recovery] PASS level 2 real liquid Area2D returns the box
+[recovery] PASS level 2 charges one visible 3-second penalty
+[recovery] PASS level 2 preserves gems and does not move either player
+[recovery] PASS level 4 configures box recovery
+[recovery] PASS level 4 real liquid Area2D returns the box
+[recovery] PASS level 4 charges one visible 3-second penalty
+[recovery] PASS level 4 preserves gems and does not move either player
+[recovery] PASS level 7 configures box recovery
+[recovery] PASS level 7 world bounds returns the box
+[recovery] PASS level 7 charges one visible 3-second penalty
+[recovery] PASS level 7 preserves gems and does not move either player
+[recovery] PASS level 9 configures box recovery
+[recovery] PASS level 9 real liquid Area2D returns the box
+[recovery] PASS level 9 charges one visible 3-second penalty
+[recovery] PASS level 9 preserves gems and does not move either player
+[recovery] PASS level 10 configures box recovery
+[recovery] PASS level 10 world bounds returns the box
+[recovery] PASS level 10 charges one visible 3-second penalty
+[recovery] PASS level 10 preserves gems and does not move either player
+[recovery] PASS fixture box initially supplies its pressure plate
+[recovery] PASS recovering box releases pressure plate; no phantom power
+[recovery] PASS pause freezes recovery delay
+[recovery] PASS returned box supplies the original plate again
+[recovery] PASS late origin occupant prevents collision restoration on the next tick
+[recovery] PASS late occupant removal allows safe return
+[recovery] PASS level 1 target and plate labels match their real channel
+[recovery] PASS level 2 target and plate labels match their real channel
+[recovery] PASS level 3 target and plate labels match their real channel
+[recovery] PASS level 4 target and plate labels match their real channel
+[recovery] PASS level 5 target and plate labels match their real channel
+[recovery] PASS level 6 target and plate labels match their real channel
+[recovery] PASS level 7 target and plate labels match their real channel
+[recovery] PASS level 8 target and plate labels match their real channel
+[recovery] PASS level 9 target and plate labels match their real channel
+[recovery] PASS level 10 target and plate labels match their real channel
+[recovery] finished, assertions=53 errors=0
+
+=== UI regression ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[ui] PASS all ten levels are listed
+[ui] PASS quit button fits in the viewport
+[ui] PASS keyboard and gamepad help remain visible
+[ui] PASS menu works from keyboard without an initial click
+[ui] PASS locked levels remain disabled
+[ui] PASS menu explains both interaction keys
+[ui] PASS menu help uses saved bindings
+[ui] PASS records cannot push Quit off-screen
+[ui] PASS keyboard focus scrolls the final level fully into view
+[ui] PASS record cards do not create horizontal overflow
+[ui] PASS star progress agrees with records
+[ui] PASS leaving the menu before deferred focus is safe
+[ui] PASS resuming cancels pending rebinding
+[ui] PASS reopening pause does not capture the next gameplay key
+[ui] PASS result panel contains Title
+[ui] PASS result panel contains @Label@176
+[ui] PASS result panel contains Stats
+[ui] PASS result panel contains @Label@177
+[ui] PASS result panel contains Hint
+[ui] finished, errors=0
+
+=== Session input regression ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[session] PASS unknown action rejected
+[session] PASS empty key rejected
+[session] PASS invalid rebind keeps previous key
+[session] PASS invalid key rejected -1
+[session] PASS invalid key rejected 33554519
+[session] PASS invalid key rejected 4194999
+[session] PASS restart key remains reserved
+[session] PASS valid swapped keys survive reload
+[session] PASS duplicate bindings and fallback chain repair together
+[session] PASS malformed binding falls back to default
+[session] PASS unrelated custom controls retained during repair
+[session] PASS broken saved controls cannot steal restart
+[session] PASS save damaged isolated settings fixture
+[session] PASS reload settings from disk
+[session] PASS disk reload installs repaired keys
+[session] PASS reloading keeps gamepad events without duplicate keys
+[session] PASS held Esc repeat cannot resume pause
+[session] PASS resuming releases hidden pause button focus
+[session] PASS pause clears held movement
+[session] PASS focus loss pauses live game
+[session] PASS focus loss clears buffered jump and held input
+[session] PASS background freezes timer and player physics
+[session] PASS returning focus waits for explicit resume
+[session] PASS repeat pause clears both players' menu input 0
+[session] PASS menu jump edge cannot trigger player after resume 0
+[session] PASS repeat pause clears both players' menu input 1
+[session] PASS menu jump edge cannot trigger player after resume 1
+[session] PASS repeat pause clears both players' menu input 2
+[session] PASS menu jump edge cannot trigger player after resume 2
+[session] PASS fresh gameplay jump still responds after resume
+[session] PASS focus loss preserves finished result
+[session] PASS diagnostic completion does not touch progress
+[session] PASS restore isolated settings after fixture
+[session] finished checks=33 errors=0
+
+=== Completion event ordering regression ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[completion-order] PASS overlap callbacks do not commit immediately
+[completion-order] PASS both signal orders complete exactly once
+[completion-order] PASS completion event uses final same-frame statistics
+[completion-order] PASS result shows final gems and three stars
+[completion-order] PASS top bar agrees with result
+[completion-order] PASS recorded result agrees with emitted and displayed statistics
+[completion-order] PASS isolated disk record contains three stars
+[completion-order] PASS late events and duplicate completion leave committed result unchanged
+[completion-order] PASS overlap callbacks do not commit immediately
+[completion-order] PASS both signal orders complete exactly once
+[completion-order] PASS completion event uses final same-frame statistics
+[completion-order] PASS result shows final gems and three stars
+[completion-order] PASS top bar agrees with result
+[completion-order] PASS recorded result agrees with emitted and displayed statistics
+[completion-order] PASS isolated disk record contains three stars
+[completion-order] PASS late events and duplicate completion leave committed result unchanged
+[completion-order] PASS same-frame enter then leave cancels pending completion
+[completion-order] PASS legitimate reentry completes while save suppression remains effective
+[completion-order] PASS same-frame death vetoes completion before exit leave arrives
+[completion-order] PASS later living reentry completes with death recorded
+[completion-order] PASS queued scene replacement cannot commit old result
+[completion-order] PASS detached scene cannot commit old result
+[completion-order] 22 checks, 0 errors
+
+=== Binding recovery regression ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[bindings] PASS repeated GUI registration does not duplicate events
+[bindings] PASS defaults save successfully
+[bindings] PASS pause cannot be rebound
+[bindings] PASS restart cannot be rebound
+[bindings] PASS saved system remaps rejected
+[bindings] PASS saved gameplay cannot steal system keys
+[bindings] PASS custom key saved
+[bindings] PASS custom key verified on disk
+[bindings] PASS custom key survives load
+[bindings] PASS create isolated save-failure fixture
+[bindings] PASS failed save reports failure
+[bindings] PASS failed save preserves live mapping
+[bindings] PASS failed defaults save reports failure
+[bindings] PASS failed defaults preserve live mapping
+[bindings] PASS failed writes preserve disk mapping
+[bindings] PASS controller A enters real focused capture button
+[bindings] PASS save failure remains retryable and visible
+[bindings] PASS remove save-failure fixture
+[bindings] PASS retry commits and exits capture
+[bindings] PASS device 0 enters capture
+[bindings] PASS device 0 cancels without resuming (6)
+[bindings] PASS controller cancel preserves mapping
+[bindings] PASS device 0 enters capture
+[bindings] PASS device 0 cancels without resuming (1)
+[bindings] PASS controller cancel preserves mapping
+[bindings] PASS device 1 enters capture
+[bindings] PASS device 1 cancels without resuming (6)
+[bindings] PASS controller cancel preserves mapping
+[bindings] PASS device 1 enters capture
+[bindings] PASS device 1 cancels without resuming (1)
+[bindings] PASS controller cancel preserves mapping
+[bindings] PASS mouse enters capture
+[bindings] PASS explicit cancel works by mouse
+[bindings] PASS cancel returns focus to selected binding
+[bindings] PASS Esc cancels without resuming
+[bindings] PASS reserved conflict stays visible in capture
+[bindings] PASS mouse defaults clears capture and restores mapping
+[bindings] PASS defaults refresh binding label
+[bindings] PASS all saves, repairs and defaults preserve both controller maps
+[bindings] PASS pause panel fits viewport
+[bindings] PASS binding UI fits panel: CancelBinding
+[bindings] PASS binding UI fits panel: BindingStatus
+[bindings] PASS binding UI fits panel: @Button@27
+[bindings] PASS Start resumes after capture cancellation
+[bindings] PASS resuming clears hidden GUI focus
+[bindings] PASS result exposes persistence warning
+[bindings] PASS persistence hint fits result panel
+[bindings] PASS restore original isolated settings
+[bindings] finished checks=48 errors=0
+
+=== Save recovery regression ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[save] PASS first save succeeds
+[save] PASS replacement save succeeds
+[save] PASS backup retains previous generation
+[save] PASS primary has newest generation
+[save] PASS failed temporary write preserves primary
+[save] PASS failed backup replacement preserves primary
+[save] PASS save recovers after filesystem obstruction removed
+[save] PASS invalid primary metadata recovers previous readable generation
+[save] PASS recovery does not rotate damaged primary over good backup
+[save] PASS zero-byte interrupted primary recovers backup
+[save] PASS missing primary recovers backup
+[save] PASS future layout is protected instead of silently loading older backup
+[save] PASS store independently refuses to replace future schema
+[save] PASS recovered progress exposes backup notice
+[save] PASS failed save exposes actionable notice
+[save] PASS successful retry clears error while retaining recovery notice
+[save] PASS damaged optional counters preserve objective records and unlocks
+[save] PASS malformed/fractional counters are absent rather than invented zero awards
+[save] PASS invalid level indices stay locked
+[save] PASS GameState protects future rating version and explains block
+[save] PASS malformed metadata without backup is retained and explained
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[save] PASS smoke startup does not rewrite legacy progress
+[save] PASS explicit save remains suppressed in smoke mode
+[smoke] levels=10
+[smoke] ---- level 0 ----
+
+[save] PASS separate smoke startup preserves original legacy save bytes
+[save] PASS ordinary startup still migrates legacy unlocks and rating
+[save] PASS migration is idempotent
+[save] 24 checks, 0 failures
+WARNING: 无法保存进度：Can't open file
+     at: push_warning (core/variant/variant_utility.cpp:1034)
+     GDScript backtrace (most recent call first):
+         [0] save_progress (res://scripts/autoload/game_state.gd:192)
+         [1] _run (res://tools/save_recovery_regression.gd:96)
+WARNING: 进度来自更新版本，请使用更新版游戏；原文件已保留，本次游玩暂不保存。
+     at: push_warning (core/variant/variant_utility.cpp:1034)
+     GDScript backtrace (most recent call first):
+         [0] load_progress (res://scripts/autoload/game_state.gd:205)
+         [1] _run (res://tools/save_recovery_regression.gd:120)
+WARNING: 进度文件无法读取，原文件已保留；本次游玩暂不保存。
+     at: push_warning (core/variant/variant_utility.cpp:1034)
+     GDScript backtrace (most recent call first):
+         [0] load_progress (res://scripts/autoload/game_state.gd:205)
+         [1] _run (res://tools/save_recovery_regression.gd:127)
+
+=== Replay records regression ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[replay] PASS panel contains Title
+[replay] PASS panel contains @Label@81
+[replay] PASS panel contains Stats
+[replay] PASS panel contains @Label@82
+[replay] PASS panel contains RecordComparison
+[replay] PASS panel contains OptionalChallenges
+[replay] PASS panel contains Hint
+[replay] PASS result panel fits viewport
+[replay] PASS first completion has no invented comparison
+[replay] PASS first clean team run records both optional challenges
+[replay] PASS both team challenge awards persisted
+[replay] PASS first completion still unlocks next level
+[replay] PASS panel contains Title
+[replay] PASS panel contains @Label@175
+[replay] PASS panel contains Stats
+[replay] PASS panel contains @Label@176
+[replay] PASS panel contains RecordComparison
+[replay] PASS panel contains OptionalChallenges
+[replay] PASS panel contains Hint
+[replay] PASS result panel fits viewport
+[replay] PASS faster result compares old fastest and old full-gem snapshot
+[replay] PASS later imperfect run retains earned records while showing current team counts
+[replay] PASS existing box-reset penalty explained without a new penalty
+[replay] PASS panel contains Title
+[replay] PASS panel contains @Label@269
+[replay] PASS panel contains Stats
+[replay] PASS panel contains @Label@270
+[replay] PASS panel contains RecordComparison
+[replay] PASS panel contains OptionalChallenges
+[replay] PASS panel contains Hint
+[replay] PASS result panel fits viewport
+[replay] PASS slower repeat shows delta rather than claiming record
+[replay] PASS slower repeat preserves both best times
+[replay] PASS duplicate completion is idempotent
+[replay] PASS panel contains Title
+[replay] PASS panel contains @Label@363
+[replay] PASS panel contains Stats
+[replay] PASS panel contains @Label@364
+[replay] PASS panel contains RecordComparison
+[replay] PASS panel contains OptionalChallenges
+[replay] PASS panel contains Hint
+[replay] PASS result panel fits viewport
+[replay] PASS fast non-full-gem run does not improve full-gem record
+[replay] PASS non-full-gem run can improve overall fastest
+[replay] PASS sub-centisecond delta does not print slow 0.00
+[replay] PASS exact repeat has no invented delta
+[replay] PASS missing historical rating is unknown rather than a fabricated zero-star record
+[replay] PASS save isolated legacy fixture
+[replay] PASS legacy scores and unlocks preserved
+[replay] PASS missing historical team counts stay absent
+[replay] PASS legacy missing counts do not become zero awards
+[replay] PASS panel contains Title
+[replay] PASS panel contains @Label@457
+[replay] PASS panel contains Stats
+[replay] PASS panel contains @Label@458
+[replay] PASS panel contains RecordComparison
+[replay] PASS panel contains OptionalChallenges
+[replay] PASS panel contains Hint
+[replay] PASS result panel fits viewport
+[replay] PASS legacy fastest and full-gem remain separate
+[replay] PASS first explicit counts initialize rather than inheriting zero
+[replay] PASS failed first tracked run remains unearned
+[replay] PASS death challenge can be earned independently
+[replay] PASS separate challenge awards survive save/load
+[replay] PASS optional tracking leaves all prior best values intact
+[replay] PASS comparison snapshot deeply detached from save
+[replay] PASS stale in-memory revision cannot supply comparison or awards
+[replay] PASS new revision does not mix old best or old challenges
+[replay] PASS save isolated legacy fixture
+[replay] PASS revision migration isolates affected level and keeps unlocks
+[replay] PASS save isolated legacy fixture
+[replay] PASS malformed challenge values are not treated as booleans
+[replay] PASS save isolated legacy fixture
+[replay] PASS malformed challenge version preserves ordinary records []
+[replay] PASS malformed challenge version cannot grant awards []
+[replay] PASS save isolated legacy fixture
+[replay] PASS malformed challenge version preserves ordinary records {  }
+[replay] PASS malformed challenge version cannot grant awards {  }
+[replay] PASS save isolated legacy fixture
+[replay] PASS malformed challenge version preserves ordinary records 1.5
+[replay] PASS malformed challenge version cannot grant awards 1.5
+[replay] PASS save isolated legacy fixture
+[replay] PASS malformed challenge version preserves ordinary records true
+[replay] PASS malformed challenge version cannot grant awards true
+[replay] PASS save isolated legacy fixture
+[replay] PASS malformed challenge version preserves ordinary records 1
+[replay] PASS malformed challenge version cannot grant awards 1
+[replay] PASS invalid in-memory challenge payload safely replaced by explicit run
+[replay] PASS API missing counters cannot award a challenge
+[replay] PASS reject invalid team count -1
+[replay] PASS reject invalid team count 0.5
+[replay] PASS reject invalid team count true
+[replay] PASS reject invalid team count 0
+[replay] PASS reject invalid team count nan
+[replay] PASS reject invalid team count inf
+[replay] PASS smoke suppression protects records and file
+[replay] PASS team counts include both players and all box recoveries
+[replay] PASS pause does not advance run timer
+[replay] PASS fresh retry resets whole-run counts
+[replay] finished checks=99 errors=0
+
+=== Replay transitions regression ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[replay-flow] PASS menu button opens real current level
+[replay-flow] PASS Esc pauses real level
+[replay-flow] PASS paused real timer stays unchanged
+[replay-flow] PASS pause checkbox applies reduced motion
+[replay-flow] PASS Esc resumes real level
+[replay-flow] PASS R destroys old scene and reloads real level
+[replay-flow] PASS R resets whole-team run counters
+[replay-flow] PASS visual preference survives restart
+[replay-flow] PASS pause retry unpauses and reloads
+[replay-flow] PASS pause menu return cleans old scene and pause state
+[replay-flow] PASS return restores current level focus
+[replay-flow] PASS diagnostic completed scene shows result
+[replay-flow] PASS result can be paused without losing summary
+[replay-flow] PASS jump from result opens next level once
+[replay-flow] PASS R from result retries same level
+[replay-flow] PASS return after replay restores second card focus
+[replay-flow] PASS jump from final result returns to menu
+[replay-flow] PASS last level menu focus remains visible after completion
+[replay-flow] PASS repeat entry starts running 0
+[replay-flow] PASS repeat entry responds to focus loss 0
+[replay-flow] PASS repeat background exit clears pause 0
+[replay-flow] PASS repeat exit restores last card focus 0
+[replay-flow] PASS repeat entry starts running 1
+[replay-flow] PASS repeat entry responds to focus loss 1
+[replay-flow] PASS repeat background exit clears pause 1
+[replay-flow] PASS repeat exit restores last card focus 1
+[replay-flow] PASS repeat entry starts running 2
+[replay-flow] PASS repeat entry responds to focus loss 2
+[replay-flow] PASS repeat background exit clears pause 2
+[replay-flow] PASS repeat exit restores last card focus 2
+[replay-flow] PASS all flow fixtures respect smoke recording suppression
+[replay-flow] finished checks=31 errors=0
+
+=== Menu replay regression ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[menu-replay] 249 checks, 0 errors
+
+=== Mechanism feedback regression ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[mechanism-feedback] PASS builder registers only controlled targets, with no startup feedback
+[mechanism-feedback] PASS normal feedback has only a short tail fade, with no position animation
+[mechanism-feedback] PASS permanent matching channel IDs stay intact
+[mechanism-feedback] PASS duplicate registration does not duplicate feedback
+[mechanism-feedback] PASS unrelated channels and unchanged initial state stay quiet
+[mechanism-feedback] PASS real lever interaction still activates matching mechanisms
+[mechanism-feedback] PASS one trigger creates one local badge per matching target
+[mechanism-feedback] PASS target badges include channel and explicit state
+[mechanism-feedback] PASS duplicate trigger spam does not refresh or multiply badges
+[mechanism-feedback] PASS gate retains its original 0.35-second physical opening
+[mechanism-feedback] PASS opening badge stays at the doorway while the gate sinks
+[mechanism-feedback] PASS platform badge follows the moving target rather than its starting point
+[mechanism-feedback] PASS pause freezes badge lifetime and leaves mechanism motion paused
+[mechanism-feedback] PASS reduced motion immediately applies static feedback while paused
+[mechanism-feedback] PASS reduced motion also makes an already-fading marker immediately static
+[mechanism-feedback] PASS paused settings cannot age feedback or restart an energy pulse
+[mechanism-feedback] PASS reduced motion keeps actual platform travel unchanged
+[mechanism-feedback] PASS normal setting restores the existing energy-band pulse
+[mechanism-feedback] PASS low detail immediately simplifies target feedback and stops the decorative pulse
+[mechanism-feedback] PASS switching off names both resulting target states
+[mechanism-feedback] PASS alternating chatter coalesces latest truth without extending lifetime or allocating nodes
+[mechanism-feedback] PASS feedback never changes controlled or always-on trigger rules
+[mechanism-feedback] PASS feedback preserves target collision shape and layers
+[mechanism-feedback] PASS all badges expire and the idle canvas stops processing
+[mechanism-feedback] PASS unchanged states cannot revive expired badges
+[mechanism-feedback] PASS actual pressure-plate overlap activates both local target badges
+[mechanism-feedback] PASS leaving a pressure plate changes local feedback back to the off state
+[mechanism-feedback] PASS large fan-out stays within the eight-marker cap
+[mechanism-feedback] PASS queued or freed targets are discarded safely even during new signals
+[mechanism-feedback] PASS leaving a world destroys all local mechanism feedback
+[mechanism-feedback] PASS teardown releases channel and visual-settings signal subscriptions
+[mechanism-feedback] PASS level 1 target retains permanent channel label
+[mechanism-feedback] PASS level 1 target retains permanent channel label
+[mechanism-feedback] PASS level 1 registers every controlled target
+[mechanism-feedback] PASS level 2 target retains permanent channel label
+[mechanism-feedback] PASS level 2 target retains permanent channel label
+[mechanism-feedback] PASS level 2 target retains permanent channel label
+[mechanism-feedback] PASS level 2 target retains permanent channel label
+[mechanism-feedback] PASS level 2 registers every controlled target
+[mechanism-feedback] PASS level 3 target retains permanent channel label
+[mechanism-feedback] PASS level 3 target retains permanent channel label
+[mechanism-feedback] PASS level 3 target retains permanent channel label
+[mechanism-feedback] PASS level 3 target retains permanent channel label
+[mechanism-feedback] PASS level 3 target retains permanent channel label
+[mechanism-feedback] PASS level 3 registers every controlled target
+[mechanism-feedback] PASS level 4 target retains permanent channel label
+[mechanism-feedback] PASS level 4 target retains permanent channel label
+[mechanism-feedback] PASS level 4 target retains permanent channel label
+[mechanism-feedback] PASS level 4 target retains permanent channel label
+[mechanism-feedback] PASS level 4 registers every controlled target
+[mechanism-feedback] PASS level 5 target retains permanent channel label
+[mechanism-feedback] PASS level 5 target retains permanent channel label
+[mechanism-feedback] PASS level 5 target retains permanent channel label
+[mechanism-feedback] PASS level 5 target retains permanent channel label
+[mechanism-feedback] PASS level 5 registers every controlled target
+[mechanism-feedback] PASS level 6 target retains permanent channel label
+[mechanism-feedback] PASS level 6 target retains permanent channel label
+[mechanism-feedback] PASS level 6 registers every controlled target
+[mechanism-feedback] PASS level 7 target retains permanent channel label
+[mechanism-feedback] PASS level 7 target retains permanent channel label
+[mechanism-feedback] PASS level 7 target retains permanent channel label
+[mechanism-feedback] PASS level 7 registers every controlled target
+[mechanism-feedback] PASS level 8 target retains permanent channel label
+[mechanism-feedback] PASS level 8 target retains permanent channel label
+[mechanism-feedback] PASS level 8 target retains permanent channel label
+[mechanism-feedback] PASS level 8 target retains permanent channel label
+[mechanism-feedback] PASS level 8 target retains permanent channel label
+[mechanism-feedback] PASS level 8 target retains permanent channel label
+[mechanism-feedback] PASS level 8 registers every controlled target
+[mechanism-feedback] PASS level 9 target retains permanent channel label
+[mechanism-feedback] PASS level 9 target retains permanent channel label
+[mechanism-feedback] PASS level 9 target retains permanent channel label
+[mechanism-feedback] PASS level 9 target retains permanent channel label
+[mechanism-feedback] PASS level 9 target retains permanent channel label
+[mechanism-feedback] PASS level 9 target retains permanent channel label
+[mechanism-feedback] PASS level 9 target retains permanent channel label
+[mechanism-feedback] PASS level 9 registers every controlled target
+[mechanism-feedback] PASS level 10 target retains permanent channel label
+[mechanism-feedback] PASS level 10 target retains permanent channel label
+[mechanism-feedback] PASS level 10 target retains permanent channel label
+[mechanism-feedback] PASS level 10 registers every controlled target
+[mechanism-feedback] PASS ten level builds and restarts leave no canvases or signal subscriptions
+[mechanism-feedback] finished, checks=82, errors=0
+
+=== Enrichment cooperation and recovery ===
+
+=== tools/test_enrichment_static.py ===
+[enrichment-static] PASS two successive keepers have a real checkpoint-state path
+[enrichment-static] PASS removing relay controller C breaks the staged route
+[enrichment-static] PASS removing relay controller D breaks the staged route
+[enrichment-static] PASS removing relay controller E breaks the staged route
+[enrichment-static] PASS relay fallback refuses box puzzles outside its model
+[enrichment-static] PASS descending jump cannot pass through a solid shelf
+[enrichment-static] PASS teaching lower exit is unavailable with all gates closed
+[enrichment-static] PASS box can ride the real lift to the delivery plate
+[enrichment-static] PASS lift cannot put the box on the final raised keeper plate
+[enrichment-static] PASS removing the lift removes the box ascent
+[enrichment-static] PASS a solid obstruction invalidates lift cargo transport
+[enrichment-static] PASS held gate lets the courier deliver the replacement box
+[enrichment-static] PASS all ten changed layouts invalidate only their stale records
+[enrichment-static] PASS breather stays completely liquid-free
+[enrichment-static] PASS receiving plate covers every possible delivered-box floor cell
+[enrichment-static] 15 fixtures passed
+
+=== tools/enrichment/verify_late_geometry.py ===
+{
+  "assertions": {
+    "L10_high_hold_plate_box_inaccessible_even_with_all_gates_open": true,
+    "L10_box_has_no_upward_route_from_start": true,
+    "L10_box_stays_on_well_floor_after_delivery": true,
+    "L10_delivery_landing_plate_reachable_by_gravity": true,
+    "L10_rescue_portals_have_no_channel_requirement": true,
+    "L10_both_return_gates_use_persistent_box_weight_A": true,
+    "L9_red_repair_is_inside_lava": true,
+    "L9_blue_repair_is_inside_water": true,
+    "L9_upper_tunnel_cannot_be_walked_over": true,
+    "L9_lower_tunnel_has_solid_ceiling": true,
+    "L9_roof_gates_reach_top_boundary": true,
+    "L9_revision_incremented": true,
+    "L10_revision_incremented": true
+  },
+  "passed": true,
+  "box_start_surfaces": [
+    [
+      0,
+      12
+    ],
+    [
+      1,
+      12
+    ],
+    [
+      2,
+      12
+    ],
+    [
+      3,
+      12
+    ],
+    [
+      4,
+      12
+    ],
+    [
+      5,
+      12
+    ],
+    [
+      6,
+      12
+    ],
+    [
+      7,
+      12
+    ],
+    [
+      8,
+      12
+    ],
+    [
+      9,
+      12
+    ],
+    [
+      10,
+      12
+    ],
+    [
+      11,
+      12
+    ],
+    [
+      12,
+      12
+    ],
+    [
+      13,
+      12
+    ],
+    [
+      14,
+      12
+    ],
+    [
+      14,
+      19
+    ],
+    [
+      15,
+      12
+    ],
+    [
+      15,
+      19
+    ],
+    [
+      16,
+      19
+    ]
+  ],
+  "box_well_surfaces": [
+    [
+      14,
+      19
+    ],
+    [
+      15,
+      19
+    ],
+    [
+      16,
+      19
+    ]
+  ],
+  "scope": "Conservative generator geometry checks, supplementary to real Input-only routes; not a physics substitute"
+}
+
+=== tools/run_full_gem_routes.py --godot /usr/local/bin/godot --skip-import --scenario --routes /tmp/fireboy-enrichment-mrhui2y1/scenarios.json --output /tmp/fireboy-enrichment-mrhui2y1/coop_scenarios.json ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[routes] START level 1
+[coop] PASS L1 idle water, checks=5 frames=640
+[routes] START level 1
+[coop] PASS L1 idle fire, checks=6 frames=640
+[routes] START level 6
+[coop] PASS L6 idle water, checks=5 frames=553
+[routes] START level 6
+[coop] PASS L6 idle fire, checks=6 frames=553
+[routes] START level 2
+[coop] PASS L2 idle guard blocks courier, checks=8 frames=420
+[routes] START level 2
+[routes] L2 f30 water p0 task0 done (464.0, 528.0)
+[routes] L2 f40 water p0 task1 done (494.0, 529.9252)
+[routes] L2 f49 fire p0 task0 done (300.2222, 689.9252)
+[routes] L2 f95 fire p0 task1 done (337.8975, 661.9182)
+[routes] L2 f110 fire p0 task2 done (302.8975, 676.1649)
+[routes] L2 f111 PHASE water guard, fire stages courier
+[routes] L2 f250 fire p1 task0 done (531.9985, 689.924)
+[routes] L2 f251 PHASE stage box at live gate
+[routes] L2 f264 water p2 task0 done (541.0001, 529.9252)
+[routes] L2 f297 fire p2 task0 done (535.2212, 689.9252)
+[routes] L2 f298 PHASE guard leaves too early
+[coop] PASS L2 early guard release closes A, checks=8 frames=539
+[routes] START level 3
+[coop] PASS L3 idle water, checks=8 frames=953
+[routes] START level 3
+[coop] PASS L3 idle fire, checks=8 frames=953
+[routes] START level 3
+[coop] PASS L3 keeper leaves C early, checks=8 frames=599
+[routes] START level 4
+[coop] PASS L4 idle holder blocks courier, checks=8 frames=300
+[routes] START level 4
+[routes] L4 f9 water p0 task0 done (204.2222, 657.9252)
+[routes] L4 f49 fire p0 task0 done (268.2223, 657.9252)
+[routes] L4 f50 PHASE live hold A
+[routes] L4 f82 fire p1 task0 done (395.0556, 657.9252)
+[routes] L4 f132 fire p1 task1 done (530.7228, 657.9243)
+[routes] L4 f133 PHASE courier beyond A
+[routes] L4 f150 water p2 task0 done (267.2222, 657.9252)
+[routes] L4 f169 fire p2 task0 done (530.7228, 657.9243)
+[routes] L4 f170 PHASE release before box arrives
+[coop] PASS L4 premature handoff release blocks box, checks=8 frames=411
+[routes] START level 4
+[routes] L4 f9 water p0 task0 done (204.2222, 657.9252)
+[routes] L4 f49 fire p0 task0 done (268.2223, 657.9252)
+[routes] L4 f50 PHASE live hold A
+[routes] L4 f82 fire p1 task0 done (395.0556, 657.9252)
+[routes] L4 f132 fire p1 task1 done (530.7228, 657.9243)
+[routes] L4 f303 fire p1 task2 done (235.2507, 657.924)
+[routes] L4 f304 PHASE retrieve box beyond A
+[routes] L4 f354 water p2 task0 done (273.1721, 657.9261)
+[routes] L4 f381 fire p2 task0 done (526.0533, 657.9252)
+[routes] L4 f419 water p2 task1 done (523.1721, 657.924)
+[routes] L4 f420 PHASE box takes over A
+[routes] L4 f429 fire p3 task0 done (557.0534, 657.9252)
+[routes] L4 f429 water p3 task0 done (558.0055, 657.9252)
+[routes] L4 f691 water p3 task1 done (631.2278, 593.9989)
+[routes] L4 f692 fire p3 task1 done (633.2756, 593.9989)
+[routes] L4 f847 fire p3 task2 done (865.7756, 593.9989)
+[routes] L4 f847 water p3 task2 done (865.2278, 593.9989)
+[routes] L4 f881 fire p3 task3 done (977.2756, 646.8141)
+[routes] L4 f881 water p3 task3 done (976.7278, 646.8141)
+[routes] L4 f899 water p3 task4 done (1036.95, 657.9252)
+[routes] L4 f900 PHASE cross acid
+[routes] L4 f902 water p4 task0 done (1041.95, 657.9252)
+[routes] L4 f965 fire p4 task0 done (1227.27, 657.9252)
+[routes] L4 f1017 fire p4 task1 done (1362.935, 708.2086)
+[routes] L4 f1102 fire p4 task2 done (1523.491, 657.9243)
+[routes] L4 f1111 fire p4 task3 done (1549.491, 657.9252)
+[routes] L4 f1116 fire p4 task4 done (1554.491, 657.9252)
+[routes] L4 f1117 PHASE lower lever
+[routes] L4 f1127 fire p5 task0 done (1524.471, 657.9252)
+[routes] L4 f1135 water p5 task0 done (979.9504, 657.9252)
+[routes] L4 f1136 PHASE one final key is insufficient
+[coop] PASS L4 single final key cannot replace teammate, checks=7 frames=1437
+[routes] START level 4
+[routes] L4 f9 water p0 task0 done (204.2222, 657.9252)
+[routes] L4 f49 fire p0 task0 done (268.2223, 657.9252)
+[routes] L4 f50 PHASE live hold A
+[routes] L4 f82 fire p1 task0 done (395.0556, 657.9252)
+[routes] L4 f132 fire p1 task1 done (530.7228, 657.9243)
+[routes] L4 f303 fire p1 task2 done (235.2507, 657.924)
+[routes] L4 f304 PHASE retrieve box beyond A
+[routes] L4 f350 water p2 task0 done (210.063, 629.9191)
+[routes] L4 f354 fire p2 task0 done (143.1013, 657.935)
+[routes] L4 f355 PHASE hold position while courier gets left of box
+[routes] L4 f394 water p3 task0 done (211.8684, 647.3505)
+[routes] L4 f630 fire p3 task0 done (601.9965, 657.924)
+[routes] L4 f631 PHASE box cannot cross acid to final keys
+[routes] L4 f722 fire p4 task0 done (606.9965, 657.9252)
+[routes] L4 f723 PHASE wait for safe box reset
+[coop] PASS L4 box cannot be carried across acid to final keys, checks=9 frames=845
+[routes] START level 7
+[routes] L7 f17 fire p0 task0 done (172.2222, 593.9252)
+[routes] L7 f25 water p0 task0 done (300.2222, 593.9252)
+[routes] L7 f50 fire p0 task1 done (302.8889, 593.9252)
+[routes] L7 f55 fire p0 task2 done (307.8889, 593.9252)
+[routes] L7 f56 PHASE open walking route
+[routes] L7 f113 water p1 task0 done (523.2222, 593.924)
+[routes] L7 f154 water p1 task1 done (563.4808, 529.9992)
+[routes] L7 f195 water p1 task2 done (715.8143, 465.9252)
+[routes] L7 f297 fire p1 task0 done (851.4953, 588.924)
+[routes] L7 f298 PHASE deliver box onto lift
+[routes] L7 f331 water p2 task0 done (755.8144, 582.5919)
+[routes] L7 f366 water p2 task1 done (839.3699, 496.4252)
+[routes] L7 f437 water p2 task2 done (844.3699, 389.9955)
+[routes] L7 f485 water p2 task3 done (977.7032, 369.9929)
+[routes] L7 f803 fire p2 task0 done (1012.328, 369.924)
+[routes] L7 f804 PHASE escort box upstairs
+[routes] L7 f854 fire p3 task0 done (1105.811, 369.9349)
+[routes] L7 f854 water p3 task0 done (1107.729, 369.924)
+[routes] L7 f895 fire p3 task1 done (1259.806, 369.9253)
+[routes] L7 f941 fire p3 task2 done (1331.474, 337.9685)
+[routes] L7 f942 PHASE walk together
+[routes] L7 f1042 water p4 task0 done (1395.481, 369.924)
+[routes] L7 f1051 water p4 task1 done (1421.48, 369.9253)
+[routes] L7 f1052 PHASE water stops before D
+[routes] L7 f1070 fire p5 task0 done (1392.306, 359.3141)
+[routes] L7 f1093 water p5 task0 done (1426.48, 369.9253)
+[routes] L7 f1094 PHASE fire leaves final plate early
+[coop] PASS L7 early final release blocks partner, checks=8 frames=1335
+[routes] START level 7
+[routes] L7 f17 fire p0 task0 done (172.2222, 593.9252)
+[routes] L7 f25 water p0 task0 done (300.2222, 593.9252)
+[routes] L7 f50 fire p0 task1 done (302.8889, 593.9252)
+[routes] L7 f55 fire p0 task2 done (307.8889, 593.9252)
+[routes] L7 f56 PHASE open walking route
+[routes] L7 f113 water p1 task0 done (523.2222, 593.924)
+[routes] L7 f154 water p1 task1 done (563.4808, 529.9992)
+[routes] L7 f195 water p1 task2 done (715.8143, 465.9252)
+[routes] L7 f297 fire p1 task0 done (851.4953, 588.924)
+[routes] L7 f298 PHASE deliver box onto lift
+[routes] L7 f331 water p2 task0 done (755.8144, 582.5919)
+[routes] L7 f366 water p2 task1 done (839.3699, 496.4252)
+[routes] L7 f437 water p2 task2 done (844.3699, 389.9955)
+[routes] L7 f485 water p2 task3 done (977.7032, 369.9929)
+[routes] L7 f803 fire p2 task0 done (1012.328, 369.924)
+[routes] L7 f804 PHASE escort box upstairs
+[routes] L7 f850 water p3 task0 done (1038.407, 341.9201)
+[routes] L7 f851 PHASE water takes box plate temporarily
+[routes] L7 f886 water p4 task0 done (1041.573, 359.3505)
+[coop] PASS L7 box cannot substitute on raised final plate, checks=11 frames=1152
+[routes] START level 7
+[routes] L7 f17 fire p0 task0 done (172.2222, 593.9252)
+[routes] L7 f50 fire p0 task1 done (302.8889, 593.9252)
+[routes] L7 f55 fire p0 task2 done (307.8889, 593.9252)
+[routes] L7 f56 PHASE open walking route
+[routes] L7 f310 fire p1 task0 done (851.3226, 580.4955)
+[routes] L7 f311 PHASE deliver box onto lift
+[routes] L7 f803 fire p2 task0 done (1012.328, 369.924)
+[routes] L7 f804 PHASE escort box upstairs
+[routes] L7 f854 fire p3 task0 done (1105.811, 369.9349)
+[routes] L7 f895 fire p3 task1 done (1259.806, 369.9253)
+[routes] L7 f941 fire p3 task2 done (1331.474, 337.9685)
+[routes] L7 f942 PHASE walk together
+[routes] L7 f960 fire p4 task0 done (1392.306, 359.3141)
+[routes] L7 f1001 fire p4 task1 done (1394.473, 369.9964)
+[coop] PASS L7 idle partner prevents final held gate, checks=7 frames=1242
+[routes] wrote /tmp/fireboy-routes-ijnzoml3/results.json
+Evidence saved to /tmp/fireboy-enrichment-mrhui2y1/coop_scenarios.json
+
+=== tools/run_full_gem_routes.py --godot /usr/local/bin/godot --skip-import --routes /tmp/fireboy-enrichment-mrhui2y1/recoveries.json --output /tmp/fireboy-enrichment-mrhui2y1/recovery_routes.json ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[routes] START level 2
+[routes] L2 f30 water p0 task0 done (464.0, 528.0)
+[routes] L2 f49 fire p0 task0 done (300.2222, 689.9252)
+[routes] L2 f82 water p0 task1 done (269.5, 676.9252)
+[routes] L2 f95 fire p0 task1 done (337.8975, 661.9182)
+[routes] L2 f110 fire p0 task2 done (302.8975, 676.1649)
+[routes] L2 f128 water p0 task2 done (464.0, 528.0)
+[routes] L2 f138 water p0 task3 done (494.0, 529.9252)
+[routes] L2 f139 PHASE water guard, fire stages courier
+[routes] L2 f378 fire p1 task0 done (691.9131, 689.924)
+[routes] L2 f409 fire p1 task1 done (695.1358, 689.9252)
+[routes] L2 f410 PHASE courier delivers behind A
+[routes] L2 f501 water p2 task0 done (753.4167, 678.8141)
+[routes] L2 f507 fire p2 task0 done (754.3597, 689.9926)
+[routes] L2 f508 PHASE guard released by B
+[routes] L2 f511 fire p3 task0 done (754.3597, 689.9926)
+[routes] L2 f511 water p3 task0 done (753.4167, 689.9916)
+[routes] L2 f883 fire p3 task1 done (770.832, 625.9252)
+[routes] L2 f884 water p3 task1 done (769.8889, 625.9252)
+[routes] L2 f1083 fire p3 task2 done (1060.082, 625.9252)
+[routes] L2 f1083 water p3 task2 done (1060.722, 625.9252)
+[routes] L2 f1120 water p3 task3 done (1139.741, 689.9252)
+[routes] L2 f1170 fire p3 task3 done (1101.831, 678.8141)
+[routes] L2 f1181 fire p3 task4 done (1134.053, 689.9252)
+[routes] L2 f1186 fire p3 task5 done (1139.053, 689.9252)
+[routes] L2 f1187 PHASE cross acid
+[routes] L2 f1216 fire p4 task0 done (1212.999, 689.9252)
+[routes] L2 f1242 water p4 task0 done (1265.996, 708.7086)
+[routes] L2 f1266 fire p4 task1 done (1392.666, 689.9243)
+[routes] L2 f1312 fire p4 task2 done (1489.999, 657.9683)
+[routes] L2 f1324 water p4 task1 done (1394.552, 689.9243)
+[routes] L2 f1358 fire p4 task3 done (1587.333, 625.9683)
+[routes] L2 f1367 fire p4 task4 done (1613.332, 625.9252)
+[routes] L2 f1370 water p4 task2 done (1523.885, 657.9683)
+[routes] PASS L2 frames=1377 time=22.9667 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 4
+[routes] L4 f9 water p0 task0 done (204.2222, 657.9252)
+[routes] L4 f49 fire p0 task0 done (268.2223, 657.9252)
+[routes] L4 f50 PHASE live hold A
+[routes] L4 f82 fire p1 task0 done (395.0556, 657.9252)
+[routes] L4 f132 fire p1 task1 done (530.7228, 657.9243)
+[routes] L4 f133 PHASE courier waits beyond A
+[routes] L4 f150 water p2 task0 done (267.2222, 657.9252)
+[routes] L4 f179 fire p2 task0 done (530.7228, 657.9243)
+[routes] L4 f180 PHASE accidentally release A
+[routes] L4 f198 water p3 task0 done (210.2223, 657.9252)
+[routes] L4 f226 fire p3 task0 done (530.7228, 657.9243)
+[routes] L4 f227 PHASE return to A and retry
+[routes] L4 f398 fire p4 task0 done (235.2507, 657.924)
+[routes] L4 f399 PHASE deliver box safely
+[routes] L4 f449 water p5 task0 done (273.1721, 657.9261)
+[routes] L4 f476 fire p5 task0 done (526.0533, 657.9252)
+[routes] L4 f514 water p5 task1 done (523.1721, 657.924)
+[routes] L4 f515 PHASE box takes over A
+[routes] L4 f524 fire p6 task0 done (557.0534, 657.9252)
+[routes] L4 f524 water p6 task0 done (558.0055, 657.9252)
+[routes] L4 f691 water p6 task1 done (631.2278, 593.9989)
+[routes] L4 f692 fire p6 task1 done (633.2756, 593.9989)
+[routes] L4 f847 fire p6 task2 done (865.7756, 593.9989)
+[routes] L4 f847 water p6 task2 done (865.2278, 593.9989)
+[routes] L4 f881 fire p6 task3 done (977.2756, 646.8141)
+[routes] L4 f881 water p6 task3 done (976.7278, 646.8141)
+[routes] L4 f899 water p6 task4 done (1036.95, 657.9252)
+[routes] L4 f900 PHASE cross acid
+[routes] L4 f902 water p7 task0 done (1041.95, 657.9252)
+[routes] L4 f965 fire p7 task0 done (1227.27, 657.9252)
+[routes] L4 f1017 fire p7 task1 done (1362.935, 708.2086)
+[routes] L4 f1102 fire p7 task2 done (1523.491, 657.9243)
+[routes] L4 f1111 fire p7 task3 done (1549.491, 657.9252)
+[routes] L4 f1116 fire p7 task4 done (1554.491, 657.9252)
+[routes] L4 f1117 PHASE lower lever
+[routes] L4 f1127 fire p8 task0 done (1524.471, 657.9252)
+[routes] L4 f1135 water p8 task0 done (979.9504, 657.9252)
+[routes] L4 f1176 water p8 task1 done (1011.481, 593.9988)
+[routes] L4 f1217 water p8 task2 done (1136.814, 529.999)
+[routes] L4 f1227 water p8 task3 done (1166.814, 529.9252)
+[routes] L4 f1243 water p8 task4 done (1229.479, 529.9252)
+[routes] L4 f1244 PHASE paired plates
+[routes] L4 f1284 water p9 task0 done (1388.307, 529.9252)
+[routes] L4 f1286 fire p9 task0 done (1677.446, 657.9252)
+[routes] L4 f1293 water p9 task1 done (1422.973, 529.9252)
+[routes] L4 f1332 fire p9 task1 done (1809.114, 625.9685)
+[routes] PASS L4 frames=1338 time=22.3167 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 7
+[routes] L7 f17 fire p0 task0 done (172.2222, 593.9252)
+[routes] L7 f25 water p0 task0 done (300.2222, 593.9252)
+[routes] L7 f50 fire p0 task1 done (302.8889, 593.9252)
+[routes] L7 f55 fire p0 task2 done (307.8889, 593.9252)
+[routes] L7 f56 PHASE open walking route
+[routes] L7 f113 water p1 task0 done (523.2222, 593.924)
+[routes] L7 f154 water p1 task1 done (563.4808, 529.9992)
+[routes] L7 f195 water p1 task2 done (715.8143, 465.9252)
+[routes] L7 f297 fire p1 task0 done (851.4953, 588.924)
+[routes] L7 f298 PHASE deliver box onto lift
+[routes] L7 f331 water p2 task0 done (755.8144, 582.5919)
+[routes] L7 f512 water p2 task1 done (755.8144, 593.9532)
+[routes] L7 f577 water p2 task2 done (848.3699, 558.9791)
+[routes] L7 f737 water p2 task3 done (848.3699, 389.9955)
+[routes] L7 f803 fire p2 task0 done (1012.328, 369.924)
+[routes] L7 f833 water p2 task4 done (979.7031, 369.9702)
+[routes] L7 f834 PHASE escort box upstairs
+[routes] L7 f884 fire p3 task0 done (1106.061, 369.924)
+[routes] L7 f884 water p3 task0 done (1105.037, 369.9241)
+[routes] L7 f925 fire p3 task1 done (1260.057, 369.9253)
+[routes] L7 f971 fire p3 task2 done (1331.724, 337.9685)
+[routes] L7 f972 PHASE walk together
+[routes] L7 f1072 water p4 task0 done (1395.481, 369.9253)
+[routes] L7 f1113 water p4 task1 done (1549.447, 369.9253)
+[routes] L7 f1114 PHASE final held gate
+[routes] PASS L7 frames=1128 time=18.8167 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 10
+[routes] PASS L10 frames=873 time=14.5667 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] wrote /tmp/fireboy-routes-8pa1w3qy/results.json
+Evidence saved to /tmp/fireboy-enrichment-mrhui2y1/recovery_routes.json
+
+=== tools/enrichment/run_lift_coop_probes.py --godot /usr/local/bin/godot --skip-import --output /tmp/fireboy-enrichment-mrhui2y1/lift_probes.json ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[routes] START level 5
+[routes] L5 f76 water p0 task0 done (1073.222, 868.2086)
+[routes] L5 f95 water p0 task1 done (1132.777, 881.9675)
+[routes] L5 f116 fire p0 task0 done (433.2221, 868.2086)
+[routes] L5 f135 fire p0 task1 done (492.7776, 881.9675)
+[routes] L5 f181 water p0 task2 done (1007.951, 817.924)
+[routes] L5 f221 fire p0 task2 done (367.9508, 817.9243)
+[routes] L5 f239 fire p0 task3 done (305.9508, 817.9252)
+[routes] L5 f239 water p0 task3 done (785.9509, 817.9252)
+[routes] L5 f240 PHASE Element detours and first supply
+[routes] L5 f467 fire p1 task0 done (222.5619, 708.0085)
+[routes] L5 f471 fire p1 task1 done (220.3952, 698.4014)
+[routes] L5 f472 PHASE Partial ascent
+[routes] L5 f491 water p2 task0 done (846.9509, 817.9252)
+[routes] L5 f533 fire p2 task0 done (220.3952, 666.999)
+[routes] L5 f534 PHASE Supply leaves early
+[routes] L5 f536 fire p3 task0 done (220.3952, 666.999)
+[routes] L5 f597 fire p3 task1 done (220.3952, 666.999)
+[routes] L5 f598 PHASE Lift safely holds position
+[routes] L5 f617 water p4 task0 done (785.9509, 817.9252)
+[routes] L5 f618 PHASE Return to supply
+[routes] L5 f620 fire p5 task0 done (220.3952, 652.4847)
+[routes] L5 f674 fire p5 task1 done (220.3952, 521.9847)
+[routes] L5 f741 fire p5 task2 done (337.7291, 497.9242)
+[routes] L5 f746 fire p5 task3 done (337.7291, 497.9242)
+[routes] L5 f747 PHASE Resume ascent
+[routes] L5 f806 water p6 task0 done (1006.951, 817.9252)
+[routes] L5 f820 fire p6 task0 done (619.7291, 497.9252)
+[routes] L5 f856 fire p6 task1 done (684.2847, 401.9253)
+[routes] L5 f856 water p6 task1 done (1202.118, 817.925)
+[routes] L5 f859 fire p6 task2 done (689.2853, 391.6578)
+[routes] L5 f873 water p6 task2 done (1262.116, 817.9252)
+[routes] L5 f890 fire p6 task3 done (620.7297, 490.5134)
+[routes] L5 f971 fire p6 task4 done (306.7297, 497.9252)
+[routes] L5 f976 water p6 task3 done (1345.505, 708.0085)
+[routes] L5 f1053 water p6 task4 done (1347.672, 521.9847)
+[routes] L5 f1146 water p6 task5 done (1196.518, 497.9242)
+[routes] L5 f1147 PHASE Water catches up; fire visits optional balcony
+[routes] L5 f1236 water p7 task0 done (850.5531, 497.9252)
+[routes] L5 f1272 water p7 task1 done (785.9974, 401.9253)
+[routes] L5 f1306 water p7 task2 done (849.4968, 490.5134)
+[routes] L5 f1371 water p7 task3 done (1099.522, 497.9252)
+[routes] L5 f1372 PHASE Water balcony and second supply
+[routes] L5 f1615 fire p8 task0 done (223.3408, 390.4252)
+[routes] L5 f1707 fire p8 task1 done (221.1741, 168.1514)
+[routes] L5 f1755 fire p8 task2 done (370.5075, 145.9787)
+[routes] L5 f1760 fire p8 task3 done (370.5075, 145.9787)
+[routes] L5 f1809 fire p8 task4 done (556.5076, 145.9252)
+[routes] L5 f1841 fire p8 task5 done (683.1743, 145.9252)
+[routes] L5 f1842 PHASE Swap the escort role
+[routes] L5 f1884 water p9 task0 done (1262.518, 497.9252)
+[routes] L5 f2017 water p9 task1 done (1343.573, 390.4252)
+[routes] L5 f2109 water p9 task2 done (1344.073, 168.1514)
+[routes] L5 f2157 water p9 task3 done (1198.74, 145.9787)
+[routes] L5 f2190 water p9 task4 done (1076.744, 145.9252)
+[lift-probes] PASS L5 L5 early release stops lift, returning resumes and full-gem completion f2244 deaths=0 reason=completed
+[routes] START level 5
+[routes] L5 f76 water p0 task0 done (1073.222, 868.2086)
+[routes] L5 f95 water p0 task1 done (1132.777, 881.9675)
+[routes] L5 f116 fire p0 task0 done (433.2221, 868.2086)
+[routes] L5 f135 fire p0 task1 done (492.7776, 881.9675)
+[routes] L5 f181 water p0 task2 done (1007.951, 817.924)
+[routes] L5 f221 fire p0 task2 done (367.9508, 817.9243)
+[routes] L5 f239 fire p0 task3 done (305.9508, 817.9252)
+[routes] L5 f239 water p0 task3 done (785.9509, 817.9252)
+[routes] L5 f240 PHASE Element detours and first supply
+[routes] L5 f467 fire p1 task0 done (222.5619, 708.0085)
+[routes] L5 f471 fire p1 task1 done (220.3952, 698.4014)
+[routes] L5 f532 fire p1 task2 done (305.7285, 817.9816)
+[routes] L5 f633 fire p1 task3 done (305.7285, 817.9816)
+[routes] L5 f635 fire p1 task4 done (305.7285, 817.9816)
+[routes] L5 f636 PHASE Step off early
+[routes] L5 f679 fire p2 task0 done (227.3396, 708.0085)
+[routes] L5 f756 fire p2 task1 done (225.173, 521.9847)
+[routes] L5 f823 fire p2 task2 done (338.5069, 497.9242)
+[routes] L5 f828 fire p2 task3 done (338.5069, 497.9242)
+[routes] L5 f829 PHASE Escort fire to safe interchange
+[routes] L5 f888 water p3 task0 done (1006.951, 817.9252)
+[routes] L5 f902 fire p3 task0 done (620.507, 497.9252)
+[routes] L5 f938 fire p3 task1 done (685.0626, 401.9253)
+[routes] L5 f938 water p3 task1 done (1202.118, 817.925)
+[routes] L5 f941 fire p3 task2 done (690.0632, 391.6578)
+[routes] L5 f955 water p3 task2 done (1262.116, 817.9252)
+[routes] L5 f972 fire p3 task3 done (621.5077, 490.5134)
+[routes] L5 f1053 fire p3 task4 done (307.5077, 497.9252)
+[routes] L5 f1058 water p3 task3 done (1345.505, 708.0085)
+[routes] L5 f1135 water p3 task4 done (1347.672, 521.9847)
+[routes] L5 f1228 water p3 task5 done (1196.518, 497.9242)
+[routes] L5 f1229 PHASE Water catches up; fire visits optional balcony
+[routes] L5 f1318 water p4 task0 done (850.5531, 497.9252)
+[routes] L5 f1354 water p4 task1 done (785.9974, 401.9253)
+[routes] L5 f1388 water p4 task2 done (849.4968, 490.5134)
+[routes] L5 f1453 water p4 task3 done (1099.522, 497.9252)
+[routes] L5 f1454 PHASE Water balcony and second supply
+[routes] L5 f1697 fire p5 task0 done (224.1188, 390.4252)
+[routes] L5 f1789 fire p5 task1 done (221.9521, 168.1514)
+[routes] L5 f1837 fire p5 task2 done (371.2855, 145.9787)
+[routes] L5 f1842 fire p5 task3 done (371.2855, 145.9787)
+[routes] L5 f1891 fire p5 task4 done (557.2855, 145.9252)
+[routes] L5 f1923 fire p5 task5 done (683.9522, 145.9252)
+[routes] L5 f1924 PHASE Swap the escort role
+[routes] L5 f1966 water p6 task0 done (1262.518, 497.9252)
+[routes] L5 f2099 water p6 task1 done (1343.573, 390.4252)
+[routes] L5 f2191 water p6 task2 done (1344.073, 168.1514)
+[routes] L5 f2239 water p6 task3 done (1198.74, 145.9787)
+[routes] L5 f2272 water p6 task4 done (1076.744, 145.9252)
+[lift-probes] PASS L5 L5 missed first lift returns to safe floor and reboards f2326 deaths=0 reason=completed
+[routes] START level 5
+[routes] L5 f65 fire p0 task0 done (364.2222, 817.9252)
+[routes] L5 f115 fire p0 task1 done (561.7227, 817.925)
+[routes] L5 f171 fire p0 task2 done (781.7228, 817.9252)
+[routes] L5 f232 fire p0 task3 done (564.5563, 817.9252)
+[routes] L5 f282 fire p0 task4 done (367.0558, 817.925)
+[routes] L5 f298 fire p0 task5 done (307.0559, 817.9252)
+[routes] L5 f377 fire p0 task6 done (188.519, 712.8409)
+[routes] L5 f379 fire p0 task7 done (188.519, 712.8409)
+[routes] L5 f560 fire p0 task8 done (188.519, 712.8407)
+[routes] L5 f562 fire p0 task9 done (188.519, 712.8407)
+[routes] L5 f563 PHASE Attempt own plate then lower lift
+[lift-probes] PASS L5 L5 water idle; fire cannot chase its own remote supply f685 deaths=0 reason=steps exhausted before both exits
+[routes] START level 5
+[routes] L5 f17 water p0 task0 done (851.7776, 817.9252)
+[routes] L5 f49 fire p0 task0 done (300.2222, 817.9252)
+[routes] L5 f67 water p0 task1 done (684.1105, 817.9243)
+[routes] L5 f90 fire p0 task1 done (175.889, 753.9252)
+[routes] L5 f100 water p0 task2 done (562.1105, 817.9252)
+[routes] L5 f150 water p0 task3 done (366.9434, 817.925)
+[routes] L5 f167 water p0 task4 done (306.9434, 817.9252)
+[routes] L5 f208 water p0 task5 done (207.2762, 753.9991)
+[routes] L5 f209 PHASE Both travel to first lift
+[routes] L5 f211 fire p1 task0 done (175.389, 753.9252)
+[routes] L5 f392 fire p1 task1 done (175.389, 753.9252)
+[routes] L5 f393 PHASE Same lift stays unpowered
+[lift-probes] PASS L5 L5 both on one first lift cannot bypass supply f515 deaths=0 reason=steps exhausted before both exits
+[routes] START level 8
+[routes] L8 f153 fire p0 task0 done (748.2222, 945.9252)
+[routes] L8 f158 fire p0 task1 done (753.2223, 945.9252)
+[routes] L8 f199 fire p0 task2 done (655.8887, 881.999)
+[routes] L8 f201 fire p0 task3 done (655.8887, 881.999)
+[routes] L8 f382 fire p0 task4 done (655.8887, 881.9252)
+[routes] L8 f384 fire p0 task5 done (655.8887, 881.9252)
+[routes] L8 f385 PHASE Fire sole operator
+[lift-probes] PASS L8 L8 water idle; fire cannot open left ascent f507 deaths=0 reason=steps exhausted before both exits
+[routes] START level 8
+[routes] L8 f105 water p0 task0 done (1395.789, 945.9252)
+[routes] L8 f146 water p0 task1 done (1292.122, 881.9991)
+[routes] L8 f148 water p0 task2 done (1292.122, 881.9991)
+[routes] L8 f329 water p0 task3 done (1292.122, 881.9252)
+[routes] L8 f331 water p0 task4 done (1292.122, 881.9252)
+[routes] L8 f332 PHASE Water sole operator
+[lift-probes] PASS L8 L8 fire idle; water cannot open right ascent f454 deaths=0 reason=steps exhausted before both exits
+[routes] START level 8
+[routes] L8 f153 fire p0 task0 done (748.2222, 945.9252)
+[routes] L8 f158 fire p0 task1 done (753.2223, 945.9252)
+[routes] L8 f161 water p0 task0 done (1171.796, 945.9252)
+[routes] L8 f222 water p0 task1 done (1388.956, 945.9252)
+[routes] L8 f223 PHASE First remote launch
+[routes] L8 f325 water p1 task0 done (1319.567, 835.4252)
+[routes] L8 f373 water p1 task1 done (1317.401, 711.4929)
+[routes] L8 f439 water p1 task2 done (1458.734, 689.9243)
+[routes] L8 f444 water p1 task3 done (1458.734, 689.9243)
+[routes] L8 f469 water p1 task4 done (1548.733, 689.9252)
+[routes] L8 f514 water p1 task5 done (1395.57, 689.9252)
+[routes] L8 f515 PHASE Water first mid-floor relay
+[routes] L8 f518 fire p2 task0 done (753.2223, 945.9252)
+[routes] L8 f611 fire p2 task1 done (678.8334, 835.4252)
+[routes] L8 f659 fire p2 task2 done (676.6667, 711.4929)
+[routes] L8 f753 fire p2 task3 done (460.5186, 689.9243)
+[routes] L8 f762 fire p2 task4 done (434.5186, 689.9252)
+[routes] L8 f767 fire p2 task5 done (429.5186, 689.9252)
+[routes] L8 f801 fire p2 task6 done (555.532, 689.9252)
+[routes] L8 f802 PHASE Fire first mid-floor relay
+[routes] L8 f934 water p3 task0 done (1316.181, 579.4252)
+[routes] L8 f982 water p3 task1 done (1314.014, 455.4929)
+[routes] L8 f1048 water p3 task2 done (1395.348, 433.9243)
+[routes] L8 f1053 water p3 task3 done (1395.348, 433.9243)
+[routes] L8 f1086 water p3 task4 done (1517.345, 433.9253)
+[routes] L8 f1099 water p3 task5 done (1492.179, 433.9253)
+[routes] L8 f1100 PHASE Water second mid-floor relay
+[routes] L8 f1120 water p4 task0 done (1550.345, 433.9253)
+[routes] L8 f1121 PHASE Water leaves T before partner arrives
+[routes] L8 f1220 fire p5 task0 done (634.921, 579.4252)
+[routes] L8 f1268 fire p5 task1 done (637.0877, 455.4929)
+[routes] L8 f1334 fire p5 task2 done (559.754, 433.9243)
+[routes] L8 f1368 fire p5 task3 done (433.7541, 433.9253)
+[routes] L8 f1369 PHASE Fire second mid-floor and joint launch
+[routes] L8 f1371 fire p6 task0 done (428.7541, 433.9253)
+[routes] L8 f1462 fire p6 task1 done (428.7541, 433.9253)
+[routes] L8 f1463 PHASE One T plate is insufficient
+[routes] L8 f1482 water p7 task0 done (1489.346, 433.9253)
+[routes] L8 f1483 PHASE Water returns to T
+[routes] L8 f1485 fire p8 task0 done (428.7541, 433.9253)
+[routes] L8 f1486 PHASE Joint latch survives departure
+[routes] L8 f1511 water p9 task0 done (1394.348, 433.9253)
+[routes] L8 f1521 fire p9 task0 done (558.7541, 433.9253)
+[routes] L8 f1671 fire p9 task1 done (638.1431, 323.4253)
+[routes] L8 f1671 water p9 task1 done (1314.96, 323.4253)
+[routes] L8 f1731 fire p9 task2 done (640.3098, 168.4928)
+[routes] L8 f1731 water p9 task2 done (1312.793, 168.4928)
+[routes] L8 f1779 fire p9 task3 done (526.9764, 145.9825)
+[routes] L8 f1779 water p9 task3 done (1458.126, 145.9825)
+[routes] L8 f1780 PHASE Both top lifts
+[routes] L8 f1813 fire p10 task0 done (404.9764, 145.9252)
+[routes] L8 f1814 PHASE Fire roof detour
+[routes] L8 f1847 water p11 task0 done (1580.124, 145.9252)
+[routes] L8 f1876 water p11 task1 done (1490.959, 145.9252)
+[routes] L8 f1877 PHASE Water roof detour
+[lift-probes] PASS L8 L8 early joint-plate departure stays locked, return latches and completes f1892 deaths=0 reason=completed
+[routes] START level 8
+[routes] L8 f153 fire p0 task0 done (748.2222, 945.9252)
+[routes] L8 f158 fire p0 task1 done (753.2223, 945.9252)
+[routes] L8 f161 water p0 task0 done (1171.796, 945.9252)
+[routes] L8 f222 water p0 task1 done (1388.956, 945.9252)
+[routes] L8 f223 PHASE First remote launch
+[routes] L8 f325 water p1 task0 done (1319.567, 835.4252)
+[routes] L8 f373 water p1 task1 done (1317.401, 711.4929)
+[routes] L8 f439 water p1 task2 done (1458.734, 689.9243)
+[routes] L8 f444 water p1 task3 done (1458.734, 689.9243)
+[routes] L8 f469 water p1 task4 done (1548.733, 689.9252)
+[routes] L8 f514 water p1 task5 done (1395.57, 689.9252)
+[routes] L8 f515 PHASE Water first mid-floor relay
+[routes] L8 f518 fire p2 task0 done (753.2223, 945.9252)
+[routes] L8 f611 fire p2 task1 done (678.8334, 835.4252)
+[routes] L8 f659 fire p2 task2 done (676.6667, 711.4929)
+[routes] L8 f753 fire p2 task3 done (460.5186, 689.9243)
+[routes] L8 f762 fire p2 task4 done (434.5186, 689.9252)
+[routes] L8 f767 fire p2 task5 done (429.5186, 689.9252)
+[routes] L8 f801 fire p2 task6 done (555.532, 689.9252)
+[routes] L8 f802 PHASE Fire first mid-floor relay
+[routes] L8 f934 water p3 task0 done (1316.181, 579.4252)
+[routes] L8 f935 water p3 task1 done (1314.514, 576.9084)
+[routes] L8 f980 water p3 task2 done (1424.57, 689.9293)
+[routes] L8 f982 water p3 task3 done (1424.57, 689.9293)
+[routes] L8 f1103 water p3 task4 done (1424.57, 689.9293)
+[routes] L8 f1113 water p3 task5 done (1394.571, 689.9252)
+[routes] L8 f1114 PHASE Water slips from second lift
+[routes] L8 f1234 water p4 task0 done (1315.182, 579.4252)
+[routes] L8 f1282 water p4 task1 done (1313.015, 455.4929)
+[routes] L8 f1348 water p4 task2 done (1394.349, 433.9243)
+[routes] L8 f1353 water p4 task3 done (1394.349, 433.9243)
+[routes] L8 f1386 water p4 task4 done (1516.346, 433.9253)
+[routes] L8 f1399 water p4 task5 done (1491.18, 433.9253)
+[routes] L8 f1400 PHASE Water second mid-floor relay
+[routes] L8 f1520 fire p5 task0 done (634.921, 579.4252)
+[routes] L8 f1568 fire p5 task1 done (637.0877, 455.4929)
+[routes] L8 f1634 fire p5 task2 done (559.754, 433.9243)
+[routes] L8 f1668 fire p5 task3 done (433.7541, 433.9253)
+[routes] L8 f1669 PHASE Fire second mid-floor and joint launch
+[routes] L8 f1694 water p6 task0 done (1396.182, 433.9253)
+[routes] L8 f1705 fire p6 task0 done (555.9207, 433.9253)
+[routes] L8 f1857 fire p6 task1 done (635.3097, 323.4253)
+[routes] L8 f1857 water p6 task1 done (1316.794, 323.4253)
+[routes] L8 f1917 fire p6 task2 done (637.4764, 168.4928)
+[routes] L8 f1917 water p6 task2 done (1314.627, 168.4928)
+[routes] L8 f1965 fire p6 task3 done (524.1431, 145.9825)
+[routes] L8 f1965 water p6 task3 done (1459.96, 145.9825)
+[routes] L8 f1966 PHASE Both top lifts
+[routes] L8 f1999 fire p7 task0 done (402.143, 145.9252)
+[routes] L8 f2000 PHASE Fire roof detour
+[routes] L8 f2033 water p8 task0 done (1581.958, 145.9252)
+[routes] L8 f2062 water p8 task1 done (1492.793, 145.9252)
+[routes] L8 f2063 PHASE Water roof detour
+[lift-probes] PASS L8 L8 missed second lift safely recovers through previous powered lift f2078 deaths=0 reason=completed
+[routes] wrote /tmp/fireboy-routes-bgj9oawv/results.json
+Evidence saved to /tmp/fireboy-enrichment-mrhui2y1/lift_probes.json
+
+=== tools/enrichment/run_late_probes.py --godot /usr/local/bin/godot --routes tools/enrichment/probe_replay_late.json --output /tmp/fireboy-enrichment-mrhui2y1/late_probes.json ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[routes] START level 10
+[probes] PASS L10_idle_holder_blocks_delivery f240 {"blue":1,"box_resets":0,"boxes":[{"x":465.997924804688,"y":369.998229980469}],"channels":{"A":false,"H":false},"completed":false,"deaths":0,"ever_on":{"A":false,"H":false},"levers":{},"max_y":{"fire":370.0,"water":370.0},"players":{"fire":{"alive":true,"x":442.99267578125,"y":369.998352050781},"water":{"alive":true,"x":944.0,"y":370.0}},"red":1}
+[routes] START level 10
+[probes] PASS L10_idle_pusher_leaves_return_paths_closed f446 {"blue":2,"box_resets":0,"boxes":[{"x":400.0,"y":369.99609375}],"channels":{"A":false,"H":true},"completed":false,"deaths":0,"ever_on":{"A":false,"H":true},"levers":{},"max_y":{"fire":370.0,"water":370.0},"players":{"fire":{"alive":true,"x":369.222229003906,"y":369.925262451172},"water":{"alive":true,"x":685.888000488281,"y":177.925247192383}},"red":1}
+[routes] START level 10
+[probes] PASS L10_early_departure_closes_delivery_gate f441 {"blue":2,"box_resets":0,"boxes":[{"x":465.999816894531,"y":369.998565673828}],"channels":{"A":false,"H":false},"completed":false,"deaths":0,"ever_on":{"A":false,"H":true},"levers":{},"max_y":{"fire":370.0,"water":370.0},"players":{"fire":{"alive":true,"x":442.992492675781,"y":369.980255126953},"water":{"alive":true,"x":752.888061523438,"y":177.925247192383}},"red":1}
+[routes] START level 10
+[probes] PASS L10_fall_rescue_without_delivered_box_or_powered_return_gate f273 {"blue":1,"box_resets":0,"boxes":[{"x":400.0,"y":369.99609375}],"channels":{"A":false,"H":false},"completed":false,"deaths":0,"ever_on":{"A":true,"H":false},"levers":{},"max_y":{"fire":370.0,"water":593.97998046875},"players":{"fire":{"alive":true,"x":336.0,"y":370.0},"water":{"alive":true,"x":755.0,"y":177.974731445312}},"red":0}
+[routes] START level 10
+[probes] PASS L10_person_on_delivery_plate_cannot_leave_it_latched f321 {"blue":1,"box_resets":0,"boxes":[{"x":400.0,"y":369.99609375}],"channels":{"A":false,"H":false},"completed":false,"deaths":0,"ever_on":{"A":true,"H":false},"levers":{},"max_y":{"fire":370.0,"water":593.925231933594},"players":{"fire":{"alive":true,"x":336.0,"y":370.0},"water":{"alive":true,"x":755.0,"y":177.974731445312}},"red":0}
+[routes] START level 10
+[probes] PASS L10_delivered_box_cannot_climb_well_wall f673 {"blue":2,"box_resets":0,"boxes":[{"x":526.002014160156,"y":593.998229980469}],"channels":{"A":true,"H":false},"completed":false,"deaths":0,"ever_on":{"A":true,"H":true},"levers":{},"max_y":{"fire":370.0,"water":593.998229980469},"players":{"fire":{"alive":true,"x":460.250366210938,"y":369.925262451172},"water":{"alive":true,"x":549.016174316406,"y":593.998229980469}},"red":1}
+[routes] START level 10
+[probes] PASS L10_return_gate_jump_shortcut_is_blocked f240 {"blue":1,"box_resets":0,"boxes":[{"x":400.0,"y":369.99609375}],"channels":{"A":false,"H":false},"completed":false,"deaths":0,"ever_on":{"A":false,"H":false},"levers":{},"max_y":{"fire":370.0,"water":370.0},"players":{"fire":{"alive":true,"x":336.0,"y":370.0},"water":{"alive":true,"x":1014.92529296875,"y":322.164947509766}},"red":0}
+[routes] START level 9
+[probes] PASS L9_missing_water_repair_blocks_fire_roof_approach f1664 {"blue":2,"box_resets":0,"boxes":[{"x":504.584320068359,"y":657.924011230469}],"channels":{"A":true,"B":false,"M":true,"R":true},"completed":false,"deaths":0,"ever_on":{"A":true,"B":false,"M":true,"R":true},"levers":{"B":false,"M":true,"R":true},"max_y":{"fire":658.0,"water":658.0},"players":{"fire":{"alive":true,"x":2345.001953125,"y":177.998336791992},"water":{"alive":true,"x":1329.50402832031,"y":657.925231933594}},"red":4}
+[routes] START level 9
+[probes] PASS L9_missing_fire_repair_blocks_water_roof_approach f1660 {"blue":4,"box_resets":0,"boxes":[{"x":504.584320068359,"y":657.924011230469}],"channels":{"A":true,"B":true,"M":true,"R":false},"completed":false,"deaths":0,"ever_on":{"A":true,"B":true,"M":true,"R":false},"levers":{"B":true,"M":true,"R":false},"max_y":{"fire":658.0,"water":658.0},"players":{"fire":{"alive":true,"x":1331.31884765625,"y":657.925231933594},"water":{"alive":true,"x":2134.99829101562,"y":177.98828125}},"red":2}
+[routes] START level 9
+[probes] PASS L9_fire_cannot_repair_water_tunnel f1373 {"blue":2,"box_resets":0,"boxes":[{"x":593.997009277344,"y":657.998229980469}],"channels":{"A":false,"B":false,"M":true,"R":false},"completed":false,"deaths":2,"ever_on":{"A":true,"B":false,"M":true,"R":false},"levers":{"B":false,"M":true,"R":false},"max_y":{"fire":658.0,"water":658.0},"players":{"fire":{"alive":true,"x":570.990112304688,"y":657.996154785156},"water":{"alive":true,"x":1329.50402832031,"y":657.925231933594}},"red":2}
+[routes] START level 9
+[probes] PASS L9_water_cannot_repair_lava_tunnel f1022 {"blue":2,"box_resets":0,"boxes":[{"x":593.997009277344,"y":657.998229980469}],"channels":{"A":false,"B":false,"M":true,"R":false},"completed":false,"deaths":2,"ever_on":{"A":true,"B":false,"M":true,"R":false},"levers":{"B":false,"M":true,"R":false},"max_y":{"fire":658.0,"water":658.0},"players":{"fire":{"alive":true,"x":1331.31884765625,"y":657.925231933594},"water":{"alive":true,"x":570.990112304688,"y":657.996154785156}},"red":2}
+[routes] START level 9
+[probes] PASS L9_both_take_left_lifts_cannot_skip_fire_repair f1660 {"blue":4,"box_resets":0,"boxes":[{"x":593.997009277344,"y":657.998229980469}],"channels":{"A":false,"B":true,"M":true,"R":false},"completed":false,"deaths":2,"ever_on":{"A":true,"B":true,"M":true,"R":false},"levers":{"B":true,"M":true,"R":false},"max_y":{"fire":658.0,"water":658.0},"players":{"fire":{"alive":true,"x":570.990112304688,"y":657.996154785156},"water":{"alive":true,"x":2134.99829101562,"y":177.98828125}},"red":2}
+[routes] START level 10
+[probes] PASS L10 misplaced cargo at right wall stays on wide receiver and both escape f873 {"blue":3,"box_resets":0,"boxes":[{"x":657.998718261719,"y":593.998229980469}],"channels":{"A":true,"H":false},"completed":true,"deaths":0,"ever_on":{"A":true,"H":true},"levers":{},"max_y":{"fire":593.998229980469,"water":370.0},"players":{"fire":{"alive":true,"x":122.22241973877,"y":369.925262451172},"water":{"alive":true,"x":1123.77453613281,"y":369.925262451172}},"red":3}
+[routes] wrote /tmp/fireboy-late-probes-nr2sl524/probes.json
+All enrichment checks passed.
+
+=== 10-level smoke ===
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[smoke] levels=10
+[smoke] ---- level 0 ----
+[smoke] level 0 -> players=[fire@(112,625)(dead), water@(410,604)] gems=0/3 red, 0/3 blue, deaths=6, t=4.0s, par=30s, completed=false
+[smoke] ---- 动作能力探针 ----
+[smoke] fire: 跳跃高度=107px(3.35格) 助跑跳远=199px(6.21格) 制动距离=5px(0.16格) 液体上浮=146px(4.57格)
+[smoke] water: 跳跃高度=107px(3.35格) 助跑跳远=199px(6.21格) 制动距离=5px(0.16格) 液体上浮=146px(4.57格)
+[smoke] ---- 木箱落体探针 ----
+[smoke] 木箱落差 1 格: 横飘=2px(0.07格) 实际坠落=33px(1.03格) 耗时=12帧
+[smoke] 木箱落差 2 格: 横飘=2px(0.07格) 实际坠落=65px(2.03格) 耗时=17帧
+[smoke] 木箱落差 3 格: 横飘=2px(0.07格) 实际坠落=97px(3.03格) 耗时=21帧
+[smoke] 木箱落差 4 格: 横飘=2px(0.07格) 实际坠落=129px(4.02格) 耗时=25帧
+[smoke] 木箱落差 5 格: 横飘=2px(0.07格) 实际坠落=161px(5.02格) 耗时=28帧
+[smoke] 木箱落差 6 格: 横飘=2px(0.07格) 实际坠落=193px(6.03格) 耗时=30帧
+[smoke] 木箱落差 7 格: 横飘=2px(0.07格) 实际坠落=225px(7.03格) 耗时=33帧
+[smoke] ---- 木箱落体探针（对照：推手持续推的前 0.9 格）----
+[smoke] 对照·落差 1 格: 总横飘=13px(0.41格) 其中被推段=13px(0.39格,11帧) 坠落=34px(1.05格) 耗时=11帧
+[smoke] 对照·落差 2 格: 总横飘=13px(0.42格) 其中被推段=13px(0.39格,11帧) 坠落=66px(2.05格) 耗时=16帧
+[smoke] 对照·落差 3 格: 总横飘=13px(0.42格) 其中被推段=13px(0.39格,11帧) 坠落=98px(3.05格) 耗时=20帧
+[smoke] 对照·落差 4 格: 总横飘=13px(0.42格) 其中被推段=13px(0.39格,11帧) 坠落=130px(4.05格) 耗时=24帧
+[smoke] 对照·落差 5 格: 总横飘=13px(0.42格) 其中被推段=13px(0.39格,11帧) 坠落=162px(5.05格) 耗时=27帧
+[smoke] 对照·落差 6 格: 总横飘=13px(0.42格) 其中被推段=13px(0.39格,11帧) 坠落=194px(6.05格) 耗时=30帧
+[smoke] 对照·落差 7 格: 总横飘=13px(0.42格) 其中被推段=13px(0.39格,11帧) 坠落=226px(7.05格) 耗时=32帧
+[smoke] ---- 木箱落体探针（第三组：掉进液体池）----
+[smoke] 木箱掉进lava池: 下落 98px(3.05格) 最终 y=466（池底 y=480）
+[smoke] 木箱掉进water池: 下落 98px(3.05格) 最终 y=466（池底 y=480）
+[smoke] ---- 踩箱子探针 ----
+[smoke] 踩箱子·承重: 箱子下沉 0px(0.00格) | 玩家 on_floor 60/60 帧 | 玩家 y=342 箱顶 y=354
+[smoke] 踩箱子·垫脚: 箱顶起跳 107px(3.36格) | 地面起跳 107px(3.36格) | 净增益 -0px(-0.00格)
+[smoke] 踩箱子·走动: 人在箱顶按方向键 60 帧，箱子横移 0px(0.00格)，✅ 不跟着跑
+[smoke] 踩箱子 => ✅ 成立（箱子不下沉、站立稳定），可作垫脚台
+[smoke] ---- 竖井攀爬探针 ----
+[smoke] 竖井 宽1 深2: 净爬升 0.00 格 / 需 2 格 ⇒ ✅ 困得住
+[smoke] 竖井 宽1 深3: 净爬升 0.00 格 / 需 3 格 ⇒ ✅ 困得住
+[smoke] 竖井 宽1 深4: 净爬升 0.00 格 / 需 4 格 ⇒ ✅ 困得住
+[smoke] 竖井 宽1 深5: 净爬升 0.00 格 / 需 5 格 ⇒ ✅ 困得住
+[smoke] 竖井 宽2 深2: 净爬升 2.01 格 / 需 2 格 ⇒ ❌ 逃得出
+[smoke] 竖井 宽2 深3: 净爬升 2.01 格 / 需 3 格 ⇒ ✅ 困得住
+[smoke] 竖井 宽2 深4: 净爬升 2.01 格 / 需 4 格 ⇒ ✅ 困得住
+[smoke] 竖井 宽2 深5: 净爬升 2.01 格 / 需 5 格 ⇒ ✅ 困得住
+[smoke] 竖井 宽3 深2: 净爬升 2.01 格 / 需 2 格 ⇒ ❌ 逃得出
+[smoke] 竖井 宽3 深3: 净爬升 2.01 格 / 需 3 格 ⇒ ✅ 困得住
+[smoke] 竖井 宽3 深4: 净爬升 2.01 格 / 需 4 格 ⇒ ✅ 困得住
+[smoke] 竖井 宽3 深5: 净爬升 2.01 格 / 需 5 格 ⇒ ✅ 困得住
+[smoke]    机关联调：门 2 / 压力板 1 / 杠杆 1 / 平台 0 / 传送门 0，问题 0 个
+[smoke] ---- level 1 ----
+[smoke] level 1 -> players=[fire@(566,674), water@(566,674)] gems=1/3 red, 0/3 blue, deaths=0, t=4.0s, par=45s, completed=false
+[smoke]    机关联调：门 4 / 压力板 2 / 杠杆 1 / 平台 1 / 传送门 2，问题 0 个
+[smoke] ---- level 2 ----
+[smoke] level 2 -> players=[fire@(370,645), water@(1108,645)] gems=0/4 red, 0/4 blue, deaths=2, t=4.0s, par=35s, completed=false
+[smoke]    机关联调：门 5 / 压力板 2 / 杠杆 2 / 平台 0 / 传送门 0，问题 0 个
+[smoke] ---- level 3 ----
+[smoke] level 3 -> players=[fire@(310,642), water@(310,642)] gems=0/3 red, 0/3 blue, deaths=0, t=4.0s, par=45s, completed=false
+[smoke]    机关联调：门 4 / 压力板 2 / 杠杆 1 / 平台 1 / 传送门 0，问题 0 个
+[smoke] ---- level 4 ----
+[smoke] level 4 -> players=[fire@(947,802), water@(1494,802)] gems=0/4 red, 0/4 blue, deaths=0, t=4.0s, par=65s, completed=false
+[smoke]    机关联调：门 0 / 压力板 2 / 杠杆 2 / 平台 4 / 传送门 0，问题 0 个
+[smoke] ---- level 5 ----
+[smoke] level 5 -> players=[fire@(502,642), water@(502,642)] gems=0/3 red, 0/3 blue, deaths=0, t=4.0s, par=30s, completed=false
+[smoke]    机关联调：门 2 / 压力板 1 / 杠杆 1 / 平台 0 / 传送门 4，问题 0 个
+[smoke] ---- level 6 ----
+[smoke] level 6 -> players=[fire@(374,578), water@(374,578)] gems=0/3 red, 0/3 blue, deaths=0, t=4.0s, par=40s, completed=false
+[smoke]    机关联调：门 3 / 压力板 2 / 杠杆 1 / 平台 1 / 传送门 0，问题 0 个
+[smoke] ---- level 7 ----
+[smoke] level 7 -> players=[fire@(226,945), water@(1942,930)] gems=1/5 red, 0/5 blue, deaths=2, t=4.0s, par=55s, completed=false
+[smoke]    机关联调：门 0 / 压力板 0 / 杠杆 4 / 平台 6 / 传送门 0，问题 0 个
+[smoke] ---- level 8 ----
+[smoke] level 8 -> players=[fire@(598,642), water@(598,642)] gems=0/4 red, 0/4 blue, deaths=0, t=4.0s, par=55s, completed=false
+[smoke]    机关联调：门 4 / 压力板 1 / 杠杆 3 / 平台 4 / 传送门 0，问题 0 个
+[smoke] ---- level 9 ----
+[smoke] level 9 -> players=[fire@(470,354), water@(1014,354)] gems=0/3 red, 1/3 blue, deaths=0, t=4.0s, par=35s, completed=false
+[smoke]    机关联调：门 3 / 压力板 2 / 杠杆 0 / 平台 0 / 传送门 2，问题 0 个
+[smoke] finished, errors=0
+
+=== 10-level full-gem input replay ===
+Godot import passed.
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+[routes] START level 1
+[routes] PASS L1 frames=640 time=10.6833 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 2
+[routes] PASS L2 frames=1377 time=22.9667 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 3
+[routes] PASS L3 frames=953 time=15.9000 gems=4/4+4/4 deaths=0 resets=0 reason=completed
+[routes] START level 4
+[routes] PASS L4 frames=1338 time=22.3167 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 5
+[routes] PASS L5 frames=2114 time=35.2500 gems=4/4+4/4 deaths=0 resets=0 reason=completed
+[routes] START level 6
+[routes] PASS L6 frames=553 time=9.2333 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 7
+[routes] PASS L7 frames=1098 time=18.3167 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] START level 8
+[routes] PASS L8 frames=1780 time=29.6833 gems=5/5+5/5 deaths=0 resets=0 reason=completed
+[routes] START level 9
+[routes] PASS L9 frames=1469 time=24.5000 gems=4/4+4/4 deaths=0 resets=0 reason=completed
+[routes] START level 10
+[routes] PASS L10 frames=644 time=10.7500 gems=3/3+3/3 deaths=0 resets=0 reason=completed
+[routes] wrote /tmp/fireboy-routes-0xd_zjw3/results.json
+Evidence saved to /tmp/fireboy-checks-k4lrrax3/Fireboy-optimization-tests/full-gem-replay.json
+
+All checks passed. Test saves were isolated and removed.

@@ -23,19 +23,14 @@ const _ACTIONS: Array[Dictionary] = [
 
 const DEADZONE := 0.2
 const SETTINGS_PATH := "user://controls.cfg"
+var last_binding_error := ""
 
 
 func _enter_tree() -> void:
 	var settings := ConfigFile.new()
 	settings.load(SETTINGS_PATH)
-	for entry in _ACTIONS:
-		var action: StringName = entry["action"]
-		if not InputMap.has_action(action):
-			InputMap.add_action(action, DEADZONE)
-		var ev := InputEventKey.new()
-		var saved: Variant = settings.get_value("keys", String(action), entry["key"])
-		ev.physical_keycode = int(saved) if saved is int and saved > 0 else entry["key"]
-		InputMap.action_add_event(action, ev)
+	apply_keyboard(settings)
+	install_ui_bindings()
 	for device in 2:
 		var prefix := "fire_" if device == 0 else "water_"
 		for suffix in ["left", "right", "jump", "action"]:
@@ -56,6 +51,19 @@ func _enter_tree() -> void:
 		InputMap.action_add_event(&"pause", pause_button)
 
 
+func install_ui_bindings() -> void:
+	# Do not rely on platform built-ins having joypad GUI bindings.
+	var buttons := {"ui_accept": JOY_BUTTON_A, "ui_cancel": JOY_BUTTON_B,
+		"ui_left": JOY_BUTTON_DPAD_LEFT, "ui_right": JOY_BUTTON_DPAD_RIGHT,
+		"ui_up": JOY_BUTTON_DPAD_UP, "ui_down": JOY_BUTTON_DPAD_DOWN}
+	for action in buttons:
+		var button := InputEventJoypadButton.new()
+		button.device = -1
+		button.button_index = buttons[action]
+		if not InputMap.action_has_event(action, button):
+			InputMap.action_add_event(action, button)
+
+
 func key_text(action: StringName) -> String:
 	for event in InputMap.action_get_events(action):
 		if event is InputEventKey:
@@ -70,23 +78,93 @@ func action_label(action: StringName) -> String:
 
 
 func rebind(action: StringName, key: int) -> bool:
-	for entry in _ACTIONS:
-		if entry["action"] == action:
-			continue
-		for event in InputMap.action_get_events(entry["action"]):
-			if event is InputEventKey and event.physical_keycode == key:
-				return false
-	for event in InputMap.action_get_events(action):
-		if event is InputEventKey:
-			InputMap.action_erase_event(action, event)
-	var event := InputEventKey.new()
-	event.physical_keycode = key
-	InputMap.action_add_event(action, event)
+	last_binding_error = ""
+	if action in [&"pause", &"restart"] or not valid_key(key) \
+			or not _ACTIONS.any(func(entry: Dictionary): return entry["action"] == action):
+		last_binding_error = "此按键不可用，请换一个"
+		return false
 	var settings := ConfigFile.new()
 	for entry in _ACTIONS:
 		for binding in InputMap.action_get_events(entry["action"]):
 			if binding is InputEventKey:
+				if entry["action"] != action and binding.physical_keycode == key:
+					last_binding_error = "按键已占用，请换一个"
+					return false
 				settings.set_value("keys", String(entry["action"]), binding.physical_keycode)
-	if settings.save(SETTINGS_PATH) != OK:
-		push_warning("无法保存按键设置")
+	settings.set_value("keys", String(action), key)
+	return _commit_keyboard(settings)
+
+
+func reset_defaults() -> bool:
+	var settings := ConfigFile.new()
+	for entry in _ACTIONS:
+		settings.set_value("keys", String(entry["action"]), entry["key"])
+	return _commit_keyboard(settings)
+
+
+func _commit_keyboard(settings: ConfigFile) -> bool:
+	last_binding_error = ""
+	if _save_keyboard(settings) != OK:
+		last_binding_error = "保存失败，原按键未变；请重试"
+		return false
+	apply_keyboard(settings)
 	return true
+
+
+## Never truncate the last good settings file. Verify the candidate before replacement.
+func _save_keyboard(settings: ConfigFile) -> Error:
+	var temporary := SETTINGS_PATH + ".tmp"
+	var error := settings.save(temporary)
+	if error != OK:
+		return error
+	var verified := ConfigFile.new()
+	error = verified.load(temporary)
+	if error == OK and verified.encode_to_text() != settings.encode_to_text():
+		error = ERR_FILE_CORRUPT
+	if error == OK:
+		error = DirAccess.rename_absolute(temporary, SETTINGS_PATH)
+	if error != OK:
+		DirAccess.remove_absolute(temporary)
+	return error
+
+
+func valid_key(key: Variant) -> bool:
+	if not key is int or key <= 0 or key != (key & KEY_CODE_MASK): return false
+	# Unknown special codes are not Unicode; do not pass them to the string converter.
+	if key > 0x10ffff and not ((key >= KEY_ESCAPE and key <= KEY_F35) \
+			or key in [KEY_MENU, KEY_HYPER, KEY_HELP] \
+			or (key >= KEY_BACK and key <= KEY_VOLUMEUP) \
+			or (key >= KEY_MEDIAPLAY and key <= KEY_JIS_KANA) \
+			or (key >= KEY_KP_MULTIPLY and key <= KEY_KP_9)): return false
+	return OS.find_keycode_from_string(OS.get_keycode_string(key)) == key
+
+
+func apply_keyboard(settings: ConfigFile) -> void:
+	var keys := validated_keys(settings)
+	for entry in _ACTIONS:
+		var action: StringName = entry["action"]
+		if not InputMap.has_action(action): InputMap.add_action(action, DEADZONE)
+		for previous in InputMap.action_get_events(action):
+			if previous is InputEventKey: InputMap.action_erase_event(action, previous)
+		var event := InputEventKey.new()
+		event.physical_keycode = keys[action]
+		InputMap.action_add_event(action, event)
+
+
+## Restore conflicting entries together, so repairing one cannot collide with another.
+## Valid swaps and both players' independent mappings survive a settings reload.
+func validated_keys(settings: ConfigFile) -> Dictionary:
+	var keys := {}
+	for entry in _ACTIONS:
+		var saved: Variant = settings.get_value("keys", String(entry["action"]), entry["key"])
+		keys[entry["action"]] = saved if valid_key(saved) and entry["action"] not in [&"pause", &"restart"] else entry["key"]
+	for iteration in _ACTIONS.size():
+		var conflicts := {}
+		for first in _ACTIONS:
+			for second in _ACTIONS:
+				if first["action"] != second["action"] and keys[first["action"]] == keys[second["action"]]:
+					conflicts[first["action"]] = true
+		if conflicts.is_empty(): break
+		for entry in _ACTIONS:
+			if conflicts.has(entry["action"]): keys[entry["action"]] = entry["key"]
+	return keys
