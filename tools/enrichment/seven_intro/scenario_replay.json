@@ -1,0 +1,526 @@
+[
+  {
+    "level": 1,
+    "name": "L1 idle Fire cannot release lower arch",
+    "replay_tape": [
+      {
+        "frames": 33,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 39,
+        "mask": 98
+      },
+      {
+        "frames": 9,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 26,
+        "mask": 0
+      },
+      {
+        "frames": 18,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 34,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 80,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 15,
+        "mask": 38
+      },
+      {
+        "frames": 24,
+        "mask": 6
+      },
+      {
+        "frames": 10,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 18,
+        "mask": 38
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 20,
+        "mask": 100
+      },
+      {
+        "frames": 6,
+        "mask": 96
+      },
+      {
+        "frames": 9,
+        "mask": 64
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 38
+      },
+      {
+        "frames": 8,
+        "mask": 36
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 7,
+        "mask": 36
+      },
+      {
+        "frames": 93,
+        "mask": 32
+      },
+      {
+        "frames": 124,
+        "mask": 0
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "water_x_max": 1145,
+      "gates": {
+        "A": false,
+        "B": false
+      },
+      "reason_prefix": "input tape exhausted",
+      "frames": 610
+    }
+  },
+  {
+    "level": 1,
+    "name": "L1 idle Water cannot release full-height upper arch",
+    "replay_tape": [
+      {
+        "frames": 33,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 39,
+        "mask": 98
+      },
+      {
+        "frames": 9,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 26,
+        "mask": 0
+      },
+      {
+        "frames": 18,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 34,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 80,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 15,
+        "mask": 38
+      },
+      {
+        "frames": 24,
+        "mask": 6
+      },
+      {
+        "frames": 10,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 18,
+        "mask": 38
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 20,
+        "mask": 100
+      },
+      {
+        "frames": 6,
+        "mask": 96
+      },
+      {
+        "frames": 9,
+        "mask": 64
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 38
+      },
+      {
+        "frames": 8,
+        "mask": 36
+      },
+      {
+        "frames": 8,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 33,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 22,
+        "mask": 6
+      },
+      {
+        "frames": 7,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 100,
+        "mask": 2
+      },
+      {
+        "frames": 124,
+        "mask": 0
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_x_max": 1560,
+      "gates": {
+        "B": false
+      },
+      "reason_prefix": "input tape exhausted",
+      "frames": 733
+    }
+  },
+  {
+    "level": 2,
+    "name": "L2 idle keeper cannot deliver the crate through A",
+    "replay_tape": [
+      {
+        "frames": 250,
+        "mask": 2
+      },
+      {
+        "frames": 124,
+        "mask": 0
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_x_max": 355,
+      "box_x_max": 383,
+      "gates": {
+        "A": false,
+        "B": false,
+        "C": false,
+        "D": false
+      },
+      "reason_prefix": "input tape exhausted",
+      "frames": 374
+    }
+  },
+  {
+    "level": 2,
+    "name": "L2 moving crate before C leaves courier waiting safely",
+    "replay_tape": [
+      {
+        "frames": 9,
+        "mask": 18
+      },
+      {
+        "frames": 120,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 10,
+        "mask": 38
+      },
+      {
+        "frames": 31,
+        "mask": 36
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 3,
+        "mask": 100
+      },
+      {
+        "frames": 1,
+        "mask": 96
+      },
+      {
+        "frames": 10,
+        "mask": 101
+      },
+      {
+        "frames": 16,
+        "mask": 100
+      },
+      {
+        "frames": 1,
+        "mask": 36
+      },
+      {
+        "frames": 24,
+        "mask": 100
+      },
+      {
+        "frames": 25,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 115,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 38,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 38,
+        "mask": 5
+      },
+      {
+        "frames": 11,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 48,
+        "mask": 1
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 6
+      },
+      {
+        "frames": 13,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 6
+      },
+      {
+        "frames": 13,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 6
+      },
+      {
+        "frames": 13,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 38,
+        "mask": 6
+      },
+      {
+        "frames": 7,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 100,
+        "mask": 2
+      },
+      {
+        "frames": 124,
+        "mask": 0
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_x_max": 568,
+      "fire_y_max": 480,
+      "gates": {
+        "B": false,
+        "C": false,
+        "D": true
+      },
+      "reason_prefix": "input tape exhausted",
+      "frames": 922
+    }
+  }
+]

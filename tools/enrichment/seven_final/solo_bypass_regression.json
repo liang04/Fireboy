@@ -1,0 +1,463 @@
+[
+  {
+    "level": 10,
+    "name": "Prior solo delivery is stopped by cooperative K readiness",
+    "max_frames": 2200,
+    "replay_tape": [
+      {
+        "frames": 1,
+        "mask": 1
+      },
+      {
+        "frames": 16,
+        "mask": 5
+      },
+      {
+        "frames": 1,
+        "mask": 1
+      },
+      {
+        "frames": 10,
+        "mask": 5
+      },
+      {
+        "frames": 39,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 18,
+        "mask": 6
+      },
+      {
+        "frames": 22,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 6
+      },
+      {
+        "frames": 23,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 72,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 91,
+        "mask": 1
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 25,
+        "mask": 1
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 34,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 139,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 37,
+        "mask": 1
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 56,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 19,
+        "mask": 6
+      },
+      {
+        "frames": 21,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 6
+      },
+      {
+        "frames": 24,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 6
+      },
+      {
+        "frames": 23,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 72,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 92,
+        "mask": 1
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 22,
+        "mask": 2
+      },
+      {
+        "frames": 20,
+        "mask": 0
+      },
+      {
+        "frames": 125,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 69,
+        "mask": 1
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 56,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 19,
+        "mask": 6
+      },
+      {
+        "frames": 21,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 6
+      },
+      {
+        "frames": 24,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 6
+      },
+      {
+        "frames": 23,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 72,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 49,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 20,
+        "mask": 6
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 27,
+        "mask": 6
+      },
+      {
+        "frames": 13,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 102,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 87,
+        "mask": 1
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 22,
+        "mask": 2
+      },
+      {
+        "frames": 20,
+        "mask": 0
+      },
+      {
+        "frames": 76,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 39,
+        "mask": 2
+      },
+      {
+        "frames": 225,
+        "mask": 0
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "frames": 2109,
+      "water_x_min": 1264,
+      "water_x_max": 1264,
+      "water_y_min": 370,
+      "water_y_max": 370,
+      "gates": {
+        "A": false,
+        "K": false
+      },
+      "reason_prefix": "input tape exhausted",
+      "box_x_max": 436,
+      "box_y_min": 369,
+      "box_y_max": 371
+    }
+  },
+  {
+    "level": 10,
+    "name": "One actor visits both K pads sequentially but cannot release cargo",
+    "replay_tape": [
+      {
+        "frames": 1,
+        "mask": 1
+      },
+      {
+        "frames": 16,
+        "mask": 5
+      },
+      {
+        "frames": 1,
+        "mask": 1
+      },
+      {
+        "frames": 10,
+        "mask": 5
+      },
+      {
+        "frames": 39,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 18,
+        "mask": 6
+      },
+      {
+        "frames": 22,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 6
+      },
+      {
+        "frames": 23,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 40,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 135,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 5
+      },
+      {
+        "frames": 13,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 100,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 87,
+        "mask": 1
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 25,
+        "mask": 1
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 34,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 200,
+        "mask": 2
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "water_x_min": 1264,
+      "water_x_max": 1264,
+      "water_y_min": 370,
+      "water_y_max": 370,
+      "box_x_max": 436,
+      "box_y_min": 369,
+      "box_y_max": 371,
+      "gates": {
+        "A": false,
+        "K": false
+      },
+      "reason_prefix": "input tape exhausted",
+      "frames": 833
+    }
+  }
+]

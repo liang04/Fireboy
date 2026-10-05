@@ -1,0 +1,237 @@
+[
+  {
+    "level": 10,
+    "verify_store": true,
+    "phases": [
+      {
+        "label": "both partners prepare high K loading key",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 9,
+            "y": 9
+          },
+          {
+            "kind": "jump",
+            "x": 11,
+            "y": 7
+          },
+          {
+            "kind": "jump",
+            "x": 13,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 17,
+            "y": 5
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 9
+          },
+          {
+            "kind": "jump",
+            "x": 36,
+            "y": 7
+          },
+          {
+            "kind": "jump",
+            "x": 34,
+            "y": 5
+          }
+        ]
+      },
+      {
+        "label": "charge first gate H",
+        "water": [
+          {
+            "kind": "jump",
+            "x": 32,
+            "y": 3
+          },
+          {
+            "kind": "go",
+            "x": 21,
+            "y": 5
+          }
+        ],
+        "fire": [
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 7
+          },
+          {
+            "kind": "go",
+            "x": 7,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "deliver to dry staging apron",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 22
+          },
+          {
+            "kind": "go",
+            "x": 20,
+            "y": 11
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "courier returns under held H and becomes second keeper",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 9,
+            "y": 9
+          },
+          {
+            "kind": "jump",
+            "x": 11,
+            "y": 7
+          },
+          {
+            "kind": "jump",
+            "x": 13,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 17,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 5
+          },
+          {
+            "kind": "jump",
+            "x": 32,
+            "y": 3
+          }
+        ]
+      },
+      {
+        "label": "first keeper takes over the waiting cargo before H expires",
+        "water": [
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 7
+          },
+          {
+            "kind": "go",
+            "x": 7,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 13,
+            "y": 11
+          },
+          {
+            "kind": "push",
+            "box_x": 25
+          },
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 11
+          },
+          {
+            "kind": "wait",
+            "frames": 80
+          }
+        ]
+      },
+      {
+        "label": "second courier recovers through well while keeper returns",
+        "water": [
+          {
+            "kind": "go",
+            "x": 28,
+            "y_less": 150
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 7
+          },
+          {
+            "kind": "go",
+            "x": 39,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 11
+          }
+        ],
+        "fire": [
+          {
+            "kind": "go",
+            "x": 17,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 7
+          },
+          {
+            "kind": "go",
+            "x": 7,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 3,
+            "y": 11
+          }
+        ]
+      }
+    ]
+  }
+]

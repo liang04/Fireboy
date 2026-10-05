@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Launch a co-op prototype with Godot 4.7 and disposable, isolated user data."""
+"""Launch a co-op playtest with Godot 4.7 and disposable, isolated user data."""
 import argparse
 import os
 from pathlib import Path
@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--godot', default=os.environ.get('GODOT_BIN', 'godot'))
-    parser.add_argument('--level', type=int, choices=[3, 4, 8], required=True)
+    parser.add_argument('--level', type=int, choices=range(1, 11), required=True)
     parser.add_argument('--test-entry', action='store_true', help=argparse.SUPPRESS)
     args = parser.parse_args()
     binary = shutil.which(args.godot)
@@ -44,7 +44,7 @@ def main():
         if args.test_entry:
             command += ['--headless', '--quit-after', '45']
         command += ['res://tools/prototype_launch.tscn', '--', f'--prototype-level={args.level}']
-        print(f'Prototype level {args.level}. Close the game window to end this session; normal saves are untouched.', flush=True)
+        print(f'Playtest level {args.level}. Close the game window to end this session; normal saves are untouched.', flush=True)
         return subprocess.run(command, cwd=ROOT, env=env).returncode
 
 if __name__ == '__main__':

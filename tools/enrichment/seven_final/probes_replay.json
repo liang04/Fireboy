@@ -1,0 +1,2775 @@
+[
+  {
+    "probe": "L9_missing_water_repair_blocks_fire_roof_approach",
+    "level": 9,
+    "max_frames": 4500,
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "levers.M",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "levers.R",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "levers.B",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "channels.B",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "players.fire.x",
+        "op": "gte",
+        "value": 2338
+      },
+      {
+        "field": "players.fire.y",
+        "op": "gte",
+        "value": 590
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      }
+    ],
+    "replay_tape": [
+      {
+        "frames": 41,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 17,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 49,
+        "mask": 98
+      },
+      {
+        "frames": 1,
+        "mask": 34
+      },
+      {
+        "frames": 2,
+        "mask": 98
+      },
+      {
+        "frames": 14,
+        "mask": 66
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 26,
+        "mask": 70
+      },
+      {
+        "frames": 6,
+        "mask": 68
+      },
+      {
+        "frames": 17,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 48,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 147,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 64
+      },
+      {
+        "frames": 8,
+        "mask": 68
+      },
+      {
+        "frames": 2,
+        "mask": 100
+      },
+      {
+        "frames": 17,
+        "mask": 102
+      },
+      {
+        "frames": 2,
+        "mask": 70
+      },
+      {
+        "frames": 2,
+        "mask": 84
+      },
+      {
+        "frames": 7,
+        "mask": 85
+      },
+      {
+        "frames": 2,
+        "mask": 5
+      },
+      {
+        "frames": 215,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 34
+      },
+      {
+        "frames": 10,
+        "mask": 32
+      },
+      {
+        "frames": 7,
+        "mask": 33
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 6,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 23,
+        "mask": 34
+      },
+      {
+        "frames": 20,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 96,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 184,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 10,
+        "mask": 4
+      },
+      {
+        "frames": 18,
+        "mask": 6
+      },
+      {
+        "frames": 12,
+        "mask": 4
+      },
+      {
+        "frames": 501,
+        "mask": 0
+      }
+    ]
+  },
+  {
+    "probe": "L9_missing_fire_repair_blocks_water_roof_approach",
+    "level": 9,
+    "max_frames": 4500,
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "levers.M",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "levers.R",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "levers.B",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "channels.R",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "players.water.x",
+        "op": "lte",
+        "value": 2020
+      },
+      {
+        "field": "players.water.y",
+        "op": "gte",
+        "value": 330
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      }
+    ],
+    "replay_tape": [
+      {
+        "frames": 41,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 17,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 49,
+        "mask": 98
+      },
+      {
+        "frames": 1,
+        "mask": 34
+      },
+      {
+        "frames": 2,
+        "mask": 98
+      },
+      {
+        "frames": 14,
+        "mask": 66
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 26,
+        "mask": 70
+      },
+      {
+        "frames": 6,
+        "mask": 68
+      },
+      {
+        "frames": 17,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 48,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 147,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 64
+      },
+      {
+        "frames": 8,
+        "mask": 68
+      },
+      {
+        "frames": 2,
+        "mask": 100
+      },
+      {
+        "frames": 17,
+        "mask": 102
+      },
+      {
+        "frames": 2,
+        "mask": 70
+      },
+      {
+        "frames": 2,
+        "mask": 84
+      },
+      {
+        "frames": 7,
+        "mask": 85
+      },
+      {
+        "frames": 2,
+        "mask": 5
+      },
+      {
+        "frames": 215,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 34
+      },
+      {
+        "frames": 10,
+        "mask": 32
+      },
+      {
+        "frames": 7,
+        "mask": 33
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 6,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 23,
+        "mask": 34
+      },
+      {
+        "frames": 20,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 16
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 49,
+        "mask": 64
+      },
+      {
+        "frames": 128,
+        "mask": 0
+      },
+      {
+        "frames": 12,
+        "mask": 64
+      },
+      {
+        "frames": 19,
+        "mask": 96
+      },
+      {
+        "frames": 5,
+        "mask": 64
+      },
+      {
+        "frames": 80,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 96
+      },
+      {
+        "frames": 15,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 57,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 128
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 48,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 10,
+        "mask": 64
+      },
+      {
+        "frames": 18,
+        "mask": 96
+      },
+      {
+        "frames": 12,
+        "mask": 64
+      },
+      {
+        "frames": 501,
+        "mask": 0
+      }
+    ]
+  },
+  {
+    "probe": "L9_fire_cannot_repair_water_tunnel",
+    "level": 9,
+    "max_frames": 4500,
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "levers.R",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "levers.B",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "deaths",
+        "op": "gte",
+        "value": 1
+      }
+    ],
+    "replay_tape": [
+      {
+        "frames": 41,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 17,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 49,
+        "mask": 98
+      },
+      {
+        "frames": 1,
+        "mask": 34
+      },
+      {
+        "frames": 2,
+        "mask": 98
+      },
+      {
+        "frames": 14,
+        "mask": 66
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 26,
+        "mask": 70
+      },
+      {
+        "frames": 6,
+        "mask": 68
+      },
+      {
+        "frames": 17,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 48,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 147,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 64
+      },
+      {
+        "frames": 8,
+        "mask": 68
+      },
+      {
+        "frames": 2,
+        "mask": 100
+      },
+      {
+        "frames": 17,
+        "mask": 102
+      },
+      {
+        "frames": 2,
+        "mask": 70
+      },
+      {
+        "frames": 2,
+        "mask": 84
+      },
+      {
+        "frames": 7,
+        "mask": 85
+      },
+      {
+        "frames": 2,
+        "mask": 5
+      },
+      {
+        "frames": 215,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 34
+      },
+      {
+        "frames": 10,
+        "mask": 32
+      },
+      {
+        "frames": 7,
+        "mask": 33
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 6,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 23,
+        "mask": 34
+      },
+      {
+        "frames": 20,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 10,
+        "mask": 1
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 49,
+        "mask": 4
+      },
+      {
+        "frames": 127,
+        "mask": 0
+      },
+      {
+        "frames": 12,
+        "mask": 4
+      },
+      {
+        "frames": 19,
+        "mask": 6
+      },
+      {
+        "frames": 5,
+        "mask": 4
+      },
+      {
+        "frames": 80,
+        "mask": 0
+      },
+      {
+        "frames": 33,
+        "mask": 6
+      },
+      {
+        "frames": 14,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 300,
+        "mask": 2
+      }
+    ]
+  },
+  {
+    "probe": "L9_water_cannot_repair_lava_tunnel",
+    "level": 9,
+    "max_frames": 4500,
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "levers.R",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "levers.B",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "deaths",
+        "op": "gte",
+        "value": 1
+      }
+    ],
+    "replay_tape": [
+      {
+        "frames": 41,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 17,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 49,
+        "mask": 98
+      },
+      {
+        "frames": 1,
+        "mask": 34
+      },
+      {
+        "frames": 2,
+        "mask": 98
+      },
+      {
+        "frames": 14,
+        "mask": 66
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 26,
+        "mask": 70
+      },
+      {
+        "frames": 6,
+        "mask": 68
+      },
+      {
+        "frames": 17,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 48,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 147,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 64
+      },
+      {
+        "frames": 8,
+        "mask": 68
+      },
+      {
+        "frames": 2,
+        "mask": 100
+      },
+      {
+        "frames": 17,
+        "mask": 102
+      },
+      {
+        "frames": 2,
+        "mask": 70
+      },
+      {
+        "frames": 2,
+        "mask": 84
+      },
+      {
+        "frames": 7,
+        "mask": 85
+      },
+      {
+        "frames": 2,
+        "mask": 5
+      },
+      {
+        "frames": 215,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 34
+      },
+      {
+        "frames": 10,
+        "mask": 32
+      },
+      {
+        "frames": 7,
+        "mask": 33
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 6,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 23,
+        "mask": 34
+      },
+      {
+        "frames": 20,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 300,
+        "mask": 32
+      }
+    ]
+  },
+  {
+    "probe": "L9_both_take_left_lifts_cannot_skip_fire_repair",
+    "level": 9,
+    "max_frames": 4500,
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "levers.R",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "levers.B",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "channels.R",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "deaths",
+        "op": "gte",
+        "value": 1
+      },
+      {
+        "field": "players.water.x",
+        "op": "lte",
+        "value": 2020
+      },
+      {
+        "field": "players.water.y",
+        "op": "gte",
+        "value": 330
+      }
+    ],
+    "replay_tape": [
+      {
+        "frames": 41,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 17,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 49,
+        "mask": 98
+      },
+      {
+        "frames": 1,
+        "mask": 34
+      },
+      {
+        "frames": 2,
+        "mask": 98
+      },
+      {
+        "frames": 14,
+        "mask": 66
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 26,
+        "mask": 70
+      },
+      {
+        "frames": 6,
+        "mask": 68
+      },
+      {
+        "frames": 17,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 48,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 147,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 64
+      },
+      {
+        "frames": 8,
+        "mask": 68
+      },
+      {
+        "frames": 2,
+        "mask": 100
+      },
+      {
+        "frames": 17,
+        "mask": 102
+      },
+      {
+        "frames": 2,
+        "mask": 70
+      },
+      {
+        "frames": 2,
+        "mask": 84
+      },
+      {
+        "frames": 7,
+        "mask": 85
+      },
+      {
+        "frames": 2,
+        "mask": 5
+      },
+      {
+        "frames": 215,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 34
+      },
+      {
+        "frames": 10,
+        "mask": 32
+      },
+      {
+        "frames": 7,
+        "mask": 33
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 6,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 23,
+        "mask": 34
+      },
+      {
+        "frames": 20,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 17
+      },
+      {
+        "frames": 1,
+        "mask": 1
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 48,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 127,
+        "mask": 0
+      },
+      {
+        "frames": 12,
+        "mask": 68
+      },
+      {
+        "frames": 19,
+        "mask": 102
+      },
+      {
+        "frames": 5,
+        "mask": 68
+      },
+      {
+        "frames": 80,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 102
+      },
+      {
+        "frames": 1,
+        "mask": 70
+      },
+      {
+        "frames": 14,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 57,
+        "mask": 34
+      },
+      {
+        "frames": 2,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 130
+      },
+      {
+        "frames": 3,
+        "mask": 2
+      },
+      {
+        "frames": 48,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 10,
+        "mask": 66
+      },
+      {
+        "frames": 18,
+        "mask": 98
+      },
+      {
+        "frames": 12,
+        "mask": 66
+      },
+      {
+        "frames": 501,
+        "mask": 2
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "probe": "L10_idle_keeper_blocks_stage_one",
+    "max_frames": 4500,
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "channels.H",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "channels.A",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "boxes.0.x",
+        "op": "lte",
+        "value": 466
+      }
+    ],
+    "replay_tape": [
+      {
+        "frames": 240,
+        "mask": 2
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "probe": "L10_idle_courier_leaves_receiver_unpowered",
+    "max_frames": 4500,
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "channels.H",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "channels.A",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "boxes.0.x",
+        "op": "gte",
+        "value": 399
+      },
+      {
+        "field": "boxes.0.x",
+        "op": "lte",
+        "value": 401
+      }
+    ],
+    "replay_tape": [
+      {
+        "frames": 1,
+        "mask": 18
+      },
+      {
+        "frames": 8,
+        "mask": 82
+      },
+      {
+        "frames": 1,
+        "mask": 80
+      },
+      {
+        "frames": 10,
+        "mask": 81
+      },
+      {
+        "frames": 2,
+        "mask": 65
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 16,
+        "mask": 69
+      },
+      {
+        "frames": 1,
+        "mask": 65
+      },
+      {
+        "frames": 1,
+        "mask": 69
+      },
+      {
+        "frames": 1,
+        "mask": 5
+      },
+      {
+        "frames": 16,
+        "mask": 84
+      },
+      {
+        "frames": 24,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 6,
+        "mask": 84
+      },
+      {
+        "frames": 1,
+        "mask": 80
+      },
+      {
+        "frames": 10,
+        "mask": 86
+      },
+      {
+        "frames": 17,
+        "mask": 70
+      },
+      {
+        "frames": 6,
+        "mask": 68
+      },
+      {
+        "frames": 7,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 6
+      },
+      {
+        "frames": 13,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 59,
+        "mask": 17
+      },
+      {
+        "frames": 8,
+        "mask": 16
+      },
+      {
+        "frames": 25,
+        "mask": 17
+      },
+      {
+        "frames": 8,
+        "mask": 16
+      },
+      {
+        "frames": 4,
+        "mask": 18
+      },
+      {
+        "frames": 30,
+        "mask": 2
+      },
+      {
+        "frames": 276,
+        "mask": 0
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "probe": "L10_first_charge_expires_and_cargo_remains_recoverable",
+    "max_frames": 4500,
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "ever_on.H",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "channels.H",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "channels.A",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "boxes.0.x",
+        "op": "lte",
+        "value": 466
+      }
+    ],
+    "replay_tape": [
+      {
+        "frames": 1,
+        "mask": 18
+      },
+      {
+        "frames": 8,
+        "mask": 82
+      },
+      {
+        "frames": 1,
+        "mask": 80
+      },
+      {
+        "frames": 10,
+        "mask": 81
+      },
+      {
+        "frames": 2,
+        "mask": 65
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 16,
+        "mask": 69
+      },
+      {
+        "frames": 1,
+        "mask": 65
+      },
+      {
+        "frames": 1,
+        "mask": 69
+      },
+      {
+        "frames": 1,
+        "mask": 5
+      },
+      {
+        "frames": 16,
+        "mask": 84
+      },
+      {
+        "frames": 24,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 6,
+        "mask": 84
+      },
+      {
+        "frames": 1,
+        "mask": 80
+      },
+      {
+        "frames": 10,
+        "mask": 86
+      },
+      {
+        "frames": 17,
+        "mask": 70
+      },
+      {
+        "frames": 6,
+        "mask": 68
+      },
+      {
+        "frames": 7,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 6
+      },
+      {
+        "frames": 13,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 59,
+        "mask": 17
+      },
+      {
+        "frames": 8,
+        "mask": 16
+      },
+      {
+        "frames": 25,
+        "mask": 17
+      },
+      {
+        "frames": 8,
+        "mask": 16
+      },
+      {
+        "frames": 4,
+        "mask": 18
+      },
+      {
+        "frames": 30,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 32
+      },
+      {
+        "frames": 433,
+        "mask": 0
+      },
+      {
+        "frames": 120,
+        "mask": 2
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "probe": "L10_stage_one_does_not_skip_second_keeper",
+    "max_frames": 4500,
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "channels.J",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "channels.A",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "boxes.0.x",
+        "op": "gte",
+        "value": 716
+      },
+      {
+        "field": "boxes.0.x",
+        "op": "lte",
+        "value": 754
+      }
+    ],
+    "replay_tape": [
+      {
+        "frames": 1,
+        "mask": 18
+      },
+      {
+        "frames": 8,
+        "mask": 82
+      },
+      {
+        "frames": 1,
+        "mask": 80
+      },
+      {
+        "frames": 10,
+        "mask": 81
+      },
+      {
+        "frames": 2,
+        "mask": 65
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 16,
+        "mask": 69
+      },
+      {
+        "frames": 1,
+        "mask": 65
+      },
+      {
+        "frames": 1,
+        "mask": 69
+      },
+      {
+        "frames": 1,
+        "mask": 5
+      },
+      {
+        "frames": 16,
+        "mask": 84
+      },
+      {
+        "frames": 24,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 6,
+        "mask": 84
+      },
+      {
+        "frames": 1,
+        "mask": 80
+      },
+      {
+        "frames": 10,
+        "mask": 86
+      },
+      {
+        "frames": 17,
+        "mask": 70
+      },
+      {
+        "frames": 6,
+        "mask": 68
+      },
+      {
+        "frames": 7,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 6
+      },
+      {
+        "frames": 13,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 59,
+        "mask": 17
+      },
+      {
+        "frames": 8,
+        "mask": 16
+      },
+      {
+        "frames": 25,
+        "mask": 17
+      },
+      {
+        "frames": 8,
+        "mask": 16
+      },
+      {
+        "frames": 4,
+        "mask": 18
+      },
+      {
+        "frames": 30,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 200,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 13,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 120,
+        "mask": 2
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "probe": "L10_unpowered_misdrop_has_independent_return",
+    "max_frames": 4500,
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "max_y.water",
+        "op": "gte",
+        "value": 580
+      },
+      {
+        "field": "players.water.y",
+        "op": "lte",
+        "value": 190
+      },
+      {
+        "field": "players.water.alive",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "channels.A",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "boxes.0.x",
+        "op": "lte",
+        "value": 410
+      }
+    ],
+    "replay_tape": [
+      {
+        "frames": 82,
+        "mask": 16
+      },
+      {
+        "frames": 33,
+        "mask": 0
+      },
+      {
+        "frames": 5,
+        "mask": 16
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 32
+      },
+      {
+        "frames": 144,
+        "mask": 0
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "probe": "L10_person_cannot_latch_final_receiver",
+    "max_frames": 4500,
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "ever_on.A",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "channels.A",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "boxes.0.y",
+        "op": "lte",
+        "value": 370
+      }
+    ],
+    "replay_tape": [
+      {
+        "frames": 98,
+        "mask": 16
+      },
+      {
+        "frames": 48,
+        "mask": 0
+      },
+      {
+        "frames": 6,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 32
+      },
+      {
+        "frames": 144,
+        "mask": 0
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "probe": "L10_return_exit_cannot_be_jumped_before_delivery",
+    "max_frames": 4500,
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "channels.A",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "players.water.x",
+        "op": "lte",
+        "value": 1336
+      }
+    ],
+    "replay_tape": [
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 49,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 48,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 48,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 31,
+        "mask": 96
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "probe": "L10_delivered_box_stays_in_well_after_mispush",
+    "max_frames": 4500,
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "channels.A",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "boxes.0.y",
+        "op": "gte",
+        "value": 590
+      },
+      {
+        "field": "boxes.0.x",
+        "op": "gte",
+        "value": 813
+      },
+      {
+        "field": "boxes.0.x",
+        "op": "lte",
+        "value": 820
+      },
+      {
+        "field": "max_y.water",
+        "op": "gte",
+        "value": 580
+      }
+    ],
+    "replay_tape": [
+      {
+        "frames": 1,
+        "mask": 18
+      },
+      {
+        "frames": 8,
+        "mask": 82
+      },
+      {
+        "frames": 1,
+        "mask": 80
+      },
+      {
+        "frames": 10,
+        "mask": 81
+      },
+      {
+        "frames": 2,
+        "mask": 65
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 16,
+        "mask": 69
+      },
+      {
+        "frames": 1,
+        "mask": 65
+      },
+      {
+        "frames": 1,
+        "mask": 69
+      },
+      {
+        "frames": 1,
+        "mask": 5
+      },
+      {
+        "frames": 16,
+        "mask": 84
+      },
+      {
+        "frames": 24,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 6,
+        "mask": 84
+      },
+      {
+        "frames": 1,
+        "mask": 80
+      },
+      {
+        "frames": 10,
+        "mask": 86
+      },
+      {
+        "frames": 17,
+        "mask": 70
+      },
+      {
+        "frames": 6,
+        "mask": 68
+      },
+      {
+        "frames": 7,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 6
+      },
+      {
+        "frames": 13,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 59,
+        "mask": 17
+      },
+      {
+        "frames": 8,
+        "mask": 16
+      },
+      {
+        "frames": 25,
+        "mask": 17
+      },
+      {
+        "frames": 8,
+        "mask": 16
+      },
+      {
+        "frames": 4,
+        "mask": 18
+      },
+      {
+        "frames": 30,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 200,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 13,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 49,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 20,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 27,
+        "mask": 96
+      },
+      {
+        "frames": 13,
+        "mask": 64
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 68,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 13,
+        "mask": 1
+      },
+      {
+        "frames": 83,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 32
+      },
+      {
+        "frames": 16,
+        "mask": 0
+      },
+      {
+        "frames": 33,
+        "mask": 32
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 98,
+        "mask": 16
+      },
+      {
+        "frames": 17,
+        "mask": 0
+      },
+      {
+        "frames": 180,
+        "mask": 16
+      }
+    ]
+  },
+  {
+    "level": 9,
+    "probe": "L9_wrong_roof_route_waits_for_remote_switch",
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "players.fire.x",
+        "op": "gte",
+        "value": 2408
+      },
+      {
+        "field": "players.fire.x",
+        "op": "lte",
+        "value": 2412
+      },
+      {
+        "field": "levers.R",
+        "op": "eq",
+        "value": true
+      },
+      {
+        "field": "levers.B",
+        "op": "eq",
+        "value": true
+      }
+    ],
+    "replay_tape": [
+      {
+        "frames": 41,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 17,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 49,
+        "mask": 98
+      },
+      {
+        "frames": 1,
+        "mask": 34
+      },
+      {
+        "frames": 2,
+        "mask": 98
+      },
+      {
+        "frames": 14,
+        "mask": 66
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 26,
+        "mask": 70
+      },
+      {
+        "frames": 6,
+        "mask": 68
+      },
+      {
+        "frames": 17,
+        "mask": 4
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 48,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 147,
+        "mask": 0
+      },
+      {
+        "frames": 2,
+        "mask": 64
+      },
+      {
+        "frames": 8,
+        "mask": 68
+      },
+      {
+        "frames": 2,
+        "mask": 100
+      },
+      {
+        "frames": 17,
+        "mask": 102
+      },
+      {
+        "frames": 2,
+        "mask": 70
+      },
+      {
+        "frames": 2,
+        "mask": 84
+      },
+      {
+        "frames": 7,
+        "mask": 85
+      },
+      {
+        "frames": 2,
+        "mask": 5
+      },
+      {
+        "frames": 215,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 34
+      },
+      {
+        "frames": 10,
+        "mask": 32
+      },
+      {
+        "frames": 7,
+        "mask": 33
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 6,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 23,
+        "mask": 34
+      },
+      {
+        "frames": 20,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 18
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 49,
+        "mask": 66
+      },
+      {
+        "frames": 37,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 8
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 85,
+        "mask": 2
+      },
+      {
+        "frames": 12,
+        "mask": 66
+      },
+      {
+        "frames": 19,
+        "mask": 98
+      },
+      {
+        "frames": 5,
+        "mask": 66
+      },
+      {
+        "frames": 63,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 10,
+        "mask": 4
+      },
+      {
+        "frames": 6,
+        "mask": 6
+      },
+      {
+        "frames": 12,
+        "mask": 102
+      },
+      {
+        "frames": 12,
+        "mask": 100
+      },
+      {
+        "frames": 8,
+        "mask": 96
+      },
+      {
+        "frames": 15,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 57,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 128
+      },
+      {
+        "frames": 3,
+        "mask": 0
+      },
+      {
+        "frames": 48,
+        "mask": 32
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 49,
+        "mask": 64
+      },
+      {
+        "frames": 73,
+        "mask": 0
+      },
+      {
+        "frames": 22,
+        "mask": 5
+      },
+      {
+        "frames": 4,
+        "mask": 69
+      },
+      {
+        "frames": 9,
+        "mask": 68
+      },
+      {
+        "frames": 9,
+        "mask": 100
+      },
+      {
+        "frames": 9,
+        "mask": 96
+      },
+      {
+        "frames": 5,
+        "mask": 64
+      },
+      {
+        "frames": 50,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 96
+      },
+      {
+        "frames": 20,
+        "mask": 64
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 90,
+        "mask": 1
+      },
+      {
+        "frames": 124,
+        "mask": 0
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "probe": "L10_one_actor_visiting_both_readiness_pads_cannot_release_cargo",
+    "max_frames": 4500,
+    "checks": [
+      {
+        "field": "completed",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "deaths",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "box_resets",
+        "op": "eq",
+        "value": 0
+      },
+      {
+        "field": "channels.K",
+        "op": "eq",
+        "value": false
+      },
+      {
+        "field": "boxes.0.x",
+        "op": "lte",
+        "value": 435
+      },
+      {
+        "field": "players.water.x",
+        "op": "gte",
+        "value": 1263
+      },
+      {
+        "field": "players.water.x",
+        "op": "lte",
+        "value": 1265
+      }
+    ],
+    "replay_tape": [
+      {
+        "frames": 9,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 12,
+        "mask": 1
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 5
+      },
+      {
+        "frames": 1,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 5
+      },
+      {
+        "frames": 47,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 6
+      },
+      {
+        "frames": 13,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 6
+      },
+      {
+        "frames": 13,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 2
+      },
+      {
+        "frames": 12,
+        "mask": 0
+      },
+      {
+        "frames": 136,
+        "mask": 2
+      },
+      {
+        "frames": 12,
+        "mask": 0
+      },
+      {
+        "frames": 105,
+        "mask": 1
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 87,
+        "mask": 1
+      },
+      {
+        "frames": 9,
+        "mask": 0
+      },
+      {
+        "frames": 25,
+        "mask": 1
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 34,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 120,
+        "mask": 2
+      }
+    ]
+  }
+]

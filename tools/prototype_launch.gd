@@ -10,7 +10,7 @@ func _ready() -> void:
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--prototype-level="):
 			number = int(arg.trim_prefix("--prototype-level="))
-	if number not in [3, 4, 8]:
+	if number < 1 or number > Levels.count():
 		get_tree().quit(2)
 		return
 	GameState.current_level_index = number - 1

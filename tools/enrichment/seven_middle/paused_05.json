@@ -1,0 +1,90 @@
+[
+  {
+    "level": 5,
+    "name": "L5 early A release safely suspends both rider and cargo",
+    "max_frames": 5000,
+    "phases": [
+      {
+        "label": "Element detours and choose freight loading",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 24
+          },
+          {
+            "kind": "go",
+            "x": 3,
+            "y": 27
+          },
+          {
+            "kind": "swim",
+            "x": 6,
+            "y": 25
+          },
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 25
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 25
+          }
+        ]
+      },
+      {
+        "label": "Load the existing A freight lift",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 17,
+            "timeout": 2400
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Keeper releases A midway; rider and cargo remain safe",
+        "fire": [
+          {
+            "kind": "wait",
+            "frames": 180
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 32,
+            "y": 25
+          },
+          {
+            "kind": "wait",
+            "frames": 70
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 25
+          },
+          {
+            "kind": "wait",
+            "frames": 90
+          }
+        ]
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_y_min": 670,
+      "fire_y_max": 735,
+      "box_y_min": 670,
+      "box_y_max": 735
+    }
+  }
+]

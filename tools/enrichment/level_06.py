@@ -1,25 +1,32 @@
-"""Two clear portal pairs, a remote keeper, and a partner-opened reunion route."""
+"""L6: two fixed portal branches, independent shared keys and a visible hub loop."""
 def build(Grid, base):
-    g=Grid(50,24);g.border();g.rect(1,21,48,23,'#')
-    g.rect(4,12,20,13,'#')
-    g.rect(24,21,26,22,'~');g.rect(31,21,33,22,'^')
-    g.rect(38,8,48,23,'#')
-    g.put(3,20,'F');g.put(6,20,'W');g.put(45,7,'E');g.put(47,7,'Q')
-    objects=[
-        {'type':'portal','cell':[2,20],'pair':'P1'},
+    g = Grid(62, 25)
+    g.border(); g.rect(1,21,60,24,'#')
+    g.rect(4,12,22,14,'#'); g.rect(28,12,46,14,'#')
+    g.rect(15,12,17,13,'^'); g.rect(36,12,38,13,'~')
+    g.put(9,20,'F'); g.put(40,20,'W')
+    g.put(57,20,'E'); g.put(59,20,'Q')
+    objects = [
+        {'type':'portal','cell':[6,20],'pair':'P1'},
         {'type':'portal','cell':[6,11],'pair':'P1'},
-        {'type':'plate','cell':[12,11],'channel':'A'},
-        {'type':'door','cell':[16,14],'height':7,'channel':'A'},
-        {'type':'lever','cell':[22,20],'channel':'B'},
-        {'type':'door','cell':[14,5],'height':7,'channel':'B'},
-        {'type':'portal','cell':[36,20],'pair':'P2'},
-        {'type':'portal','cell':[40,7],'pair':'P2'},
-        {'type':'gem','cell':[4,11],'color':'red'},
-        {'type':'gem','cell':[32,22],'color':'red'},
-        {'type':'gem','cell':[46,7],'color':'red'},
-        {'type':'gem','cell':[8,20],'color':'blue'},
-        {'type':'gem','cell':[25,22],'color':'blue'},
-        {'type':'gem','cell':[44,7],'color':'blue'},
+        {'type':'portal','cell':[44,20],'pair':'P2'},
+        {'type':'portal','cell':[44,11],'pair':'P2'},
+        # Neither key is a solo round-trip: the hub keeper and branch scout
+        # must stand together. Once lit, either branch can be revisited freely.
+        {'type':'double_plate','cells':[[20,11],[16,20]],'channel':'L'},
+        {'type':'double_plate','cells':[[30,11],[34,20]],'channel':'R'},
+        {'type':'door','cell':[50,0],'height':21,'channel':'L'},
+        {'type':'door','cell':[54,0],'height':21,'channel':'R'},
+        {'type':'gem','cell':[9,20],'color':'red'},
+        {'type':'gem','cell':[10,11],'color':'red'},
+        {'type':'gem','cell':[16,13],'color':'red'},
+        {'type':'gem','cell':[31,11],'color':'red'},
+        {'type':'gem','cell':[40,20],'color':'blue'},
+        {'type':'gem','cell':[41,11],'color':'blue'},
+        {'type':'gem','cell':[37,13],'color':'blue'},
+        {'type':'gem','cell':[21,11],'color':'blue'},
     ]
-    return dict(base,grid=g.rows(),objects=objects,revision=base['revision']+1,
-        subtitle='P1 通往观察台：先遣者守 A，伙伴在下层拉 B 接应；最后经 P2 到会合高台。',par_time=30.0)
+    return dict(base, name='6 - 传送终局', grid=g.rows(), objects=objects,
+        revision=base.get('revision',1)+2,
+        subtitle='P1 左台、P2 右台，原门原路返回。任选顺序：一人在台上、一人在下方同踩 L / R；两钥匙亮后换路取宝、会合。',
+        par_time=100.0)

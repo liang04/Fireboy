@@ -1,0 +1,217 @@
+[
+  {
+    "level": 6,
+    "verify_store": true,
+    "max_frames": 18000,
+    "phases": [
+      {
+        "label": "Choose the right branch first",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 34,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 37,
+            "y": 13
+          },
+          {
+            "kind": "swim",
+            "x": 33,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "Return to the hub and hand over the keeper role",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 6,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 16,
+            "y": 13
+          },
+          {
+            "kind": "swim",
+            "x": 20,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 20,
+            "y": 11
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 33,
+            "y": 11
+          },
+          {
+            "kind": "swim",
+            "x": 41,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 16,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "Revisit opposite fixed branches for the optional gems",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 13,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 6,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 41,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 34,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 31,
+            "y": 11
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 6,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 10,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 13,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 20,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 21,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "Two independent return loops to the shared exit",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 34,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 41,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 57,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 20,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 13,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 6,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 59,
+            "y": 20
+          }
+        ]
+      }
+    ]
+  }
+]

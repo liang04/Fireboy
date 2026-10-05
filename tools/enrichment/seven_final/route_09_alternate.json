@@ -1,0 +1,209 @@
+[
+  {
+    "level": 9,
+    "phases": [
+      {
+        "label": "weight",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 20
+          },
+          {
+            "kind": "push",
+            "box_x": 15
+          },
+          {
+            "kind": "jump",
+            "x": 17,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 17,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "cross acid",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1050,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1050,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 38,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "separate elemental service routes",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 53,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "kind": "go",
+            "x": 76,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 2,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 222,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 75,
+            "y": 5
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 40,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 1,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 420,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 46,
+            "y": 12
+          },
+          {
+            "kind": "go",
+            "x": 53,
+            "y": 12
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "kind": "go",
+            "x": 59,
+            "y": 12
+          },
+          {
+            "kind": "board",
+            "platform": 3,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 222,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 64,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 70,
+            "y": 5
+          }
+        ]
+      },
+      {
+        "label": "A first: water enters hub before opening B",
+        "water": [
+          {
+            "kind": "interact"
+          }
+        ]
+      },
+      {
+        "label": "partner follows via B",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 69,
+            "y": 5
+          }
+        ]
+      }
+    ],
+    "verify_store": true
+  }
+]

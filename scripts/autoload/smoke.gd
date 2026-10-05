@@ -112,10 +112,24 @@ func _run() -> void:
 			await _probe_box_drop()
 			await _probe_box_stand(lvl)
 			await _probe_shaft_climb(lvl)
-		errors += await _probe_mechanisms(lvl)
+		# Component fixtures start from a fresh level: the input simulation and
+		# movement probes may leave dead actors, held plates or pending respawns.
+		get_tree().change_scene_to_packed(LEVEL_SCENE)
+		await get_tree().process_frame
+		await get_tree().process_frame
+		errors += await _probe_mechanisms(get_tree().current_scene)
 
 	print("[smoke] finished, errors=%d" % errors)
 	_finished = true
+	# Let scene teardown and the audio thread release their queued playback
+	# references before exiting the accelerated headless fixture.
+	get_tree().current_scene.queue_free()
+	await get_tree().process_frame
+	Sound._stop_all()
+	# Audio is mixed on wall time, while --fixed-fps can race hundreds of
+	# physics frames ahead. Give its playback queue real time to drain too.
+	OS.delay_msec(350)
+	await get_tree().create_timer(0.5, true).timeout
 	get_tree().quit(0 if errors == 0 else 1)
 
 
@@ -736,13 +750,55 @@ func _probe_box_drop() -> void:
 
 		probe3.queue_free()
 		await get_tree().physics_frame
-## 关卡里的机关光「生成出来没报错」是不够的 —— 冒烟 AI 通常被第一道门挡住，
-## 后面的平台、压力板、传送门一辈子都碰不到。这里绕过玩法，直接对每个机关做联调：
-##   移动平台：自己动起来了没有
-##   升降门   ：收到 channel 信号后真的升降了没有
-##   压力板   ：角色站上去 → 同 channel 的门打开（端到端验证整条机关链）
-##   传送门   ：两端配对上了没有
-## 返回新增的错误数。
+## Controlled component/integration fixture, NOT a raw-input completion proof.
+## Actors and cargo are placed directly, with all collision layers and masks intact.
+## Raw full-gem routes and adversarial replays separately prove the playable layout.
+const MECHANISM_PARK := Vector2(-8192.0, 370.0)
+
+
+func _probe_frames(count: int) -> void:
+	for i in count:
+		await get_tree().physics_frame
+
+
+func _park_probe_players(lvl: Node) -> void:
+	var players: Array = lvl.get("_players")
+	for i in players.size():
+		var player := players[i] as Player
+		_teleport(player, MECHANISM_PARK + Vector2(i * 64.0, 0.0))
+		player.clear_pending_input()
+
+
+func _probe_actor_for(lvl: Node, at: Vector2) -> Player:
+	# Elemental controls must be approached by their matching actor. This is
+	# an integration probe; wrong-element rejection belongs to raw route tests.
+	var grid: Array = Levels.get_level(GameState.current_level_index).grid
+	var cell := Vector2i(at / 32.0)
+	var liquid: String = grid[cell.y][cell.x]
+	var required: StringName = &"water" if liquid == "~" else (&"fire" if liquid == "^" else &"")
+	var players: Array = lvl.get("_players")
+	for player: Player in players:
+		if player.alive and (required == &"" or player.element == required):
+			return player
+	return null
+
+
+func _probe_platform_travel(platforms: Array, frames: int) -> Dictionary:
+	# Accumulate distance rather than net displacement: a real platform may
+	# legitimately turn around and return to its starting point in this window.
+	var travel := {}
+	var previous := {}
+	for platform: MovingPlatform in platforms:
+		travel[platform] = 0.0
+		previous[platform] = platform.global_position
+	for i in frames:
+		await get_tree().physics_frame
+		for platform: MovingPlatform in platforms:
+			travel[platform] += platform.global_position.distance_to(previous[platform])
+			previous[platform] = platform.global_position
+	return travel
+
+
 func _probe_mechanisms(lvl: Node) -> int:
 	var errs := 0
 	var objects := lvl.get_node_or_null("Objects")
@@ -754,6 +810,7 @@ func _probe_mechanisms(lvl: Node) -> int:
 	var platforms: Array = []
 	var levers: Array = []
 	var portals: Array = []
+	var boxes: Array = []
 	for c in objects.get_children():
 		if c is GateDoor:
 			doors.append(c)
@@ -765,240 +822,180 @@ func _probe_mechanisms(lvl: Node) -> int:
 			levers.append(c)
 		elif c is Portal:
 			portals.append(c)
+		elif c is PushBox:
+			boxes.append(c)
 
-	# --- 移动平台：跑 60 帧，看它动了没
-	#     带 channel 的平台平时就是不动的（要等别人供电），所以测之前
-	#     先把它的 channel 点亮，测完再灭掉 —— 否则「受控平台」会被
-	#     误判成「坏掉的平台」，而「受控」恰恰是第 5 关的核心机制。
-	for mp in platforms:
-		var plat := mp as MovingPlatform
-		var gated := plat.channel != &""
-		if gated:
-			EventBus.channel_state_changed.emit(plat.channel, true)
-			await get_tree().physics_frame
-		var p0 := plat.global_position
-		for i in 60:
-			await get_tree().physics_frame
-		var p1 := plat.global_position
-		if p0.distance_to(p1) < 8.0:
-			printerr("[smoke] 移动平台没有动：%s" % (plat as Node).get_path())
-			errs += 1
-		if gated:
-			EventBus.channel_state_changed.emit(plat.channel, false)
-			await get_tree().physics_frame
-
-	# --- 平台载客：站上去之后，人必须跟着平台走
-	#     横向渡河靠它，纵向电梯更是全靠它 —— 第 5 关的两台电梯如果
-	#     只是「平台在动而人没跟上」，关卡就变成不可通关，而静态校验器
-	#     看不出来（它假设平台两端天然连通）。所以这条必须实测位移。
-	for mp in platforms:
-		var plat := mp as MovingPlatform
-		var riders: Array = lvl.get("_players")
-		if riders.is_empty():
-			continue
-		var rider: Player = null
-		for r in riders:
-			var rp := r as Player
-			if rp != null and rp.alive:
-				rider = rp
-				break
-		if rider == null:
-			continue
-		var gated := plat.channel != &""
-		if gated:
-			EventBus.channel_state_changed.emit(plat.channel, true)
-		var saved_pos := rider.global_position
-		# 放到平台站立面正上方（角色高 28px，原点在中心，抬 18px 再落下去）
-		rider.global_position = plat.global_position + Vector2(16.0, -18.0)
-		rider.velocity = Vector2.ZERO
-		for i in 12:
-			await get_tree().physics_frame
-		var q0 := rider.global_position
-		var s0 := plat.global_position
-		for i in 40:
-			await get_tree().physics_frame
-		var q1 := rider.global_position
-		var s1 := plat.global_position
-		var drift := (q1 - q0).distance_to(s1 - s0)
-		# 自己也得动起来才算有效测试：否则「平台没动 + 人没动」会
-		# 因为两者位移都接近 0 而被判成「完美同步」，整条检查形同虚设
-		if (s1 - s0).length() < 8.0:
-			printerr("[smoke] 平台 %s 在载客测试窗口内没有位移，无法判定是否载客"
-					% (plat as Node).get_path())
-			errs += 1
-		elif drift > 24.0:
-			printerr("[smoke] 平台 %s 没有把乘客带走：平台位移 %s，乘客位移 %s"
-					% [(plat as Node).get_path(), s1 - s0, q1 - q0])
-			errs += 1
-		rider.global_position = saved_pos
-		rider.velocity = Vector2.ZERO
-		for i in 20:
-			await get_tree().physics_frame
-		if gated:
-			EventBus.channel_state_changed.emit(plat.channel, false)
-			await get_tree().physics_frame
-
-	# --- 升降门：广播 channel，看门有没有升降
-	for d in doors:
-		var gate := d as GateDoor
-		var y0 := gate.position.y
-		EventBus.channel_state_changed.emit(gate.channel, true)
-		for i in 30:
-			await get_tree().physics_frame
-		var y1 := gate.position.y
+	print("[smoke] controlled mechanism fixture: direct placement, live collisions, no raw completion claim")
+	# A separate solid parking pad keeps spectators/cargo out of gate sweeps,
+	# platform undersides and controls. They remain real collidable bodies.
+	# Only off-map box recovery is suspended while cargo is parked for this
+	# fixture; recovery itself is exercised by its dedicated regression.
+	var parking := Node2D.new()
+	lvl.add_child(parking)
+	_slab(parking, MECHANISM_PARK.x - 64.0, MECHANISM_PARK.x + 1024.0, 384.0)
+	for player: Player in lvl.get("_players"):
+		_release_all(player)
+		player.respawn()
+		player.frozen = false
+	_park_probe_players(lvl)
+	for i in boxes.size():
+		var box := boxes[i] as PushBox
+		var recovery := box.get_node_or_null("Recovery") as BoxRecovery
+		if recovery != null:
+			recovery.set_physics_process(false)
+		box.global_position = MECHANISM_PARK + Vector2(256.0 + i * 64.0, 0.0)
+		box.velocity = Vector2.ZERO
+	await _probe_frames(4) # Drain Area2D exits before injecting test signals.
+	for gate: GateDoor in doors:
 		EventBus.channel_state_changed.emit(gate.channel, false)
-		for i in 30:
-			await get_tree().physics_frame
-		var y2 := gate.position.y
-		# Stacked timed routes can retract upward; check the configured endpoint
-		# and direction, rather than treating only downward travel as opening.
-		var travel := float(gate.height_cells * gate.cell_size) + 8.0
-		var direction := -1.0 if gate.open_up else 1.0
-		var expected_open := gate._closed_y + direction * travel
-		if absf(y1 - expected_open) > 1.0 or (y1 - y0) * direction < 16.0:
-			printerr("[smoke] 门收到信号后没有打开：%s (Δ=%.1f)" % [gate.get_path(), y1 - y0])
+	for platform: MovingPlatform in platforms:
+		if platform.channel != &"":
+			EventBus.channel_state_changed.emit(platform.channel, false)
+	await _probe_frames(30)
+
+	# --- Platform motion, with no body underneath to request a safety wait.
+	for platform: MovingPlatform in platforms:
+		if platform.channel != &"":
+			EventBus.channel_state_changed.emit(platform.channel, true)
+		var travel := await _probe_platform_travel([platform], 60)
+		if travel[platform] < 8.0 or platform._blocked_below:
+			printerr("[smoke] platform motion failed: %s travel=%.1f blocked=%s"
+				% [platform.get_path(), travel[platform], platform._blocked_below])
 			errs += 1
-		elif absf(y2 - y0) > 1.0:
-			printerr("[smoke] 门收到关闭信号后没有复位：%s (Δ=%.1f)" % [gate.get_path(), y2 - y0])
+		if platform.channel != &"":
+			EventBus.channel_state_changed.emit(platform.channel, false)
+
+	# --- Carry a real rider through clear space, not through a closed puzzle
+	# gate (L2's D intersects the platform route). Gate collisions are kept;
+	# opening them here explicitly supplies this component test's prerequisite.
+	for gate: GateDoor in doors:
+		EventBus.channel_state_changed.emit(gate.channel, true)
+	await _probe_frames(30)
+	for platform: MovingPlatform in platforms:
+		var rider := _probe_actor_for(lvl, Vector2(96, 96))
+		if rider == null:
+			printerr("[smoke] no living actor available for platform carry")
+			errs += 1
+			continue
+		# Deterministic interior phase avoids endpoint/support ambiguity. Only
+		# fixture initial state is placed; every measured step uses real physics.
+		platform._t = 0.25
+		platform._dir = 1.0
+		platform.global_position = platform._a.lerp(platform._b, platform._t)
+		if platform.channel != &"":
+			EventBus.channel_state_changed.emit(platform.channel, true)
+		_teleport(rider, platform.global_position + Vector2(platform.width_cells * platform.cell_size * 0.5, -18.0))
+		await _probe_frames(12)
+		var q0 := rider.global_position
+		var s0 := platform.global_position
+		await _probe_frames(40)
+		var rider_delta := rider.global_position - q0
+		var platform_delta := platform.global_position - s0
+		var drift := rider_delta.distance_to(platform_delta)
+		if platform_delta.length() < 8.0 or drift > 24.0 or not rider.alive:
+			printerr("[smoke] platform carry failed: %s platform=%s rider=%s drift=%.1f alive=%s"
+				% [platform.get_path(), platform_delta, rider_delta, drift, rider.alive])
+			errs += 1
+		_park_probe_players(lvl)
+		await _probe_frames(4)
+		if platform.channel != &"":
+			EventBus.channel_state_changed.emit(platform.channel, false)
+
+	# --- Gate travel uses configured endpoints, including upward retraction.
+	# Parking clears the whole safe-closing volume; an occupied safety wait
+	# is not a failed close, and must not contaminate the following control test.
+	for gate: GateDoor in doors:
+		EventBus.channel_state_changed.emit(gate.channel, false)
+	await _probe_frames(30)
+	for gate: GateDoor in doors:
+		if absf(gate.position.y - gate._closed_y) > 1.0 or gate._waiting_for_clear:
+			printerr("[smoke] gate baseline not clear/closed: %s y=%.1f closed=%.1f waiting=%s"
+				% [gate.get_path(), gate.position.y, gate._closed_y, gate._waiting_for_clear])
+			errs += 1
+		EventBus.channel_state_changed.emit(gate.channel, true)
+		await _probe_frames(30)
+		if absf(gate.position.y - gate._open_y) > 1.0 or not gate._requested_open:
+			printerr("[smoke] gate did not reach configured open endpoint: %s y=%.1f open=%.1f"
+				% [gate.get_path(), gate.position.y, gate._open_y])
+			errs += 1
+		EventBus.channel_state_changed.emit(gate.channel, false)
+		await _probe_frames(30)
+		if absf(gate.position.y - gate._closed_y) > 1.0 or gate._waiting_for_clear:
+			printerr("[smoke] gate did not close with clear sweep: %s y=%.1f closed=%.1f waiting=%s"
+				% [gate.get_path(), gate.position.y, gate._closed_y, gate._waiting_for_clear])
 			errs += 1
 
-	# --- 压力板 → 门：端到端验证「站上去就开门」这条链
-	for pl in plates:
-		var plate := pl as PressurePlate
-		var linked: Array = doors.filter(func(d): return (d as GateDoor).channel == plate.channel)
-		var linked_plats: Array = platforms.filter(
-				func(m): return (m as MovingPlatform).channel == plate.channel)
-		if linked.is_empty() and linked_plats.is_empty():
-			printerr("[smoke] 压力板 %s 的 channel '%s' 没有任何门在听"
-					% [plate.get_path(), String(plate.channel)])
-			errs += 1
-			continue
-		var players: Array = lvl.get("_players")
-		if players.is_empty():
-			continue
-		var probe_player := players[0] as Player
-		var saved := probe_player.global_position
-		# 板子也可能是在给平台供电（第 5 关就是），那时改用平台位移来验收
-		if linked.is_empty():
-			var plat := linked_plats[0] as MovingPlatform
-			var q0 := plat.global_position
-			probe_player.global_position = plate.position + Vector2(16, 16)
-			for i in 60:
-				await get_tree().physics_frame
-			if plat.global_position.distance_to(q0) < 8.0:
-				printerr("[smoke] 角色站上压力板 %s，但平台 %s 没有通电动起来"
-						% [plate.get_path(), plat.get_path()])
-				errs += 1
-			probe_player.global_position = saved
-			for i in 25:
-				await get_tree().physics_frame
-			continue
-		var gate := linked[0] as GateDoor
-		var gy0 := gate.position.y
-		# 站到压力板格子中心
-		probe_player.global_position = plate.position + Vector2(16, 16)
-		for i in 20:
-			await get_tree().physics_frame
-		if gate.position.y - gy0 < 16.0:
-			printerr("[smoke] 角色站上压力板 %s，但门 %s 没开"
-					% [plate.get_path(), gate.get_path()])
-			errs += 1
-		probe_player.global_position = saved
-		for i in 25:
-			await get_tree().physics_frame
+	# --- Physical control -> channel -> every linked door/platform.
+	for plate: PressurePlate in plates:
+		errs += await _probe_control(lvl, plate, doors, platforms, false)
+	for lever: Lever in levers:
+		errs += await _probe_control(lvl, lever, doors, platforms, true)
 
-	# --- 杠杆：必须自锁。拉一下门就开，人走开也不能关回去。
-	#     这条和压力板是两种语义，混为一谈就会漏掉「门在人走后莫名关上」的 bug
-	for lv in levers:
-		var lever := lv as Lever
-		var linked: Array = doors.filter(func(d): return (d as GateDoor).channel == lever.channel)
-		var linked_plats: Array = platforms.filter(
-				func(m): return (m as MovingPlatform).channel == lever.channel)
-		if linked.is_empty() and linked_plats.is_empty():
-			printerr("[smoke] 杠杆 %s 的 channel '%s' 没有任何门在听"
-					% [lever.get_path(), String(lever.channel)])
-			errs += 1
-			continue
-		var players: Array = lvl.get("_players")
-		if players.is_empty():
-			continue
-		var pb := players[0] as Player
-		# Mechanism integration probes may place a player directly on a lever.
-		# Elemental repair levers need the matching actor; using Fire in water
-		# tests death instead of the lever. Wrong-element rejection has its own
-		# real-input adversarial route, separate from this component probe.
-		var grid: Array = Levels.get_level(GameState.current_level_index).grid
-		var cell := Vector2i(lever.position / 32.0)
-		var liquid: String = grid[cell.y][cell.x]
-		var required: StringName = &"water" if liquid == "~" else (&"fire" if liquid == "^" else &"")
-		for candidate: Player in players:
-			if candidate.alive and (required == &"" or candidate.element == required):
-				pb = candidate
-				break
-		pb.velocity = Vector2.ZERO
-		var saved := pb.global_position
-		# 杠杆也可能是在给平台供电（第 5 关就是），那时改用平台位移验收，
-		# 并且要额外验证「人走开之后平台照样在跑」—— 那才是自锁
-		if linked.is_empty():
-			var plat := linked_plats[0] as MovingPlatform
-			pb.global_position = lever.position + Vector2(16, 16)
-			for i in 4:
-				await get_tree().physics_frame
-			Input.action_press(pb.action_key)
-			await get_tree().physics_frame
-			Input.action_release(pb.action_key)
-			var q1 := plat.global_position
-			for i in 60:
-				await get_tree().physics_frame
-			if plat.global_position.distance_to(q1) < 8.0:
-				printerr("[smoke] 角色拉下杠杆 %s，但平台 %s 没有通电动起来"
-						% [lever.get_path(), plat.get_path()])
-				errs += 1
-			pb.global_position = saved
-			var q2 := plat.global_position
-			for i in 30:
-				await get_tree().physics_frame
-			if plat.global_position.distance_to(q2) < 4.0:
-				printerr("[smoke] 杠杆 %s 没有自锁：人一走开，平台 %s 就断电了"
-						% [lever.get_path(), plat.get_path()])
-				errs += 1
-			continue
-		var gate := linked[0] as GateDoor
-		var gy0 := gate.position.y
-
-		pb.global_position = lever.position + Vector2(16, 16)
-		# 必须等几帧让 Area2D 的 body_entered 真正派发 —— 传送完立刻按键，
-		# 杠杆的 _bodies 还是空的，这一按等于按了个寂寞
-		for i in 4:
-			await get_tree().physics_frame
-		Input.action_press(pb.action_key)
-		await get_tree().physics_frame
-		Input.action_release(pb.action_key)
-		for i in 20:
-			await get_tree().physics_frame
-		if gate.position.y - gy0 < 16.0:
-			printerr("[smoke] 角色拉下杠杆 %s，但门 %s 没开"
-					% [lever.get_path(), gate.get_path()])
-			errs += 1
-
-		# 自锁验证：人走开，门必须保持开着
-		pb.global_position = saved
-		for i in 30:
-			await get_tree().physics_frame
-		if gate.position.y - gy0 < 16.0:
-			printerr("[smoke] 杠杆 %s 没有自锁：人一走开，门 %s 就关回去了"
-					% [lever.get_path(), gate.get_path()])
-			errs += 1
-
-	# --- 传送门：必须两两配对
-	for po in portals:
-		if (po as Portal).target == null:
-			printerr("[smoke] 传送门没有配对：%s" % (po as Node).get_path())
+	for portal: Portal in portals:
+		if portal.target == null:
+			printerr("[smoke] unpaired portal: %s" % portal.get_path())
 			errs += 1
 
 	print("[smoke]    机关联调：门 %d / 压力板 %d / 杠杆 %d / 平台 %d / 传送门 %d，问题 %d 个"
-			% [doors.size(), plates.size(), levers.size(),
-			   platforms.size(), portals.size(), errs])
+		% [doors.size(), plates.size(), levers.size(), platforms.size(), portals.size(), errs])
+	return errs
+
+
+func _probe_control(lvl: Node, control: Area2D, doors: Array, platforms: Array, latched: bool) -> int:
+	var errs := 0
+	var channel: StringName = control.channel
+	var linked := doors.filter(func(gate: GateDoor): return gate.channel == channel)
+	var linked_platforms := platforms.filter(func(platform: MovingPlatform): return platform.channel == channel)
+	var label := "lever" if latched else "plate"
+	if linked.is_empty() and linked_platforms.is_empty():
+		printerr("[smoke] %s %s channel '%s' has no receiver" % [label, control.get_path(), channel])
+		return 1
+	var actor := _probe_actor_for(lvl, control.global_position)
+	if actor == null:
+		printerr("[smoke] no matching living actor for %s %s" % [label, control.get_path()])
+		return 1
+
+	# No direct channel signal is sent here: physical occupancy/action must
+	# power every receiver. Spectators remain on the parking pad throughout.
+	_teleport(actor, control.global_position + Vector2(16, 16))
+	await _probe_frames(4)
+	if latched:
+		Input.action_press(actor.action_key)
+		await _probe_frames(1)
+		Input.action_release(actor.action_key)
+	var travel := await _probe_platform_travel(linked_platforms, 60)
+	if not actor.alive or not control._bodies.has(actor) or (latched and not control._on):
+		printerr("[smoke] physical %s activation failed: %s actor=%s alive=%s occupants=%s"
+			% [label, control.get_path(), actor.global_position, actor.alive, control._bodies.size()])
+		errs += 1
+	for gate: GateDoor in linked:
+		if not gate._requested_open or absf(gate.position.y - gate._open_y) > 1.0:
+			printerr("[smoke] %s %s did not open gate %s (y=%.1f open=%.1f requested=%s)"
+				% [label, control.get_path(), gate.get_path(), gate.position.y, gate._open_y, gate._requested_open])
+			errs += 1
+	for platform: MovingPlatform in linked_platforms:
+		if not platform._active or travel[platform] < 8.0:
+			printerr("[smoke] %s %s did not power platform %s (travel=%.1f active=%s blocked=%s)"
+				% [label, control.get_path(), platform.get_path(), travel[platform], platform._active, platform._blocked_below])
+			errs += 1
+
+	_park_probe_players(lvl)
+	await _probe_frames(4) # Let the actual body_exited signal run.
+	var after := await _probe_platform_travel(linked_platforms, 30)
+	if not control._bodies.is_empty():
+		printerr("[smoke] %s retained stale occupants after leaving: %s" % [label, control.get_path()])
+		errs += 1
+	for gate: GateDoor in linked:
+		var expected := gate._open_y if latched else gate._closed_y
+		if gate._requested_open != latched or absf(gate.position.y - expected) > 1.0:
+			printerr("[smoke] %s release/latch failed for gate %s (y=%.1f expected=%.1f)"
+				% [label, gate.get_path(), gate.position.y, expected])
+			errs += 1
+	for platform: MovingPlatform in linked_platforms:
+		if platform._active != latched or (latched and after[platform] < 4.0) or (not latched and after[platform] > 1.0):
+			printerr("[smoke] %s release/latch failed for platform %s (travel=%.1f active=%s)"
+				% [label, platform.get_path(), after[platform], platform._active])
+			errs += 1
 	return errs
 
 

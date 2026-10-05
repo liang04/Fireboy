@@ -1,0 +1,270 @@
+[
+  {
+    "level": 10,
+    "verify_store": true,
+    "replay_tape": [
+      {
+        "frames": 1,
+        "mask": 18
+      },
+      {
+        "frames": 8,
+        "mask": 82
+      },
+      {
+        "frames": 1,
+        "mask": 80
+      },
+      {
+        "frames": 10,
+        "mask": 81
+      },
+      {
+        "frames": 2,
+        "mask": 65
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 16,
+        "mask": 69
+      },
+      {
+        "frames": 1,
+        "mask": 65
+      },
+      {
+        "frames": 1,
+        "mask": 69
+      },
+      {
+        "frames": 1,
+        "mask": 5
+      },
+      {
+        "frames": 16,
+        "mask": 84
+      },
+      {
+        "frames": 24,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 6,
+        "mask": 84
+      },
+      {
+        "frames": 1,
+        "mask": 80
+      },
+      {
+        "frames": 10,
+        "mask": 86
+      },
+      {
+        "frames": 17,
+        "mask": 70
+      },
+      {
+        "frames": 6,
+        "mask": 68
+      },
+      {
+        "frames": 7,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 6
+      },
+      {
+        "frames": 13,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 59,
+        "mask": 17
+      },
+      {
+        "frames": 8,
+        "mask": 16
+      },
+      {
+        "frames": 25,
+        "mask": 17
+      },
+      {
+        "frames": 8,
+        "mask": 16
+      },
+      {
+        "frames": 4,
+        "mask": 18
+      },
+      {
+        "frames": 30,
+        "mask": 2
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 200,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 13,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 49,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 20,
+        "mask": 96
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 27,
+        "mask": 96
+      },
+      {
+        "frames": 13,
+        "mask": 64
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 68,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 13,
+        "mask": 1
+      },
+      {
+        "frames": 83,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 34
+      },
+      {
+        "frames": 16,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 34
+      },
+      {
+        "frames": 9,
+        "mask": 32
+      },
+      {
+        "frames": 18,
+        "mask": 34
+      },
+      {
+        "frames": 5,
+        "mask": 32
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 8,
+        "mask": 32
+      },
+      {
+        "frames": 32,
+        "mask": 33
+      },
+      {
+        "frames": 74,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 55,
+        "mask": 1
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 25,
+        "mask": 1
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 30,
+        "mask": 1
+      }
+    ],
+    "expected": {
+      "frames": 1159,
+      "stars": 3,
+      "deaths": 0,
+      "box_resets": 0,
+      "red": 3,
+      "red_total": 3,
+      "blue": 3,
+      "blue_total": 3
+    }
+  }
+]

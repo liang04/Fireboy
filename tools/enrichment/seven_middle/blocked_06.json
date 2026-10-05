@@ -1,0 +1,86 @@
+[
+  {
+    "level": 6,
+    "name": "L6 visiting both ends at different times does not latch L",
+    "max_frames": 5000,
+    "phases": [
+      {
+        "label": "Scout arrives before the keeper",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 6,
+            "y_less": 450
+          },
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 16,
+            "y": 13
+          },
+          {
+            "kind": "swim",
+            "x": 20,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 20,
+            "y": 11
+          }
+        ],
+        "water": [
+          {
+            "kind": "wait",
+            "frames": 100
+          }
+        ]
+      },
+      {
+        "label": "Return without a key; the keeper arrives too late",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 13,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 6,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 16,
+            "y": 20
+          }
+        ]
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "gates": {
+        "L": false,
+        "R": false
+      }
+    }
+  }
+]

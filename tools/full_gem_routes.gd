@@ -167,6 +167,10 @@ func _task(who: String, task: Dictionary) -> bool:
 	var player := _player(who)
 	var age: int = task_ticks[who]
 	var kind: String = task.get("kind", "go")
+	if kind == "input":
+		# Bounded raw controls deliberately mistime a jump/gate without changing game state.
+		_controls(who, float(task.get("direction", 0)), bool(task.get("jump", false)), bool(task.get("interact", false)))
+		return age >= int(task.get("frames", 1))
 	if kind == "wait":
 		_controls(who, 0)
 		return age >= int(task.get("frames", 1))

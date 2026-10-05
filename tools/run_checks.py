@@ -49,6 +49,7 @@ def main():
             ("Existing regression", [binary, "--headless", "--path", str(ROOT), "res://tools/regression.tscn"]),
             ("Controls regression", [binary, "--headless", "--path", str(ROOT), "res://tools/control_regression.tscn"]),
             ("Box co-op regression", [binary, "--headless", "--path", str(ROOT), "res://tools/box_regression.tscn"]),
+            ("Platform underside safety", [binary, "--headless", "--path", str(ROOT), "--fixed-fps", "60", "res://tools/platform_safety_regression.tscn"]),
             ("Feedback regression", [binary, "--headless", "--path", str(ROOT), "res://tools/feedback_regression.tscn"]),
             ("Audio regression", [binary, "--headless", "--path", str(ROOT), "res://tools/audio_regression.tscn"]),
             ("Visual feedback regression", [binary, "--headless", "--path", str(ROOT), "res://tools/visual_feedback_regression.tscn"]),
@@ -74,11 +75,12 @@ def main():
                            "--output", str(isolated / "full-gem-replay.json")]))
         for name, command in checks:
             print(f"\n=== {name} ===", flush=True)
+            timeout = 600 if name in ("Prototype temporal/cooperation/recovery", "Enrichment cooperation and recovery") else 240
             try:
                 result = subprocess.run(command, cwd=ROOT, env=env, capture_output=True,
-                                        text=True, encoding="utf-8", errors="replace", timeout=240)
+                                        text=True, encoding="utf-8", errors="replace", timeout=timeout)
             except subprocess.TimeoutExpired:
-                print(f"FAIL: {name} exceeded 240 seconds", file=sys.stderr)
+                print(f"FAIL: {name} exceeded {timeout} seconds", file=sys.stderr)
                 return 1
             output = result.stdout + result.stderr
             # Fresh Godot caches can log this before importing the project's font.

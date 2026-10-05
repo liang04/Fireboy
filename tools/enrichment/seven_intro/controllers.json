@@ -1,0 +1,1642 @@
+[
+  {
+    "level": 1,
+    "phases": [
+      {
+        "label": "first pool",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 14,
+            "y": 21
+          },
+          {
+            "kind": "swim",
+            "x": 16,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 16,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "second pool",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 26,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 31,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 32,
+            "y": 17
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 28,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 21
+          },
+          {
+            "kind": "swim",
+            "x": 31,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "fire keeps A on the lava bridge",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 35,
+            "y": 15
+          },
+          {
+            "kind": "go",
+            "x": 39,
+            "y": 16
+          },
+          {
+            "kind": "swim",
+            "x": 46,
+            "y": 15
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "water holds B for Fire",
+        "fire": [],
+        "water": [
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "join exits",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 50,
+            "y": 15
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "water leaves after Fire is safely through",
+        "water": [
+          {
+            "kind": "go",
+            "x": 47,
+            "y": 19
+          }
+        ]
+      }
+    ],
+    "name": "L1 standard reciprocal rescue",
+    "verify_store": true
+  },
+  {
+    "level": 1,
+    "phases": [
+      {
+        "label": "first pool",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 14,
+            "y": 21
+          },
+          {
+            "kind": "swim",
+            "x": 16,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 16,
+            "y": 19
+          },
+          {
+            "kind": "go",
+            "x": 28,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 21
+          },
+          {
+            "kind": "swim",
+            "x": 31,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "second pool",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 26,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 31,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 32,
+            "y": 17
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "fire keeps A on the lava bridge",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 35,
+            "y": 15
+          },
+          {
+            "kind": "go",
+            "x": 39,
+            "y": 16
+          },
+          {
+            "kind": "swim",
+            "x": 46,
+            "y": 15
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "water holds B for Fire",
+        "fire": [],
+        "water": [
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "join exits",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 50,
+            "y": 15
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "water leaves after Fire is safely through",
+        "water": [
+          {
+            "kind": "go",
+            "x": 47,
+            "y": 19
+          }
+        ]
+      }
+    ],
+    "name": "L1 water gathers pools before Fire climbs",
+    "verify_store": true
+  },
+  {
+    "level": 1,
+    "phases": [
+      {
+        "label": "first pool",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 14,
+            "y": 21
+          },
+          {
+            "kind": "swim",
+            "x": 16,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 16,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "second pool",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 26,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 31,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 32,
+            "y": 17
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 28,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 21
+          },
+          {
+            "kind": "swim",
+            "x": 31,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "fire keeps A on the lava bridge",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 31,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 32,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 35,
+            "y": 15
+          },
+          {
+            "kind": "go",
+            "x": 39,
+            "y": 16
+          },
+          {
+            "kind": "swim",
+            "x": 46,
+            "y": 15
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "A keeper leaves early; Water safely stops at the closed lower arch",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 47.5,
+            "y": 15
+          },
+          {
+            "kind": "wait",
+            "frames": 65
+          }
+        ],
+        "water": [
+          {
+            "kind": "wait",
+            "frames": 40
+          },
+          {
+            "kind": "input",
+            "direction": 1,
+            "frames": 60
+          }
+        ]
+      },
+      {
+        "label": "return to A without a reset",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 15
+          }
+        ],
+        "water": [
+          {
+            "kind": "wait",
+            "frames": 25
+          }
+        ]
+      },
+      {
+        "label": "water holds B for Fire",
+        "fire": [],
+        "water": [
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "Water releases B too early; the full-height arch stops Fire",
+        "fire": [
+          {
+            "kind": "wait",
+            "frames": 45
+          },
+          {
+            "kind": "go",
+            "x": 48,
+            "y": 15
+          },
+          {
+            "kind": "input",
+            "direction": 1,
+            "frames": 60
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 19
+          },
+          {
+            "kind": "wait",
+            "frames": 70
+          }
+        ]
+      },
+      {
+        "label": "Water returns to B and retries the same handoff",
+        "water": [
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "join exits",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 50,
+            "y": 15
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "water leaves after Fire is safely through",
+        "water": [
+          {
+            "kind": "go",
+            "x": 47,
+            "y": 19
+          }
+        ]
+      }
+    ],
+    "name": "L1 missed landing and two early support releases recover",
+    "verify_store": true
+  },
+  {
+    "level": 2,
+    "name": "L2 fire courier water scout",
+    "verify_store": true,
+    "phases": [
+      {
+        "label": "teammate holds A while courier delivers crate to B",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 14
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 4,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "scout crosses B, climbs dry stair, opens C before crate is moved",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 14,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 13,
+            "y": 21
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 16,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 30.5,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 28,
+            "y": 19,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 27,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 25,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 22,
+            "y": 14
+          },
+          {
+            "kind": "interact"
+          }
+        ]
+      },
+      {
+        "label": "the same crate moves from B to its second job D",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 16
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "courier returns via now permanent C bridge",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 11,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 5,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 7,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 9,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 11,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 15,
+            "y": 14
+          },
+          {
+            "kind": "go",
+            "x": 20,
+            "y": 14
+          },
+          {
+            "kind": "go",
+            "x": 30.5,
+            "y": 21
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 30.5,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "ride across acid",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 31.5,
+            "y": 21
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400,
+            "range": 75
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1300,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 21
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 31.5,
+            "y": 21
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400,
+            "range": 75
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1300,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "element pool and exits",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 43,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 49,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 51,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 53,
+            "y": 19
+          },
+          {
+            "kind": "go",
+            "x": 54,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 49,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 51,
+            "y": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "level": 2,
+    "name": "L2 water courier fire scout",
+    "verify_store": true,
+    "phases": [
+      {
+        "label": "teammate holds A while courier delivers crate to B",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 4,
+            "y": 21
+          }
+        ],
+        "water": [
+          {
+            "kind": "push",
+            "box_x": 14
+          }
+        ]
+      },
+      {
+        "label": "scout crosses B, climbs dry stair, opens C before crate is moved",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 14,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 16,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 30.5,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 28,
+            "y": 19,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 27,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 25,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 22,
+            "y": 14
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "kind": "go",
+            "x": 20,
+            "y": 14
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 14,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 13,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "the same crate moves from B to its second job D",
+        "fire": [],
+        "water": [
+          {
+            "kind": "push",
+            "box_x": 16
+          }
+        ]
+      },
+      {
+        "label": "courier returns via now permanent C bridge",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 30.5,
+            "y": 21
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 11,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 5,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 7,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 9,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 11,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 15,
+            "y": 14
+          },
+          {
+            "kind": "go",
+            "x": 20,
+            "y": 14
+          },
+          {
+            "kind": "go",
+            "x": 30.5,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "ride across acid",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 31.5,
+            "y": 21
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400,
+            "range": 75
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1300,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 21
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 31.5,
+            "y": 21
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400,
+            "range": 75
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1300,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "element pool and exits",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 43,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 49,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 51,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 53,
+            "y": 19
+          },
+          {
+            "kind": "go",
+            "x": 54,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 49,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 51,
+            "y": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "level": 2,
+    "name": "L2 early A release, missed stair, and trapped crate recovery",
+    "verify_store": true,
+    "phases": [
+      {
+        "label": "prepare a deliberate early release",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 21
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 4,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "A released too soon; dry crate stops safely at its closed gate",
+        "fire": [
+          {
+            "kind": "wait",
+            "frames": 50
+          },
+          {
+            "kind": "input",
+            "direction": 1,
+            "frames": 80
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 5,
+            "y": 21
+          },
+          {
+            "kind": "wait",
+            "frames": 130
+          }
+        ]
+      },
+      {
+        "label": "helper returns to A without reset",
+        "water": [
+          {
+            "kind": "go",
+            "x": 4,
+            "y": 21
+          }
+        ],
+        "fire": [
+          {
+            "kind": "wait",
+            "frames": 30
+          }
+        ]
+      },
+      {
+        "label": "teammate holds A while courier delivers crate to B",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 14
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 4,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "scout crosses B, climbs dry stair, opens C before crate is moved",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 14,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 13,
+            "y": 21
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 16,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 30.5,
+            "y": 21
+          },
+          {
+            "kind": "input",
+            "direction": -1,
+            "jump": true,
+            "frames": 3
+          },
+          {
+            "kind": "input",
+            "direction": 0,
+            "frames": 45
+          },
+          {
+            "kind": "wait",
+            "frames": 10
+          },
+          {
+            "kind": "go",
+            "x": 30.5,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 28,
+            "y": 19,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 27,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 25,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 22,
+            "y": 14
+          },
+          {
+            "kind": "interact"
+          }
+        ]
+      },
+      {
+        "label": "overshoot the second plate against B; crate remains reachable",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 17
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "scout returns through C and reopens B for crate recovery",
+        "water": [
+          {
+            "kind": "go",
+            "x": 5,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 14,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "courier gets behind crate and puts the same box back on D",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 19,
+            "y": 21
+          },
+          {
+            "kind": "push",
+            "box_x": 16
+          },
+          {
+            "kind": "jump",
+            "x": 13,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "courier returns via now permanent C bridge",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 11,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 5,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 7,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 9,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 11,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 15,
+            "y": 14
+          },
+          {
+            "kind": "go",
+            "x": 20,
+            "y": 14
+          },
+          {
+            "kind": "go",
+            "x": 30.5,
+            "y": 21
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 11,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 5,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 7,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 9,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 11,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 15,
+            "y": 14
+          },
+          {
+            "kind": "go",
+            "x": 20,
+            "y": 14
+          },
+          {
+            "kind": "go",
+            "x": 30.5,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "ride across acid",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 31.5,
+            "y": 21
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400,
+            "range": 75
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1300,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 21
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 31.5,
+            "y": 21
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400,
+            "range": 75
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1300,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "element pool and exits",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 43,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 49,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 51,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 53,
+            "y": 19
+          },
+          {
+            "kind": "go",
+            "x": 54,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 49,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 51,
+            "y": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "level": 2,
+    "name": "L2 box moved before shortcut; scout rescues waiting courier",
+    "verify_store": true,
+    "phases": [
+      {
+        "label": "teammate holds A while courier delivers crate to B",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 14
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 4,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "scout crosses B, climbs dry stair, opens C before crate is moved",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 14,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 13,
+            "y": 21
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 16,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 30.5,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "the same crate moves from B to its second job D",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 16
+          }
+        ],
+        "water": []
+      },
+      {
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 11,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 5,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 7,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 9,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 11,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 15,
+            "y": 14
+          },
+          {
+            "kind": "go",
+            "x": 17,
+            "y": 14
+          },
+          {
+            "kind": "input",
+            "direction": 1,
+            "frames": 100
+          }
+        ]
+      },
+      {
+        "label": "scout opens C after courier discovers the closed return arch",
+        "water": [
+          {
+            "kind": "jump",
+            "x": 28,
+            "y": 19,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 27,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 25,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 22,
+            "y": 14
+          },
+          {
+            "kind": "interact"
+          }
+        ]
+      },
+      {
+        "label": "meet above the closed B route",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 20,
+            "y": 14
+          },
+          {
+            "kind": "go",
+            "x": 30.5,
+            "y": 21
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 30.5,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "ride across acid",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 31.5,
+            "y": 21
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400,
+            "range": 75
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1300,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 21
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 31.5,
+            "y": 21
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400,
+            "range": 75
+          },
+          {
+            "kind": "ride",
+            "axis": "x",
+            "until": 1300,
+            "less": false,
+            "timeout": 2400
+          },
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "element pool and exits",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 43,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 49,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 51,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 53,
+            "y": 19
+          },
+          {
+            "kind": "go",
+            "x": 54,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 49,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 51,
+            "y": 20
+          }
+        ]
+      }
+    ]
+  }
+]

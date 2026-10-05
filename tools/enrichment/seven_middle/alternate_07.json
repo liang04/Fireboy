@@ -1,0 +1,170 @@
+[
+  {
+    "level": 7,
+    "verify_store": true,
+    "max_frames": 18000,
+    "phases": [
+      {
+        "label": "Water chooses the first sightseeing ride",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 5,
+            "y": 19
+          },
+          {
+            "kind": "go",
+            "x": 17,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 19
+          },
+          {
+            "kind": "go",
+            "x": 7,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "Fire keeps A powered while water opens B",
+        "fire": [],
+        "water": [
+          {
+            "kind": "board",
+            "platform": 0,
+            "range": 145,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 370,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 14,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 15,
+            "y": 10
+          },
+          {
+            "kind": "interact"
+          }
+        ]
+      },
+      {
+        "label": "Meet on the balcony from different lifts",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 19
+          },
+          {
+            "kind": "board",
+            "platform": 1,
+            "range": 145,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 370,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 33,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 18,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 20,
+            "y": 10
+          },
+          {
+            "kind": "jump",
+            "x": 22,
+            "y": 7,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 28,
+            "y": 10
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 28,
+            "y": 10
+          },
+          {
+            "kind": "jump",
+            "x": 25,
+            "y": 7,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 28,
+            "y": 10
+          }
+        ]
+      },
+      {
+        "label": "Return to the dry promenade",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 43,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "Finish side by side",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 19
+          }
+        ]
+      }
+    ]
+  }
+]

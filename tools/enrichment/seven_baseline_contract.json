@@ -1,0 +1,161 @@
+{
+  "_source": {
+    "local_tested_commit": "66fb81f0e4633260f342156f3f257748db8967e0",
+    "remote_commit": "6e7de7ff95d8fc3d41beadef77e84b89b7592682",
+    "tree": "33f6c006404a0df6b2f5aa46a5a519b0333d163f",
+    "description": "Frozen Godot 4.7 release before enriching levels 1, 2, 5, 6, 7, 9 and 10; levels 3, 4 and 8 retain their tested data, controller routes and raw-input replays.",
+    "canonical_hash_format": "SHA-256 of json.dumps(value, sort_keys=True, separators=(\",\", \":\")) encoded as UTF-8.",
+    "entry_bytes_format": "UTF-8 bytes of each complete JSON object from its opening brace through its closing brace, retaining internal whitespace.",
+    "generated_block_bytes_format": "Bytes from static func _level_NN() to the next static func _level_ declaration (or EOF), retaining trailing whitespace."
+  },
+  "1": {
+    "revision": 2,
+    "par_time": 30.0,
+    "gem_counts": {
+      "red": 3,
+      "blue": 3
+    },
+    "sha256": "cf93cbc946f16b1012d57721a09526060cb57d4102df450f57ad001f1686e0ff",
+    "builder_sha256": "bc8920543d25fdbc324859deaf773684ce4dd085967270ec8b2f677765653c30",
+    "generated_block_sha256": "ad36b2700e3d42994d53d66f79f398613aa38c6bc638338a0ea9b17dd8ff43c9",
+    "replay_sha256": "33d53e2fe7a1b4f226a82ef1dbdf8df735d0dd6ef1da2988913c2984aa691f10",
+    "replay_bytes_sha256": "974e2205a08d14411465940ec4c16320100c69ce8aa4736758769bda377aa13c",
+    "controller_sha256": "9e51c85143e91604f13a5bfe256418c2703639bd7636383494ef555c5267985d",
+    "controller_bytes_sha256": "d9a21a5498ed935aac571b2e9f8f4683b44d432fdb8c59376bc9460cf0043eec"
+  },
+  "2": {
+    "revision": 2,
+    "par_time": 45.0,
+    "gem_counts": {
+      "red": 3,
+      "blue": 3
+    },
+    "sha256": "47cadc751d9e6f3b0e5094e06c15b05dedd2c9ade7e0886d08d17cb6d4db5f4e",
+    "builder_sha256": "97560b90a48758785c48fd0f1a7fc3c5ed9b62affe5a7ee23c51a0cb09849e22",
+    "generated_block_sha256": "1e8cab8c3cd40848ef35ae87d1d802444ff25d223bf8b66bfbff60e447149251",
+    "replay_sha256": "95e243855356d2aeda56c4b025b9b07ecbddbda27c3070afc87b2b0fc7260a77",
+    "replay_bytes_sha256": "64cb2285ea124214630d32b857a30a4561ff6b963f4cee555fae70ee1a53b34a",
+    "controller_sha256": "2bb0b571f2460a5bcabb19b477119c8b16c72af7219903fdab8497bc38e60086",
+    "controller_bytes_sha256": "f9168f08b94dae7678f01b8031a09bcc879bf9f41867b6f9c9c5dbf5765b30ba"
+  },
+  "3": {
+    "revision": 3,
+    "par_time": 65.0,
+    "gem_counts": {
+      "red": 5,
+      "blue": 5
+    },
+    "sha256": "80ae30ffc06a3805108f6b907ac068ad57d021af2551f5be38aed2fa57ed6ec4",
+    "builder_sha256": "48d92669e37fa6325229aacf576b2840fd8b5ed96d3145287a121ea8b8b39528",
+    "generated_block_sha256": "7a49b75e8095b7affa24fbb00faa4b7b19823564984769d70411467ee9b117f0",
+    "replay_sha256": "3b43a982cbd2d24691d501dc0ddbdf464e9f29a8afbecf10b2e868388d9018a9",
+    "replay_bytes_sha256": "f9a91eb0393b05c6813040ebc966cd2dc71476b9ccb01a29c502b979f82c42b6",
+    "controller_sha256": "448eb29dd8603455f603cf3cf96b015962a170ec19758090abb050219a1964f2",
+    "controller_bytes_sha256": "7759df60b2e04c4afb667d771195f3537cd4521d51e7697ea8150c2fb68f6ebb"
+  },
+  "4": {
+    "revision": 4,
+    "par_time": 50.0,
+    "gem_counts": {
+      "red": 3,
+      "blue": 3
+    },
+    "sha256": "5c862a1c7c36dfdd342d3615ce691da594da359ceadaa63a62c47dcd585d4d52",
+    "builder_sha256": "448fb919d773777e6f365e9e7bbcb23abc4e917be9298f20461373b1b322e94b",
+    "generated_block_sha256": "38fcfa30cc1b8f641df590d6e50f5d70c3c05a6a28416a9df57c2ff08c67d901",
+    "replay_sha256": "ff88519010b46d731a2076b1187c58d809fc18fdd3d6ba4fb09b9009af8e6746",
+    "replay_bytes_sha256": "b095d74f84fcebe738f27f59a3568428480b4d0b905251eab2bb0ae784272c74",
+    "controller_sha256": "1f2c1114e60f772848f44e73b197654c4484e958b255724e7beab55a677ac824",
+    "controller_bytes_sha256": "828ae7741ab97a981829930393e728540894034c0275b3b3d4ebe3c63380055f"
+  },
+  "5": {
+    "revision": 2,
+    "par_time": 65.0,
+    "gem_counts": {
+      "red": 4,
+      "blue": 4
+    },
+    "sha256": "e19b94ebe785d55d42cee0e674356c57e94459458561d728e8d3a4dc86adc23c",
+    "builder_sha256": "0b96b385819cffe64f0b946c1705fab0f6cb351f958c174f6f5d3d5e220a8fad",
+    "generated_block_sha256": "8cb7d80137721543797e380cb91e160d2c5b3d7c3cebcadec9f095eb4199a3a2",
+    "replay_sha256": "ccec329f1772a2ccc2194935f6c85e4feac6a2dc15f4f1c941559f620a7013b2",
+    "replay_bytes_sha256": "8394ccbd63392b031266ab377c1dfbd2303a6d7804fc416dbba39818b21c8897",
+    "controller_sha256": "f8e48129c9313dc764e5aaa13ed17343449d02bbcdf3b9b1ffc192312e9ec560",
+    "controller_bytes_sha256": "f4308d117f9a798c287d15dd022d41388eabd9018d70330b3b531a3e915f7c87"
+  },
+  "6": {
+    "revision": 2,
+    "par_time": 30.0,
+    "gem_counts": {
+      "red": 3,
+      "blue": 3
+    },
+    "sha256": "99835c1c90e1caf2d8b45c90d96c097234cfe3ffeb946ad71d0c273f3cd682c7",
+    "builder_sha256": "a82a4d7aa18750e536d8d8e64c82d8053fa494d9f2fd618b5e8cf4d7f5bf6765",
+    "generated_block_sha256": "2fea804dcd6f9ebc4ea28a80cfd31ac7d07fbab36fd10d1b27e039302d5538bd",
+    "replay_sha256": "a1c3d20e8582909e2abb062fa8c8f02504080e0b132813f0bf50730b5724435f",
+    "replay_bytes_sha256": "eba51135e22214f257f9614c2474b6a0ada53ed543ddbf57ef7f7889f62ec26d",
+    "controller_sha256": "46986aaba01b292099a2a90e1a7a626db75b2843469683656dba276ead0a1fa9",
+    "controller_bytes_sha256": "2c61af356a7fbcd058e94e2f905752f94e8394d8ba25fb6e1a5227261ea049c8"
+  },
+  "7": {
+    "revision": 2,
+    "par_time": 40.0,
+    "gem_counts": {
+      "red": 3,
+      "blue": 3
+    },
+    "sha256": "a2b45dec9401513e053b3a304f3cb3641c1475855e632a22ec23a8a7a2f95d2d",
+    "builder_sha256": "fb45f2e546340a4a80573b2994f0926d48b7cefe0e47c362e99531e912cf6f75",
+    "generated_block_sha256": "aaa28d8b1c37ba1bc9a50601b8a1326743c0860382cdd30786b4c7cd86375582",
+    "replay_sha256": "5cd2dfdd6ce68ab83fc56c4a7585749ac5a022817795ebbc03cba4427037a25e",
+    "replay_bytes_sha256": "ebad18ec49c80a4b1004584f0cf3dcd4eb4ffa7673163f60d7b9dcc266a9d814",
+    "controller_sha256": "b47da8f3fa6d7c1089af875b0cae4ee4b1443a88cadfd7d746ce708ddae5dd24",
+    "controller_bytes_sha256": "4ddce9fc9c2befd63ff1b1bb75793695f4a70ba77fbb265ae4985fc87ed9dbb2"
+  },
+  "8": {
+    "revision": 3,
+    "par_time": 90.0,
+    "gem_counts": {
+      "red": 5,
+      "blue": 5
+    },
+    "sha256": "71165defb52bc0447946365bb5779027589d72f98c9c83243404341bfd1ad332",
+    "builder_sha256": "c4d855f13cb9258dbc46d7c2150becd30e8ebc500b4dc1404ca42e6093a2fb76",
+    "generated_block_sha256": "a6e6598c66bca7d87a060b6b2fb104b21bd5593411041abf84fb85dbeec92b22",
+    "replay_sha256": "b82b90150f42a8500a19df4c4af1f8b6fa66a6c1013f9646c94f33d8a5a3662b",
+    "replay_bytes_sha256": "6df88919ac97f13a7715d9d419af7ddfe7ffe8604e3a3b02775c2cd0d959a7bf",
+    "controller_sha256": "111e0180f6a8495f415a71b6dc2ada7c5bbb600cc857be016280bef761f9db2b",
+    "controller_bytes_sha256": "18f55c18d26ffe34821fb66b7fa26a8f4b85cb4e82d38c132bceb4edfd53ff5e"
+  },
+  "9": {
+    "revision": 2,
+    "par_time": 55.0,
+    "gem_counts": {
+      "red": 4,
+      "blue": 4
+    },
+    "sha256": "7eeb94a694d1f3c32d5dae72da4112de221d8e2258396b9309c8877e62c41bca",
+    "builder_sha256": "964536911a4f17c497d6b71abf34ba13fd9b5efd46d813c52d430e7028d341b0",
+    "generated_block_sha256": "2bde29cf3c4189aaadf14cc617529115899108fb24a1aa3f07809383fc98a12f",
+    "replay_sha256": "d65267a8e5652a5d7bfb4b01e91c2c75c8f2fd36dbccd599f086fe779b6c69fa",
+    "replay_bytes_sha256": "4e4478eaaf39ccb9ed247dd96ef590547c4efd986407e3f5ca9d94916359b0ae",
+    "controller_sha256": "45ea3bc0baf989a93498a445a593b8a1a9afe2d9d142f677cb989e485540bd0e",
+    "controller_bytes_sha256": "63ec2c56416fbc12643ca432235dcaca0b731980d1f5fd70aa6367ca555b4121"
+  },
+  "10": {
+    "revision": 4,
+    "par_time": 35.0,
+    "gem_counts": {
+      "red": 3,
+      "blue": 3
+    },
+    "sha256": "333890078c40ae6e2b34802bb593fe5d950bec0399e7580e9fd6401a5885ba4c",
+    "builder_sha256": "0ff2b491b12959b9bbae622749d4916062ad0889286677f2e1bd6bca4782765d",
+    "generated_block_sha256": "44f92cf6db9d97d257edafdc16b87ca2753ee195138fe36c70c7f3211b511b26",
+    "replay_sha256": "abb201a9db28d4ee3653be8e43dc1876b6de924a570c38b04202c3b3ac4b7ac9",
+    "replay_bytes_sha256": "0d2618671ce45f396669709b973ebea3da49f3bbb8f5b481604cd910224451bd",
+    "controller_sha256": "011c14f2c7f5d873a0d95220ca6108196d8d7172452b525619300fb75afa8afc",
+    "controller_bytes_sha256": "db5ba70142d201e64d5a945d54c95198ef54f8c040841be70105e9113496a327"
+  }
+}

@@ -99,20 +99,12 @@
         ]
       },
       {
-        "label": "water returns B",
+        "label": "water holds B for Fire",
         "fire": [],
         "water": [
           {
             "kind": "go",
             "x": 42,
-            "y": 19
-          },
-          {
-            "kind": "interact"
-          },
-          {
-            "kind": "go",
-            "x": 47,
             "y": 19
           }
         ]
@@ -127,15 +119,57 @@
           }
         ],
         "water": []
+      },
+      {
+        "label": "water leaves after Fire is safely through",
+        "water": [
+          {
+            "kind": "go",
+            "x": 47,
+            "y": 19
+          }
+        ]
       }
-    ]
+    ],
+    "name": "L1 standard reciprocal rescue",
+    "verify_store": true
   },
   {
     "level": 2,
+    "name": "L2 fire courier water scout",
+    "verify_store": true,
     "phases": [
       {
-        "label": "water guard, fire stages courier",
+        "label": "teammate holds A while courier delivers crate to B",
         "fire": [
+          {
+            "kind": "push",
+            "box_x": 14
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 4,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "scout crosses B, climbs dry stair, opens C before crate is moved",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 14,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 13,
+            "y": 21
+          }
+        ],
+        "water": [
           {
             "kind": "go",
             "x": 9,
@@ -143,66 +177,108 @@
           },
           {
             "kind": "jump",
-            "x": 10,
-            "y": 20
-          },
-          {
-            "kind": "go",
-            "x": 9,
+            "x": 16,
             "y": 21
-          }
-        ],
-        "water": [
-          {
-            "kind": "go",
-            "x": 2,
-            "y_less": 550,
-            "timeout": 200
           },
           {
             "kind": "go",
-            "x": 15,
-            "y": 16
+            "x": 30.5,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 28,
+            "y": 19,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 27,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 25,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 22,
+            "y": 14
+          },
+          {
+            "kind": "interact"
           }
         ]
       },
       {
-        "label": "courier delivers behind A",
+        "label": "the same crate moves from B to its second job D",
         "fire": [
           {
             "kind": "push",
-            "box_x": 22
-          },
-          {
-            "kind": "wait",
-            "frames": 30
+            "box_x": 16
           }
         ],
         "water": []
       },
       {
-        "label": "guard released by B",
+        "label": "courier returns via now permanent C bridge",
         "fire": [
           {
             "kind": "jump",
-            "x": 23,
+            "x": 11,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 5,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 7,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 9,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 11,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 15,
+            "y": 14
+          },
+          {
+            "kind": "go",
+            "x": 20,
+            "y": 14
+          },
+          {
+            "kind": "go",
+            "x": 30.5,
             "y": 21
           }
         ],
         "water": [
           {
             "kind": "go",
-            "x": 23,
+            "x": 30.5,
             "y": 21
           }
         ]
       },
       {
-        "label": "cross acid",
+        "label": "ride across acid",
         "fire": [
           {
             "kind": "go",
-            "x": 23,
+            "x": 31.5,
             "y": 21
           },
           {
@@ -214,28 +290,20 @@
           {
             "kind": "ride",
             "axis": "x",
-            "until": 1060,
+            "until": 1300,
             "less": false,
             "timeout": 2400
           },
           {
             "kind": "go",
-            "x": 34,
+            "x": 42,
             "y": 21
-          },
-          {
-            "kind": "go",
-            "x": 35,
-            "y": 21
-          },
-          {
-            "kind": "interact"
           }
         ],
         "water": [
           {
             "kind": "go",
-            "x": 23,
+            "x": 31.5,
             "y": 21
           },
           {
@@ -247,65 +315,60 @@
           {
             "kind": "ride",
             "axis": "x",
-            "until": 1060,
+            "until": 1300,
             "less": false,
             "timeout": 2400
           },
           {
             "kind": "go",
-            "x": 35,
+            "x": 42,
             "y": 21
           }
         ]
       },
       {
-        "label": "water and exits",
+        "label": "element pool and exits",
         "fire": [
           {
             "kind": "go",
-            "x": 37.5,
-            "y": 21
-          },
-          {
-            "kind": "jump",
             "x": 43,
             "y": 21
-          },
-          {
-            "kind": "jump",
-            "x": 46,
-            "y": 20
           },
           {
             "kind": "jump",
             "x": 49,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 51,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 53,
             "y": 19
           },
           {
             "kind": "go",
-            "x": 50,
+            "x": 54,
             "y": 19
           }
         ],
         "water": [
           {
             "kind": "go",
-            "x": 39,
+            "x": 46,
             "y": 22
           },
           {
             "kind": "swim",
-            "x": 43,
+            "x": 49,
             "y": 21
           },
           {
             "kind": "jump",
-            "x": 47,
-            "y": 20
-          },
-          {
-            "kind": "go",
-            "x": 46,
+            "x": 51,
             "y": 20
           }
         ]
@@ -808,239 +871,244 @@
   },
   {
     "level": 5,
+    "verify_store": true,
+    "max_frames": 18000,
     "phases": [
       {
-        "label": "Element detours and first supply",
+        "label": "Element detours and choose freight loading",
         "fire": [
           {
-            "kind": "go",
-            "x": 13,
-            "y": 27
+            "kind": "jump",
+            "x": 5,
+            "y": 24
           },
           {
             "kind": "go",
-            "x": 15,
+            "x": 3,
             "y": 27
           },
           {
             "kind": "swim",
-            "x": 11,
+            "x": 6,
             "y": 25
           },
           {
             "kind": "go",
             "x": 9,
             "y": 25
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 25
+          }
+        ]
+      },
+      {
+        "label": "Load the existing A freight lift",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 17,
+            "timeout": 2400
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Escort cargo to the wide B landing",
+        "fire": [
+          {
+            "kind": "ride",
+            "until": 666,
+            "timeout": 2400
+          },
+          {
+            "kind": "push",
+            "box_x": 18,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 21,
+            "y": 18
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 32,
+            "y": 25
+          }
+        ]
+      },
+      {
+        "label": "Scout enables the keeper return lift",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 22,
+            "y": 18
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "kind": "go",
+            "x": 24,
+            "y": 18
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Keeper visits water cove and takes C; scout waits for summit",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 18
           }
         ],
         "water": [
           {
             "kind": "go",
             "x": 33,
-            "y": 27
+            "y": 25
+          },
+          {
+            "kind": "jump",
+            "x": 35,
+            "y": 24
           },
           {
             "kind": "go",
-            "x": 35,
+            "x": 37,
             "y": 27
           },
           {
             "kind": "swim",
-            "x": 31,
+            "x": 40,
             "y": 25
           },
           {
             "kind": "go",
-            "x": 24,
-            "y": 25
-          }
-        ]
-      },
-      {
-        "label": "Escort fire to safe interchange",
-        "fire": [
-          {
-            "kind": "board",
-            "platform": 0,
-            "timeout": 2400,
-            "range": 145
-          },
-          {
-            "kind": "ride",
-            "until": 522,
-            "timeout": 2400
-          },
-          {
-            "kind": "jump",
-            "x": 10,
-            "y": 15
-          },
-          {
-            "kind": "interact"
-          }
-        ],
-        "water": []
-      },
-      {
-        "label": "Water catches up; fire visits optional balcony",
-        "fire": [
-          {
-            "kind": "go",
-            "x": 19,
-            "y": 15
-          },
-          {
-            "kind": "jump",
-            "x": 21,
-            "y": 12,
-            "rise_first": true
-          },
-          {
-            "kind": "go",
-            "x": 21,
-            "y": 12
-          },
-          {
-            "kind": "go",
-            "x": 19,
-            "y": 15
-          },
-          {
-            "kind": "go",
-            "x": 9,
-            "y": 15
-          }
-        ],
-        "water": [
-          {
-            "kind": "go",
-            "x": 31,
-            "y": 25
-          },
-          {
-            "kind": "jump",
-            "x": 37,
-            "y": 25
-          },
-          {
-            "kind": "go",
-            "x": 39,
+            "x": 45,
             "y": 25
           },
           {
             "kind": "board",
             "platform": 1,
-            "timeout": 2400,
-            "range": 145
+            "range": 145,
+            "timeout": 2400
           },
           {
             "kind": "ride",
-            "until": 522,
+            "until": 626,
             "timeout": 2400
           },
           {
             "kind": "jump",
-            "x": 37,
-            "y": 15
+            "x": 43,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 18
           }
         ]
       },
       {
-        "label": "Water balcony and second supply",
-        "fire": [],
-        "water": [
-          {
-            "kind": "go",
-            "x": 26,
-            "y": 15
-          },
-          {
-            "kind": "jump",
-            "x": 24,
-            "y": 12,
-            "rise_first": true
-          },
-          {
-            "kind": "go",
-            "x": 26,
-            "y": 15
-          },
-          {
-            "kind": "go",
-            "x": 34,
-            "y": 15
-          }
-        ]
-      },
-      {
-        "label": "Swap the escort role",
+        "label": "Join the cargo-powered summit lift",
         "fire": [
+          {
+            "kind": "go",
+            "x": 45,
+            "y": 18
+          },
           {
             "kind": "board",
             "platform": 2,
-            "timeout": 2400,
-            "range": 145
+            "range": 145,
+            "timeout": 2400
           },
           {
             "kind": "ride",
-            "until": 170,
+            "until": 306,
             "timeout": 2400
           },
           {
             "kind": "jump",
-            "x": 11,
-            "y": 4
-          },
-          {
-            "kind": "interact"
-          },
-          {
-            "kind": "go",
-            "x": 17,
-            "y": 4
-          },
-          {
-            "kind": "go",
-            "x": 21,
-            "y": 4
-          }
-        ],
-        "water": []
-      },
-      {
-        "label": "Water upper ascent and rooftop reunion",
-        "fire": [],
-        "water": [
-          {
-            "kind": "go",
-            "x": 39,
-            "y": 15
-          },
-          {
-            "kind": "board",
-            "platform": 3,
-            "timeout": 2400,
-            "range": 145
-          },
-          {
-            "kind": "ride",
-            "until": 170,
-            "timeout": 2400
-          },
-          {
-            "kind": "jump",
-            "x": 37,
-            "y": 4
+            "x": 43,
+            "y": 8
           },
           {
             "kind": "go",
             "x": 33,
-            "y": 4
+            "y": 8
+          },
+          {
+            "kind": "jump",
+            "x": 30,
+            "y": 5,
+            "rise_first": true
           },
           {
             "kind": "go",
-            "x": 26,
-            "y": 4
+            "x": 28,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 33,
+            "y": 8
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 45,
+            "y": 18
+          },
+          {
+            "kind": "board",
+            "platform": 2,
+            "range": 145,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 306,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 43,
+            "y": 8
+          },
+          {
+            "kind": "go",
+            "x": 39,
+            "y": 8
+          },
+          {
+            "kind": "go",
+            "x": 33,
+            "y": 8
+          },
+          {
+            "kind": "jump",
+            "x": 30,
+            "y": 5,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 39,
+            "y": 8
           }
         ]
       }
@@ -1048,140 +1116,225 @@
   },
   {
     "level": 6,
+    "verify_store": true,
+    "max_frames": 18000,
     "phases": [
       {
-        "label": "P1 observation post",
+        "label": "Left branch first with a hub keeper",
         "fire": [
           {
             "kind": "go",
-            "x": 2,
+            "x": 6,
             "y_less": 450
           },
           {
             "kind": "go",
-            "x": 4,
+            "x": 10,
             "y": 11
           },
           {
+            "kind": "go",
+            "x": 16,
+            "y": 13
+          },
+          {
+            "kind": "swim",
+            "x": 20,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 20,
+            "y": 11
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 16,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "Return through P1; change keeper for P2",
+        "fire": [
+          {
             "kind": "jump",
+            "x": 13,
+            "y": 11
+          },
+          {
+            "kind": "go",
             "x": 9,
             "y": 11
           },
           {
             "kind": "go",
-            "x": 12,
+            "x": 6,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 34,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 37,
+            "y": 13
+          },
+          {
+            "kind": "swim",
+            "x": 33,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "Both keys stay lit during return and gem exchange",
+        "fire": [],
+        "water": [
+          {
+            "kind": "go",
+            "x": 33,
+            "y": 11
+          },
+          {
+            "kind": "swim",
+            "x": 41,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 6,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 10,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 13,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 20,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 21,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "Visit the other fixed branch",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 41,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 34,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 31,
             "y": 11
           }
         ],
         "water": [
           {
             "kind": "go",
-            "x": 8,
-            "y": 20
-          },
-          {
-            "kind": "go",
-            "x": 14,
-            "y": 20
-          }
-        ]
-      },
-      {
-        "label": "partner opens B return",
-        "fire": [],
-        "water": [
-          {
-            "kind": "go",
-            "x": 22,
-            "y": 20
-          },
-          {
-            "kind": "interact"
-          }
-        ]
-      },
-      {
-        "label": "rejoin under observation deck",
-        "fire": [
-          {
-            "kind": "go",
-            "x": 22,
-            "y": 20
-          }
-        ],
-        "water": []
-      },
-      {
-        "label": "elemental shallows",
-        "fire": [
-          {
-            "kind": "jump",
-            "x": 28,
-            "y": 20
-          },
-          {
-            "kind": "go",
-            "x": 32,
-            "y": 22
-          },
-          {
-            "kind": "swim",
-            "x": 35,
-            "y": 20
-          }
-        ],
-        "water": [
-          {
-            "kind": "go",
-            "x": 25,
-            "y": 22
-          },
-          {
-            "kind": "swim",
-            "x": 29,
-            "y": 20
+            "x": 20,
+            "y": 11
           },
           {
             "kind": "jump",
-            "x": 35,
+            "x": 13,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 6,
             "y": 20
-          }
-        ]
-      },
-      {
-        "label": "P2 rooftop reunion",
-        "fire": [
-          {
-            "kind": "go",
-            "x": 36,
-            "y_less": 300
-          },
-          {
-            "kind": "go",
-            "x": 46,
-            "y": 7
-          },
-          {
-            "kind": "go",
-            "x": 45,
-            "y": 7
-          }
-        ],
-        "water": [
-          {
-            "kind": "go",
-            "x": 36,
-            "y_less": 300
-          },
-          {
-            "kind": "go",
-            "x": 44,
-            "y": 7
           },
           {
             "kind": "go",
             "x": 47,
-            "y": 7
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "Return to hub and take the two-key exit",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 34,
+            "y": 11
+          },
+          {
+            "kind": "jump",
+            "x": 41,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 57,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 59,
+            "y": 20
           }
         ]
       }
@@ -1189,143 +1342,169 @@
   },
   {
     "level": 7,
+    "verify_store": true,
+    "max_frames": 18000,
     "phases": [
       {
-        "label": "open walking route",
+        "label": "Choose the optional sightseeing trip",
         "fire": [
           {
             "kind": "go",
             "x": 5,
-            "y": 18
+            "y": 19
           },
           {
             "kind": "go",
-            "x": 9,
-            "y": 18
+            "x": 7,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 19
+          },
+          {
+            "kind": "go",
+            "x": 17,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "A keeper sends first sightseer",
+        "fire": [
+          {
+            "kind": "board",
+            "platform": 0,
+            "range": 145,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 370,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 14,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 15,
+            "y": 10
           },
           {
             "kind": "interact"
           }
         ],
-        "water": [
-          {
-            "kind": "go",
-            "x": 9,
-            "y": 18
-          }
-        ]
+        "water": []
       },
       {
-        "label": "deliver box onto lift",
+        "label": "B lift brings the keeper; explore first balcony",
         "fire": [
           {
-            "kind": "push",
-            "box_x": 27,
-            "timeout": 1800
-          }
-        ],
-        "water": [
-          {
             "kind": "go",
-            "x": 16,
-            "y": 18
+            "x": 18,
+            "y": 10
           },
           {
-            "kind": "jump",
-            "x": 17,
-            "y": 16
+            "kind": "go",
+            "x": 20,
+            "y": 10
           },
           {
             "kind": "jump",
             "x": 22,
-            "y": 14
-          }
-        ]
-      },
-      {
-        "label": "escort box upstairs",
-        "fire": [
-          {
-            "kind": "push",
-            "box_x": 32,
-            "timeout": 1800
-          }
-        ],
-        "water": [
-          {
-            "kind": "go",
-            "x": 23,
-            "y": 18
-          },
-          {
-            "kind": "board",
-            "platform": 0,
-            "timeout": 1800
-          },
-          {
-            "kind": "ride",
-            "until": 390
-          },
-          {
-            "kind": "jump",
-            "x": 30,
-            "y": 11
-          }
-        ]
-      },
-      {
-        "label": "walk together",
-        "fire": [
-          {
-            "kind": "jump",
-            "x": 34,
-            "y": 11
+            "y": 7,
+            "rise_first": true
           },
           {
             "kind": "go",
-            "x": 39,
-            "y": 11
-          },
-          {
-            "kind": "jump",
-            "x": 41,
+            "x": 28,
             "y": 10
           }
         ],
         "water": [
           {
-            "kind": "jump",
-            "x": 34,
-            "y": 11
-          }
-        ]
-      },
-      {
-        "label": "final held gate",
-        "fire": [],
-        "water": [
+            "kind": "go",
+            "x": 35,
+            "y": 19
+          },
+          {
+            "kind": "board",
+            "platform": 1,
+            "range": 145,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 370,
+            "timeout": 2400
+          },
           {
             "kind": "jump",
-            "x": 43,
-            "y": 11
+            "x": 33,
+            "y": 10
           },
           {
             "kind": "go",
-            "x": 48,
-            "y": 11
+            "x": 30,
+            "y": 10
           }
         ]
       },
       {
-        "label": "fire exit",
+        "label": "Upper viewpoint and the safe walking return",
         "fire": [
           {
             "kind": "go",
-            "x": 43,
-            "y": 11
+            "x": 41,
+            "y": 19
           }
         ],
-        "water": []
+        "water": [
+          {
+            "kind": "go",
+            "x": 28,
+            "y": 10
+          },
+          {
+            "kind": "jump",
+            "x": 25,
+            "y": 7,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 28,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 43,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "Meet at the promenade exits",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 19
+          }
+        ]
       }
     ]
   },
@@ -1712,11 +1891,6 @@
             "kind": "jump",
             "x": 75,
             "y": 5
-          },
-          {
-            "kind": "go",
-            "x": 69,
-            "y": 5
           }
         ],
         "water": [
@@ -1767,7 +1941,38 @@
             "kind": "jump",
             "x": 64,
             "y": 5
+          }
+        ]
+      },
+      {
+        "label": "water opens B for partner from safe left console",
+        "water": [
+          {
+            "kind": "interact"
+          }
+        ]
+      },
+      {
+        "label": "fire crosses B and opens A from central console",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 70,
+            "y": 5
           },
+          {
+            "kind": "interact"
+          },
+          {
+            "kind": "go",
+            "x": 69,
+            "y": 5
+          }
+        ]
+      },
+      {
+        "label": "water rejoins along A",
+        "water": [
           {
             "kind": "go",
             "x": 70,
@@ -1775,64 +1980,21 @@
           }
         ]
       }
-    ]
+    ],
+    "verify_store": true
   },
   {
     "level": 10,
+    "verify_store": true,
     "phases": [
       {
-        "label": "hold elevated delivery plate",
-        "water": [
-          {
-            "kind": "jump",
-            "x": 27,
-            "y": 9
-          },
-          {
-            "kind": "jump",
-            "x": 25,
-            "y": 7
-          },
-          {
-            "kind": "jump",
-            "x": 23,
-            "y": 5
-          },
-          {
-            "kind": "go",
-            "x": 21,
-            "y": 5
-          }
-        ],
+        "label": "both partners prepare high K loading key",
         "fire": [
           {
             "kind": "go",
             "x": 11,
             "y": 11
-          }
-        ]
-      },
-      {
-        "label": "deliver box while partner holds H",
-        "fire": [
-          {
-            "kind": "push",
-            "box_x": 16
           },
-          {
-            "kind": "go",
-            "x": 14,
-            "y": 11
-          },
-          {
-            "kind": "wait",
-            "frames": 60
-          }
-        ]
-      },
-      {
-        "label": "upper red gem and release H",
-        "fire": [
           {
             "kind": "go",
             "x": 10,
@@ -1861,24 +2023,131 @@
         ],
         "water": [
           {
+            "kind": "jump",
+            "x": 38,
+            "y": 9
+          },
+          {
+            "kind": "jump",
+            "x": 36,
+            "y": 7
+          },
+          {
+            "kind": "jump",
+            "x": 34,
+            "y": 5
+          }
+        ]
+      },
+      {
+        "label": "charge first gate H",
+        "water": [
+          {
             "kind": "go",
-            "x": 24,
+            "x": 21,
+            "y": 5
+          }
+        ],
+        "fire": [
+          {
+            "kind": "go",
+            "x": 10,
             "y": 7
           },
           {
             "kind": "go",
-            "x": 29,
+            "x": 7,
             "y": 11
           },
           {
             "kind": "go",
-            "x": 35,
+            "x": 11,
             "y": 11
           }
         ]
       },
       {
-        "label": "fire return route",
+        "label": "deliver to dry staging apron",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 22
+          },
+          {
+            "kind": "go",
+            "x": 20,
+            "y": 11
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "transfer keeper to second gate J",
+        "water": [
+          {
+            "kind": "jump",
+            "x": 32,
+            "y": 3
+          }
+        ]
+      },
+      {
+        "label": "deliver to full-width receiver",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 25
+          },
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 11
+          },
+          {
+            "kind": "wait",
+            "frames": 80
+          }
+        ]
+      },
+      {
+        "label": "return and collect upper red gem",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 28,
+            "y_less": 150
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 17,
+            "y": 5
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 7
+          },
+          {
+            "kind": "go",
+            "x": 39,
+            "y": 11
+          },
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "fire returns to own exit",
         "fire": [
           {
             "kind": "go",

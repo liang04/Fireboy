@@ -33,6 +33,8 @@ var _width_px := 0
 var _pulse := 0.0
 var _powered := false
 var _static_power_light := false
+var _blocked_below := false
+var _safety_label: Label
 
 
 func _ready() -> void:
@@ -74,6 +76,16 @@ func setup(from_cell: Vector2i, to_cell: Vector2i, width: int, spd: float,
 	_body_sprite = Tex.sprite(Tex.C_PLATFORM, Vector2i(int(w), int(cell_px * 0.5)), false)
 	_body_sprite.z_index = 3
 	add_child(_body_sprite)
+
+	# Static feedback also remains legible with reduced motion enabled.
+	_safety_label = Label.new()
+	_safety_label.text = "下方有阻挡"
+	_safety_label.position = Vector2(w * 0.5 - 35.0, -24.0)
+	_safety_label.add_theme_font_size_override("font_size", 14)
+	_safety_label.add_theme_color_override("font_color", Tex.C_POWER_ON)
+	_safety_label.z_index = 5
+	_safety_label.hide()
+	add_child(_safety_label)
 
 	# 乘客检测区：贴在站立面正上方
 	_riders = Area2D.new()
@@ -125,17 +137,68 @@ func _physics_process(delta: float) -> void:
 		_pulse += delta
 		_power_light.modulate.a = 0.55 + sin(_pulse * 6.0) * 0.45
 	if not _active or _length <= 0.001:
+		_set_blocked_below(false)
 		return
 	var prev := global_position
-	_t += _dir * speed * delta / _length
-	if _t >= 1.0:
-		_t = 1.0
-		_dir = -1.0
-	elif _t <= 0.0:
-		_t = 0.0
-		_dir = 1.0
-	global_position = _a.lerp(_b, _t)
-	_carry(global_position - prev)
+	var next_t := _t + _dir * speed * delta / _length
+	var next_dir := _dir
+	if next_t >= 1.0:
+		next_t = 1.0
+		next_dir = -1.0
+	elif next_t <= 0.0:
+		next_t = 0.0
+		next_dir = 1.0
+	var next_position := _a.lerp(_b, next_t)
+	var displacement := next_position - prev
+	_set_blocked_below(_descent_obstructed(displacement))
+	if _blocked_below:
+		# Keep phase AND direction: clearing the underside resumes the same trip.
+		return
+	_t = next_t
+	_dir = next_dir
+	global_position = next_position
+	_carry(displacement)
+
+
+func _descent_obstructed(displacement: Vector2) -> bool:
+	if displacement.y <= 0.0 or not is_inside_tree():
+		return false
+	# Query the entire underside sweep before translating this StaticBody2D.
+	# Otherwise its next position may overlap a body and depenetration can push
+	# that body through the floor. World terrain itself must not stop the lift.
+	var shape := RectangleShape2D.new()
+	shape.size = Vector2(width_cells * cell_size + absf(displacement.x), displacement.y + 0.2)
+	var query := PhysicsShapeQueryParameters2D.new()
+	query.shape = shape
+	query.transform = Transform2D(0.0, global_position + Vector2(
+		width_cells * cell_size * 0.5 + displacement.x * 0.5,
+		cell_size * 0.5 + displacement.y * 0.5))
+	query.collision_mask = 2 | 4
+	query.collide_with_areas = false
+	for hit in get_world_2d().direct_space_state.intersect_shape(query, 64):
+		var body: Object = hit.collider
+		if not is_instance_valid(body) or body.is_queued_for_deletion():
+			continue
+		if body is Player:
+			if not body.alive:
+				continue
+		elif body is PushBox:
+			var recovery := body.get_node_or_null("Recovery") as BoxRecovery
+			if recovery != null and recovery.recovering:
+				continue
+		else:
+			continue
+		# Top riders remain eligible for normal _carry(), never this guard.
+		if body.global_position.y < global_position.y:
+			continue
+		return true
+	return false
+
+
+func _set_blocked_below(value: bool) -> void:
+	_blocked_below = value
+	if _safety_label != null:
+		_safety_label.visible = value
 
 
 func _carry(delta_pos: Vector2) -> void:

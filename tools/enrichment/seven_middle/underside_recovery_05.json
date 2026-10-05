@@ -1,0 +1,346 @@
+[
+  {
+    "level": 5,
+    "verify_store": true,
+    "max_frames": 18000,
+    "phases": [
+      {
+        "label": "Choose a scout before loading the box",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 24
+          },
+          {
+            "kind": "go",
+            "x": 3,
+            "y": 27
+          },
+          {
+            "kind": "swim",
+            "x": 6,
+            "y": 25
+          },
+          {
+            "kind": "jump",
+            "x": 12,
+            "y": 25
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 32,
+            "y": 25
+          }
+        ]
+      },
+      {
+        "label": "Scout opens C before cargo leaves the floor",
+        "fire": [
+          {
+            "kind": "board",
+            "platform": 0,
+            "range": 145,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 626,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 21,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 22,
+            "y": 18
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Pause the freight lift and return for cargo",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 25
+          },
+          {
+            "kind": "jump",
+            "x": 9,
+            "y": 25
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 25
+          }
+        ]
+      },
+      {
+        "label": "Load the existing A freight lift",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 16,
+            "timeout": 2400
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Wait below the returning lift instead of unloading",
+        "fire": [
+          {
+            "kind": "wait",
+            "frames": 420
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 32,
+            "y": 25
+          },
+          {
+            "kind": "wait",
+            "frames": 420
+          }
+        ]
+      },
+      {
+        "label": "Move cargo out from below the lift with ordinary pushing",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 20,
+            "timeout": 1200
+          },
+          {
+            "kind": "jump",
+            "x": 22,
+            "y": 25
+          }
+        ],
+        "water": [
+          {
+            "kind": "wait",
+            "frames": 240
+          }
+        ]
+      },
+      {
+        "label": "Wait outside, reload on the next pass, and unload upstairs",
+        "fire": [
+          {
+            "kind": "wait",
+            "frames": 120
+          },
+          {
+            "kind": "push",
+            "box_x": 17,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 12,
+            "y": 25
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "range": 145,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 666,
+            "timeout": 2400
+          },
+          {
+            "kind": "push",
+            "box_x": 18,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 21,
+            "y": 18
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Keep C enabled and return to the summit route",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 24,
+            "y": 18
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Keeper visits water cove and takes C; scout waits for summit",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 18
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 33,
+            "y": 25
+          },
+          {
+            "kind": "jump",
+            "x": 35,
+            "y": 24
+          },
+          {
+            "kind": "go",
+            "x": 37,
+            "y": 27
+          },
+          {
+            "kind": "swim",
+            "x": 40,
+            "y": 25
+          },
+          {
+            "kind": "go",
+            "x": 45,
+            "y": 25
+          },
+          {
+            "kind": "board",
+            "platform": 1,
+            "range": 145,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 626,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 43,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 18
+          }
+        ]
+      },
+      {
+        "label": "Join the cargo-powered summit lift",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 45,
+            "y": 18
+          },
+          {
+            "kind": "board",
+            "platform": 2,
+            "range": 145,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 306,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 43,
+            "y": 8
+          },
+          {
+            "kind": "go",
+            "x": 33,
+            "y": 8
+          },
+          {
+            "kind": "jump",
+            "x": 30,
+            "y": 5,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 28,
+            "y": 5
+          },
+          {
+            "kind": "go",
+            "x": 33,
+            "y": 8
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 45,
+            "y": 18
+          },
+          {
+            "kind": "board",
+            "platform": 2,
+            "range": 145,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 306,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 43,
+            "y": 8
+          },
+          {
+            "kind": "go",
+            "x": 39,
+            "y": 8
+          },
+          {
+            "kind": "go",
+            "x": 33,
+            "y": 8
+          },
+          {
+            "kind": "jump",
+            "x": 30,
+            "y": 5,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 39,
+            "y": 8
+          }
+        ]
+      }
+    ]
+  }
+]

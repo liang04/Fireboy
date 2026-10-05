@@ -1,0 +1,170 @@
+[
+  {
+    "level": 7,
+    "verify_store": true,
+    "max_frames": 18000,
+    "phases": [
+      {
+        "label": "Choose the optional sightseeing trip",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 5,
+            "y": 19
+          },
+          {
+            "kind": "go",
+            "x": 7,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 19
+          },
+          {
+            "kind": "go",
+            "x": 17,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "A keeper sends first sightseer",
+        "fire": [
+          {
+            "kind": "board",
+            "platform": 0,
+            "range": 145,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 370,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 14,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 15,
+            "y": 10
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "B lift brings the keeper; explore first balcony",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 18,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 20,
+            "y": 10
+          },
+          {
+            "kind": "jump",
+            "x": 22,
+            "y": 7,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 28,
+            "y": 10
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 19
+          },
+          {
+            "kind": "board",
+            "platform": 1,
+            "range": 145,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 370,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 33,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 10
+          }
+        ]
+      },
+      {
+        "label": "Upper viewpoint and the safe walking return",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 28,
+            "y": 10
+          },
+          {
+            "kind": "jump",
+            "x": 25,
+            "y": 7,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 28,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 43,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "Meet at the promenade exits",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 19
+          }
+        ]
+      }
+    ]
+  }
+]

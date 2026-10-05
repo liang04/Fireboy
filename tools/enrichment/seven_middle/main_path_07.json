@@ -1,0 +1,30 @@
+[
+  {
+    "level": 7,
+    "name": "L7 short dry promenade without the optional lift trip",
+    "phases": [
+      {
+        "label": "Walk directly to the exits",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 19
+          }
+        ]
+      }
+    ],
+    "scenario": {
+      "completed": true,
+      "deaths": 0,
+      "box_resets": 0
+    }
+  }
+]

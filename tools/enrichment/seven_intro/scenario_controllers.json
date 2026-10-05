@@ -1,0 +1,385 @@
+[
+  {
+    "level": 1,
+    "name": "L1 idle Fire cannot release lower arch",
+    "phases": [
+      {
+        "label": "first pool",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 14,
+            "y": 21
+          },
+          {
+            "kind": "swim",
+            "x": 16,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 16,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "second pool",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 26,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 31,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 32,
+            "y": 17
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 28,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 21
+          },
+          {
+            "kind": "swim",
+            "x": 31,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 35,
+            "y": 15
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 19
+          },
+          {
+            "kind": "input",
+            "direction": 1,
+            "frames": 100
+          }
+        ]
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "water_x_max": 1145,
+      "gates": {
+        "A": false,
+        "B": false
+      },
+      "reason_prefix": "steps exhausted"
+    }
+  },
+  {
+    "level": 1,
+    "name": "L1 idle Water cannot release full-height upper arch",
+    "phases": [
+      {
+        "label": "first pool",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 14,
+            "y": 21
+          },
+          {
+            "kind": "swim",
+            "x": 16,
+            "y": 19
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 16,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "second pool",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 26,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 31,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 32,
+            "y": 17
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 28,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 21
+          },
+          {
+            "kind": "swim",
+            "x": 31,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "label": "fire keeps A on the lava bridge",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 35,
+            "y": 15
+          },
+          {
+            "kind": "go",
+            "x": 39,
+            "y": 16
+          },
+          {
+            "kind": "swim",
+            "x": 46,
+            "y": 15
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 35,
+            "y": 19
+          }
+        ]
+      },
+      {
+        "fire": [
+          {
+            "kind": "go",
+            "x": 48,
+            "y": 15
+          },
+          {
+            "kind": "input",
+            "direction": 1,
+            "frames": 100
+          }
+        ]
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_x_max": 1560,
+      "gates": {
+        "B": false
+      },
+      "reason_prefix": "steps exhausted"
+    }
+  },
+  {
+    "level": 2,
+    "name": "L2 idle keeper cannot deliver the crate through A",
+    "phases": [
+      {
+        "fire": [
+          {
+            "kind": "input",
+            "direction": 1,
+            "frames": 250
+          }
+        ]
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_x_max": 355,
+      "box_x_max": 383,
+      "gates": {
+        "A": false,
+        "B": false,
+        "C": false,
+        "D": false
+      },
+      "reason_prefix": "steps exhausted"
+    }
+  },
+  {
+    "level": 2,
+    "name": "L2 moving crate before C leaves courier waiting safely",
+    "phases": [
+      {
+        "label": "teammate holds A while courier delivers crate to B",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 14
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 4,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "scout crosses B, climbs dry stair, opens C before crate is moved",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 14,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 13,
+            "y": 21
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 9,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 16,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 30.5,
+            "y": 21
+          }
+        ]
+      },
+      {
+        "label": "the same crate moves from B to its second job D",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 16
+          }
+        ],
+        "water": []
+      },
+      {
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 11,
+            "y": 21
+          },
+          {
+            "kind": "go",
+            "x": 5,
+            "y": 21
+          },
+          {
+            "kind": "jump",
+            "x": 7,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 9,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 11,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 15,
+            "y": 14
+          },
+          {
+            "kind": "go",
+            "x": 17,
+            "y": 14
+          },
+          {
+            "kind": "input",
+            "direction": 1,
+            "frames": 100
+          }
+        ]
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_x_max": 568,
+      "fire_y_max": 480,
+      "gates": {
+        "B": false,
+        "C": false,
+        "D": true
+      },
+      "reason_prefix": "steps exhausted"
+    }
+  }
+]
