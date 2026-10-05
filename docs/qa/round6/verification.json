@@ -173,7 +173,7 @@
     "tools/enrichment/verify_late_geometry.py": "044e3d8bb03b32327c72df0615ca9baa0871d2d0e36736d217a7e7385e1a2a00",
     "tools/enrichment_visual.gd": "7fc76c9d5dc73f9e27810221decb9f2c73397e8c48791854759459ab9bb14d88",
     "tools/enrichment_visual.tscn": "50f74ca1b4b4ab578ae0c9277debc60eb02bf96f4ce354a7f31c7233f41ca4f5",
-    "tools/feedback_regression.gd": "725bdc376c413ec51a986c90919b56994c6d9d264bd5ce4c7a1847180b8ecaba",
+    "tools/feedback_regression.gd": "97ba7ecf6ecf97995ef7a8ea947cd299c80d435ef6a9d8a70846fe8a7384e35c",
     "tools/feedback_regression.tscn": "e1ba32c3a8ba940f2ad4e8d0c3d1734739d8394799f780d961a64f23b5ca86bd",
     "tools/full_gem_route_evidence.json": "c169efd8f425f099c9221b61a236624db27b1e7eb3ee3b866d5d9520ecc95cbe",
     "tools/full_gem_route_replay.json": "df40f4a00ef520bfdd66e7fa4c841deee40943b43cadb1a0b4cc98424d7afb81",
@@ -213,5 +213,6 @@
     "tools/visual_feedback_regression.gd": "1fa115631e9d2cd5938acdf94bed0fac79cc5cee066276c65b8e759fa6fcd5c5",
     "tools/visual_feedback_regression.tscn": "5b3cf06caa5852805136aff1a81566c59560fde2f2fbb5198d3b818e6c1ca856"
   },
-  "completion_event_order_assertions_each_engine": 22
+  "completion_event_order_assertions_each_engine": 22,
+  "feedback_clock_fix": "test waits use same monotonic clock as HUD, all 49 assertions preserved"
 }

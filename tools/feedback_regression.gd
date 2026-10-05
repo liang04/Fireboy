@@ -26,6 +26,19 @@ func frames(count: int) -> void:
 		await get_tree().physics_frame
 
 
+func wait_until_msec(target_msec: int) -> void:
+	# HUD cooldowns use the monotonic clock, not accumulated simulation delta.
+	# A startup frame can satisfy a SceneTreeTimer without advancing that clock.
+	# Yield to the event loop, with a frame budget so a broken clock fails boundedly.
+	for i in 36000:
+		if Time.get_ticks_msec() >= target_msec:
+			return
+		await get_tree().process_frame
+	printerr("[feedback] Monotonic-clock wait exceeded its frame budget.")
+	errors += 1
+	get_tree().quit(1)
+
+
 func _hud_checks() -> void:
 	var hud := preload("res://scenes/hud.tscn").instantiate() as HUD
 	add_child(hud)
@@ -53,13 +66,13 @@ func _hud_checks() -> void:
 	check(hud._warn.text == death_text and hud._warn_tween == death_tween,
 		"gem, recovery, and generic hint spam cannot replace death")
 	check(hud._warn_until_msec == death_until, "suppressed hints do not extend the death hold")
-	await get_tree().create_timer(0.06).timeout
+	await wait_until_msec(Time.get_ticks_msec() + 60)
 	hud.flash_death_cause(&"water", &"fire")
 	check(hud._warn.text.contains("火娃碰水潭"), "a newer death updates the cause during the hold")
 	check(hud._warn_until_msec > death_until and not death_tween.is_valid(),
 		"a newer death refreshes its hold and cancels the old animation")
 	death_until = hud._warn_until_msec
-	await get_tree().create_timer(0.06).timeout
+	await wait_until_msec(Time.get_ticks_msec() + 60)
 	hud.flash_death_cause(&"water", &"fire")
 	check(hud._warn_until_msec > death_until and is_equal_approx(hud._warn.modulate.a, 1.0),
 		"repeated identical deaths remain opaque and refresh their full hold")
@@ -75,11 +88,12 @@ func _hud_checks() -> void:
 			"acid explains the hazard for " + String(element))
 	death_text = hud._warn.text
 	# Exercise the actual clock and tween, including one lower-priority event near expiry.
-	await get_tree().create_timer(float(HUD.DEATH_HOLD_MSEC) / 1000.0 - 0.15).timeout
+	death_until = hud._warn_until_msec
+	await wait_until_msec(death_until - 150)
 	hud.flash_box_recovery()
 	check(hud._warn.text == death_text and is_equal_approx(hud._warn.modulate.a, 1.0),
 		"death stays readable throughout its real hold interval")
-	await get_tree().create_timer(0.2).timeout
+	await wait_until_msec(death_until + 50)
 	death_tween = hud._warn_tween
 	hud.flash_gem_owner_hint(&"blue", &"water")
 	check(hud._warn.text.contains("蓝宝石") and hud._warn_priority == HUD.HintPriority.NORMAL,
