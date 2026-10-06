@@ -1024,7 +1024,12 @@ for _source in sorted((Path(__file__).parent / "enrichment").glob("level_??.py")
     _spec = importlib.util.spec_from_file_location(_source.stem, _source)
     _module = importlib.util.module_from_spec(_spec)
     _spec.loader.exec_module(_module)
-    LEVELS[_number - 1] = _module.build(Grid, LEVELS[_number - 1])
+    if _number == len(LEVELS) + 1:
+        LEVELS.append(_module.build(Grid, {"revision": 1}))
+    elif 1 <= _number <= len(LEVELS):
+        LEVELS[_number - 1] = _module.build(Grid, LEVELS[_number - 1])
+    else:
+        raise ValueError(f"Non-contiguous level module: {_source.name}")
     ENRICHED_LEVELS.add(_number)
 
 

@@ -1,0 +1,59 @@
+{
+  "base_commit": "aeb95f10dcbab3c748fb13aa1422b9c0697c65d5",
+  "levels": {
+    "1": {
+      "sha256": "09a65849851d76c518716a237bbd6b14c9b60def65476ae88eb73538d0a1836c",
+      "revision": 3
+    },
+    "2": {
+      "sha256": "d09cf64ceb1dea255eed743722931d8f71daa47d84fdf8b4b9a7effc76aa0aa0",
+      "revision": 3
+    },
+    "3": {
+      "sha256": "80ae30ffc06a3805108f6b907ac068ad57d021af2551f5be38aed2fa57ed6ec4",
+      "revision": 3
+    },
+    "4": {
+      "sha256": "5c862a1c7c36dfdd342d3615ce691da594da359ceadaa63a62c47dcd585d4d52",
+      "revision": 4
+    },
+    "5": {
+      "sha256": "f2b3adc6625c1900e3ea984185bf823e0f4d940ea76d4514747355f4c424046d",
+      "revision": 3
+    },
+    "6": {
+      "sha256": "3a91d2218deffafce5f25bec3c7b6b271761ae6095b5c27906d4b27f02c68804",
+      "revision": 3
+    },
+    "7": {
+      "sha256": "89a92c0fda4c0bf5bf9d8c4b6b0b464c58f44f5fdb8b68b97aafa7c8f229d2fb",
+      "revision": 3
+    },
+    "8": {
+      "sha256": "71165defb52bc0447946365bb5779027589d72f98c9c83243404341bfd1ad332",
+      "revision": 3
+    },
+    "9": {
+      "sha256": "69d54a6792ae15c7c406ec8bbe99e75e1c49a7550859e48e922459124ec5c69f",
+      "revision": 3
+    },
+    "10": {
+      "sha256": "5926dc8cf80688100b2f671b2d5bf49963fd19ae0d106c1a4d5e6d148e0c798f",
+      "revision": 5
+    }
+  },
+  "files": {
+    "tools/full_gem_routes.json": "1a68551704b22208b96c92f5ed0c0e7dca572aaa45200604009eb19dca058395",
+    "tools/full_gem_route_replay.json": "034b645a94569c43964179de6fa5acc70907722af8cf04e5bf969d660f006b7c",
+    "tools/enrichment/level_01.py": "74526c89604d732bb4c8ceac35b073f613b7b6e56adc8e90f0e37af923fd6409",
+    "tools/enrichment/level_02.py": "3e7dc98f4e7ef9194de9804784b780f2d75329d18879ad485b37a1a283096f8d",
+    "tools/enrichment/level_03.py": "48d92669e37fa6325229aacf576b2840fd8b5ed96d3145287a121ea8b8b39528",
+    "tools/enrichment/level_04.py": "448fb919d773777e6f365e9e7bbcb23abc4e917be9298f20461373b1b322e94b",
+    "tools/enrichment/level_05.py": "74f575e742e890492354b2fabcbca771897effe7eac51e8ebad0593e1f722104",
+    "tools/enrichment/level_06.py": "846457d8cec10733cd67db04c24816813203950aa7721422b7527d21e8ce99cb",
+    "tools/enrichment/level_07.py": "973d4358b81aff354428ce2f4085fa1df34b33c347bdb1b2dee4be67133588f7",
+    "tools/enrichment/level_08.py": "c4d855f13cb9258dbc46d7c2150becd30e8ebc500b4dc1404ca42e6093a2fb76",
+    "tools/enrichment/level_09.py": "1a33500c17501f2a1fed5ca07b08dcdd209831adf94c9cec1f92b29ca9eefa90",
+    "tools/enrichment/level_10.py": "67ce45e3d4b0c3afe738bdde2f3bc1fac8b65895b0fbc6e2853d690c70144785"
+  }
+}

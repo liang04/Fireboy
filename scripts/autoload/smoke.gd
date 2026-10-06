@@ -4,13 +4,14 @@ extends Node
 ## 依次载入每一关、模拟按键推进物理帧，然后打印关卡状态并退出。
 ## 目的：在没有图形界面的 CI / 命令行环境中，快速发现脚本运行时错误。
 
+const REVERSIBLE_ROUTE_SCRIPT := preload("res://scripts/objects/reversible_route.gd")
 const LEVEL_SCENE := preload("res://scenes/level.tscn")
 const SIM_FRAMES := 240
-# 8 关逐关载入 + 动作探针 + 机关联调（每关十几个 await physics_frame 的联调窗口）
-# 在 headless 下物理帧按 60fps 节流，全量跑完需要 ~100-130s（真实时间）。
-# 之前只有 6 关时 90s 够用；加关后看门狗会把「还没跑完」误判成「死循环」。
-# 留足余量设 240s——真死循环照样会被抓住，只是别再误伤正常的长测试。
-const WATCHDOG_SECONDS := 240.0
+# Fixed movement probes plus a bounded budget per level. Appended levels must
+# not inherit a ten-level total timeout; each mechanism fixture still has fixed
+# frame windows and explicit motion/occupancy assertions.
+const WATCHDOG_SETUP_SECONDS := 80.0
+const WATCHDOG_PER_LEVEL_SECONDS := 20.0
 
 var _watchdog := 0.0
 var _finished := false
@@ -35,7 +36,7 @@ func _process(delta: float) -> void:
 		set_process(false)
 		return
 	_watchdog += delta
-	if _watchdog > WATCHDOG_SECONDS and not _finished:
+	if _watchdog > WATCHDOG_SETUP_SECONDS + WATCHDOG_PER_LEVEL_SECONDS * Levels.count() and not _finished:
 		printerr("[smoke] WATCHDOG TIMEOUT after %.0fs" % _watchdog)
 		_finished = true
 		get_tree().quit(2)
@@ -955,6 +956,19 @@ func _probe_control(lvl: Node, control: Area2D, doors: Array, platforms: Array, 
 		printerr("[smoke] no matching living actor for %s %s" % [label, control.get_path()])
 		return 1
 
+	# A physical control can be inside a reversible loading arch (L12 C).
+	# Set that unrelated route prerequisite through its normal state request;
+	# never remove collisions or signal the channel being measured here.
+	var route_states := {}
+	for object in lvl.get_node("Objects").get_children():
+		if object is REVERSIBLE_ROUTE_SCRIPT:
+			var route = object
+			for gate: Dictionary in route._gates:
+				var area := Rect2(gate.body.global_position, gate.size).grow(16.0)
+				if area.has_point(control.global_position + Vector2(16, 16)):
+					route_states[route] = route.state
+					route.request_state(int(gate.open_state))
+	await _probe_frames(4)
 	# No direct channel signal is sent here: physical occupancy/action must
 	# power every receiver. Spectators remain on the parking pad throughout.
 	_teleport(actor, control.global_position + Vector2(16, 16))
@@ -996,6 +1010,9 @@ func _probe_control(lvl: Node, control: Area2D, doors: Array, platforms: Array, 
 			printerr("[smoke] %s release/latch failed for platform %s (travel=%.1f active=%s)"
 				% [label, platform.get_path(), after[platform], platform._active])
 			errs += 1
+	for route in route_states:
+		route.request_state(int(route_states[route]))
+	await _probe_frames(4)
 	return errs
 
 

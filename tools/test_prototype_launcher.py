@@ -13,7 +13,7 @@ with tempfile.TemporaryDirectory(prefix='prototype-launcher-check-') as director
     env = os.environ.copy()
     for key in ['HOME', 'APPDATA', 'XDG_DATA_HOME', 'XDG_CONFIG_HOME', 'XDG_CACHE_HOME']: env[key] = str(root)
     before = {str(x.relative_to(root)): x.read_bytes() for x in root.rglob('*') if x.is_file()}
-    for level in range(1, 11):
+    for level in range(1, 14):
         result = subprocess.run([sys.executable, 'tools/play_prototypes.py', '--godot', a.godot,
                                  '--level', str(level), '--test-entry'], cwd=ROOT, env=env,
                                 capture_output=True, text=True, timeout=300)

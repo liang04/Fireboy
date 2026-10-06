@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--godot', default=os.environ.get('GODOT_BIN', 'godot'))
-    parser.add_argument('--level', type=int, choices=range(1, 11), required=True)
+    parser.add_argument('--level', type=int, choices=range(1, 14), required=True)
     parser.add_argument('--test-entry', action='store_true', help=argparse.SUPPRESS)
     args = parser.parse_args()
     binary = shutil.which(args.godot)

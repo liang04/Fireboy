@@ -15,6 +15,9 @@ const THEMES := [
 	{"name": "Twin watchtowers", "base": "161a28", "wall": "252c40", "relief": "32394d", "ink": "444d61", "motif": "towers"},
 	{"name": "Maintenance works", "base": "1c1b1e", "wall": "312e32", "relief": "3e383c", "ink": "50494b", "motif": "works"},
 	{"name": "Delivery atrium", "base": "201a26", "wall": "332c3d", "relief": "42394a", "ink": "574b5b", "motif": "atrium"},
+	{"name": "Meeting galleries", "base": "181e25", "wall": "29353d", "relief": "35434a", "ink": "46565c", "motif": "meeting"},
+	{"name": "Freight interchange", "base": "211d1a", "wall": "37302a", "relief": "453d33", "ink": "594e40", "motif": "freight"},
+	{"name": "Choice courtyard", "base": "211c2b", "wall": "342e43", "relief": "443b53", "ink": "574c65", "motif": "choice"},
 ]
 
 var theme_index := 0
@@ -131,6 +134,15 @@ func _draw() -> void:
 			_draw_works(w, h)
 		"atrium":
 			_draw_atrium(w, h)
+		"meeting":
+			_draw_cloister(w, h)
+			_draw_towers(w, h)
+		"freight":
+			_draw_works(w, h)
+			_draw_shaft(w, h)
+		"choice":
+			_draw_atrium(w, h)
+			_draw_clockwork(w, h)
 	# Soft edge recesses keep the actual stone boundary visibly in front.
 	draw_rect(Rect2(0, 0, 55, h), Color(_base, 0.40))
 	draw_rect(Rect2(w - 55, 0, 55, h), Color(_base, 0.40))

@@ -52,7 +52,7 @@ for who,marker in [('fire','E'),('water','Q')]:
 # Existing static model must now understand a held-gate box handoff.
 lv=g.LEVELS[3];active,_=g.solve_channels(lv['grid'],lv['objects'])
 check('A' in active,'held gate lets the courier deliver the replacement box')
-check(all(lv['revision']>g.LEVEL_REVISION[i+1] for i,lv in enumerate(g.LEVELS)),'all ten changed layouts invalidate only their stale records')
+check(all(lv['revision']>g.LEVEL_REVISION[i+1] for i,lv in enumerate(g.LEVELS[:10])),'all ten changed layouts invalidate only their stale records')
 check(not any(ch in '^~*' for row in g.LEVELS[6]['grid'] for ch in row),'breather stays completely liquid-free')
 plate=next(o for o in g.LEVELS[9]['objects'] if o['type']=='plate' and o['channel']=='A')
 check(g.plate_surfaces(plate)=={(x,19) for x in range(25,30)},'receiving plate covers every possible delivered-box floor cell')

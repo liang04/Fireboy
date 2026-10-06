@@ -1,0 +1,642 @@
+[
+  {
+    "level": 12,
+    "name": "L12 sequential K visits with an idle partner cannot commission freight",
+    "max_frames": 1800,
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "box_x_max": 371,
+      "gates": {
+        "K": false
+      },
+      "reason_prefix": "task timeout"
+    },
+    "phases": [
+      {
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 3,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 7,
+            "y": 13
+          },
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 13
+          },
+          {
+            "kind": "go",
+            "x": 4,
+            "y": 15
+          },
+          {
+            "kind": "go",
+            "x": 3,
+            "y": 17
+          },
+          {
+            "kind": "go",
+            "x": 6,
+            "y": 19
+          },
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 19
+          },
+          {
+            "kind": "push",
+            "box_x": 15,
+            "timeout": 300
+          }
+        ],
+        "water": []
+      }
+    ]
+  },
+  {
+    "level": 12,
+    "name": "L12 both partners cannot leave without a delivered crate",
+    "max_frames": 3600,
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "box_x_min": 303,
+      "box_x_max": 305,
+      "fire_y_min": 230,
+      "water_y_max": 170,
+      "reason_prefix": "task timeout"
+    },
+    "phases": [
+      {
+        "label": "Use the unconditional player service route while the cargo remains untouched",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 3,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 7,
+            "y": 13
+          },
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 13
+          },
+          {
+            "kind": "jump",
+            "x": 15,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 20,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 34,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 38,
+            "y": 18
+          },
+          {
+            "kind": "jump",
+            "x": 41,
+            "y_less": 430
+          },
+          {
+            "kind": "go",
+            "x": 44,
+            "y": 13
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 3,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 7,
+            "y": 13
+          },
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 13
+          },
+          {
+            "kind": "jump",
+            "x": 15,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 20,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 34,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 38,
+            "y": 18
+          },
+          {
+            "kind": "jump",
+            "x": 41,
+            "y_less": 430
+          },
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 13
+          }
+        ]
+      },
+      {
+        "label": "One partner can ride while the other holds C",
+        "fire": [],
+        "water": [
+          {
+            "kind": "board",
+            "platform": 1,
+            "range": 145,
+            "timeout": 1800
+          },
+          {
+            "kind": "ride",
+            "until": 178,
+            "timeout": 1800
+          },
+          {
+            "kind": "jump",
+            "x": 46,
+            "y": 4
+          },
+          {
+            "kind": "go",
+            "x": 45,
+            "y": 4
+          }
+        ]
+      },
+      {
+        "label": "The final keeper cannot follow with C unweighted",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 13
+          },
+          {
+            "kind": "board",
+            "platform": 1,
+            "range": 145,
+            "timeout": 600
+          },
+          {
+            "kind": "ride",
+            "until": 178,
+            "timeout": 600
+          },
+          {
+            "kind": "jump",
+            "x": 46,
+            "y": 4
+          },
+          {
+            "kind": "go",
+            "x": 40,
+            "y": 4
+          }
+        ],
+        "water": []
+      }
+    ]
+  },
+  {
+    "level": 12,
+    "name": "L12 left-wall reclaim returns the original cargo with the normal penalty",
+    "max_frames": 600,
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 1,
+      "box_x_min": 303,
+      "box_x_max": 305,
+      "gates": {
+        "K": false
+      }
+    },
+    "phases": [
+      {
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 3,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 15
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 11,
+            "y": 19
+          },
+          {
+            "kind": "input",
+            "direction": -1,
+            "frames": 180
+          },
+          {
+            "kind": "wait",
+            "frames": 90
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "level": 12,
+    "name": "L12 receiver-edge drop returns across the apron and right-wall reclaim resets cargo",
+    "max_frames": 5000,
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 1,
+      "box_x_min": 303,
+      "box_x_max": 305,
+      "gates": {
+        "K": true
+      }
+    },
+    "phases": [
+      {
+        "label": "Commission the elevated two-person loading key",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 3,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 7,
+            "y": 13
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 3,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 7,
+            "y": 13
+          },
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 13
+          }
+        ]
+      },
+      {
+        "label": "Load the grounded ferry while the keeper stays off H",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 4,
+            "y": 15
+          },
+          {
+            "kind": "go",
+            "x": 3,
+            "y": 17
+          },
+          {
+            "kind": "go",
+            "x": 6,
+            "y": 19
+          },
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 19
+          },
+          {
+            "kind": "push",
+            "box_x": 15
+          },
+          {
+            "kind": "go",
+            "x": 14,
+            "y": 19
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Keeper powers diagonal cargo crossing",
+        "fire": [
+          {
+            "kind": "ride",
+            "until": 423,
+            "timeout": 1800
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 9,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "Pause above the receiving dock and select unloading route B",
+        "fire": [],
+        "water": [
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 13
+          },
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 13
+          },
+          {
+            "kind": "interact"
+          }
+        ]
+      },
+      {
+        "label": "Unload freight onto permanent receiving plate C",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 37,
+            "timeout": 1800
+          },
+          {
+            "kind": "wait",
+            "frames": 30
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Drop received cargo off the left edge onto the continuous catch apron",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 24,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 38,
+            "y": 18
+          },
+          {
+            "kind": "jump",
+            "x": 41,
+            "y_less": 430
+          },
+          {
+            "kind": "go",
+            "x": 38,
+            "y": 13
+          },
+          {
+            "kind": "push",
+            "box_x": 35.8,
+            "timeout": 600
+          },
+          {
+            "kind": "wait",
+            "frames": 60
+          },
+          {
+            "kind": "go",
+            "x": 34,
+            "y": 18
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Push that same recovered crate to the far-right reclaim pocket",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 52,
+            "timeout": 1200
+          },
+          {
+            "kind": "wait",
+            "frames": 100
+          }
+        ],
+        "water": []
+      }
+    ]
+  },
+  {
+    "level": 12,
+    "max_frames": 15000,
+    "phases": [
+      {
+        "label": "Commission the elevated two-person loading key",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 3,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 7,
+            "y": 13
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 3,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 7,
+            "y": 13
+          },
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 13
+          }
+        ]
+      },
+      {
+        "label": "Load the grounded ferry while the keeper stays off H",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 4,
+            "y": 15
+          },
+          {
+            "kind": "go",
+            "x": 3,
+            "y": 17
+          },
+          {
+            "kind": "go",
+            "x": 6,
+            "y": 19
+          },
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 19
+          },
+          {
+            "kind": "push",
+            "box_x": 15
+          },
+          {
+            "kind": "go",
+            "x": 14,
+            "y": 19
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Keeper powers diagonal cargo crossing",
+        "fire": [
+          {
+            "kind": "ride",
+            "until": 414.5,
+            "timeout": 1800
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 9,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "Pause above the receiving dock and select unloading route B",
+        "fire": [],
+        "water": [
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 13
+          },
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 13
+          },
+          {
+            "kind": "interact"
+          }
+        ]
+      },
+      {
+        "label": "Unload freight onto permanent receiving plate C",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 52,
+            "timeout": 1200
+          },
+          {
+            "kind": "wait",
+            "frames": 30
+          }
+        ],
+        "water": []
+      }
+    ],
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "box_x_min": 1675,
+      "box_y_min": 430,
+      "box_y_max": 436
+    },
+    "name": "L12 over-push to the upper right wall keeps the full-width receiver weighted"
+  }
+]

@@ -39,9 +39,9 @@ def route_entries(path):
     return entries
 
 
-assert len(g.LEVELS) == 10, 'The seven-level enrichment must preserve level count/order'
+assert len(g.LEVELS) >= 10, 'The original ten levels must remain present'
 emitted = (ROOT / 'scripts/levels/levels.gd').read_bytes()
-for n, lv in enumerate(g.LEVELS, 1):
+for n, lv in enumerate(g.LEVELS[:10], 1):
     old = contract[str(n)]
     if n in changed:
         assert lv['revision'] == old['revision'] + 1, f'L{n}: content revision must increment exactly once'

@@ -76,6 +76,29 @@ func _build_level_buttons() -> void:
 		if i == focus_index:
 			_initial_focus = btn
 
+	_wire_level_focus()
+
+
+func _wire_level_focus() -> void:
+	# Explicit neighbors keep an odd final row deterministic for keys and pads.
+	var count := mini(GameState.unlocked_levels, _list.get_child_count())
+	for i in count:
+		var button := _list.get_child(i) as Button
+		var left := i - 1 if i % 2 == 1 else i
+		var right := i + 1 if i % 2 == 0 and i + 1 < count else i
+		var up := maxi(0, i - 2)
+		var down := mini(count - 1, i + 2)
+		button.focus_neighbor_left = button.get_path_to(_list.get_child(left))
+		button.focus_neighbor_right = button.get_path_to(_list.get_child(right))
+		button.focus_neighbor_top = button.get_path_to(_list.get_child(up))
+		button.focus_neighbor_bottom = button.get_path_to(_quit if i / 2 == (count - 1) / 2 else _list.get_child(down))
+		button.focus_next = button.get_path_to(_list.get_child(i + 1) if i + 1 < count else _quit)
+		button.focus_previous = button.get_path_to(_list.get_child(i - 1) if i > 0 else _quit)
+	if count > 0:
+		_quit.focus_next = _quit.get_path_to(_list.get_child(0))
+		_quit.focus_previous = _quit.get_path_to(_list.get_child(count - 1))
+		_quit.focus_neighbor_top = _quit.focus_previous
+
 
 ## 已通关的关卡显示历史最好成绩
 func _badge(index: int, unlocked: bool) -> String:

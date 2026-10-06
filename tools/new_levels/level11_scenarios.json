@@ -1,0 +1,280 @@
+[
+  {
+    "level": 11,
+    "max_frames": 9000,
+    "verify_store": false,
+    "phases": [
+      {
+        "label": "split outward and power each other",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 21,
+            "y": 22
+          },
+          {
+            "kind": "go",
+            "x": 19,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 15,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "take the permanent dry switchbacks after missing the lifts",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 9,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 18
+          },
+          {
+            "kind": "jump",
+            "x": 2,
+            "y": 16
+          },
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 14
+          },
+          {
+            "kind": "jump",
+            "x": 2,
+            "y": 12
+          },
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 7,
+            "y": 10
+          },
+          {
+            "kind": "jump",
+            "x": 12,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 22,
+            "y": 10,
+            "timeout": 180
+          }
+        ],
+        "water": []
+      }
+    ],
+    "name": "L11 one wing cannot unlock its own shortcut or final reunion",
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_x_min": 595,
+      "fire_x_max": 601,
+      "fire_y_max": 340,
+      "gates": {
+        "R": true,
+        "B": false,
+        "K": false
+      },
+      "reason_prefix": "task timeout:",
+      "frames": 747
+    }
+  },
+  {
+    "level": 11,
+    "max_frames": 9000,
+    "verify_store": false,
+    "phases": [
+      {
+        "label": "split outward and power each other",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 21,
+            "y": 22
+          },
+          {
+            "kind": "go",
+            "x": 19,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 15,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 43,
+            "y": 22
+          },
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 49,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 51,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          }
+        ]
+      },
+      {
+        "label": "take the cross-powered shortcuts",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 11.5,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "y",
+            "until": 375,
+            "timeout": 1800
+          },
+          {
+            "kind": "jump",
+            "x": 13,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 25,
+            "y": 10
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 52,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 1,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "y",
+            "until": 375,
+            "timeout": 1800
+          },
+          {
+            "kind": "jump",
+            "x": 50,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 40,
+            "y": 10
+          }
+        ]
+      },
+      {
+        "label": "fire leaves its key before water arrives",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 23,
+            "y": 10
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "second key alone does not latch",
+        "fire": [],
+        "water": [
+          {
+            "kind": "go",
+            "x": 38,
+            "y": 10
+          }
+        ]
+      },
+      {
+        "label": "try the locked reunion",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 26,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 10,
+            "timeout": 180
+          }
+        ],
+        "water": []
+      }
+    ],
+    "name": "L11 upper keys must overlap, sequential visits keep reunion closed",
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "fire_x_min": 851,
+      "fire_x_max": 857,
+      "fire_y_max": 340,
+      "gates": {
+        "R": true,
+        "B": true,
+        "K": false
+      },
+      "reason_prefix": "task timeout:",
+      "frames": 735
+    }
+  }
+]

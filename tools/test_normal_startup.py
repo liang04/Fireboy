@@ -39,8 +39,8 @@ func _observe() -> void:
 	if title == null or not title.is_visible_in_tree() or title.text.is_empty():
 		_fail("menu title missing")
 		return
-	if list == null or list.get_child_count() != 10:
-		_fail("expected ten menu buttons")
+	if list == null or list.get_child_count() != Levels.count():
+		_fail("expected one menu button per level")
 		return
 	var first := list.get_child(0) as Button
 	if first == null or first.disabled or not first.is_visible_in_tree() or first.size.y < 60:
@@ -49,7 +49,7 @@ func _observe() -> void:
 	if get_tree().paused:
 		_fail("menu unexpectedly paused")
 		return
-	print("NORMAL_MENU_OK: main_menu, background, title, 10 buttons, unpaused")
+	print("NORMAL_MENU_OK: main_menu, background, title, all level buttons, unpaused")
 	# Use the menu's real button handler rather than loading a test scene.
 	first.pressed.emit()
 	for frame in 12:

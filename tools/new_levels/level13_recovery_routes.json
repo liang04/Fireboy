@@ -1,0 +1,1244 @@
+[
+  {
+    "level": 13,
+    "name": "Recovery: expired H recharges from the safe courtyard",
+    "max_frames": 14000,
+    "phases": [
+      {
+        "label": "West: simultaneously hold the low and high K keys",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 6,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 26,
+            "y": 20,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 24,
+            "y": 18,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 20,
+            "y": 16,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 23,
+            "y": 14,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 20,
+            "y": 12,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 16,
+            "y": 10,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 10
+          },
+          {
+            "kind": "wait",
+            "frames": 20
+          }
+        ]
+      },
+      {
+        "label": "Return to the central choice courtyard",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 27,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 26,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 27,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "East: Water charges H; Fire waits on its dry approach",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 27,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 31,
+            "y": 20,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 29,
+            "y": 22
+          },
+          {
+            "kind": "wait",
+            "frames": 20
+          }
+        ]
+      },
+      {
+        "label": "Release H too early and let its six-second charge expire",
+        "fire": [
+          {
+            "kind": "wait",
+            "frames": 430
+          }
+        ],
+        "water": [
+          {
+            "kind": "swim",
+            "x": 27,
+            "y": 20,
+            "rise_first": true
+          },
+          {
+            "kind": "wait",
+            "frames": 430
+          }
+        ]
+      },
+      {
+        "label": "Recharge H without resetting either actor",
+        "fire": [],
+        "water": [
+          {
+            "kind": "go",
+            "x": 29,
+            "y": 22
+          },
+          {
+            "kind": "wait",
+            "frames": 25
+          }
+        ]
+      },
+      {
+        "label": "East: Fire crosses H while Water keeps the relay charged",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "kind": "go",
+            "x": 47,
+            "y": 20
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Fire holds the inner R key while Water leaves H and joins the dry R key",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 53,
+            "y": 22
+          },
+          {
+            "kind": "wait",
+            "frames": 25
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 29,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 31,
+            "y": 20,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          },
+          {
+            "kind": "wait",
+            "frames": 25
+          }
+        ]
+      },
+      {
+        "label": "Water uses the dry S escape hatch and collects the upper gem",
+        "fire": [
+          {
+            "kind": "swim",
+            "x": 57,
+            "y": 20,
+            "rise_first": true
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 36,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 18,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 34,
+            "y": 16,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 14,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 42,
+            "y": 12,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 12
+          },
+          {
+            "kind": "go",
+            "x": 51,
+            "y": 14
+          }
+        ]
+      },
+      {
+        "label": "Reunite beyond both independent keys",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 65,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 58,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 67,
+            "y": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "level": 13,
+    "name": "Recovery: scout exits through upper S escape after H closes",
+    "max_frames": 14000,
+    "phases": [
+      {
+        "label": "East: Water charges H; Fire waits on its dry approach",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 27,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 31,
+            "y": 20,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 29,
+            "y": 22
+          },
+          {
+            "kind": "wait",
+            "frames": 20
+          }
+        ]
+      },
+      {
+        "label": "East: Fire crosses H while Water keeps the relay charged",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "kind": "go",
+            "x": 47,
+            "y": 20
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Let H close behind the scout before R is repaired",
+        "fire": [
+          {
+            "kind": "wait",
+            "frames": 440
+          }
+        ],
+        "water": [
+          {
+            "kind": "swim",
+            "x": 27,
+            "y": 20,
+            "rise_first": true
+          },
+          {
+            "kind": "wait",
+            "frames": 430
+          }
+        ]
+      },
+      {
+        "label": "Fire holds the inner R key while Water leaves H and joins the dry R key",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 53,
+            "y": 22
+          },
+          {
+            "kind": "wait",
+            "frames": 25
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 29,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 31,
+            "y": 20,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          },
+          {
+            "kind": "wait",
+            "frames": 25
+          }
+        ]
+      },
+      {
+        "label": "Prepare the dry return stair",
+        "fire": [
+          {
+            "kind": "swim",
+            "x": 57,
+            "y": 20,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 59,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 57,
+            "y": 18,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 54,
+            "y": 16,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 50,
+            "y": 14,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 46,
+            "y": 12,
+            "rise_first": true
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 36,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 18,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 34,
+            "y": 16,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 14,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 42,
+            "y": 12,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 12
+          },
+          {
+            "kind": "go",
+            "x": 51,
+            "y": 14
+          }
+        ]
+      },
+      {
+        "label": "Both return through S even after H expires",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 12
+          },
+          {
+            "kind": "go",
+            "x": 31,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 27,
+            "y": 20,
+            "rise_first": true
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 46,
+            "y": 12,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 12
+          },
+          {
+            "kind": "go",
+            "x": 31,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 27,
+            "y": 20,
+            "rise_first": true
+          }
+        ]
+      },
+      {
+        "label": "West: simultaneously hold the low and high K keys",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 6,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 26,
+            "y": 20,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 24,
+            "y": 18,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 20,
+            "y": 16,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 23,
+            "y": 14,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 20,
+            "y": 12,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 16,
+            "y": 10,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 10
+          },
+          {
+            "kind": "wait",
+            "frames": 20
+          }
+        ]
+      },
+      {
+        "label": "The opened S hatch remains available after doing K",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 27,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 31,
+            "y": 20,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 36,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 18,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 34,
+            "y": 16,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 14,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 42,
+            "y": 12,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 12
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 26,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 27,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 31,
+            "y": 20,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 36,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 18,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 34,
+            "y": 16,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 14,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 42,
+            "y": 12,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 12
+          }
+        ]
+      },
+      {
+        "label": "Cross the dry roof and reunite beyond K and R",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 58,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 65,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 58,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 67,
+            "y": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "level": 13,
+    "name": "Recovery: Water opens S after the actors split onto the wrong sides",
+    "max_frames": 16000,
+    "phases": [
+      {
+        "label": "East: Water charges H; Fire waits on its dry approach",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 27,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 31,
+            "y": 20,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 29,
+            "y": 22
+          },
+          {
+            "kind": "wait",
+            "frames": 20
+          }
+        ]
+      },
+      {
+        "label": "Scout enters without opening S",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 47,
+            "y": 20
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Keeper follows too early while Fire walks back outside",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "swim",
+            "x": 31,
+            "y": 20,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 45,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "Let H expire with the actors on the wrong sides",
+        "fire": [
+          {
+            "kind": "wait",
+            "frames": 450
+          }
+        ],
+        "water": [
+          {
+            "kind": "wait",
+            "frames": 450
+          }
+        ]
+      },
+      {
+        "label": "Water can open the dry S escape unaided",
+        "fire": [],
+        "water": [
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          },
+          {
+            "kind": "wait",
+            "frames": 25
+          }
+        ]
+      },
+      {
+        "label": "Fire re-enters by the upper hatch; Water returns to the outside R key",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 36,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 18,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 34,
+            "y": 16,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 14,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 42,
+            "y": 12,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 12
+          },
+          {
+            "kind": "go",
+            "x": 58,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 59,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 52,
+            "y": 22
+          },
+          {
+            "kind": "go",
+            "x": 53,
+            "y": 22
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 47,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 48,
+            "y": 17,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 52,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 54,
+            "y": 16,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 50,
+            "y": 14,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 46,
+            "y": 12,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 12
+          },
+          {
+            "kind": "go",
+            "x": 31,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 41,
+            "y": 20
+          },
+          {
+            "kind": "wait",
+            "frames": 25
+          }
+        ]
+      },
+      {
+        "label": "Prepare the dry return stair",
+        "fire": [
+          {
+            "kind": "swim",
+            "x": 57,
+            "y": 20,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 59,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 57,
+            "y": 18,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 54,
+            "y": 16,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 50,
+            "y": 14,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 46,
+            "y": 12,
+            "rise_first": true
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 36,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 18,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 34,
+            "y": 16,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 14,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 42,
+            "y": 12,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 12
+          },
+          {
+            "kind": "go",
+            "x": 51,
+            "y": 14
+          }
+        ]
+      },
+      {
+        "label": "Both return through S even after H expires",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 12
+          },
+          {
+            "kind": "go",
+            "x": 31,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 27,
+            "y": 20,
+            "rise_first": true
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 46,
+            "y": 12,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 42,
+            "y": 12
+          },
+          {
+            "kind": "go",
+            "x": 31,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 27,
+            "y": 20,
+            "rise_first": true
+          }
+        ]
+      },
+      {
+        "label": "West: simultaneously hold the low and high K keys",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 6,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 26,
+            "y": 20,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 24,
+            "y": 18,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 20,
+            "y": 16,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 23,
+            "y": 14,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 20,
+            "y": 12,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 16,
+            "y": 10,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 10
+          },
+          {
+            "kind": "wait",
+            "frames": 20
+          }
+        ]
+      },
+      {
+        "label": "The opened S hatch remains available after doing K",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 27,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 31,
+            "y": 20,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 36,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 18,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 34,
+            "y": 16,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 14,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 42,
+            "y": 12,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 12
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 26,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 27,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 31,
+            "y": 20,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 36,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 18,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 34,
+            "y": 16,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 38,
+            "y": 14,
+            "rise_first": true
+          },
+          {
+            "kind": "jump",
+            "x": 42,
+            "y": 12,
+            "rise_first": true
+          },
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 12
+          }
+        ]
+      },
+      {
+        "label": "Cross the dry roof and reunite beyond K and R",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 58,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 65,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 58,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 67,
+            "y": 20
+          }
+        ]
+      }
+    ]
+  }
+]

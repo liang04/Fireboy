@@ -18,7 +18,7 @@ def main():
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--godot", default=os.environ.get("GODOT_BIN", "godot"))
-    parser.add_argument("--skip-smoke", action="store_true", help="Skip the longer 10-level probe")
+    parser.add_argument("--skip-smoke", action="store_true", help="Skip the longer 13-level probe")
     parser.add_argument("--skip-routes", action="store_true", help="Skip full-gem input replays")
     args = parser.parse_args()
     binary = shutil.which(args.godot)
@@ -45,6 +45,7 @@ def main():
         checks = [
             ("Import", [binary, "--headless", "--path", str(ROOT), "--editor", "--import", "--quit"]),
             ("Clean and upgrade normal startup", [sys.executable, "tools/test_normal_startup.py", "--godot", binary]),
+            ("Append-only preservation", [sys.executable, "tools/test_new_levels_static.py"]),
             ("Level validator", [sys.executable, "tools/gen_levels.py"]),
             ("Existing regression", [binary, "--headless", "--path", str(ROOT), "res://tools/regression.tscn"]),
             ("Controls regression", [binary, "--headless", "--path", str(ROOT), "res://tools/control_regression.tscn"]),
@@ -62,20 +63,23 @@ def main():
             ("Save recovery regression", [binary, "--headless", "--path", str(ROOT), "res://tools/save_recovery_regression.tscn"]),
             ("Replay records regression", [binary, "--headless", "--path", str(ROOT), "res://tools/replay_regression.tscn"]),
             ("Replay transitions regression", [binary, "--headless", "--path", str(ROOT), "res://tools/replay_flow_regression.tscn"]),
+            ("New campaign save and controller boundaries", [binary, "--headless", "--path", str(ROOT), "res://tools/new_levels_regression.tscn"]),
             ("Menu replay regression", [binary, "--headless", "--path", str(ROOT), "res://tools/menu_replay_regression.tscn"]),
             ("Mechanism feedback regression", [binary, "--headless", "--path", str(ROOT), "res://tools/mechanism_feedback_regression.tscn"]),
             ("Prototype temporal/cooperation/recovery", [sys.executable, "tools/run_prototype_checks.py", "--godot", binary]),
             ("Enrichment cooperation and recovery", [sys.executable, "tools/run_enrichment_checks.py", "--godot", binary]),
         ]
         if not args.skip_smoke:
-            checks.append(("10-level smoke", [binary, "--headless", "--path", str(ROOT), "--fixed-fps", "60", "--", "--smoke"]))
+            checks.append(("13-level smoke", [binary, "--headless", "--path", str(ROOT), "--fixed-fps", "60", "--", "--smoke"]))
         if not args.skip_routes:
-            checks.append(("10-level full-gem input replay", [sys.executable,
+            checks.append(("Original 10-level immutable input replay", [sys.executable,
                            "tools/run_full_gem_routes.py", "--godot", binary, "--replay",
                            "--output", str(isolated / "full-gem-replay.json")]))
+        if not args.skip_routes:
+            checks.append(("New level input/recovery replays", [sys.executable, "tools/run_new_level_checks.py", "--godot", binary]))
         for name, command in checks:
             print(f"\n=== {name} ===", flush=True)
-            timeout = 600 if name in ("Prototype temporal/cooperation/recovery", "Enrichment cooperation and recovery") else 240
+            timeout = 600 if name in ("Prototype temporal/cooperation/recovery", "Enrichment cooperation and recovery", "New level input/recovery replays") else 240
             try:
                 result = subprocess.run(command, cwd=ROOT, env=env, capture_output=True,
                                         text=True, encoding="utf-8", errors="replace", timeout=timeout)

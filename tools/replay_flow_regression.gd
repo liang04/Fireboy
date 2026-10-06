@@ -107,16 +107,16 @@ func _run() -> void:
 	await frames()
 	menu = get_tree().current_scene as MainMenu
 	check(menu != null and get_viewport().gui_get_focus_owner() == menu._list.get_child(1), "return after replay restores second card focus")
-	menu._list.get_child(9).pressed.emit()
+	menu._list.get_child(Levels.count() - 1).pressed.emit()
 	await frames()
 	world()._complete()
 	await key(KEY_W)
 	menu = get_tree().current_scene as MainMenu
-	check(menu != null and GameState.current_level_index == 9, "jump from final result returns to menu")
-	check(get_viewport().gui_get_focus_owner() == menu._list.get_child(9), "last level menu focus remains visible after completion")
+	check(menu != null and GameState.current_level_index == Levels.count() - 1, "jump from final result returns to menu")
+	check(get_viewport().gui_get_focus_owner() == menu._list.get_child(Levels.count() - 1), "last level menu focus remains visible after completion")
 	await capture("menu-last-return-flow")
 	for cycle in 3:
-		menu._list.get_child(9).pressed.emit()
+		menu._list.get_child(Levels.count() - 1).pressed.emit()
 		await frames()
 		check(world() != null and not get_tree().paused, "repeat entry starts running %d" % cycle)
 		if DisplayServer.get_name() == "headless": world()._hud.set_paused(true)
@@ -126,7 +126,7 @@ func _run() -> void:
 		await frames()
 		menu = get_tree().current_scene as MainMenu
 		check(menu != null and not get_tree().paused, "repeat background exit clears pause %d" % cycle)
-		check(get_viewport().gui_get_focus_owner() == menu._list.get_child(9), "repeat exit restores last card focus %d" % cycle)
+		check(get_viewport().gui_get_focus_owner() == menu._list.get_child(Levels.count() - 1), "repeat exit restores last card focus %d" % cycle)
 	check(GameState.results.is_empty(), "all flow fixtures respect smoke recording suppression")
 	menu.queue_free()
 	await frames()

@@ -1,0 +1,244 @@
+[
+  {
+    "level": 11,
+    "max_frames": 9000,
+    "verify_store": true,
+    "phases": [
+      {
+        "label": "split outward and power each other",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 21,
+            "y": 22
+          },
+          {
+            "kind": "go",
+            "x": 19,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 15,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 43,
+            "y": 22
+          },
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 49,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 51,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          }
+        ]
+      },
+      {
+        "label": "leave both lifts early onto dry outer aprons",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 11.5,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "y",
+            "until": 500,
+            "timeout": 1800
+          },
+          {
+            "kind": "input",
+            "direction": -1,
+            "frames": 17
+          },
+          {
+            "kind": "go",
+            "x": 7,
+            "y": 20
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 52,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 1,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "y",
+            "until": 500,
+            "timeout": 1800
+          },
+          {
+            "kind": "input",
+            "direction": 1,
+            "frames": 17
+          },
+          {
+            "kind": "go",
+            "x": 56,
+            "y": 20
+          }
+        ]
+      },
+      {
+        "label": "take the permanent dry switchbacks after missing the lifts",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 7,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 18
+          },
+          {
+            "kind": "jump",
+            "x": 2,
+            "y": 16
+          },
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 14
+          },
+          {
+            "kind": "jump",
+            "x": 2,
+            "y": 12
+          },
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 7,
+            "y": 10
+          },
+          {
+            "kind": "jump",
+            "x": 12,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 25,
+            "y": 10
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 56,
+            "y": 20
+          },
+          {
+            "kind": "jump",
+            "x": 58,
+            "y": 18
+          },
+          {
+            "kind": "jump",
+            "x": 61,
+            "y": 16
+          },
+          {
+            "kind": "jump",
+            "x": 58,
+            "y": 14
+          },
+          {
+            "kind": "jump",
+            "x": 61,
+            "y": 12
+          },
+          {
+            "kind": "jump",
+            "x": 58,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 56,
+            "y": 10
+          },
+          {
+            "kind": "jump",
+            "x": 51,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 38,
+            "y": 10
+          }
+        ]
+      },
+      {
+        "label": "latch the shared reunion and collect exit gems",
+        "fire": [
+          {
+            "kind": "wait",
+            "frames": 15
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 10
+          }
+        ],
+        "water": [
+          {
+            "kind": "wait",
+            "frames": 15
+          },
+          {
+            "kind": "go",
+            "x": 33,
+            "y": 10
+          }
+        ]
+      }
+    ],
+    "name": "L11 early lift dismount recovers through permanent dry stairs"
+  }
+]

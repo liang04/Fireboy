@@ -1,0 +1,253 @@
+[
+  {
+    "level": 12,
+    "max_frames": 15000,
+    "phases": [
+      {
+        "label": "Commission the elevated two-person loading key",
+        "fire": [
+          {
+            "kind": "jump",
+            "x": 3,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 7,
+            "y": 13
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 3,
+            "y": 17
+          },
+          {
+            "kind": "jump",
+            "x": 5,
+            "y": 15
+          },
+          {
+            "kind": "jump",
+            "x": 7,
+            "y": 13
+          },
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 13
+          }
+        ]
+      },
+      {
+        "label": "Load the grounded ferry while the keeper stays off H",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 4,
+            "y": 15
+          },
+          {
+            "kind": "go",
+            "x": 3,
+            "y": 17
+          },
+          {
+            "kind": "go",
+            "x": 6,
+            "y": 19
+          },
+          {
+            "kind": "go",
+            "x": 8,
+            "y": 19
+          },
+          {
+            "kind": "push",
+            "box_x": 15
+          },
+          {
+            "kind": "go",
+            "x": 14,
+            "y": 19
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Keeper powers diagonal cargo crossing",
+        "fire": [
+          {
+            "kind": "ride",
+            "until": 423,
+            "timeout": 1800
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 9,
+            "y": 11
+          }
+        ]
+      },
+      {
+        "label": "Pause above the receiving dock and select unloading route B",
+        "fire": [],
+        "water": [
+          {
+            "kind": "go",
+            "x": 11,
+            "y": 13
+          },
+          {
+            "kind": "go",
+            "x": 10,
+            "y": 13
+          },
+          {
+            "kind": "interact"
+          }
+        ]
+      },
+      {
+        "label": "Unload freight onto permanent receiving plate C",
+        "fire": [
+          {
+            "kind": "push",
+            "box_x": 37,
+            "timeout": 1800
+          },
+          {
+            "kind": "wait",
+            "frames": 30
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "Collect dry-basin gems and reunite through the service portal",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 24,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 38,
+            "y": 18
+          },
+          {
+            "kind": "jump",
+            "x": 41,
+            "y_less": 430
+          },
+          {
+            "kind": "go",
+            "x": 38,
+            "y": 13
+          },
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 13
+          }
+        ],
+        "water": [
+          {
+            "kind": "jump",
+            "x": 15,
+            "y": 19
+          },
+          {
+            "kind": "jump",
+            "x": 20,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 34,
+            "y": 18
+          },
+          {
+            "kind": "go",
+            "x": 38,
+            "y": 18
+          },
+          {
+            "kind": "jump",
+            "x": 41,
+            "y_less": 430
+          }
+        ]
+      },
+      {
+        "label": "Both ride the crate-powered final lift",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 13
+          },
+          {
+            "kind": "board",
+            "platform": 1,
+            "range": 145,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 178,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 46,
+            "y": 4
+          },
+          {
+            "kind": "go",
+            "x": 40,
+            "y": 4
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 13
+          },
+          {
+            "kind": "board",
+            "platform": 1,
+            "range": 145,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "until": 178,
+            "timeout": 2400
+          },
+          {
+            "kind": "jump",
+            "x": 46,
+            "y": 4
+          },
+          {
+            "kind": "go",
+            "x": 45,
+            "y": 4
+          }
+        ]
+      }
+    ],
+    "verify_store": true
+  }
+]

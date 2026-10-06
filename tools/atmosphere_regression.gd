@@ -74,7 +74,7 @@ func _run() -> void:
 		level.queue_free()
 		await frames()
 	check(motifs.size() == Levels.count() and base_colors.size() == Levels.count(),
-		"all ten palettes and motifs are distinct")
+		"all level palettes and motifs are distinct")
 	Sound._stop_all()
 	# The audio thread drains on wall time even under --fixed-fps.
 	OS.delay_msec(350)

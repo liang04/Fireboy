@@ -110,9 +110,11 @@ func _run() -> void:
 	for index in range(2, Levels.count(), 2):
 		await keypress(KEY_DOWN)
 		visible_focus(menu, index, "Down key level %d" % (index + 1))
+	var bottom_left := ((Levels.count() - 1) / 2) * 2
 	await keypress(KEY_RIGHT)
-	visible_focus(menu, 9, "Right key last level")
-	for index in [7, 5, 3, 1]:
+	var bottom := mini(bottom_left + 1, Levels.count() - 1)
+	visible_focus(menu, bottom, "Right key final row")
+	for index in range(bottom - 2, -1, -2):
 		await keypress(KEY_UP)
 		visible_focus(menu, index, "Up key level %d" % (index + 1))
 	await keypress(KEY_LEFT)
@@ -124,14 +126,14 @@ func _run() -> void:
 	await keypress(KEY_TAB)
 	check(get_viewport().gui_get_focus_owner() == menu._quit, "Tab reaches Quit after levels")
 	await keypress(KEY_TAB, true)
-	visible_focus(menu, 9, "Shift-Tab returns to final level")
+	visible_focus(menu, Levels.count() - 1, "Shift-Tab returns to final level")
 
 	# Resize the actual menu rectangle, including narrower cards/wrapped text.
 	menu.set_anchors_preset(Control.PRESET_TOP_LEFT, true)
 	for dimensions in [Vector2(1024, 576), Vector2(960, 540), Vector2(1280, 720)]:
 		menu.size = dimensions
 		await frames(8)
-		visible_focus(menu, 9, "resize %s" % dimensions)
+		visible_focus(menu, Levels.count() - 1, "resize %s" % dimensions)
 		check(not menu._focus_sync_queued, "layout reconciliation settles after resize")
 	menu._quit.grab_focus()
 	menu.size = Vector2(1024, 576)
@@ -201,13 +203,13 @@ func _run() -> void:
 	check(not first.text.contains("最快") and not first.text.contains("★★★"),
 		"stale content revision never leaks old scores into cards")
 	check(first.text.contains("挑战 待记录"), "stale content revision does not earn challenge badges")
-	check(menu._progress.text.contains("27 / 30"), "progress excludes incomparable stars")
+	check(menu._progress.text.contains("%d / %d" % [(Levels.count() - 1) * 3, Levels.count() * 3]), "progress excludes incomparable stars")
 	menu.queue_free()
 	await frames(2)
 
 	# Removing/freeing the scene before queued layout must not access its viewport.
 	for free_immediately in [false, true]:
-		var fleeting := new_menu(9)
+		var fleeting := new_menu(Levels.count() - 1)
 		remove_child(fleeting)
 		if free_immediately:
 			fleeting.free()
@@ -215,12 +217,12 @@ func _run() -> void:
 		if not free_immediately:
 			check(not fleeting.is_inside_tree(), "removed scene safely ignores queued layout")
 			fleeting.free()
-	var reentered := new_menu(9)
+	var reentered := new_menu(Levels.count() - 1)
 	remove_child(reentered)
 	await frames()
 	add_child(reentered)
 	await frames()
-	visible_focus(reentered, 9, "re-entered menu resumes layout safely")
+	visible_focus(reentered, Levels.count() - 1, "re-entered menu resumes layout safely")
 	GameState.current_level_index = 0
 	reentered._build_level_buttons()
 	reentered._build_level_buttons()
@@ -229,14 +231,14 @@ func _run() -> void:
 	check(reentered._scroll.scroll_vertical == 0, "rebuilt first card resets to exact top")
 	reentered.queue_free()
 	await frames(2)
-	var queued := new_menu(9)
+	var queued := new_menu(Levels.count() - 1)
 	queued.queue_free()
 	await frames()
 	check(not is_instance_valid(queued), "queued scene deletion before layout is safe")
 
 	GameState.results.clear()
 	GameState.unlocked_levels = 1
-	menu = new_menu(9)
+	menu = new_menu(Levels.count() - 1)
 	await frames()
 	visible_focus(menu, 0, "locked selection falls back to first level")
 	check((menu._list.get_child(1) as Button).disabled, "locked levels remain disabled")

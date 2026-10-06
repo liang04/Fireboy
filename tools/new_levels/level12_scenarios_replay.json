@@ -1,0 +1,940 @@
+[
+  {
+    "level": 12,
+    "name": "L12 sequential K visits with an idle partner cannot commission freight",
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "box_x_max": 371,
+      "gates": {
+        "K": false
+      },
+      "frames": 620
+    },
+    "max_frames": 620,
+    "replay_tape": [
+      {
+        "frames": 1,
+        "mask": 1
+      },
+      {
+        "frames": 16,
+        "mask": 5
+      },
+      {
+        "frames": 1,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 5
+      },
+      {
+        "frames": 47,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 6
+      },
+      {
+        "frames": 13,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 6
+      },
+      {
+        "frames": 13,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 60,
+        "mask": 1
+      },
+      {
+        "frames": 9,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 1
+      },
+      {
+        "frames": 16,
+        "mask": 0
+      },
+      {
+        "frames": 26,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 15,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 300,
+        "mask": 2
+      }
+    ]
+  },
+  {
+    "level": 12,
+    "name": "L12 both partners cannot leave without a delivered crate",
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "box_x_min": 303,
+      "box_x_max": 305,
+      "fire_y_min": 230,
+      "water_y_max": 170,
+      "frames": 1714
+    },
+    "max_frames": 1714,
+    "replay_tape": [
+      {
+        "frames": 1,
+        "mask": 17
+      },
+      {
+        "frames": 16,
+        "mask": 85
+      },
+      {
+        "frames": 1,
+        "mask": 81
+      },
+      {
+        "frames": 2,
+        "mask": 85
+      },
+      {
+        "frames": 30,
+        "mask": 84
+      },
+      {
+        "frames": 1,
+        "mask": 20
+      },
+      {
+        "frames": 16,
+        "mask": 84
+      },
+      {
+        "frames": 1,
+        "mask": 16
+      },
+      {
+        "frames": 2,
+        "mask": 86
+      },
+      {
+        "frames": 25,
+        "mask": 70
+      },
+      {
+        "frames": 13,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 8,
+        "mask": 70
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 18,
+        "mask": 102
+      },
+      {
+        "frames": 9,
+        "mask": 100
+      },
+      {
+        "frames": 4,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 8,
+        "mask": 66
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 23,
+        "mask": 98
+      },
+      {
+        "frames": 1,
+        "mask": 96
+      },
+      {
+        "frames": 3,
+        "mask": 102
+      },
+      {
+        "frames": 13,
+        "mask": 70
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 14,
+        "mask": 38
+      },
+      {
+        "frames": 18,
+        "mask": 36
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 10,
+        "mask": 100
+      },
+      {
+        "frames": 5,
+        "mask": 96
+      },
+      {
+        "frames": 16,
+        "mask": 102
+      },
+      {
+        "frames": 25,
+        "mask": 70
+      },
+      {
+        "frames": 4,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 4,
+        "mask": 2
+      },
+      {
+        "frames": 41,
+        "mask": 98
+      },
+      {
+        "frames": 4,
+        "mask": 66
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 62,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 31,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 17,
+        "mask": 38
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 6,
+        "mask": 38
+      },
+      {
+        "frames": 5,
+        "mask": 36
+      },
+      {
+        "frames": 1,
+        "mask": 32
+      },
+      {
+        "frames": 19,
+        "mask": 34
+      },
+      {
+        "frames": 1,
+        "mask": 2
+      },
+      {
+        "frames": 5,
+        "mask": 98
+      },
+      {
+        "frames": 19,
+        "mask": 96
+      },
+      {
+        "frames": 5,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 41,
+        "mask": 32
+      },
+      {
+        "frames": 219,
+        "mask": 0
+      },
+      {
+        "frames": 13,
+        "mask": 64
+      },
+      {
+        "frames": 24,
+        "mask": 96
+      },
+      {
+        "frames": 117,
+        "mask": 0
+      },
+      {
+        "frames": 24,
+        "mask": 80
+      },
+      {
+        "frames": 21,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 8,
+        "mask": 16
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 2
+      },
+      {
+        "frames": 74,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 4
+      },
+      {
+        "frames": 18,
+        "mask": 6
+      },
+      {
+        "frames": 601,
+        "mask": 0
+      }
+    ]
+  },
+  {
+    "level": 12,
+    "name": "L12 left-wall reclaim returns the original cargo with the normal penalty",
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 1,
+      "box_x_min": 303,
+      "box_x_max": 305,
+      "gates": {
+        "K": false
+      },
+      "frames": 445
+    },
+    "max_frames": 445,
+    "replay_tape": [
+      {
+        "frames": 1,
+        "mask": 33
+      },
+      {
+        "frames": 16,
+        "mask": 101
+      },
+      {
+        "frames": 1,
+        "mask": 97
+      },
+      {
+        "frames": 2,
+        "mask": 101
+      },
+      {
+        "frames": 13,
+        "mask": 100
+      },
+      {
+        "frames": 17,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 4
+      },
+      {
+        "frames": 16,
+        "mask": 20
+      },
+      {
+        "frames": 1,
+        "mask": 16
+      },
+      {
+        "frames": 27,
+        "mask": 22
+      },
+      {
+        "frames": 13,
+        "mask": 20
+      },
+      {
+        "frames": 123,
+        "mask": 16
+      },
+      {
+        "frames": 214,
+        "mask": 0
+      }
+    ]
+  },
+  {
+    "level": 12,
+    "name": "L12 receiver-edge drop returns across the apron and right-wall reclaim resets cargo",
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 1,
+      "box_x_min": 303,
+      "box_x_max": 305,
+      "gates": {
+        "K": true
+      },
+      "frames": 2014
+    },
+    "max_frames": 2014,
+    "replay_tape": [
+      {
+        "frames": 1,
+        "mask": 17
+      },
+      {
+        "frames": 16,
+        "mask": 85
+      },
+      {
+        "frames": 1,
+        "mask": 81
+      },
+      {
+        "frames": 2,
+        "mask": 85
+      },
+      {
+        "frames": 30,
+        "mask": 84
+      },
+      {
+        "frames": 1,
+        "mask": 20
+      },
+      {
+        "frames": 16,
+        "mask": 84
+      },
+      {
+        "frames": 1,
+        "mask": 16
+      },
+      {
+        "frames": 2,
+        "mask": 86
+      },
+      {
+        "frames": 25,
+        "mask": 70
+      },
+      {
+        "frames": 13,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 8,
+        "mask": 70
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 18,
+        "mask": 102
+      },
+      {
+        "frames": 9,
+        "mask": 100
+      },
+      {
+        "frames": 4,
+        "mask": 68
+      },
+      {
+        "frames": 9,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 96
+      },
+      {
+        "frames": 13,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 26,
+        "mask": 1
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 8,
+        "mask": 1
+      },
+      {
+        "frames": 17,
+        "mask": 0
+      },
+      {
+        "frames": 25,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 119,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 5,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 18,
+        "mask": 80
+      },
+      {
+        "frames": 22,
+        "mask": 64
+      },
+      {
+        "frames": 376,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 32
+      },
+      {
+        "frames": 9,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 16
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 128
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 103,
+        "mask": 2
+      },
+      {
+        "frames": 33,
+        "mask": 0
+      },
+      {
+        "frames": 98,
+        "mask": 1
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 116,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 23,
+        "mask": 6
+      },
+      {
+        "frames": 6,
+        "mask": 4
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 25,
+        "mask": 1
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 22,
+        "mask": 1
+      },
+      {
+        "frames": 62,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 336,
+        "mask": 2
+      },
+      {
+        "frames": 224,
+        "mask": 0
+      }
+    ]
+  },
+  {
+    "level": 12,
+    "name": "L12 over-push to the upper right wall keeps the full-width receiver weighted",
+    "scenario": {
+      "completed": false,
+      "deaths": 0,
+      "box_resets": 0,
+      "box_x_min": 1675,
+      "box_y_min": 430,
+      "box_y_max": 436,
+      "frames": 1483
+    },
+    "max_frames": 1483,
+    "replay_tape": [
+      {
+        "frames": 1,
+        "mask": 17
+      },
+      {
+        "frames": 16,
+        "mask": 85
+      },
+      {
+        "frames": 1,
+        "mask": 81
+      },
+      {
+        "frames": 2,
+        "mask": 85
+      },
+      {
+        "frames": 30,
+        "mask": 84
+      },
+      {
+        "frames": 1,
+        "mask": 20
+      },
+      {
+        "frames": 16,
+        "mask": 84
+      },
+      {
+        "frames": 1,
+        "mask": 16
+      },
+      {
+        "frames": 2,
+        "mask": 86
+      },
+      {
+        "frames": 25,
+        "mask": 70
+      },
+      {
+        "frames": 13,
+        "mask": 68
+      },
+      {
+        "frames": 1,
+        "mask": 64
+      },
+      {
+        "frames": 8,
+        "mask": 70
+      },
+      {
+        "frames": 1,
+        "mask": 6
+      },
+      {
+        "frames": 18,
+        "mask": 102
+      },
+      {
+        "frames": 9,
+        "mask": 100
+      },
+      {
+        "frames": 4,
+        "mask": 68
+      },
+      {
+        "frames": 9,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 27,
+        "mask": 96
+      },
+      {
+        "frames": 13,
+        "mask": 64
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 32,
+        "mask": 32
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 26,
+        "mask": 1
+      },
+      {
+        "frames": 8,
+        "mask": 0
+      },
+      {
+        "frames": 8,
+        "mask": 1
+      },
+      {
+        "frames": 17,
+        "mask": 0
+      },
+      {
+        "frames": 25,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 16,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 119,
+        "mask": 2
+      },
+      {
+        "frames": 1,
+        "mask": 0
+      },
+      {
+        "frames": 5,
+        "mask": 1
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 18,
+        "mask": 80
+      },
+      {
+        "frames": 22,
+        "mask": 64
+      },
+      {
+        "frames": 392,
+        "mask": 0
+      },
+      {
+        "frames": 17,
+        "mask": 32
+      },
+      {
+        "frames": 9,
+        "mask": 0
+      },
+      {
+        "frames": 9,
+        "mask": 16
+      },
+      {
+        "frames": 2,
+        "mask": 0
+      },
+      {
+        "frames": 1,
+        "mask": 128
+      },
+      {
+        "frames": 4,
+        "mask": 0
+      },
+      {
+        "frames": 392,
+        "mask": 2
+      },
+      {
+        "frames": 154,
+        "mask": 0
+      }
+    ]
+  }
+]

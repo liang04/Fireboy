@@ -273,5 +273,12 @@ func load_progress() -> void:
 			if rating_stale:
 				record.erase("stars")
 			results[index] = record
-	if rating_stale or layout_stale or rev_stale or loaded["recovered"]:
+	# Appending levels leaves the index and rating versions unchanged. A valid
+	# completion of the former final level unlocks its newly appended successor.
+	# Merely having unlocked level 10 is not a completion and earns no new stars.
+	var before_unlock := unlocked_levels
+	if level_count() > 10 and results.get(9, {}).has("time"):
+		unlocked_levels = maxi(unlocked_levels, 11)
+	var appended_unlock := unlocked_levels != before_unlock
+	if rating_stale or layout_stale or rev_stale or loaded["recovered"] or appended_unlock:
 		save_progress()   # 迁移只做一次，下次启动版本已对齐

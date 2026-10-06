@@ -1,0 +1,269 @@
+[
+  {
+    "level": 11,
+    "max_frames": 9000,
+    "verify_store": true,
+    "phases": [
+      {
+        "label": "split outward and power each other",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 21,
+            "y": 22
+          },
+          {
+            "kind": "go",
+            "x": 19,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 15,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 43,
+            "y": 22
+          },
+          {
+            "kind": "go",
+            "x": 46,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 49,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 51,
+            "y": 20
+          },
+          {
+            "kind": "interact"
+          }
+        ]
+      },
+      {
+        "label": "take the cross-powered shortcuts",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 11.5,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "y",
+            "until": 375,
+            "timeout": 1800
+          },
+          {
+            "kind": "jump",
+            "x": 13,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 25,
+            "y": 10
+          }
+        ],
+        "water": [
+          {
+            "kind": "go",
+            "x": 52,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 1,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "y",
+            "until": 375,
+            "timeout": 1800
+          },
+          {
+            "kind": "jump",
+            "x": 50,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 38,
+            "y": 10
+          }
+        ]
+      },
+      {
+        "label": "permanent K latch settles before deliberate wrong-element detour",
+        "fire": [
+          {
+            "kind": "wait",
+            "frames": 30
+          }
+        ],
+        "water": [
+          {
+            "kind": "wait",
+            "frames": 30
+          }
+        ]
+      },
+      {
+        "label": "fire drops into the right service apron without entering both exits",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 54
+          },
+          {
+            "kind": "wait",
+            "frames": 40
+          },
+          {
+            "kind": "go",
+            "x": 51,
+            "y": 20
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "deliberate water contact and natural respawn after K is already open",
+        "fire": [
+          {
+            "kind": "input",
+            "direction": -1,
+            "frames": 40
+          },
+          {
+            "kind": "wait",
+            "frames": 40
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 20
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "central respawn can return through the still-open lower lava lane",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 21,
+            "y": 22
+          },
+          {
+            "kind": "go",
+            "x": 19,
+            "y": 22
+          },
+          {
+            "kind": "swim",
+            "x": 15,
+            "y": 20
+          },
+          {
+            "kind": "go",
+            "x": 12,
+            "y": 20
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "reactivating switches is unnecessary because earned progress persists",
+        "fire": [
+          {
+            "kind": "go",
+            "x": 11.5,
+            "y": 20
+          },
+          {
+            "kind": "board",
+            "platform": 0,
+            "timeout": 2400
+          },
+          {
+            "kind": "ride",
+            "axis": "y",
+            "until": 375,
+            "timeout": 1800
+          },
+          {
+            "kind": "jump",
+            "x": 13,
+            "y": 10
+          },
+          {
+            "kind": "go",
+            "x": 25,
+            "y": 10
+          }
+        ],
+        "water": []
+      },
+      {
+        "label": "latch the shared reunion and collect exit gems",
+        "fire": [
+          {
+            "kind": "wait",
+            "frames": 15
+          },
+          {
+            "kind": "go",
+            "x": 30,
+            "y": 10
+          }
+        ],
+        "water": [
+          {
+            "kind": "wait",
+            "frames": 15
+          },
+          {
+            "kind": "go",
+            "x": 33,
+            "y": 10
+          }
+        ]
+      }
+    ],
+    "name": "L11 death after K latch returns through the central hub without losing progress",
+    "expected": {
+      "frames": 1510,
+      "deaths": 1,
+      "box_resets": 0,
+      "red": 5,
+      "red_total": 5,
+      "blue": 5,
+      "blue_total": 5,
+      "stars": 3
+    }
+  }
+]
